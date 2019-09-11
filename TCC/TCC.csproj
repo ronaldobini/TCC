@@ -66,10 +66,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BiniPassou\index %281%29.aspx" />
+    <Content Include="BiniPassou\index.aspx" />
     <Content Include="index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BiniPassou\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BiniPassou\index.aspx.designer %281%29.cs" />
+    <Compile Include="BiniPassou\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
