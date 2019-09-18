@@ -1,24 +1,18 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using MySql.Data.MySqlClient;
 
-namespace tcc3
+namespace TCC.Classes
 {
     public class Conn
     {
-
-
-
-
         private MySqlConnection connection;
         private string server;
         private string database;
         private string uid;
         private string password;
-
-
 
         public MySqlConnection conectar()
         {
@@ -37,9 +31,6 @@ namespace tcc3
 
         }
 
-
-
-
         public string conectarErros()
         {
             string erro = "sem erros";
@@ -55,7 +46,7 @@ namespace tcc3
             try
             {
                 connection = new MySqlConnection(connectionString);
-               
+
 
 
             }
@@ -67,6 +58,5 @@ namespace tcc3
             return erro;
 
         }
-
     }
 }

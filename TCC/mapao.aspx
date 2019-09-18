@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="teste3.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="mapao.aspx.cs" Inherits="TCC.mapao" %>
 
 <!DOCTYPE html>
 
@@ -61,7 +61,7 @@
                     <%
                         foreach(var ponto in listaPontos)
                         {
-                            string pontoJavaScript = ponto.MapPoint();
+                            string pontoJavaScript = ponto.Ponto;
                     %>
 
                         <%=pontoJavaScript%>
@@ -108,8 +108,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
