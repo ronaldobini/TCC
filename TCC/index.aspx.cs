@@ -16,7 +16,7 @@ namespace TCC
         {
 
             Conn c = new Conn();
-            results = c.conectarErros();
+            //results = c.conectarErros();
 
             //results = "asp ok";
 

@@ -46,8 +46,7 @@ namespace TCC.Classes
             try
             {
                 connection = new MySqlConnection(connectionString);
-
-
+                connection.Close();
 
             }
             catch (Exception ee)
@@ -57,6 +56,17 @@ namespace TCC.Classes
 
             return erro;
 
+        }
+        public void fechaConn(MySqlConnection conn)
+        {
+            try
+            {
+                conn.Close();
+
+            }
+            catch (Exception e)
+            {
+            }
         }
     }
 }

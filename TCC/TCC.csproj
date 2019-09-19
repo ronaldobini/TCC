@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Classes\Conn.cs" />
     <Compile Include="Classes\MapPoint.cs" />
+    <Compile Include="Classes\Usuario.cs" />
     <Compile Include="mapao.aspx.cs">
       <DependentUpon>mapao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
