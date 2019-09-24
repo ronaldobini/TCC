@@ -11,6 +11,16 @@
     <form id="form1" runat="server">
         <div>
             <h3><%=results %></h3>
+            <h3>Usuario 2:<%=user.Id %></h3>
+            <h3><%=user.Login %></h3>
+            <h3><%=user.Nome %></h3>
+            <h1>----------------</h1>
+            <%foreach (var usu in users)
+                {
+                    %><h3>Usuario <%=usu.Id %></h3>
+            <h3>Login<%=usu.Login %></h3>
+            <h3>Nome<%=usu.Nome %></h3><%
+                } %>
         </div>
     </form>
 </body>

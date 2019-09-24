@@ -26,7 +26,7 @@ namespace TCC.Classes
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
 
             connection = new MySqlConnection(connectionString);
-
+            connection.Open();
             return connection;
 
         }
@@ -46,6 +46,7 @@ namespace TCC.Classes
             try
             {
                 connection = new MySqlConnection(connectionString);
+                connection.Open();
                 connection.Close();
 
             }
@@ -55,6 +56,38 @@ namespace TCC.Classes
             }
 
             return erro;
+
+        }
+
+        public string executar(string sql, MySqlConnection conn)
+        {
+            string result = "-";
+            try
+            {
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                command.ExecuteNonQuery();
+                result = "OK comando sql executado com sussesso";
+            }
+            catch (Exception e)
+            {
+                result = "ERRO: " + e;
+            }
+            return result;
+        }
+        public MySqlDataReader consultar(string sql,MySqlConnection conn)
+        {
+            string result = "-";
+            MySqlDataReader reader = null;
+            try
+            {
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                reader = command.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                result = "ERRO: " + e;
+            }
+            return reader;
 
         }
         public void fechaConn(MySqlConnection conn)
