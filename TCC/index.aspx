@@ -5,23 +5,34 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<title>Home Page</title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <h3><%=results %></h3>
-            <h3>Usuario 2:<%=user.Id %></h3>
-            <h3><%=user.Login %></h3>
-            <h3><%=user.Nome %></h3>
-            <h1>----------------</h1>
-            <%foreach (var usu in users)
-                {
-                    %><h3>Usuario <%=usu.Id %></h3>
-            <h3>Login<%=usu.Login %></h3>
-            <h3>Nome<%=usu.Nome %></h3><%
-                } %>
-        </div>
-    </form>
-</body>
-</html>
+	<div class="top_cliente">
+		<div class="top_int_cliente">
+			Nome do Sistema
+		</div>
+	</div>
+
+	<div class="middle">
+		<div class="middle_int">
+			<div class="middle_int_l">
+				<a href="cliente.aspx"><button class="btn btn-success">Sou Cliente</button></a>
+			</div>
+			<div class="middle_int_r">
+				<a href="prestador.aspx"><button class="btn btn-success">Sou Prestador</button></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="footer_int">
+			Rodapé teste. Aqui terá um rodapé.
+		</div>
+	</div>
+
+</body></html>

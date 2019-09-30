@@ -84,7 +84,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cliente.aspx" />
+    <Content Include="css\bootstrap-grid.css" />
+    <Content Include="css\bootstrap-grid.min.css" />
+    <Content Include="css\bootstrap-reboot.css" />
+    <Content Include="css\bootstrap-reboot.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\estilo.css" />
+    <Content Include="css\Notas.txt" />
+    <Content Include="imgs\checked.png" />
+    <Content Include="imgs\circular-clock.png" />
+    <Content Include="imgs\cliente2tirasamerda.jpg" />
+    <Content Include="imgs\clientetirasamerda.jpeg" />
+    <Content Include="imgs\delete.png" />
+    <Content Include="imgs\dreaming.png" />
+    <Content Include="imgs\favourites.png" />
+    <Content Include="imgs\images.jpg" />
+    <Content Include="imgs\maps.png" />
+    <Content Include="imgs\more.png" />
+    <Content Include="imgs\pause.png" />
+    <Content Include="imgs\prestador2tirasamerda.jpg" />
+    <Content Include="imgs\prestadortirasamerda.jpg" />
+    <Content Include="imgs\star.png" />
+    <Content Include="imgs\x-button.png" />
+    <Content Include="js\bootstrap.bundle.js" />
+    <Content Include="js\bootstrap.bundle.min.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="mapao.aspx" />
+    <Content Include="prestador.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
   </ItemGroup>
@@ -93,12 +123,26 @@
     <Compile Include="Classes\MapPoint.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\UsuarioDAO.cs" />
+    <Compile Include="cliente.aspx.cs">
+      <DependentUpon>cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cliente.aspx.designer.cs">
+      <DependentUpon>cliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="mapao.aspx.cs">
       <DependentUpon>mapao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="mapao.aspx.designer.cs">
       <DependentUpon>mapao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="prestador.aspx.cs">
+      <DependentUpon>prestador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="prestador.aspx.designer.cs">
+      <DependentUpon>prestador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="index.aspx.cs">
@@ -110,6 +154,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\.DS_Store" />
+    <Content Include="css\bootstrap-grid.css.map" />
+    <Content Include="css\bootstrap-grid.min.css.map" />
+    <Content Include="css\bootstrap-reboot.css.map" />
+    <Content Include="css\bootstrap-reboot.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="js\bootstrap.bundle.js.map" />
+    <Content Include="js\bootstrap.bundle.min.js.map" />
+    <Content Include="js\bootstrap.js.map" />
+    <Content Include="js\bootstrap.min.js.map" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

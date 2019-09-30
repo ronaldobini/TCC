@@ -10,6 +10,6 @@
 namespace TCC {
     
     
-    public partial class Index {
+    public partial class cliente {
     }
 }

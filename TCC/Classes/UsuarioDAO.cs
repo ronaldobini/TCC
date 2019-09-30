@@ -78,10 +78,23 @@ namespace TCC.Classes
             new Conn().executar(sql, conn);
             conn.Close();
         }
-        public Usuario selectUser(Usuario user)
+        public Usuario selectUserComUser(Usuario user)
         {
             string sql = "SELECT * FROM usuario WHERE id = " + user.Id;
 
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            while (reader.Read() && reader.HasRows)
+            {
+                user = preencherUser(reader);
+            }
+            conn.Close();
+            return user;
+        }
+        public Usuario selectUser(int id)
+        {
+            string sql = "SELECT * FROM usuario WHERE id = " + id;
+            Usuario user = new Usuario();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
             while (reader.Read() && reader.HasRows)
@@ -107,6 +120,10 @@ namespace TCC.Classes
             }
             conn.Close();
             return users;
+        }
+        public void updateErrosSenha(Usuario user, int erros)
+        {
+
         }
 
         //So pra facilitar ja que vai precisar usar mais de uma vez
