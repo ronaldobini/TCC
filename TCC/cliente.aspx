@@ -68,7 +68,7 @@
 			</div>
 			<div class="middle_int_r_cliente">
 				Já é Cliente? Faça Login! <br><br><br><br>
-				<form runat="server" method="post" action="#">
+				<form run at="server" method="post" action="#">
 				  <div class="form-group">
 				    <label for="exampleInputEmail1">Login</label>
 				    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu login">
@@ -80,7 +80,7 @@
 				  </div>
 				  <br><br>
 				  
-				</formrunat="server">
+				</form run at="server">
 				<a href="indexCliente.html"><button type="submit" class="btn btn-primary">Entrar</button></a>
 			</div>
 		</div>

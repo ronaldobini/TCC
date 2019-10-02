@@ -18,7 +18,7 @@ namespace TCC
         {
             UsuarioDAO dao = new UsuarioDAO();
             user.Id = 2;
-            user = dao.selectUser(user);
+            user = dao.selectUser(user.Id);
             users = dao.selectAllUsers();
         }
     }

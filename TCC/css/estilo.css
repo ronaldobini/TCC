@@ -129,25 +129,25 @@ body {
 }
 
 .middle_int_l {
-	width: 50%;
-	height: 600px;
-	float: left;
-	text-align: center;
-	padding-top: 280px;
-	background-image: url("cliente.jpeg");
-	background-size: cover;
-	background-repeat: no-repeat;
+    width: 50%;
+    height: 600px;
+    float: left;
+    text-align: center;
+    padding-top: 280px;
+    background-image: url("imgs/cliente.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .middle_int_r {
-	width: 50%;
-	height: 600px;
-	float: right;
-	text-align: center;
-	padding-top: 280px;
-	background-image: url("prestador.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
+    width: 50%;
+    height: 600px;
+    float: right;
+    text-align: center;
+    padding-top: 280px;
+    background-image: url("imgs/prestador.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .middle_int_l_cliente {
@@ -156,20 +156,20 @@ body {
 	float: left;
 	text-align: center;
 	padding: 15px;
-	background-image: url("cliente2.jpg");
+	background-image: url("imgs/cliente2.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 .middle_int_r_cliente {
-	width: 50%;
-	height: 600px;
-	float: right;
-	text-align: center;
-	padding: 15px;
-	background-image: url("prestador2.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
+    width: 50%;
+    height: 600px;
+    float: right;
+    text-align: center;
+    padding: 15px;
+    background-image: url("imgs/prestador2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 tbody tr:hover {
