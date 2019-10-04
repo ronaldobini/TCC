@@ -16,6 +16,7 @@ namespace TCC
         private string senhaPost;
         private string erro;
         private int contaErros = 0;
+        public Usuario user = null;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -49,7 +50,7 @@ namespace TCC
 
             if (reader.Read() && reader.HasRows)
             {
-                Usuario user = new UsuarioDAO().selectUser(reader.GetInt32(0));
+                user = new UsuarioDAO().selectUser(reader.GetInt32(0));
                 conn.Close();
                 if (user.Block != 0)
                 {
@@ -61,6 +62,7 @@ namespace TCC
                     else
                     {
                         ++contaErros;
+                        user = null;
                         if (contaErros >= 5)
                         {
 

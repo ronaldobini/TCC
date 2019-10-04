@@ -108,6 +108,7 @@
     <Content Include="imgs\prestadortirasamerda.jpg" />
     <Content Include="imgs\star.png" />
     <Content Include="imgs\x-button.png" />
+    <Content Include="indexPrestador.aspx" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
@@ -167,6 +168,13 @@
     </Compile>
     <Compile Include="cliente.aspx.designer.cs">
       <DependentUpon>cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indexPrestador.aspx.cs">
+      <DependentUpon>indexPrestador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indexPrestador.aspx.designer.cs">
+      <DependentUpon>indexPrestador.aspx</DependentUpon>
     </Compile>
     <Compile Include="mapao.aspx.cs">
       <DependentUpon>mapao.aspx</DependentUpon>

@@ -89,15 +89,23 @@
                    <input runat="server" style="width:100px;" class="btn btn-primary" type="submit" value="Entrar" onserverclick="Logar_Click" /><br />
 				</form>
 			</div>
+            <%if (user != null)
+                {
+                    
+                    %>
+            <meta http-equiv="refresh" content="0; URL=indexPrestador.aspx" />
+            <%
+                }
+                    %>
 		</div>
 	</div>
 
 	<div class="footer">
 		<div class="footer_int">
 			Rodapé teste. Aqui terá um rodapé.
-            <%if (result) {
+           <%-- <%if (result) {
                    
-                }%>
+                }%>--%>
 		</div>
 	</div>
 </body>
