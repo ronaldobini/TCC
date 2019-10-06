@@ -104,6 +104,32 @@ namespace TCC.Classes
             conn.Close();
             return user;
         }
+
+        public Usuario selectUserLogin(string login)
+        {
+            string sql = "SELECT * FROM usuario WHERE login = '" + login+"'";
+            Usuario user = new Usuario();
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            //Se nao for encontrado login
+            if (reader != null)
+            {
+                while (reader.Read() && reader.HasRows)
+                {
+                    user = preencherUser(reader);
+                }
+            }
+            else
+            {
+                //Se nao for encontrado login
+                user.Id = -1;
+                user.Senha = "!!xxxxxxx!!";
+            }
+            conn.Close();
+            return user;
+        }
+
+
         public List<Usuario> selectAllUsers()
         {
             string sql = "SELECT * FROM usuario";
@@ -151,5 +177,42 @@ namespace TCC.Classes
             user.Nivel = reader.GetInt32(18);
             return user;
         }
+
+
+        public Usuario autenticaUser(string login, string senha)
+        {
+            Usuario logando = new Usuario();
+
+            logando = selectUserLogin(login);
+            
+            //Algum outro erro
+            if (logando != null)
+            {
+                //Se nao for encontrado login
+                if (logando.Id == -1)
+                {
+                    return logando;
+                }
+
+                if (logando.Senha == senha)
+                {
+                    //login e senha ok
+                }
+                else
+                {
+                    //senha incorreta
+                    logando.Id = 0;
+                }
+            }
+            else
+            {
+                //Se nao for encontrado login
+                logando.Id = -1;
+            }
+
+            return logando;
+        }
+
+
     }
 }

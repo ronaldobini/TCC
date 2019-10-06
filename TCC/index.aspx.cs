@@ -16,10 +16,11 @@ namespace TCC
         public List<Usuario> users = new List<Usuario>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            UsuarioDAO dao = new UsuarioDAO();
-            user.Id = 2;
-            user = dao.selectUser(user.Id);
-            users = dao.selectAllUsers();
+            //UsuarioDAO dao = new UsuarioDAO();
+            //user.Id = 2;
+            //user = dao.selectUser(user.Id);
+            //users = dao.selectAllUsers();
+            
         }
     }
 }

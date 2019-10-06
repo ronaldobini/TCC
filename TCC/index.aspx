@@ -28,7 +28,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="footer">
 		<div class="footer_int">
 			Rodapé teste. Aqui terá um rodapé.

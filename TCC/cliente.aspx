@@ -68,24 +68,23 @@
 			</div>
 			<div class="middle_int_r_cliente">
 				Já é Cliente? Faça Login! <br><br><br><br>
-				<form run at="server" method="post" action="#">
+				<form runat="server" method="post" action="#">
 				  <div class="form-group">
 				    <label for="exampleInputEmail1">Login</label>
-				    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu login">
+				    <input type="text" class="form-control" id="login" name="login" aria-describedby="emailHelp" placeholder="Insira seu login" runat="server">
 				    <small id="emailHelp" class="form-text text-muted">Nunca divulgue seus dados, por sua segurança.</small>
 				  </div>
 				  <div class="form-group">
 				    <label for="exampleInputPassword1">Senha</label>
-				    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Insira sua senha">
+				    <input type="password" class="form-control" id="senha" name="senha" placeholder="Insira sua senha" runat="server">
 				  </div>
 				  <br><br>
-				  
-				</form run at="server">
-				<a href="indexCliente.html"><button type="submit" class="btn btn-primary">Entrar</button></a>
+				  <input type="submit" class="btn btn-primary" value="Entrar" runat="server" onserverclick="autenticar">
+				</form>
 			</div>
 		</div>
 	</div>
-
+    <%=mensagem %>
 	<div class="footer">
 		<div class="footer_int">
 			Rodapé teste. Aqui terá um rodapé.
