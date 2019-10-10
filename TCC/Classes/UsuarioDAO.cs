@@ -58,8 +58,8 @@ namespace TCC.Classes
                 " `cep` = '" + user.Cep + "', " +
                 " `cidade` = '" + user.Cidade + "', " +
                 " `reputacao` = '" + user.Reputacao + "', " +
-                " `data_cadastro` = '" + user.DataCadastro + "', " +
-                " `ultimo_login` = '" + user.UltimoLogin + "', " +
+                " `data_cadastro` = '" + user.DataCadastro.ToString("MM/dd/yyyy HH:mm:ss") + "', " +
+                " `ultimo_login` = '" + user.UltimoLogin.ToString("MM/dd/yyyy HH:mm:ss") + "', " +
                 " `erros_senha` = '" + user.ErrosSenha + "', " +
                 " `block` = '" + user.Block + "', " +
                 " `nivel_acesso` = '" + user.Nivel + "' " +

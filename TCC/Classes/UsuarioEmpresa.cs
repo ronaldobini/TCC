@@ -22,9 +22,9 @@ namespace TCC.Classes
         private string cep;
         private string cidade;
         private string funcao;
-        private int nivelEmp;
+        private string nivelEmp;
         private int qtdServicos;
-        private int nivelEscolar;
+        private string nivelEscolar;
         private string formacao;
         private int repMedia;
         private DateTime dataCadastro;
@@ -35,7 +35,7 @@ namespace TCC.Classes
 
         public UsuarioEmpresa(int id, int idEmpresa, string login, string senha, string nome, string email,
             string cpf, string tel1, string tel2, string endereco, int numero, string complemento,
-            string cep, string cidade, string funcao, int nivelEmp, int qtdServicos, int nivelEscolar,
+            string cep, string cidade, string funcao, string nivelEmp, int qtdServicos, string nivelEscolar,
             string formacao, int repMedia, DateTime dataCadastro, DateTime ultimoLogin, int errosSenha,
             int block, int nivel)
         {
@@ -84,9 +84,9 @@ namespace TCC.Classes
         public string Cep { get => cep; set => cep = value; }
         public string Cidade { get => cidade; set => cidade = value; }
         public string Funcao { get => funcao; set => funcao = value; }
-        public int NivelEmp { get => nivelEmp; set => nivelEmp = value; }
+        public string NivelEmp { get => nivelEmp; set => nivelEmp = value; }
         public int QtdServicos { get => qtdServicos; set => qtdServicos = value; }
-        public int NivelEscolar { get => nivelEscolar; set => nivelEscolar = value; }
+        public string NivelEscolar { get => nivelEscolar; set => nivelEscolar = value; }
         public string Formacao { get => formacao; set => formacao = value; }
         public int RepMedia { get => repMedia; set => repMedia = value; }
         public DateTime DataCadastro { get => dataCadastro; set => dataCadastro = value; }
