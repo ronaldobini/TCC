@@ -160,6 +160,7 @@
   <ItemGroup>
     <Compile Include="Classes\Conn.cs" />
     <Compile Include="Classes\Empresa.cs" />
+    <Compile Include="Classes\EmpresaDAO.cs" />
     <Compile Include="Classes\UsuarioEmpresa.cs" />
     <Compile Include="Classes\UsuarioEmpresaDAO.cs" />
     <Compile Include="Classes\MapPoint.cs" />
