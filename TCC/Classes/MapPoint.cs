@@ -8,13 +8,14 @@ namespace TCC.Classes
     public class MapPoint
     {
 
-        private string ponto;
+
+        private string mapPoint;
 
 
         //-25.436958
         //-49.19756
 
-        public MapPoint(double lat, double lon, string titulo, string servicos, double reputacaoMedia, int tipo)
+        public MapPoint(double lat, double lon, string titulo, string servicos, int reputacaoMedia, int tipo, int idEmpresa)
         {
             string tipoS = "-";
             if (tipo == 1)
@@ -25,16 +26,31 @@ namespace TCC.Classes
             {
                 tipoS = "domicilio";
             }
-            ponto = "{ position: new google.maps.LatLng(" + lat + ", " + lon + "),type: '" + tipoS + "',name: '<b>" + titulo + " </b><br>" + servicos + "' }";
+
+            string notaBarra = "<div class=\"progress\" style=\"width:85px; height: 7px;\">" +
+                                  "<div class=\"progress-bar progress-bar-striped progress-bar-animated role=\"progressbar\" style=\"width: " + reputacaoMedia + "%\"; aria-valuenow=\"" + reputacaoMedia + "\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>" +
+                                "</div>";
+
+
+
+            //mapPoint = "{ position: new google.maps.LatLng("+lat+", "+lon+"),type: '"+tipoS+"',infos: '<b>"+titulo+" </b><br>"+servicos+ "<br> Nota: " + reputacaoMedia + " < br >' }";
+
+            mapPoint = "{ position: new google.maps.LatLng(" + lat + ", " + lon + "),type: '" + tipoS + "'," +
+                "infos: '<b>" + titulo + " </b><br>" + servicos + " <br><br> " +
+                "Reputacao: " + reputacaoMedia + "<br>" + notaBarra +
+                "<a href=contratar.aspx?empresa=" + idEmpresa + ">Detalhes </a>' }";
+
 
         }
 
-        public string Ponto { get => ponto; set => ponto = value; }
 
-        //public string getPonto()
-        //{
-        //    return ponto;
-        //}
+        public string MapPointo()
+        {
+            return mapPoint;
+        }
+
+
+
 
     }
 }

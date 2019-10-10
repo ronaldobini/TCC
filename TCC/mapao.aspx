@@ -2,11 +2,15 @@
 
 <!DOCTYPE html>
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Custom Legend</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
     <style>
       html, body {
         margin: 0;
@@ -32,6 +36,9 @@
         vertical-align: middle;
       }
     </style>
+
+
+
 </head>
 <body>
     <div id="map"></div>
@@ -46,7 +53,7 @@
             });
 
             var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-            var icons = {                
+            var icons = {
                 domicilio: {
                     name: 'Servico em domicilio',
                     icon: iconBase + 'library_maps.png'
@@ -61,10 +68,10 @@
                     <%
                         foreach(var ponto in listaPontos)
                         {
-                            string pontoJavaScript = ponto.Ponto;
+                            string pontoJavaScript = ponto.MapPointo();
                     %>
 
-                        <%=pontoJavaScript%>
+                        <%=pontoJavaScript%>,
 
                     <%
                         }
@@ -86,7 +93,7 @@
                     map: map
                 });
                 marker.addListener('click', function () {
-                    infoWindow.setContent(feature.name);
+                    infoWindow.setContent(feature.infos);
                     infoWindow.open(map, marker);
                 });
             });
