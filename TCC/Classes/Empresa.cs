@@ -28,6 +28,7 @@ namespace TCC.Classes
         private int repAtendimento;
         private int repQuantidade;
         private int repFiscal;
+        private int qtdServ;
         private string zonaAtendimento;
         private DateTime dataCadastro;
         private int block;
@@ -35,7 +36,7 @@ namespace TCC.Classes
         public Empresa(int id, int idDiretor, int idComercial, int idTecnico, string cnpj, string razaoSocial,
             string tel1, string tel2, string endereco, int numero, string complemento, string cep, string cidade,
             DateTime inicioEmpresa, string descEmpresa, int qtdFuncionarios, int repTempo, int repQualidade, int repAtendimento,
-            int repQuantidade, int repFiscal, string zonaAtendimento, DateTime dataCadastro, int block)
+            int repQuantidade, int repFiscal, int qtdServ, string zonaAtendimento, DateTime dataCadastro, int block)
         {
             this.id = id;
             this.idDiretor = idDiretor;
@@ -58,6 +59,7 @@ namespace TCC.Classes
             this.repAtendimento = repAtendimento;
             this.repQuantidade = repQuantidade;
             this.repFiscal = repFiscal;
+            this.qtdServ = qtdServ;
             this.zonaAtendimento = zonaAtendimento;
             this.dataCadastro = dataCadastro;
             this.block = block;
@@ -91,5 +93,6 @@ namespace TCC.Classes
         public string ZonaAtendimento { get => zonaAtendimento; set => zonaAtendimento = value; }
         public DateTime DataCadastro { get => dataCadastro; set => dataCadastro = value; }
         public int Block { get => block; set => block = value; }
+        public int QtdServ { get => qtdServ; set => qtdServ = value; }
     }
 }

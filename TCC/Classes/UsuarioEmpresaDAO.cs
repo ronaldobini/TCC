@@ -10,34 +10,18 @@ namespace TCC.Classes
     {
         public void insertEmpresa(UsuarioEmpresa userEmp)
         {
-            string sql = "INSERT INTO usuario_empresa(id, id_empresa, login, senha, nome, email, telefone1, telefone2, endereco," +
-                " numero, complemento, cep, cidade, funcao, nivel_empresa, qtd_servicos, nivel_escolar, formacao," +
-                " reputacao_media, data_cadastro, ultimo_login, erros_senha, block, nivel_acesso)" +
+            string sql = "INSERT INTO usuario_empresa(id, id_usuario,id_empresa, funcao, nivel_empresa, qtd_servicos, nivel_escolar," +
+                " formacao, reputacao_media)" +
                 " VALUES (" +
                 " NULL," +
+                "'" + userEmp.IdUsuario + "'," +
                 "'" + userEmp.IdEmpresa + "'," +
-                "'" + userEmp.Login + "'," +
-                "'" + userEmp.Senha + "'," +
-                "'" + userEmp.Nome + "'," +
-                "'" + userEmp.Email + "'," +
-                "'" + userEmp.Tel1 + "'," +
-                "'" + userEmp.Tel2 + "'," +
-                "'" + userEmp.Endereco + "'," +
-                "'" + userEmp.Numero + "'," +
-                "'" + userEmp.Complemento + "'," +
-                "'" + userEmp.Cep + "'," +
-                "'" + userEmp.Cidade + "'," +
                 "'" + userEmp.Funcao + "'," +
                 "'" + userEmp.NivelEmp + "'," +
                 "'" + userEmp.QtdServicos + "'," +
                 "'" + userEmp.NivelEscolar + "'," +
                 "'" + userEmp.Formacao + "'," +
                 "'" + userEmp.RepMedia + "'," +
-                "'" + userEmp.DataCadastro.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
-                "'" + userEmp.UltimoLogin.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
-                "'" + userEmp.ErrosSenha + "'," +
-                "'" + userEmp.Block + "'," +
-                "'" + userEmp.Nivel + "'," +
                 ");";
 
             MySqlConnection conn = new Conn().conectar();
@@ -48,30 +32,14 @@ namespace TCC.Classes
         public void updateUsuarioEmpresa(UsuarioEmpresa userEmp)
         {
             string sql = "UPDATE empresa " +
-                " SET id_empresa = " + userEmp.IdEmpresa + "," +
-                " login = '" + userEmp.Login + "'," +
-                " senha = '" + userEmp.Senha + "'," +
-                " nome = '" + userEmp.Nome + "'," +
-                " email = '" + userEmp.Email + "'," +
-                " cpf = '" + userEmp.Cpf + "'," +
-                " telefone1 = '" + userEmp.Tel1 + "'," +
-                " telefone2 = '" + userEmp.Tel2 + "'," +
-                " endereco = '" + userEmp.Endereco + "'," +
-                " numero = " + userEmp.Numero + "," +
-                " complemento = '" + userEmp.Tel2 + "'," +
-                " cep = '" + userEmp.Cep + "'," +
-                " cidade = '" + userEmp.Cidade + "'," +
+                " SET id_usuario = " + userEmp.IdUsuario + "," +
+                " id_empresa = '" + userEmp.IdEmpresa + "'," +
                 " funcao = '" + userEmp.Funcao + "'," +
-                " nivel_empresa= '" + userEmp.NivelEmp + "'," +
-                " qtd_servicos = " + userEmp.QtdServicos + "," +
+                " nivel_empresa = '" + userEmp.NivelEmp + "'," +
+                " qtd_servicos = '" + userEmp.QtdServicos + "'," +
                 " nivel_escolar = '" + userEmp.NivelEscolar + "'," +
                 " formacao = '" + userEmp.Formacao + "'," +
-                " reputacao_media = " + userEmp.RepMedia + "," +
-                " data_cadastro = '" + userEmp.DataCadastro.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
-                " ultimo_login = '" + userEmp.UltimoLogin.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
-                " erros_senha = " + userEmp.ErrosSenha + "," +
-                " block = " + userEmp.Block + "," +
-                " nivel_acesso = " + userEmp.Nivel +
+                " reputacao_media = '" + userEmp.RepMedia + "'," +
                 " WHERE id = " + userEmp.Id + " ";
 
             MySqlConnection conn = new Conn().conectar();
@@ -118,9 +86,9 @@ namespace TCC.Classes
             return userEmp;
         }
 
-        public UsuarioEmpresa selectUserLogin(string login)
+        public UsuarioEmpresa selectUserIdUser(int idUser)
         {
-            string sql = "SELECT * FROM usuario_empresa WHERE login = '" + login + "'";
+            string sql = "SELECT * FROM usuario_empresa WHERE id_usuario = '" + idUser + "'";
             UsuarioEmpresa userEmp = new UsuarioEmpresa();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
@@ -135,13 +103,35 @@ namespace TCC.Classes
             else
             {
                 //Se nao for encontrado login
-                userEmp.Id = -1;
-                userEmp.Senha = "!!xxxxxxx!!";
+                //userEmp.Id = -1;
+                //userEmp.Senha = "!!xxxxxxx!!";
             }
             conn.Close();
             return userEmp;
         }
-
+        public UsuarioEmpresa selectUserIdEmpresa(int idEmpresa)
+        {
+            string sql = "SELECT * FROM usuario_empresa WHERE id_empresa = '" + idEmpresa + "'";
+            UsuarioEmpresa userEmp = new UsuarioEmpresa();
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            //Se nao for encontrado login
+            if (reader != null)
+            {
+                while (reader.Read() && reader.HasRows)
+                {
+                    userEmp = preencherUserEmp(reader);
+                }
+            }
+            else
+            {
+                //Se nao for encontrado login
+                //userEmp.Id = -1;
+                //userEmp.Senha = "!!xxxxxxx!!";
+            }
+            conn.Close();
+            return userEmp;
+        }
 
         public List<UsuarioEmpresa> selectAllUsers()
         {
@@ -164,71 +154,55 @@ namespace TCC.Classes
         {
 
         }
-
         //So pra facilitar ja que vai precisar usar mais de uma vez
         private UsuarioEmpresa preencherUserEmp(MySqlDataReader reader)
         {
             UsuarioEmpresa userEmp = new UsuarioEmpresa();
             userEmp.Id = reader.GetInt32(0);
-            userEmp.IdEmpresa = reader.GetInt32(1);
-            userEmp.Login = reader.GetString(2);
-            userEmp.Senha = reader.GetString(3);
-            userEmp.Nome = reader.GetString(4);
-            userEmp.Email = reader.GetString(5);
-            userEmp.Tel1 = reader.GetString(6);
-            userEmp.Tel2 = reader.GetString(7);
-            userEmp.Endereco = reader.GetString(8);
-            userEmp.Numero = reader.GetInt32(9);
-            userEmp.Complemento = reader.GetString(10);
-            userEmp.Cep = reader.GetString(11);
-            userEmp.Cidade = reader.GetString(12);
-            userEmp.Funcao = reader.GetString(13);
-            userEmp.NivelEmp = reader.GetString(14);
-            userEmp.QtdServicos = reader.GetInt32(15);
-            userEmp.NivelEscolar = reader.GetString(16);
-            userEmp.Formacao = reader.GetString(17);
-            userEmp.RepMedia = reader.GetInt32(18);
-            userEmp.DataCadastro = reader.GetDateTime(19);
-            userEmp.UltimoLogin = reader.GetDateTime(20);
-            userEmp.ErrosSenha = reader.GetInt32(21);
-            userEmp.Block = reader.GetInt32(22);
-            userEmp.Nivel = reader.GetInt32(23);
+            userEmp.IdUsuario = reader.GetInt32(1);
+            userEmp.IdEmpresa = reader.GetInt32(2);
+            userEmp.Funcao = reader.GetString(3);
+            userEmp.NivelEmp = reader.GetInt32(4);
+            userEmp.QtdServicos = reader.GetInt32(5);
+            userEmp.NivelEscolar = reader.GetString(6);
+            userEmp.Formacao = reader.GetString(7);
+            userEmp.RepMedia = reader.GetInt32(8);
             return userEmp;
         }
 
-        public UsuarioEmpresa autenticaUser(string login, string senha)
-        {
-            UsuarioEmpresa logando = new UsuarioEmpresa();
+        //public UsuarioEmpresa autenticaUser(string login, string senha)
+        //{
+        //    UsuarioEmpresa logando = new UsuarioEmpresa();
 
-            logando = selectUserLogin(login);
+        //    logando = selectUserLogin(login);
 
-            //Algum outro erro
-            if (logando != null)
-            {
-                //Se nao for encontrado login
-                if (logando.Id == -1)
-                {
-                    return logando;
-                }
+        //    //Algum outro erro
+        //    if (logando != null)
+        //    {
+        //        //Se nao for encontrado login
+        //        if (logando.Id == -1)
+        //        {
+        //            return logando;
+        //        }
 
-                if (logando.Senha == senha)
-                {
-                    //login e senha ok
-                }
-                else
-                {
-                    //senha incorreta
-                    logando.Id = 0;
-                }
-            }
-            else
-            {
-                //Se nao for encontrado login
-                logando.Id = -1;
-            }
+        //        if (logando.Senha == senha)
+        //        {
+        //            //login e senha ok
+        //        }
+        //        else
+        //        {
+        //            //senha incorreta
+        //            logando.Id = 0;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        //Se nao for encontrado login
+        //        logando.Id = -1;
+        //    }
 
-            return logando;
-        }
+        //    return logando;
+        //}
 
     }
 
