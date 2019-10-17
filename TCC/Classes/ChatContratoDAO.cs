@@ -33,44 +33,50 @@ namespace TCC.Classes
             conn.Close();
             return chatC;
         }
-        public ChatContrato selectChatCIdUser(int id)
+        public List<ChatContrato> selectChatCIdUser(int id)
         {
             string sql = "SELECT * FROM chat_contrato WHERE id_usuario = " + id;
+            List<ChatContrato> chatCs = new List<ChatContrato>();
             ChatContrato chatC = new ChatContrato();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
             while (reader.Read() && reader.HasRows)
             {
                 chatC = preencherChatC(reader);
+                chatCs.Add(chatC);
             }
             conn.Close();
-            return chatC;
+            return chatCs;
         }
-        public ChatContrato selectChatCIdUserEmp(int id)
+        public List<ChatContrato> selectChatCIdUserEmp(int id)
         {
             string sql = "SELECT * FROM chat_contrato WHERE id_user_empresa = " + id;
+            List<ChatContrato> chatCs = new List<ChatContrato>();
             ChatContrato chatC = new ChatContrato();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
             while (reader.Read() && reader.HasRows)
             {
                 chatC = preencherChatC(reader);
+                chatCs.Add(chatC);
             }
             conn.Close();
-            return chatC;
+            return chatCs;
         }
-        public ChatContrato selectChatCIdServ(int id)
+        public List<ChatContrato> selectChatCIdServ(int id)
         {
             string sql = "SELECT * FROM chat_contrato WHERE id_servico = " + id;
+            List<ChatContrato> chatCs = new List<ChatContrato>();
             ChatContrato chatC = new ChatContrato();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
             while (reader.Read() && reader.HasRows)
             {
                 chatC = preencherChatC(reader);
+                chatCs.Add(chatC);
             }
             conn.Close();
-            return chatC;
+            return chatCs;
         }
         private ChatContrato preencherChatC(MySqlDataReader reader)
         {

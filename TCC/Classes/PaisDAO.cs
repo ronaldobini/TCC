@@ -42,6 +42,19 @@ namespace TCC.Classes
             conn.Close();
             return pais;
         }
+        public Pais selectPaisPorNome(string nome)
+        {
+            string sql = "SELECT * FROM pais WHERE nome = " + nome;
+            Pais pais = new Pais();
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            while (reader.Read() && reader.HasRows)
+            {
+                pais = preencherPais(reader);
+            }
+            conn.Close();
+            return pais;
+        }
         public List<Pais> selectAllPaises()
         {
             string sql = "SELECT * FROM pais";

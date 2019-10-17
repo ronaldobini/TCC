@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TCC.Classes
 {
-    public class ChatMensagens
+    public class ChatMensagem
     {
         private int id;
         private int idChatC;
@@ -13,12 +13,12 @@ namespace TCC.Classes
         private DateTime tempo;
         private string mensagem;
         private int situacao;
-        public ChatMensagens()
+        public ChatMensagem()
         {
 
         }
 
-        public ChatMensagens(int id, int idChatC, int idUser, DateTime tempo, string mensagem, int situacao)
+        public ChatMensagem(int id, int idChatC, int idUser, DateTime tempo, string mensagem, int situacao)
         {
             this.id = id;
             this.idChatC = idChatC;
