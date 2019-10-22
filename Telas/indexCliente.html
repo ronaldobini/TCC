@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<title>Home Page</title>
+</head>
+<body>
+	<div class="top_cliente">
+		<div class="top_int_cliente">
+			Nome do Sistema
+		</div>
+	</div>
+
+	<div class="menu">
+		<div class="menu_int">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			  
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item active">
+			        <a class="nav-link" href="indexCliente.html">Buscar Serviço <span class="sr-only">(página atual)</span></a>
+			      </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="solicitacoesCliente.html">Solicitações <span class="sr-only">(página atual)</span></a>
+			      </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
+			      </li>
+			    </ul>
+			    <form class="form-inline my-2 my-lg-0" action="index.html" method="POST">
+			      <button class="btn btn-outline-danger" type="submit">Sair</button>
+			    </form>
+			  </div>
+			</nav>
+		</div>
+	</div>
+	
+	<div class="conteudo_index_cliente">
+		<div class="conteudo_index_cliente_int">
+			<div class="conteudo_index_cliente_int_l">
+				Qual serviço você deseja hoje? <br><br>
+				<form>
+					<select class="form-control form-control-lg">
+					  <option>Categoria</option>
+					  <option>Automóvel</option>
+					  <option>Roupa</option>
+					  <option>Geladeira</option>
+					</select>
+					<br><br>
+					<select class="form-control form-control-lg">
+					  <option>O que fazer com a cat. (Automovel)</option>
+					  <option>Pneu</option>
+					  <option>Revisão</option>
+					  <option>Pintura</option>
+					</select>
+
+				</form>
+				<br><br>
+				<a href=""><button class="btn btn-success">Buscar</button></a> <br><br>
+				Aqui você pode digitar o serviço desejado e o mapa mostrará a listagem de serviços deste tipo localizados próximos a você! <br><br><br>
+
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-x1">Modal ao clicar no mapa</button>
+
+				<div class="modal fade bd-example-modal-x1" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <div>
+				        	Dados da empresa: <br><br>
+				        	Endereço: Exemplo exemplo exemplo<br>
+				        	Reputação de qualidade: Exemplo exemplo exemplo<br>
+				        	Reputação de tempo: Exemplo exemplo exemplo<br>
+				        	Reputação de Atendimento: Exemplo exemplo exemplo<br>
+				        </div>
+				        <hr>
+				        	Escolha o serviço: <br><br>
+				        <div class="row">
+					     <table class="table table-dark">
+						  <thead>
+						    <tr>
+						      <th scope="col">Serviço</th>
+						      <th scope="col">Preço</th>
+						      <th scope="col">Tempo</th>
+						      <th scope="col">Solicitar</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">Pintura</th>
+						      <td>R$150</td>
+						      <td>12h</td>
+						      <td><a href=""><img src="checked.png"></a></td>
+						    </tr>
+						    <tr>
+						      <th scope="row">Pintura</th>
+						      <td>R$150</td>
+						      <td>12h</td>
+						      <td><a href=""><img src="checked.png"></a></td>
+						    </tr>
+						    <tr>
+						      <th scope="row">Pintura</th>
+						      <td>R$150</td>
+						      <td>12h</td>
+						      <td><a href=""><img src="checked.png"></a></td>
+						    </tr
+						  </tbody>
+						</table>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+
+			</div>
+			<div class="conteudo_index_cliente_int_r">
+				<img src="maps.png" width="900" class="img_map">
+			</div>
+		</div>
+	</div>
+
+
+	<div class="footer">
+		<div class="footer_int">
+			Rodapé teste. Aqui terá um rodapé.
+		</div>
+	</div>
+</body>
+</html>
