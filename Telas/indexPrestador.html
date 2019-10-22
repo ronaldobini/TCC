@@ -39,6 +39,10 @@
 			      <li class="nav-item">
 			        <a class="nav-link" href="cadastrarColaborador.html">Cadastrar Colaborador <span class="sr-only">(página atual)</span></a>
 			      </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="saldoEmpresa.html">Saldo da Empresa <span class="sr-only">(página atual)</span></a>
+			      </li>
 			    </ul>
 			    <form class="form-inline my-2 my-lg-0" action="index.html" method="POST">
 			      <button class="btn btn-outline-danger" type="submit">Sair</button>
@@ -54,7 +58,7 @@
 				<br><br>
 				<div class="panel">
 					Legenda das ações: <br><br>
-					</a>Aceitar: <a data-toggle="tooltip" title=""><img src="checked.png"></a> --------- Recusar: <a data-toggle="tooltip" title=""><img src="x-button.png"></a>
+					</a>Aceitar: <a data-toggle="tooltip" title=""><img src="checked.png"></a> --------- Recusar: <a data-toggle="tooltip" title=""><img src="x-button.png"></a> --------- Mais detalhes: <a data-toggle="tooltip" title=""><img src="more.png"></a>
 					
 				</div><br><hr><br>
 				Estes são os novos pedidos de serviço: <br>
@@ -66,9 +70,11 @@
 				      <th scope="col">Nome do Cliente</th>
 				      <th scope="col">Solicitação</th>
 				      <th scope="col">Categoria</th>
+				      <th scope="col">Reputação</th>
 				      <th scope="col">Data da Solicitação</th>
 				      <th scope="col">Para quando?</th>
 				      <th scope="col">Ação</th>
+				      <th scope="col">Detalhes</th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -77,30 +83,68 @@
 				      <td>Nicolas</td>
 				      <td>Pintura</td>
 				      <td>Automóvel</td>
+				      <td>5</td>
 				      <td>12-12-2002</td>
 				      <td>13-12-2002</td>
 				      <td><a href=""><img src="checked.png"></a> --- <a href=""><img src="x-button.png"></a></td>
+				      <td><a href=""><img src="more.png"></a></td>
 				    </tr>
 				    <tr>
-				      <th scope="row">2</th>
-				      <td>Ronaldo</td>
-				      <td>Costura</td>
-				      <td>Alfaiate</td>
+				      <th scope="row">1</th>
+				      <td>Nicolas</td>
+				      <td>Pintura</td>
+				      <td>Automóvel</td>
+				      <td>5</td>
 				      <td>12-12-2002</td>
-				      <td>16-12-2002</td>
+				      <td>13-12-2002</td>
 				      <td><a href=""><img src="checked.png"></a> --- <a href=""><img src="x-button.png"></a></td>
+				      <td><a href=""><img src="more.png"></a></td>
 				    </tr>
 				    <tr>
-				      <th scope="row">3</th>
-				      <td>Mattei</td>
-				      <td>Reparo</td>
-				      <td>Sapateiro</td>
+				      <th scope="row">1</th>
+				      <td>Nicolas</td>
+				      <td>Pintura</td>
+				      <td>Automóvel</td>
+				      <td>5</td>
 				      <td>12-12-2002</td>
-				      <td>12-12-2002</td>
+				      <td>13-12-2002</td>
 				      <td><a href=""><img src="checked.png"></a> --- <a href=""><img src="x-button.png"></a></td>
+				      <td><a href=""><img src="more.png"></a></td>
 				    </tr>
 				  </tbody>
 				</table>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-x1">Modal ao aceitar serviço</button>
+
+				<div class="modal fade bd-example-modal-x1" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <div>
+				        	<form>
+				        		Preço: <input type="text" name="" disabled><br><br>
+				        		Término previsto em: <input type="date" name="" disabled><br><br>
+				        		Prioridade: <select class="form-control">
+											  <option>Baixa</option>
+											  <option>Normal</option>
+											  <option>Urgente</option>
+											</select>
+
+				        	</form>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
 			</div>
 		</div>
 	</div>
