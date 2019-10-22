@@ -167,6 +167,7 @@
     <Compile Include="Classes\Cidade.cs" />
     <Compile Include="Classes\CidadeDAO.cs" />
     <Compile Include="Classes\Servico.cs" />
+    <Compile Include="Classes\ServicoDAO.cs" />
     <Compile Include="Classes\ServicoTecnicoDAO.cs" />
     <Compile Include="Classes\Conn.cs" />
     <Compile Include="Classes\Debug.cs" />
