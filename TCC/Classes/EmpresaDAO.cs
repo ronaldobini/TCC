@@ -28,6 +28,8 @@ namespace TCC.Classes
                 "'" + emp.Numero + "'," +
                 "'" + emp.Complemento + "'," +
                 "'" + emp.Cep + "'," +
+                "'" + emp.Lat + "'," +
+                "'" + emp.Lon + "'," +
                 "'" + emp.Cidade + "'," +
                 "'" + emp.InicioEmpresa + "'," +
                 "'" + emp.DescEmpresa + "'," +
@@ -60,6 +62,8 @@ namespace TCC.Classes
                 "numero = '" + emp.Numero + "'," +
                 "complemento = '" + emp.Complemento + "'," +
                 "cep = '" + emp.Cep + "'," +
+                "lat = '" + emp.Lat + "'," +
+                "lon = '" + emp.Lon + "'," +
                 "cidade = '" + emp.Cidade + "', " +
                 "inicio_empresa = '" + emp.InicioEmpresa.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
                 "descricao_empresa = '" + emp.DescEmpresa + "'," +
@@ -149,18 +153,20 @@ namespace TCC.Classes
             emp.Numero = reader.GetInt32(9);
             emp.Complemento = reader.GetString(10);
             emp.Cep = reader.GetString(11);
-            emp.Cidade = reader.GetString(12);
-            emp.InicioEmpresa = reader.GetDateTime(13);
-            emp.DescEmpresa = reader.GetString(14);
-            emp.QtdFuncionarios = reader.GetInt32(15);
-            emp.RepTempo = reader.GetInt32(16);
-            emp.RepQualidade = reader.GetInt32(17);
-            emp.RepAtendimento = reader.GetInt32(18);
-            emp.RepQuantidade = reader.GetInt32(19);
-            emp.RepFiscal = reader.GetInt32(20);
-            emp.ZonaAtendimento = reader.GetString(21);
-            emp.DataCadastro = reader.GetDateTime(22);
-            emp.Block = reader.GetInt32(23);
+            emp.Lat = reader.GetString(12);
+            emp.Lon = reader.GetString(13);
+            emp.Cidade = reader.GetString(14);
+            emp.InicioEmpresa = reader.GetDateTime(15);
+            emp.DescEmpresa = reader.GetString(16);
+            emp.QtdFuncionarios = reader.GetInt32(17);
+            emp.RepTempo = reader.GetInt32(18);
+            emp.RepQualidade = reader.GetInt32(19);
+            emp.RepAtendimento = reader.GetInt32(20);
+            emp.RepQuantidade = reader.GetInt32(21);
+            emp.RepFiscal = reader.GetInt32(22);
+            emp.ZonaAtendimento = reader.GetString(23);
+            emp.DataCadastro = reader.GetDateTime(24);
+            emp.Block = reader.GetInt32(25);
 
             return emp;
         }

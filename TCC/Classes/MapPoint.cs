@@ -15,7 +15,7 @@ namespace TCC.Classes
         //-25.436958
         //-49.19756
 
-        public MapPoint(double lat, double lon, string titulo, string servicos, int reputacaoMedia, int tipo, int idEmpresa)
+        public MapPoint(string lat, string lon, string titulo, string servicos, int reputacaoMedia, int tipo, int idEmpresa)
         {
             string tipoS = "-";
             if (tipo == 1)
