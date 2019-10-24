@@ -10,12 +10,29 @@ namespace TCC
 {
     public partial class mapao : System.Web.UI.Page
     {
-
+        public string mostrar = " ";
         public List<MapPoint> listaPontos = new List<MapPoint> { };
         protected void Page_Load(object sender, EventArgs e)
         {
-            listaPontos.Add(new MapPoint(-49.19756, -25.436958,  "Bini software", "-Desenvolver soft (4.000,00)<br>-Analisar soft (2.500,00)<br>-Seguranca de soft (1.500,00)<br>-Integracao de soft (3.500,00)<br>-App Mobile (3.200,00)", 85, 1, 1));
-            listaPontos.Add(new MapPoint(-25.446958, -49.19756, "Gantzel software", "Desenvolver soft<br>Redes<br>Suporte remoto<br>Conserto de PC", 69, 1, 2));
+            List<Empresa> listaEmpresas = new List<Empresa>();
+
+            listaEmpresas = new EmpresaDAO().selectAllEmps();
+            
+
+            foreach(Empresa empresa in listaEmpresas)
+            {
+                //mostrar = empresa.RazaoSocial;
+
+                int repMedia = (empresa.RepAtendimento + empresa.RepQualidade + empresa.RepTempo)/3;
+
+                listaPontos.Add(new MapPoint(empresa.Lat, empresa.Lon, empresa.RazaoSocial, empresa.DescEmpresa, repMedia, 1, 1));
+
+
+            }
+
+
+            listaPontos.Add(new MapPoint("-25.45", "-49.27", "Gantzel software", "Desenvolver soft<br>Redes<br>Suporte remoto<br>Conserto de PC", 69, 1, 2));
+            
         }
     }
 }

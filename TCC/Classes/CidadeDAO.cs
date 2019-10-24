@@ -6,8 +6,7 @@ using System.Web;
 
 namespace TCC.Classes
 {
-    public class CidadeDAO
-    {
+    public class CidadeDAO    {
         public Cidade selectCidade(Cidade cid)
         {
             string sql = "SELECT * FROM cidade WHERE id = " + cid.Id;

@@ -113,5 +113,8 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSbnmsy0j1KVVLOG8FxGELMeha_pqnvYo&callback=initMap">
     </script>
+
+    
+     <p><%=mostrar%></p>
 </body>
 </html>
