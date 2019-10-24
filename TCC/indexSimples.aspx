@@ -1,11 +1,15 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="indexSimples.aspx.cs" Inherits="TCC.indexSimples" %>
+
 <!DOCTYPE html>
-<html>
-<head>
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="estilo.css">
-	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<title>Index Simples</title>
 </head>
 <body>
 	<div class="top_cliente">
@@ -25,19 +29,13 @@
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="indexCliente.html">Buscar Serviço <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="indexSimples.html">Buscar Serviço <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item">
-			        <a class="nav-link" href="solicitacoesCliente.html">Solicitações <span class="sr-only">(página atual)</span></a>
-			      </li>
-
-			      <li class="nav-item">
-			        <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
-			      </li>
+			      
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="index.html" method="POST">
-			      <button class="btn btn-outline-danger" type="submit">Sair</button>
+			    <form class="form-inline my-2 my-lg-0" action="cliente.aspx" method="POST">
+			      <button class="btn btn-outline-success" type="submit">Logue para solicitar um serviço</button>
 			    </form>
 			  </div>
 			</nav>
@@ -66,7 +64,10 @@
 				</form>
 				<br><br>
 				<a href=""><button class="btn btn-success">Buscar</button></a> <br><br>
-				Aqui você pode digitar o serviço desejado e o mapa mostrará a listagem de serviços deste tipo localizados próximos a você!
+				Aqui você pode digitar o serviço desejado e o mapa mostrará a listagem de serviços deste tipo localizados próximos a você! <br><br><br>
+
+				
+
 			</div>
 			<div class="conteudo_index_cliente_int_r">
 				<img src="maps.png" width="900" class="img_map">

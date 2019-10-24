@@ -95,6 +95,8 @@
     <Content Include="css\Notas.txt" />
     <Content Include="imgs\checked.png" />
     <Content Include="imgs\circular-clock.png" />
+    <Content Include="imgs\cliente.jpeg" />
+    <Content Include="imgs\cliente2.jpg" />
     <Content Include="imgs\cliente2tirasamerda.jpg" />
     <Content Include="imgs\clientetirasamerda.jpeg" />
     <Content Include="imgs\delete.png" />
@@ -104,11 +106,14 @@
     <Content Include="imgs\maps.png" />
     <Content Include="imgs\more.png" />
     <Content Include="imgs\pause.png" />
+    <Content Include="imgs\prestador.jpg" />
+    <Content Include="imgs\prestador2.jpg" />
     <Content Include="imgs\prestador2tirasamerda.jpg" />
     <Content Include="imgs\prestadortirasamerda.jpg" />
     <Content Include="imgs\star.png" />
     <Content Include="imgs\x-button.png" />
     <Content Include="indexPrestador.aspx" />
+    <Content Include="indexSimples.aspx" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
@@ -152,6 +157,7 @@
     <Content Include="Layout\solicitacoesCliente.html" />
     <Content Include="Layout\star.png" />
     <Content Include="Layout\x-button.png" />
+    <Content Include="loginSimples.aspx" />
     <Content Include="mapao.aspx" />
     <Content Include="prestador.aspx" />
     <Content Include="Web.config" />
@@ -203,6 +209,20 @@
     </Compile>
     <Compile Include="indexPrestador.aspx.designer.cs">
       <DependentUpon>indexPrestador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indexSimples.aspx.cs">
+      <DependentUpon>indexSimples.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indexSimples.aspx.designer.cs">
+      <DependentUpon>indexSimples.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginSimples.aspx.cs">
+      <DependentUpon>loginSimples.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginSimples.aspx.designer.cs">
+      <DependentUpon>loginSimples.aspx</DependentUpon>
     </Compile>
     <Compile Include="mapao.aspx.cs">
       <DependentUpon>mapao.aspx</DependentUpon>
