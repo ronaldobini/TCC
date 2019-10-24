@@ -16,9 +16,20 @@ namespace TCC
         {
 
         }
+        public void cadastrar(object sender, EventArgs e)
+        {
+            string nomePost = nomeC.Value;
+            string emailPost = emailC.Value;
+            string cpfPost = cpfC.Value;
+            string endPost = endC.Value;
+            int numPost = Int32.Parse(numC.Value);
+            string loginPost = loginC.Value;
+            string senhaPost = senhaC.Value;
+            Usuario user = new Usuario(0,loginPost, senhaPost, nomePost, emailPost, cpfPost, "tel1","tel2",
+                endPost,numPost,"complemento","cep","cidade","0.0", DateTime.Now, DateTime.Now, 0, 0, 0);
 
-
-
+            new UsuarioDAO().insertUser(user);
+        }
         public void autenticar(object sender, EventArgs e)
         {
             string loginPOST = login.Value;

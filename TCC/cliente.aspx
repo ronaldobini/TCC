@@ -22,29 +22,29 @@
 		<div class="middle_int">
 			<div class="middle_int_l_cliente">
 				Não tem login? Cadastre-se! <br><br>
-				<form>
+				<form runat="server" method="post" action="#">
 				  <div class="form-row">
 				    <div class="form-group col-md-6">
 				      <label for="inputEmail4">Nome Completo</label>
-				      <input type="text" class="form-control" id="inputEmail4" placeholder="Nome...">
+				      <input runat="server" type="text" class="form-control" id="nomeC" placeholder="Nome...">
 				    </div>
 				    <div class="form-group col-md-6">
 				      <label for="inputPassword4">E-mail</label>
-				      <input type="email" class="form-control" id="inputPassword4" placeholder="Senha...">
+				      <input runat="server" type="email" class="form-control" id="emailC" placeholder="Senha...">
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <label for="inputAddress">CPF</label>
-				    <input type="text" class="form-control" id="inputAddress" placeholder="CPF (Apenas números)">
+				    <input runat="server" type="text" class="form-control" id="cpfC" placeholder="CPF (Apenas números)">
 				  </div>
 				  <div class="form-group">
 				    <label for="inputAddress2">Endereço</label>
-				    <input type="text" class="form-control" id="inputAddress2" placeholder="Endereço">
+				    <input runat="server" type="text" class="form-control" id="endC" placeholder="Endereço">
 				  </div>
 				  <div class="form-row">
 				    <div class="form-group col-md-3">
 				      <label for="inputCity">Nº</label>
-				      <input type="text" class="form-control" id="inputCity">
+				      <input runat="server" type="text" class="form-control" id="numC">
 				    </div>
 				    <div class="form-group col-md-4">
 				      <label for="inputState">CEP</label>
@@ -55,20 +55,20 @@
 				    </div>
 				    <div class="form-group col-md-2">
 				      <label for="inputZip">Login</label>
-				      <input type="text" class="form-control" id="inputZip">
+				      <input runat="server" type="text" class="form-control" id="loginC">
 				    </div>
 				    <div class="form-group col-md-2">
 				      <label for="inputZip">Senha</label>
-				      <input type="text" class="form-control" id="inputZip">
+				      <input runat="server" type="text" class="form-control" id="senhaC">
 				    </div>
 				  </div>
-				  <a href=""><button type="submit" class="btn btn-primary">Cadastrar</button></a>
-				</form>
-
+				  <input type="submit" id="botCad" class="btn btn-primary" value="Cadastrar" runat="server" onserverclick="cadastrar">
+				
+<%--                    </form>
+				<form runat="server" method="post" action="#">--%>
 			</div>
 			<div class="middle_int_r_cliente">
 				Já é Cliente? Faça Login! <br><br><br><br>
-				<form runat="server" method="post" action="#">
 				  <div class="form-group">
 				    <label for="exampleInputEmail1">Login</label>
 				    <input type="text" class="form-control" id="login" name="login" aria-describedby="emailHelp" placeholder="Insira seu login" runat="server">
