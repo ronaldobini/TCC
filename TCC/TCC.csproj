@@ -102,6 +102,7 @@
     <Content Include="imgs\delete.png" />
     <Content Include="imgs\dreaming.png" />
     <Content Include="imgs\favourites.png" />
+    <Content Include="imgs\house.png" />
     <Content Include="imgs\images.jpg" />
     <Content Include="imgs\maps.png" />
     <Content Include="imgs\more.png" />

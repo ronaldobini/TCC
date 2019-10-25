@@ -31,7 +31,7 @@ namespace TCC
             }
 
 
-            listaPontos.Add(new MapPoint("-25.45", "-49.27", "Gantzel software", "Desenvolver soft<br>Redes<br>Suporte remoto<br>Conserto de PC", 69, 1, 2));
+            listaPontos.Add(new MapPoint("-25.45", "-49.27", "Gantzel software", "Desenvolver soft<br>Redes<br>Suporte remoto<br>Conserto de PC", 69, 2, 2));
             
         }
     }

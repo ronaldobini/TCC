@@ -52,15 +52,15 @@
                 mapTypeId: 'roadmap'
             });
 
-            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+            var iconBase = '/imgs/';
             var icons = {
                 domicilio: {
                     name: 'Servico em domicilio',
-                    icon: iconBase + 'library_maps.png'
+                    icon: iconBase + 'house.png'
                 },
                 local: {
                     name: 'Servico local',
-                    icon: iconBase + 'info-i_maps.png'
+                    icon: iconBase + 'local.png'
                 }
             };
 
@@ -104,7 +104,7 @@
                 var name = type.name;
                 var icon = type.icon;
                 var div = document.createElement('div');
-                div.innerHTML = '<img src="' + icon + '"> ' + name;
+                div.innerHTML = '<img src="' + icon + '" width=24 hight=24> ' + name;
                 legend.appendChild(div);
             }
 
