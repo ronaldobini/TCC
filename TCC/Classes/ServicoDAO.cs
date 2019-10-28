@@ -139,7 +139,7 @@ namespace TCC.Classes
         }
         public List<Servico> selectAllServsEmp(int idEmp)
         {
-            string sql = "SELECT * FROM empresa WHERE id_usuario = " + idEmp;
+            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp;
             List<Servico> servs = new List<Servico>();
             Servico serv = new Servico();
             MySqlDataReader reader = null;
