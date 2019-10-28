@@ -55,6 +55,19 @@ namespace TCC.Classes
             conn.Close();
             return empServ;
         }
+        public string selectDescPorId(int id)
+        {
+            string sql = "SELECT * FROM empresa_servicos WHERE id = " + id;
+            string desc = "-";
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            while (reader.Read() && reader.HasRows)
+            {
+                desc = reader.GetString(3);
+            }
+            conn.Close();
+            return desc;
+        }
         public EmpresaServico selectEmpServPorIDEmp(int id)
         {
             string sql = "SELECT * FROM empresa_servicos WHERE id_empresa = " + id;

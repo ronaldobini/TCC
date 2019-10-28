@@ -161,6 +161,7 @@
     <Content Include="loginSimples.aspx" />
     <Content Include="mapao.aspx" />
     <Content Include="prestador.aspx" />
+    <Content Include="servicoEmExecucao.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
   </ItemGroup>
@@ -246,6 +247,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="servicoEmExecucao.aspx.cs">
+      <DependentUpon>servicoEmExecucao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="servicoEmExecucao.aspx.designer.cs">
+      <DependentUpon>servicoEmExecucao.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

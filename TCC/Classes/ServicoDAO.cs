@@ -11,7 +11,7 @@ namespace TCC.Classes
         public void insertServico(Servico serv)
         {
             //Vou deixar bem separado o que é oq pra ficar mais claro
-            string sql = "INSERT INTO servico (id, id_usuairo, id_empresa, id_repres_empresa, data_inicio, id_categoria," +
+            string sql = "INSERT INTO servico (id, id_usuairo, id_empresa, id_repres_empresa, data_inicio, id_categoria, id_empresa_servico," +
                 "descricao_usuario,prioridade, valor, data_fim_estimada,data_fim, situacao, aceite_usuario, aceite_empresa," +
                 "reputacao_tempo, reputacao_qualidade,reputacao_atendimento, obs_finais_usuario	,obs_finais_empresa) " +
                 " VALUES( " +
@@ -21,6 +21,7 @@ namespace TCC.Classes
                 "" + serv.IdRepresEmp + "," +
                 "" + serv.DataIni.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
                 "" + serv.IdCat + "," +
+                "" + serv.IdEmpSer + "," +
                 "'" + serv.DescUser + "'," +
                 "" + serv.Prioridade + "," +
                 "" + serv.Valor + "," +
@@ -181,19 +182,20 @@ namespace TCC.Classes
             serv.IdRepresEmp = reader.GetInt32(3);
             serv.DataIni = reader.GetDateTime(4);
             serv.IdCat = reader.GetInt32(5);
-            serv.DescUser = reader.GetString(6);
-            serv.Prioridade = reader.GetInt32(7);
-            serv.Valor = reader.GetDouble(8);
-            serv.DataFimEst = reader.GetDateTime(9);
-            serv.DataFim = reader.GetDateTime(10);
-            serv.Sit = reader.GetInt32(11);
-            serv.AceiteUser = reader.GetInt32(12);
-            serv.AceiteEmp = reader.GetInt32(13);
-            serv.RepTempo = reader.GetDouble(14);
-            serv.RepQualidade = reader.GetDouble(15);
-            serv.RepAtendimento = reader.GetDouble(16);
-            serv.ObsFinUser = reader.GetString(17);
-            serv.ObsFinEmp = reader.GetString(18);
+            serv.IdEmpSer = reader.GetInt32(6);
+            serv.DescUser = reader.GetString(7);
+            serv.Prioridade = reader.GetInt32(8);
+            serv.Valor = reader.GetDouble(9);
+            serv.DataFimEst = reader.GetDateTime(10);
+            serv.DataFim = reader.GetDateTime(11);
+            serv.Sit = reader.GetInt32(12);
+            serv.AceiteUser = reader.GetInt32(13);
+            serv.AceiteEmp = reader.GetInt32(14);
+            serv.RepTempo = reader.GetDouble(15);
+            serv.RepQualidade = reader.GetDouble(16);
+            serv.RepAtendimento = reader.GetDouble(17);
+            serv.ObsFinUser = reader.GetString(18);
+            serv.ObsFinEmp = reader.GetString(19);
 
             return serv;
         }

@@ -13,6 +13,7 @@ namespace TCC.Classes
         private int idRepresEmp;
         private DateTime dataIni;
         private int idCat;
+        private int idEmpSer;
         private string descUser;
         private int prioridade;
         private double valor;
@@ -32,7 +33,7 @@ namespace TCC.Classes
 
         }
 
-        public Servico(int id, int idUser, int idEmp, int idRepresEmp, DateTime dataIni, int idCat, string descUser,
+        public Servico(int id, int idUser, int idEmp, int idRepresEmp, DateTime dataIni, int idCat, int idEmpSer, string descUser,
             int prioridade, double valor, DateTime dataFimEst, DateTime dataFim, int sit, int aceiteUser, int aceiteEmp,
             double repTempo, double repQualidade, double repAtendimento, string obsFinUser, string obsFinEmp)
         {
@@ -42,6 +43,7 @@ namespace TCC.Classes
             this.idRepresEmp = idRepresEmp;
             this.dataIni = dataIni;
             this.idCat = idCat;
+            this.idEmpSer = idEmpSer;            
             this.descUser = descUser;
             this.prioridade = prioridade;
             this.valor = valor;
@@ -63,6 +65,7 @@ namespace TCC.Classes
         public int IdRepresEmp { get => idRepresEmp; set => idRepresEmp = value; }
         public DateTime DataIni { get => dataIni; set => dataIni = value; }
         public int IdCat { get => idCat; set => idCat = value; }
+        public int IdEmpSer { get => idEmpSer; set => idEmpSer = value; }
         public string DescUser { get => descUser; set => descUser = value; }
         public int Prioridade { get => prioridade; set => prioridade = value; }
         public double Valor { get => valor; set => valor = value; }
