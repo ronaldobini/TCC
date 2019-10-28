@@ -5,18 +5,12 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
-	<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-	<title>Solicitações</title>
+    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+	<title>Home Page</title>
 </head>
 <body>
-	<div class="top_cliente">
-		<div class="top_int_cliente">
-			Nome do Sistema
-		</div>
-	</div>
-
-	<div class="menu">
-		<div class="menu_int">
+	<div class="menu_principal">
+		<div class="menu_principal_int">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			  
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -25,81 +19,47 @@
 
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item">
-			        <a class="nav-link" href="indexCliente.html">Buscar Serviço <span class="sr-only">(página atual)</span></a>
-			      </li>
-
 			      <li class="nav-item active">
-			        <a class="nav-link" href="solicitacoesCliente.html">Solicitações <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="principal.html">Pagina inicial<span class="sr-only">(página atual)</span></a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="sobre.html">Sobre Nós<span class="sr-only">(página atual)</span></a>
+			      </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="contato.html">Contato <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
-			      <button class="btn btn-outline-danger" type="submit">Sair</button>
+			    <form class="form-inline my-2 my-lg-0" action="loginEmpresa.html" method="POST">
+			      <button class="btn btn-outline-primary" type="submit">Sou Empresa</button>
 			    </form>
 			  </div>
 			</nav>
 		</div>
 	</div>
-	
-	<div class="conteudo_solicitacoes_cliente">
-		<div class="conteudo_solicitacao_cliente_int">
-			<div class="solicitacaoCliente_int">
-				<br><br>
-				<div class="panel">
-					Legenda dos status: <br><br>
-					Aceite: <a data-toggle="tooltip" title=""><img src="checked.png"></a> --------- Pendente: <a data-toggle="tooltip" title=""><img src="pause.png"></a> --------- Negada: <a data-toggle="tooltip" title=""><img src="x-button.png"></a>
-					
-				</div><br><hr>
 
-				 <br><br>
-				<table class="table table-dark">
-				  <thead>
-				    <tr>
-				      <th scope="col">Nº</th>
-				      <th scope="col">Solicitação</th>
-				      <th scope="col">Categoria</th>
-				      <th scope="col">Data da Solicitação</th>
-				      <th scope="col">Status</th>
-				      <th scope="col">Cancelar</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-				    <tr>
-				      <th scope="row">1</th>
-				      <td>Pintura</td>
-				      <td>Automóvel</td>
-				      <td>12-12-2002</td>
-				      <td><a href=""><img src="pause.png"></a></td>
-				      <td><a href=""><img src="delete.png"></a></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">2</th>
-				      <td>Costura</td>
-				      <td>Alfaiate</td>
-				      <td>12-12-2002</td>
-				      <td><a href=""><img src="checked.png"></a></td>
-				      <td><a href=""><img src="delete.png"></a></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">3</th>
-				      <td>Reparo</td>
-				      <td>Sapateiro</td>
-				      <td>12-12-2002</td>
-				      <td><a href=""><img src="x-button.png"></a></td>
-				      <td><a href=""><img src="delete.png"></a></td>
-				    </tr>
-				  </tbody>
-				</table>
-			</div>
-		</div>
+	<div class="conteudo_pagina_principal">
+		<div class="conteudo_pagina_principal_int">
+			<img src="logoTeste.png" width="350"> <br><br>
+			<form method="POST" action="indexSimples.html">
+				<div class="form-group">
+					<input type="" name="" placeholder="Nome Completo" class="form-control"> <br><br>
+					<input type="" name="" placeholder="CEP" class="form-control">
+					<small id="emailHelp" class="form-text text-muted">Sem cadastro, sem burocracias! Experimente dar apenas uma espiadinha!</small> <br>
+					<input type="submit" name="" value="Espiar" class="btn btn-primary">
+				</div>
+			</form>
+		</div>		
 	</div>
 
-
-	<footer id="myFooter">
+	<div class="conteudo_pagina_principal_2">
+		<div class="conteudo_pagina_principal_2_int">
+			<div class="botao_esq"><a href="login.html"><button class="btn btn-success">Login</button></a></div>
+			<div class="botao_dir"><a href="cadastroCliente.html"><button class="btn btn-success">Cadastrar-se</button></a></div>
+		</div>
+	</div>
+    <footer id="myFooter">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
