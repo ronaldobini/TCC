@@ -1,7 +1,6 @@
 body {
 	background-color: #dbdbdb;
 	font-family: Arial;
-	font-weight: bold;
 }
 
 .top {
@@ -272,4 +271,9 @@ tbody tr:hover {
 	text-align: center;
 	margin: auto;
 	padding: 15px;
+}
+
+.equipe {
+	width: 100px;
+	border-radius: 50px;
 }
