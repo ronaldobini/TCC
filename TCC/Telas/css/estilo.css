@@ -63,7 +63,8 @@ body {
 
 .conteudo_index_cliente_int {
 	width: 100%;
-	height: 600px;
+	min-height: 600px;
+	height: auto;
 	margin: auto;
 	text-align: center;
 }

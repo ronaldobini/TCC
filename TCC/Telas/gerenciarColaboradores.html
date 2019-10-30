@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-	<title>Cadastrar Colaborador</title>
+	<title>Gerenciar Colaboradores</title>
 </head>
 <body>
 	<div class="top_cliente">
@@ -37,11 +37,11 @@
 			        <a class="nav-link" href="pedidosEmExecucao.html">Pedidos Em Execução <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item active">
+			      <li class="nav-item">
 			        <a class="nav-link" href="cadastrarColaborador.html">Cadastrar Colaborador <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item">
+			      <li class="nav-item active">
 			        <a class="nav-link" href="gerenciarColaboradores.html">Gerenciar Colaboradores <span class="sr-only">(página atual)</span></a>
 			      </li>
 
@@ -57,90 +57,65 @@
 		</div>
 	</div>
 	
-	<div class="conteudo_solicitacoes_cliente">
-		<div class="conteudo_index_cliente_int">
-			<div class="solicitacaoPrestador_int">
-				Cadastre um novo colaborador <br><br>
-				<form>
-				  <div class="form-row">
-			    <div class="form-group col-md-6">
-			      <label for="inputEmail4">Login</label>
-			      <input type="text" class="form-control" id="inputEmail4" placeholder="Login">
-			    </div>
-			    <div class="form-group col-md-6">
-			      <label for="inputPassword4">Senha</label>
-			      <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
-			    </div>
-			  </div>
+	<div class="conteudo_relatorio_cliente">
+		<div class="conteudo_solicitacao_cliente_int">
+			
+				<br><br>
+				<div class="panel">
+					Colaboradores
 
-			  <div class="form-row">
-			    <div class="form-group col-md-6">
-			      <label for="inputEmail4">Nome Completo</label>
-			      <input type="text" class="form-control" id="inputEmail4" placeholder="Nome completo">
-			    </div>
-			    <div class="form-group col-md-6">
-			      <label for="inputPassword4">E-mail</label>
-			      <input type="email" class="form-control" id="inputPassword4" placeholder="exemplo@exemplo.com.br">
-			    </div>
-			  </div>
+					
+				</div> <br> <hr> <br>
 
-			  <div class="form-row">
-			    <div class="form-group col-md-6">
-			      <label for="inputEmail4">CPF</label>
-			      <input type="text" class="form-control" id="inputEmail4" placeholder="Apenas números">
-			    </div>
-			    <div class="form-group col-md-6">
-			      <label for="inputPassword4">CEP</label>
-			      <input type="text" class="form-control" id="inputPassword4" placeholder="Apenas números">
-			    </div>
-			  </div>
-
-			  <div class="form-row">
-			    <div class="form-group col-md-6">
-			      <label for="inputEmail4">Endereço</label>
-			      <input type="text" class="form-control" id="inputEmail4" placeholder="Endereço">
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputPassword4">Complemento</label>
-			      <input type="text" class="form-control" id="inputPassword4" placeholder="Complemento">
-			    </div>
-			    <div class="form-group col-md-4">
-			      <label for="inputPassword4">Número</label>
-			      <input type="text" class="form-control" id="inputPassword4" placeholder="Número">
-			    </div>
-			  </div>
-
-			  <div class="form-row">
-			    <div class="form-group col-md-6">
-			      <label for="inputEmail4">Telefone</label>
-			      <input type="tel" class="form-control" id="inputEmail4" placeholder="xxxx-xxxx">
-			    </div>
-			    <div class="form-group col-md-6">
-			      <label for="inputPassword4">Celular</label>
-			      <input type="text" class="form-control telefone" id="inputPassword4" placeholder="(XX)x xxxx-xxxx">
-			    </div>
-			  </div> <br>
-
-			  <div class="form-row">
-			    <select class="form-control col-md-4">
-			    	<option>Cidade...</option>
-			    </select>
-			    <select class="form-control col-md-4">
-			    	<option>Função...</option>
-			    </select>
-			    <select class="form-control col-md-4">
-			    	<option>Formação...</option>
-			    </select>
-			  </div>
-				  </div>
-				  <a href=""><button type="submit" class="btn btn-success">Cadastrar</button></a>
-				</form>
+				<table class="table table-dark">
+				  <thead>
+				    <tr>
+				      <th scope="col">Nº</th>
+				      <th scope="col">Nome do Colaborador</th>
+				      <th scope="col">Função</th>
+				      <th scope="col">Data Cadastro</th>
+				      <th scope="col">Visualizar</th>
+				      <th scope="col">Editar</th>
+				      <th scope="col">Remover</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Nicolas</td>
+				      <td>Gerente</td>
+				      <td>12-12-2002</td>
+				      <td><a href="verDadosColaborador.html"><img src="binoculars.png"></a></td>
+				      <td><a href="editarColaborador.html"><img src="edit.png"></a></td>
+				      <td><a href=""><img src="delete.png"></a></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Ronaldo</td>
+				      <td>Proprietário</td>
+				      <td>12-12-2002</td>
+				      <td><a href="verDadosColaborador.html"><img src="binoculars.png"></a></td>
+				      <td><a href="editarColaborador.html"><img src="edit.png"></a></td>
+				      <td><a href=""><img src="delete.png"></a></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Fulano</td>
+				      <td>Ralé</td>
+				      <td>12-12-2002</td>
+				      <td><a href="verDadosColaborador.html"><img src="binoculars.png"></a></td>
+				      <td><a href="editarColaborador.html"><img src="edit.png"></a></td>
+				      <td><a href=""><img src="delete.png"></a></td>
+				    </tr>
+				  </tbody>
+				</table>
 			</div>
+		
+			
 		</div>
 	</div>
 
-	<br><br><br><br><br><br><br><br>
-	<footer id="myFooter">
+<footer id="myFooter">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
