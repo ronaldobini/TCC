@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<title>Home Page</title>
 </head>
 <body>
@@ -59,7 +59,7 @@
 				<br><br>
 				<div class="panel">
 					Legenda das ações: <br><br>
-					</a>Aceitar: <a data-toggle="tooltip" title=""><img src="checked.png"></a> --------- Recusar: <a data-toggle="tooltip" title=""><img src="x-button.png"></a>
+					</a>Aceitar: <a data-toggle="tooltip" title=""><img src="imgs/checked.png"></a> --------- Recusar: <a data-toggle="tooltip" title=""><img src="imgs/x-button.png"></a>
 					
 				</div><br><hr><br>
 				Estes são os novos pedidos de serviço: <br>
@@ -84,7 +84,7 @@
 				      <td>Automóvel</td>
 				      <td>12-12-2002</td>
 				      <td>13-12-2002</td>
-				      <td><a href=""><img src="checked.png"></a> --- <a href=""><img src="x-button.png"></a></td>
+				      <td><a href=""><img src="imgs/checked.png"></a> --- <a href=""><img src="imgs/x-button.png"></a></td>
 				    </tr>
 				    <tr>
 				      <th scope="row">2</th>
@@ -93,7 +93,7 @@
 				      <td>Alfaiate</td>
 				      <td>12-12-2002</td>
 				      <td>16-12-2002</td>
-				      <td><a href=""><img src="checked.png"></a> --- <a href=""><img src="x-button.png"></a></td>
+				      <td><a href=""><img src="imgs/checked.png"></a> --- <a href=""><img src="imgs/x-button.png"></a></td>
 				    </tr>
 				    <tr>
 				      <th scope="row">3</th>
@@ -102,7 +102,7 @@
 				      <td>Sapateiro</td>
 				      <td>12-12-2002</td>
 				      <td>12-12-2002</td>
-				      <td><a href=""><img src="checked.png"></a> --- <a href=""><img src="x-button.png"></a></td>
+				      <td><a href=""><img src="imgs/checked.png"></a> --- <a href=""><img src="imgs/x-button.png"></a></td>
 				    </tr>
 				  </tbody>
 				</table>
