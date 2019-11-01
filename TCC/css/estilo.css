@@ -1,7 +1,6 @@
 body {
 	background-color: #dbdbdb;
 	font-family: Arial;
-	font-weight: bold;
 }
 
 .top {
@@ -64,6 +63,21 @@ body {
 
 .conteudo_index_cliente_int {
 	width: 100%;
+	min-height: 600px;
+	height: auto;
+	margin: auto;
+	text-align: center;
+}
+.conteudo_solicitacao_cliente_int {
+	width: 100%;
+	height: 600px;
+	margin: auto;
+	text-align: center;
+	padding: 25px;
+}
+
+.conteudo_solicitacao_cliente_int {
+	width: 100%;
 	height: 600px;
 	margin: auto;
 	text-align: center;
@@ -108,6 +122,7 @@ body {
 	width: 50%;
 	height: 600px;
 	float: left;
+	padding: 25px;
 }
 
 -----------------------------------
@@ -203,4 +218,63 @@ tbody tr:hover {
 	padding: 50px;
 	margin: auto;
 	text-align: center;
+}
+
+.conteudo_pagina_principal {
+	width: 100%;
+	height: 700px;
+	min-height: 700px; 
+}
+
+.conteudo_pagina_principal_int {
+	width: 1040px;
+	height: 700px;
+	min-height: 700px;
+	text-align: center;
+	margin: auto;
+	padding: 100px;
+}
+
+.conteudo_pagina_principal_2 {
+	width: 100%;
+	height: 150px;
+	min-height: 150px;
+}
+
+.conteudo_pagina_principal_2_int {
+	width: 1040px;
+	height: 150px;
+	min-height: 150px;
+	margin: auto;
+	text-align: center;
+}
+
+.botao_esq {
+	float: left;
+	margin-left: 40%;
+}
+
+.botao_dir {
+	float: right;
+	margin-right: 40%;
+}
+
+.conteudo_pagina_cadastro {
+	width: 100%;
+	height: 700px;
+	min-height: 700px; 
+}
+
+.conteudo_pagina_cadastro_int {
+	width: 1040px;
+	height: 700px;
+	min-height: 700px;
+	text-align: center;
+	margin: auto;
+	padding: 15px;
+}
+
+.equipe {
+	width: 100px;
+	border-radius: 50px;
 }

@@ -1,16 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="TCC.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginCliente.aspx.cs" Inherits="TCC.loginCliente" %>
+
 <!DOCTYPE html>
-<html>
-<head>
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-	<title>Servitiba</title>
+	<title>Login</title>
 </head>
 <body>
-	<div class="menu_principal">
+    <div class="menu_principal">
 		<div class="menu_principal_int">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			  
@@ -43,22 +46,17 @@
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
 			<img src="imgs/logoTeste.png" width="350"> <br><br>
-			<form method="POST" action="indexSimples.html">
+			<form runat="server" method="post" action="#">
 				<div class="form-group">
-					<input type="" name="" placeholder="Nome Completo" class="form-control"> <br><br>
-					<input type="" name="" placeholder="CEP" class="form-control">
-					<small id="emailHelp" class="form-text text-muted">Sem cadastro, sem burocracias! Experimente dar apenas uma espiadinha!</small> <br>
-					<input type="submit" name="" value="Espiar" class="btn btn-primary">
+					<input type="text" name="" placeholder="Login" class="form-control" id="login" runat="server"> <br><br>
+					<input type="password" name="" placeholder="Senha" class="form-control" id="senha" runat="server">
+					<br>
+					<input type="submit" onserverclick="autenticar" value="Login" class="btn btn-success" runat="server">
+					<br>
+					<small id="emailHelp" class="form-text text-muted">Não tem login? <a href="cadastroCliente.html">Cadastre-se!</a></small>
 				</div>
 			</form>
 		</div>		
-	</div>
-
-	<div class="conteudo_pagina_principal_2">
-		<div class="conteudo_pagina_principal_2_int">
-			<div class="botao_esq"><a href="loginCliente.aspx"><button class="btn btn-success">Login</button></a></div>
-			<div class="botao_dir"><a href="cadastroCliente.html"><button class="btn btn-success">Cadastrar-se</button></a></div>
-		</div>
 	</div>
     <footer id="myFooter">
         <div class="container">

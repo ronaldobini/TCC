@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="cliente.aspx.cs" Inherits="TCC.cliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="old_cliente.aspx.cs" Inherits="TCC.cliente" %>
 
 <!DOCTYPE html>
 

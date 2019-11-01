@@ -54,7 +54,8 @@
 		</div>
 	</div>
 
-	<div class="menu">
+
+    <div class="menu">
 		<div class="menu_int">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			  
@@ -65,41 +66,52 @@
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="idnexSimples.html">Buscar Serviço <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="indexCliente.html">Buscar Serviço <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      
+			      <li class="nav-item">
+			        <a class="nav-link" href="solicitacoesCliente.html">Solicitações <span class="sr-only">(página atual)</span></a>
+			      </li>
+
+			      <li class="nav-item">
+			        <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
+			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="cliente.html" method="POST">
-			      <button class="btn btn-outline-success" type="submit">Logue para solicitar um serviço</button>
+			    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
+<% if (Session["sId"] == null){ %>
+			        <button class="btn btn-outline-success" type="submit">Logue para solicitar um serviço</button>
+<% }else{ %>
+                    <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %></font></a>
+                    <button class="btn btn-outline-danger" type="submit">Sair</button>
+<% } %>
+			      
 			    </form>
 			  </div>
 			</nav>
 		</div>
 	</div>
+
+	
 	
 	<div class="conteudo_index_cliente">
 		<div class="conteudo_index_cliente_int">
 			<div class="conteudo_index_cliente_int_l">
 				Qual serviço você deseja hoje? <br><br>
-				<form>
-					<select class="form-control form-control-lg">
+				<form id="mapao" runat="server" method="post" action="#">
+					<select class="form-control form-control-lg" runat="server">
 					  <option>Categoria</option>
 					  <option>Automóvel</option>
 					  <option>Roupa</option>
-					  <option>Geladeira</option>
+					  <option>Informática</option>
 					</select>
 					<br><br>
-					<select class="form-control form-control-lg">
-					  <option>O que fazer com a cat. (Automovel)</option>
-					  <option>Pneu</option>
-					  <option>Revisão</option>
-					  <option>Pintura</option>
-					</select>
+					
+                    <input type="text" id="pesq" name="pesq" runat="server"/>
+                    <br><br>
+				    <button class="btn btn-success" runat="server"  onserverclick="filtrar">Buscar</button> <br><br>
 
 				</form>
-				<br><br>
-				<a href=""><button class="btn btn-success">Buscar</button></a> <br><br>
+				
 				Aqui você pode digitar o serviço desejado e o mapa mostrará a listagem de serviços deste tipo localizados próximos a você! <br><br><br>
 
 				

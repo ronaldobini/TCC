@@ -84,7 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cliente.aspx" />
+    <Content Include="old_cliente.aspx" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
     <Content Include="css\bootstrap-reboot.css" />
@@ -114,7 +114,6 @@
     <Content Include="imgs\star.png" />
     <Content Include="imgs\x-button.png" />
     <Content Include="indexPrestador.aspx" />
-    <Content Include="indexSimples.aspx" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
@@ -158,7 +157,7 @@
     <Content Include="Layout\solicitacoesCliente.html" />
     <Content Include="Layout\star.png" />
     <Content Include="Layout\x-button.png" />
-    <Content Include="loginSimples.aspx" />
+    <Content Include="loginCliente.aspx" />
     <Content Include="mapao.aspx" />
     <Content Include="prestador.aspx" />
     <Content Include="servicoEmExecucao.aspx" />
@@ -198,12 +197,12 @@
     <Compile Include="Classes\MapPoint.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\UsuarioDAO.cs" />
-    <Compile Include="cliente.aspx.cs">
-      <DependentUpon>cliente.aspx</DependentUpon>
+    <Compile Include="old_cliente.aspx.cs">
+      <DependentUpon>old_cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cliente.aspx.designer.cs">
-      <DependentUpon>cliente.aspx</DependentUpon>
+    <Compile Include="old_cliente.aspx.designer.cs">
+      <DependentUpon>old_cliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="indexPrestador.aspx.cs">
       <DependentUpon>indexPrestador.aspx</DependentUpon>
@@ -212,19 +211,12 @@
     <Compile Include="indexPrestador.aspx.designer.cs">
       <DependentUpon>indexPrestador.aspx</DependentUpon>
     </Compile>
-    <Compile Include="indexSimples.aspx.cs">
-      <DependentUpon>indexSimples.aspx</DependentUpon>
+    <Compile Include="loginCliente.aspx.cs">
+      <DependentUpon>loginCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="indexSimples.aspx.designer.cs">
-      <DependentUpon>indexSimples.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="loginSimples.aspx.cs">
-      <DependentUpon>loginSimples.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="loginSimples.aspx.designer.cs">
-      <DependentUpon>loginSimples.aspx</DependentUpon>
+    <Compile Include="loginCliente.aspx.designer.cs">
+      <DependentUpon>loginCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="mapao.aspx.cs">
       <DependentUpon>mapao.aspx</DependentUpon>
