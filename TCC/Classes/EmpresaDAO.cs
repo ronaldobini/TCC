@@ -137,15 +137,15 @@ namespace TCC.Classes
             return emps;
         }
 
-        public List<Empresa> selectAllEmpsFiltradas(string cat, string pesq)
+        public List<Empresa> selectAllEmpsFiltradas(int cat, string pesq)
         {
-            string sql = "SELECT * FROM empresa WHERE (descricao_empresa like '%" + pesq+ "%' or razao_social like '%" + pesq + "%') ";
+            string sql = "SELECT * FROM empresa WHERE (descricao_empresa like '%" + pesq+ "%' or razao_social like '%" + pesq + "%')";
             List<Empresa> emps = new List<Empresa>();
             Empresa emp = new Empresa();
             MySqlDataReader reader = null;
             MySqlConnection conn = new Conn().conectar();
             reader = new Conn().consultar(sql, conn);
-            if (reader.HasRows)
+            if (reader != null)
             {
                 while (reader.Read() && reader.HasRows)
                 {

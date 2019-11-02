@@ -11,6 +11,7 @@ namespace TCC
     public partial class loginCliente : System.Web.UI.Page
     {
         public string mensagem = " ";
+        private int contaErros = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,26 +20,59 @@ namespace TCC
 
         public void autenticar(object sender, EventArgs e)
         {
-            string loginPOST = login.Value;
-            string senhaPOST = senha.Value;
 
-            Usuario logado = new UsuarioDAO().autenticaUser(loginPOST, senhaPOST);
 
-            if (logado.Id > 0)
-            {
-                mensagem = "Login e senha OK";
-                Session["sId"] = logado.Id;
-                Session["sNome"] = logado.Nome;
-                Session["sRep"] = logado.Reputacao;
-                Session["sNivel"] = logado.Nivel;
-                Response.Redirect("mapao.aspx");
+            string senhaPost = (senha.Value);
+            string loginPost = (login.Value);
+
+            //ANTI INJECTION
+            int lenS = senhaPost.Length; if (lenS >= 10) lenS = 10;
+            int lenL = loginPost.Length; if (lenL >= 12) lenS = 12;
+
+            senhaPost = senhaPost.Substring(0, lenS);
+            loginPost = loginPost.Substring(0, lenL);
+
+            senhaPost = senhaPost.Replace("'", "0");
+            loginPost = loginPost.Replace("'", "0");
+            senhaPost = senhaPost.Replace('"', '0');
+            loginPost = loginPost.Replace('"', '0');
+            senhaPost = senhaPost.Replace("/", "0");
+            loginPost = loginPost.Replace("/", "0");
+            senhaPost = senhaPost.Replace("=", "0");
+            loginPost = loginPost.Replace("=", "0");
+            loginPost = loginPost.Replace(" OR ", "0");
+
+            Usuario logando = new Usuario();
+
+            logando = new UsuarioDAO().selectUserLogin(loginPost);
+
+                if (logando.Block != 1)
+                {
+                    String senha = logando.Senha;
+                    if (senha.Equals(senhaPost))
+                    {
+                        mensagem = "Login e senha OK";
+                        Session["sId"] = logando.Id;
+                        Session["sNome"] = logando.Nome;
+                        Session["sRep"] = logando.Reputacao;
+                        Session["sNivel"] = logando.Nivel;
+                        Response.Redirect("mapao.aspx");
+                }
+                    else
+                    {
+                        ++contaErros;
+                        logando = null;
+                        if (contaErros >= 5)
+                        {
+
+                        }
+                    }
+                }
+                else
+                {
+                mensagem = "Usuario Bloqueado";
+                }
             }
-            else
-            {
-                mensagem = "<center><font color=red>Login ou senha incorretos</font></center>";
-            }
 
-            //mensagem = senhaPOST;
-        }
     }
 }

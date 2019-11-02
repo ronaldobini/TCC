@@ -66,7 +66,7 @@ namespace TCC
             {
                 user = new UsuarioDAO().selectUser(reader.GetInt32(0));
                 conn.Close();
-                if (user.Block != 0)
+                if (user.Block != 1)
                 {
                     String senha = reader.GetString(2);
                     if (senha.Equals(senhaPost))

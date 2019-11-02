@@ -98,11 +98,16 @@
 			<div class="conteudo_index_cliente_int_l">
 				Qual serviço você deseja hoje? <br><br>
 				<form id="mapao" runat="server" method="post" action="#">
-					<select class="form-control form-control-lg" runat="server">
-					  <option>Categoria</option>
-					  <option>Automóvel</option>
-					  <option>Roupa</option>
-					  <option>Informática</option>
+					<select class="form-control form-control-lg" id="categoria" runat="server">
+                        
+                       <option runat="server" value="0">
+					    Todas
+                      </option>
+                      <option runat="server" value="1">
+					    Informática
+                      </option>
+
+					  
 					</select>
 					<br><br>
 					
