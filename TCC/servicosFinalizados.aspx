@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="servicoEmExecucao.aspx.cs" Inherits="TCC.servicoEmExecucao" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="servicosFinalizados.aspx.cs" Inherits="TCC.servicosFinalizados" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Serviços Finalizados</title>
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -33,11 +33,11 @@
 			        <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item active">
+			      <li class="nav-item">
 			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-                   <li class="nav-item">
+                   <li class="nav-item active">
 			        <a class="nav-link" href="servicosFinalizados.aspx">Serviços Finalizados <span class="sr-only">(página atual)</span></a>
 			      </li>
 
@@ -81,8 +81,9 @@
 				      <th scope="col">Serviço</th>
 				      <th scope="col">Resumo</th>
 				      <th scope="col">Data do início</th>
-				      <th scope="col">Data FIM</th>
-				      <th scope="col">Situ</th>
+				      <th scope="col">Data FIM Prev</th>
+                      <th scope="col">Data FIM Real</th>,
+                      <th scope="col">Nota Media</th>
 				      <th scope="col">Detalhes</th>
 				    </tr>
 				  </thead>
@@ -97,20 +98,9 @@
         int idEmpSer = serv.IdEmpSer;
         string resumo = serv.DescUser;
         DateTime datIni = serv.DataIni;
-        DateTime datFim = serv.DataFim;
-        int sit = serv.Sit;
-
-        string situ = "-";
-        if (sit == 1)
-        {
-            situ = "<font color=orange>Executando</font>";
-        }else if (sit == 2)
-        {
-            situ = "<font color=blue>Aguardando Aceite</font>";
-        }else if (sit == -1)
-        {
-            situ = "<font color=red>Problemas</font>";
-        }
+        DateTime datFim = serv.DataFimEst;
+        DateTime datFimR = serv.DataFim;
+        double notaMedia = serv.RepQualidade;
 
         TCC.Classes.Usuario user = new TCC.Classes.UsuarioDAO().selectUser(idCliente);
         string cliente = user.Nome;
@@ -127,8 +117,9 @@
 				      <td><%=resumo %></td>
 				      <td><%=datIni %></td>
 				      <td><%=datFim %></td>                        
-				      <td><%=situ %></td>
-				      <td><a href="servico.aspx"><img src="imgs/circular-clock.png"></a></td>
+				      <td><%=datFimR %></td>                        
+				      <td><%=notaMedia %></td>
+				      <td><a href="servico.aspx"><img src="imgs/checked.png"></a></td>
 				    </tr>
 
 <%
@@ -187,4 +178,3 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
-</html>

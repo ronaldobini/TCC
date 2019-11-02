@@ -8,9 +8,8 @@ using TCC.Classes;
 
 namespace TCC
 {
-    public partial class servicoEmExecucao : System.Web.UI.Page
+    public partial class servicosFinalizados : System.Web.UI.Page
     {
-
         public List<Servico> servsDB = new List<Servico>();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -22,12 +21,12 @@ namespace TCC
 
 
             //puxa lista do banco de dados
-            servsDB = new ServicoDAO().selectAllServsEmpExe(SS_empresa);
+            servsDB = new ServicoDAO().selectAllServsEmpFin(SS_empresa);
 
 
 
 
-           
+
 
 
         }

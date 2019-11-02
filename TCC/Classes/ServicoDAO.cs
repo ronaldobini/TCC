@@ -8,6 +8,14 @@ namespace TCC.Classes
 {
     public class ServicoDAO
     {
+
+        //Situacao Servico
+        // 0 = em solicitacao/negociacao para aceite da empresa
+        // 1 = aceito pela empresa / em execucao 
+        // 2 = executado pela empresa, aguardando aceite do usuario
+        // 3 = fechado
+        // -1 =  em discussao / problemas juridicos
+
         public void insertServico(Servico serv)
         {
             //Vou deixar bem separado o que é oq pra ficar mais claro
@@ -121,6 +129,10 @@ namespace TCC.Classes
             conn.Close();
             return servs;
         }
+
+      
+
+
         public List<Servico> selectAllServsUser(int idUser)
         {
             string sql = "SELECT * FROM empresa WHERE id_usuario = " + idUser;
@@ -155,6 +167,46 @@ namespace TCC.Classes
             conn.Close();
             return servs;
         }
+
+
+        public List<Servico> selectAllServsEmpExe(int idEmp)
+        {
+            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao in (1,2,-1) ";
+            List<Servico> servs = new List<Servico>();
+            Servico serv = new Servico();
+            MySqlDataReader reader = null;
+            MySqlConnection conn = new Conn().conectar();
+            reader = new Conn().consultar(sql, conn);
+
+            while (reader.Read() && reader.HasRows)
+            {
+                serv = preencherServ(reader);
+                servs.Add(serv);
+            }
+            conn.Close();
+            return servs;
+        }
+
+
+        public List<Servico> selectAllServsEmpFin(int idEmp)
+        {
+            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao = 3 ";
+            List<Servico> servs = new List<Servico>();
+            Servico serv = new Servico();
+            MySqlDataReader reader = null;
+            MySqlConnection conn = new Conn().conectar();
+            reader = new Conn().consultar(sql, conn);
+
+            while (reader.Read() && reader.HasRows)
+            {
+                serv = preencherServ(reader);
+                servs.Add(serv);
+            }
+            conn.Close();
+            return servs;
+        }
+
+
         public List<Servico> selectAllServsRepresEmp(int idRepEmp)
         {
             string sql = "SELECT * FROM empresa WHERE id_usuario = " + idRepEmp;
