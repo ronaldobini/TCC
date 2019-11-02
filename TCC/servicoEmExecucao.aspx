@@ -15,7 +15,7 @@
 <body>
     <div class="top_cliente">
 		<div class="top_int_cliente">
-			Nome do Sistema
+			Servitiba
 		</div>
 	</div>
 
@@ -53,7 +53,8 @@
 			        <a class="nav-link" href="empresaFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
+                   <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
+			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
 			      <button class="btn btn-outline-danger" type="submit">Sair</button>
 			    </form>
 			  </div>
@@ -71,7 +72,7 @@
 					
 				</div> <br> <hr> <br>
 				
-				Pedidos Aceitos: <br><br> <br>
+				<img src="imgs/circular-clock.png"/> Serviços em Execução: <br><br> <br>
 
 				<table class="table table-dark">
 				  <thead>
@@ -81,7 +82,7 @@
 				      <th scope="col">Serviço</th>
 				      <th scope="col">Resumo</th>
 				      <th scope="col">Data do início</th>
-				      <th scope="col">Data FIM</th>
+				      <th scope="col">Data Fim</th>
 				      <th scope="col">Situ</th>
 				      <th scope="col">Detalhes</th>
 				    </tr>
@@ -128,7 +129,7 @@
 				      <td><%=datIni %></td>
 				      <td><%=datFim %></td>                        
 				      <td><%=situ %></td>
-				      <td><a href="servico.aspx"><img src="imgs/circular-clock.png"></a></td>
+				      <td><a href="servico.aspx"><img src="imgs/more.png"></a></td>
 				    </tr>
 
 <%

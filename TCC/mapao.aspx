@@ -77,7 +77,7 @@
 			        <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
+			    <form class="form-inline my-2 my-lg-0" action="loginCliente.aspx" method="POST">
 <% if (Session["sId"] == null){ %>
 			        <button class="btn btn-outline-success" type="submit">Logue para solicitar um serviço</button>
 <% }else{ %>

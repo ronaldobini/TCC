@@ -15,7 +15,7 @@
 <body>
     <div class="top_cliente">
 		<div class="top_int_cliente">
-			Nome do Sistema
+			Servitiba
 		</div>
 	</div>
 
@@ -53,7 +53,8 @@
 			        <a class="nav-link" href="empresaFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
+                   <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
+			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
 			      <button class="btn btn-outline-danger" type="submit">Sair</button>
 			    </form>
 			  </div>
@@ -71,7 +72,7 @@
 					
 				</div> <br> <hr> <br>
 				
-				Pedidos Aceitos: <br><br> <br>
+				<img src="imgs/checked.png"/> Serviços Finalizados: <br><br> <br>
 
 				<table class="table table-dark">
 				  <thead>
@@ -81,8 +82,8 @@
 				      <th scope="col">Serviço</th>
 				      <th scope="col">Resumo</th>
 				      <th scope="col">Data do início</th>
-				      <th scope="col">Data FIM Prev</th>
-                      <th scope="col">Data FIM Real</th>,
+				      <th scope="col">Data Fim Prev</th>
+                      <th scope="col">Data Fim Real</th>,
                       <th scope="col">Nota Media</th>
 				      <th scope="col">Detalhes</th>
 				    </tr>
@@ -119,7 +120,7 @@
 				      <td><%=datFim %></td>                        
 				      <td><%=datFimR %></td>                        
 				      <td><%=notaMedia %></td>
-				      <td><a href="servico.aspx"><img src="imgs/checked.png"></a></td>
+				      <td><a href="servico.aspx"><img src="imgs/more.png"></a></td>
 				    </tr>
 
 <%

@@ -15,7 +15,7 @@
 <body>
 	<div class="top_cliente">
 		<div class="top_int_cliente">
-			Nome do Sistema
+			Servitiba
 		</div>
 	</div>
 
@@ -54,7 +54,7 @@
 			      </li>
 			    </ul>
                 <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
-			    <form class="form-inline my-2 my-lg-0" action="index.html" method="POST">
+			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
 			      <button class="btn btn-outline-danger" type="submit">Sair</button>
 			    </form>
 			  </div>
@@ -76,43 +76,66 @@
 				<table class="table table-dark">
 				  <thead>
 				    <tr>
-				      <th scope="col">Nº</th>
+                      <th scope="col">Nº</th>
 				      <th scope="col">Nome do Cliente</th>
-				      <th scope="col">Solicitação</th>
-				      <th scope="col">Categoria</th>
-				      <th scope="col">Data da Solicitação</th>
-				      <th scope="col">Para quando?</th>
-				      <th scope="col">Ação</th>
+				      <th scope="col">Serviço</th>
+				      <th scope="col">Resumo</th>
+				      <th scope="col">Pra quando?</th>      
+				      <th scope="col">Ações</th>
+				      <th scope="col">Detalhes</th>                  
 				    </tr>
 				  </thead>
 				  <tbody>
+
+<%
+
+    foreach (var serv in servsDB)
+    {
+
+        int idServico = serv.Id;
+        int idCliente = serv.IdUser;
+        int idEmpSer = serv.IdEmpSer;
+        string resumo = serv.DescUser;
+        DateTime dataFimEst = serv.DataFimEst;
+        int sit = serv.Sit;
+
+        string situ = "-";
+        if (sit == 1)
+        {
+            situ = "<font color=orange>Executando</font>";
+        }else if (sit == 2)
+        {
+            situ = "<font color=blue>Aguardando Aceite</font>";
+        }else if (sit == -1)
+        {
+            situ = "<font color=red>Problemas</font>";
+        }
+
+        TCC.Classes.Usuario user = new TCC.Classes.UsuarioDAO().selectUser(idCliente);
+        string cliente = user.Nome;
+
+        string servico = new TCC.Classes.EmpresaServicoDAO().selectDescPorId(idEmpSer);
+
+
+
+%>
+
 				    <tr>
-				      <th scope="row">1</th>
-				      <td>Nicolas</td>
-				      <td>Pintura</td>
-				      <td>Automóvel</td>
-				      <td>12-12-2002</td>
-				      <td>13-12-2002</td>
+                              
+
+				      <th scope="row"><%=idServico %></th>
+				      <td><%=cliente %></td>
+				      <td><%=servico %></td>
+				      <td><%=resumo %></td>
+				      <td><%=dataFimEst %></td> 
 				      <td><a href=""><img src="imgs/checked.png"></a> --- <a href=""><img src="imgs/x-button.png"></a></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">2</th>
-				      <td>Ronaldo</td>
-				      <td>Costura</td>
-				      <td>Alfaiate</td>
-				      <td>12-12-2002</td>
-				      <td>16-12-2002</td>
-				      <td><a href=""><img src="imgs/checked.png"></a> --- <a href=""><img src="imgs/x-button.png"></a></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">3</th>
-				      <td>Mattei</td>
-				      <td>Reparo</td>
-				      <td>Sapateiro</td>
-				      <td>12-12-2002</td>
-				      <td>12-12-2002</td>
-				      <td><a href=""><img src="imgs/checked.png"></a> --- <a href=""><img src="imgs/x-button.png"></a></td>
-				    </tr>
+				      <td><a href="servico.aspx"><img src="imgs/more.png"></a></td>
+				    </tr>	
+                      
+<%
+    }
+%>
+
 				  </tbody>
 				</table>
 			</div>

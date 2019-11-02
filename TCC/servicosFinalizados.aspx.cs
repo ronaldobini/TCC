@@ -17,7 +17,7 @@ namespace TCC
 
 
             //mudar pra session
-            int SS_empresa = 2;
+            int SS_empresa = (int)Session["sIdEmp"];
 
 
             //puxa lista do banco de dados

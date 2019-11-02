@@ -168,6 +168,23 @@ namespace TCC.Classes
             return servs;
         }
 
+        public List<Servico> selectAllServsEmpSolic(int idEmp)
+        {
+            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao = 0 ";
+            List<Servico> servs = new List<Servico>();
+            Servico serv = new Servico();
+            MySqlDataReader reader = null;
+            MySqlConnection conn = new Conn().conectar();
+            reader = new Conn().consultar(sql, conn);
+
+            while (reader.Read() && reader.HasRows)
+            {
+                serv = preencherServ(reader);
+                servs.Add(serv);
+            }
+            conn.Close();
+            return servs;
+        }
 
         public List<Servico> selectAllServsEmpExe(int idEmp)
         {
