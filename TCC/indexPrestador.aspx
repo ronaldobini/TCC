@@ -30,21 +30,30 @@
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="indexPrestador.html">Lista de Pedidos <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="PedidosAceitos.html">Pedidos Aceitos <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+			      </li>
+
+                   <li class="nav-item">
+			        <a class="nav-link" href="servicosFinalizados.aspx">Serviços Finalizados <span class="sr-only">(página atual)</span></a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="pedidosEmExecucao.html">Pedidos Em Execução <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="servicoCadastro.aspx">Gerenciar Serviços <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item">
-			        <a class="nav-link" href="cadastrarColaborador.html">Cadastrar Colaborador <span class="sr-only">(página atual)</span></a>
+                   <li class="nav-item">
+			        <a class="nav-link" href="empresaColaboradores.aspx">Gerenciar Colaboradores <span class="sr-only">(página atual)</span></a>
+			      </li>
+
+                   <li class="nav-item">
+			        <a class="nav-link" href="empresaFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
+                <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
 			    <form class="form-inline my-2 my-lg-0" action="index.html" method="POST">
 			      <button class="btn btn-outline-danger" type="submit">Sair</button>
 			    </form>

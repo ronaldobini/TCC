@@ -1,26 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="servicoEmExecucao.aspx.cs" Inherits="TCC.servicoEmExecucao" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginEmpresa.aspx.cs" Inherits="TCC.loginEmpresa" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+	<title>Login Empresa</title>
 </head>
 <body>
-    <div class="top_cliente">
-		<div class="top_int_cliente">
-			Nome do Sistema
-		</div>
-	</div>
-
-	<div class="menu">
-		<div class="menu_int">
+   <div class="menu_principal">
+		<div class="menu_principal_int">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			  
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -29,106 +23,45 @@
 
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item active">
-			        <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
+			      <li class="nav-item">
+			        <a class="nav-link" href="principal.html">Pagina inicial<span class="sr-only">(página atual)</span></a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
-			      </li>
-
-                   <li class="nav-item">
-			        <a class="nav-link" href="servicosFinalizados.aspx">Serviços Finalizados <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="sobre.html">Sobre Nós<span class="sr-only">(página atual)</span></a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="servicoCadastro.aspx">Gerenciar Serviços <span class="sr-only">(página atual)</span></a>
-			      </li>
-
-                   <li class="nav-item">
-			        <a class="nav-link" href="empresaColaboradores.aspx">Gerenciar Colaboradores <span class="sr-only">(página atual)</span></a>
-			      </li>
-
-                   <li class="nav-item">
-			        <a class="nav-link" href="empresaFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="contato.html">Contato <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
-			      <button class="btn btn-outline-danger" type="submit">Sair</button>
+			    <form class="form-inline my-2 my-lg-0" action="loginEmpresa.html" method="POST">
+			      <button class="btn btn-primary" type="submit">Sou Empresa</button>
 			    </form>
 			  </div>
 			</nav>
 		</div>
 	</div>
-	
-	<div class="conteudo_relatorio_cliente">
-		<div class="conteudo_solicitacao_cliente_int">
-			
-				<br><br>
-				<div class="panel">
-					
 
-					
-				</div> <br> <hr> <br>
-				
-				Pedidos Aceitos: <br><br> <br>
-
-				<table class="table table-dark">
-				  <thead>
-				    <tr>
-				      <th scope="col">Nº</th>
-				      <th scope="col">Nome do Cliente</th>
-				      <th scope="col">Serviço</th>
-				      <th scope="col">Resumo</th>
-				      <th scope="col">Data do início</th>
-				      <th scope="col">Data FIM</th>
-				      <th scope="col">Ação</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-<%
-
-    foreach (var serv in servsDB)
-    {
-        
-        int idServico = serv.Id;
-        int idCliente = serv.IdUser;
-        int idEmpSer = serv.IdEmpSer;
-        string resumo = serv.DescUser;
-        DateTime datIni = serv.DataIni;
-        DateTime datFim = serv.DataFim;
-
-        TCC.Classes.Usuario user = new TCC.Classes.UsuarioDAO().selectUser(idCliente);
-        string cliente = user.Nome;
-
-        string servico = new TCC.Classes.EmpresaServicoDAO().selectDescPorId(idEmpSer);
-        
-
-
-%>
-				    <tr>
-				      <th scope="row"><%=idServico %></th>
-				      <td><%=cliente %></td>
-				      <td><%=servico %></td>
-				      <td><%=resumo %></td>
-				      <td><%=datIni %></td>
-				      <td><%=datFim %></td>
-				      <td><a href=""><img src="imgs/checked.png"></a></td>
-				    </tr>
-
-<%
-    }
-%>
-				    
-				  </tbody>
-				</table>
-			</div>
-		
-			
-		</div>
+	<div class="conteudo_pagina_principal">
+		<div class="conteudo_pagina_principal_int">
+			<img src="logoTeste.png" width="350"> <br>
+			<h3>Logue como empresa!</h3>
+			<br>
+			<form method="POST" action="#" runat="server">
+				<div class="form-group">
+					<input type="text" id="login" runat="server" placeholder="Login" class="form-control"> <br><br>
+					<input type="password" id="senha"  runat="server" placeholder="Senha" class="form-control">
+					<br>
+					<input type="submit" onserverclick="autenticar" value="Login" class="btn btn-dark" runat="server">
+					<br>
+					<small id="emailHelp" class="form-text text-muted">Sua empresa não tem login? <a href="cadastroEmpresa.html">Cadastre-a</a>!</small>
+				</div>
+			</form>
+		</div>		
 	</div>
-
-<footer id="myFooter">
+	<br><br>
+    <footer id="myFooter">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">

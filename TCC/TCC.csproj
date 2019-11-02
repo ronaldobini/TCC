@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="loginEmpresa.aspx" />
     <Content Include="old_cliente.aspx" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
@@ -197,6 +198,13 @@
     <Compile Include="Classes\MapPoint.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\UsuarioDAO.cs" />
+    <Compile Include="loginEmpresa.aspx.cs">
+      <DependentUpon>loginEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginEmpresa.aspx.designer.cs">
+      <DependentUpon>loginEmpresa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="old_cliente.aspx.cs">
       <DependentUpon>old_cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
