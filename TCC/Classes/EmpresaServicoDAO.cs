@@ -68,18 +68,21 @@ namespace TCC.Classes
             conn.Close();
             return desc;
         }
-        public EmpresaServico selectEmpServPorIDEmp(int id)
+        public List<EmpresaServico> selectEmpServPorIDEmp(int id)
         {
-            string sql = "SELECT * FROM empresa_servicos WHERE id_empresa = " + id;
+            string sql = "SELECT * FROM empresa_servicos where id_empresa = "+id;
+            List<EmpresaServico> empServs = new List<EmpresaServico>();
             EmpresaServico empServ = new EmpresaServico();
+            MySqlDataReader reader = null;
             MySqlConnection conn = new Conn().conectar();
-            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            reader = new Conn().consultar(sql, conn);
             while (reader.Read() && reader.HasRows)
             {
                 empServ = preencherEmpServ(reader);
+                empServs.Add(empServ);
             }
             conn.Close();
-            return empServ;
+            return empServs;
         }
         public EmpresaServico selectEmpServPorIDCat(int id)
         {

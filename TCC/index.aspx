@@ -43,7 +43,7 @@
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
 			<img src="imgs/logoTeste.png" width="350"> <br><br>
-			<form method="POST" action="indexSimples.html">
+			<form method="POST" action="mapao.aspx">
 				<div class="form-group">
 					<input type="" name="" placeholder="Nome Completo" class="form-control"> <br><br>
 					<input type="" name="" placeholder="CEP" class="form-control">

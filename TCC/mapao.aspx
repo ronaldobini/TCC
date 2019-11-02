@@ -100,12 +100,10 @@
 				<form id="mapao" runat="server" method="post" action="#">
 					<select class="form-control form-control-lg" id="categoria" runat="server">
                         
-                       <option runat="server" value="0">
+                      <option runat="server" value="0">
 					    Todas
                       </option>
-                      <option runat="server" value="1">
-					    Informática
-                      </option>
+                      
 
 					  
 					</select>

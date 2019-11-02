@@ -32,16 +32,28 @@ namespace TCC
                 if (listaEmpresas != null) { 
                     foreach (Empresa empresa in listaEmpresas)
                     {
-                        //mostrar = empresa.RazaoSocial;
+                        string servicosEmp = pegarSevicos(empresa.Id);
                         int repMedia = (empresa.RepAtendimento + empresa.RepQualidade + empresa.RepTempo) / 3;
-                        listaPontos.Add(new MapPoint(empresa.Lat, empresa.Lon, empresa.RazaoSocial, empresa.DescEmpresa, repMedia, 1, 1));
+                        listaPontos.Add(new MapPoint(empresa.Lat, empresa.Lon, empresa.RazaoSocial, empresa.DescEmpresa + "<br>" + servicosEmp, repMedia, 1, 1));
                     }
-                    listaPontos.Add(new MapPoint("-25.45", "-49.27", "Gantzel software", "Desenvolver soft<br>Redes<br>Suporte remoto<br>Conserto de PC", 69, 2, 2));
+                    
                 }
             }
 
         }
 
+        private string pegarSevicos(int id)
+        {
+            string results = "";
+            List<EmpresaServico> servs = new List<EmpresaServico>();
+            servs = new EmpresaServicoDAO().selectEmpServPorIDEmp(id);
+
+            foreach (EmpresaServico serv in servs)
+            {
+                results = results + "<br>" + serv.Desc;
+            }
+            return results;
+        }
 
         public void filtrar(object sender, EventArgs e)
         {
