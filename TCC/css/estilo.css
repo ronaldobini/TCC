@@ -95,6 +95,9 @@ body {
 	width: 70%;
 	height: 600px;
 	float: left;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 50px;
 }
 
 -----------------------------------
