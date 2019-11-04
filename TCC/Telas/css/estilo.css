@@ -70,7 +70,8 @@ body {
 }
 .conteudo_solicitacao_cliente_int {
 	width: 100%;
-	height: 600px;
+	min-height: 600px;
+	height: auto;
 	margin: auto;
 	text-align: center;
 	padding: 25px;
@@ -78,7 +79,7 @@ body {
 
 .conteudo_solicitacao_cliente_int {
 	width: 100%;
-	height: 600px;
+	height: auto;
 	margin: auto;
 	text-align: center;
 }
@@ -277,4 +278,14 @@ tbody tr:hover {
 .equipe {
 	width: 100px;
 	border-radius: 50px;
+}
+
+.chat_empresa {
+	background-color: #55a1ed;
+	color: black;
+}
+
+.chat_cliente {
+	background-color: #5ae0a8;
+	color: black;
 }
