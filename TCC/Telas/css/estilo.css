@@ -64,6 +64,7 @@ body {
 .conteudo_index_cliente_int {
 	width: 100%;
 	min-height: 600px;
+	padding: 50px;
 	height: auto;
 	margin: auto;
 	text-align: center;
