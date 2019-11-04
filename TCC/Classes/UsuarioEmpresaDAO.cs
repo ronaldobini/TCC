@@ -8,7 +8,7 @@ namespace TCC.Classes
 {
     public class UsuarioEmpresaDAO
     {
-        public void insertEmpresa(UsuarioEmpresa userEmp)
+        public void insertUserEmp(UsuarioEmpresa userEmp)
         {
             string sql = "INSERT INTO usuario_empresa(id, id_usuario,id_empresa, funcao, nivel_empresa, qtd_servicos, nivel_escolar," +
                 " formacao, reputacao_media)" +

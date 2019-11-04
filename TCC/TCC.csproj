@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="empresaCadastro.aspx" />
     <Content Include="loginEmpresa.aspx" />
     <Content Include="old_cliente.aspx" />
     <Content Include="css\bootstrap-grid.css" />
@@ -163,6 +164,8 @@
     <Content Include="prestador.aspx" />
     <Content Include="servicoEmExecucao.aspx" />
     <Content Include="servicosFinalizados.aspx" />
+    <Content Include="sobre.aspx" />
+    <Content Include="userEmpCadastro.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
   </ItemGroup>
@@ -199,6 +202,13 @@
     <Compile Include="Classes\MapPoint.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\UsuarioDAO.cs" />
+    <Compile Include="empresaCadastro.aspx.cs">
+      <DependentUpon>empresaCadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empresaCadastro.aspx.designer.cs">
+      <DependentUpon>empresaCadastro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="loginEmpresa.aspx.cs">
       <DependentUpon>loginEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -262,6 +272,20 @@
     </Compile>
     <Compile Include="servicosFinalizados.aspx.designer.cs">
       <DependentUpon>servicosFinalizados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sobre.aspx.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sobre.aspx.designer.cs">
+      <DependentUpon>sobre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userEmpCadastro.aspx.cs">
+      <DependentUpon>userEmpCadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userEmpCadastro.aspx.designer.cs">
+      <DependentUpon>userEmpCadastro.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

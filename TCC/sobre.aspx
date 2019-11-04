@@ -1,19 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginEmpresa.aspx.cs" Inherits="TCC.loginEmpresa" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sobre.aspx.cs" Inherits="TCC.sobre" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-	<title>Login Empresa</title>
+	<title>Sobre Nós</title>
 </head>
 <body>
-   <div class="menu_principal">
+	<div class="menu_principal">
 		<div class="menu_principal_int">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			  
@@ -27,7 +27,7 @@
 			        <a class="nav-link" href="index.aspx">Pagina inicial<span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item">
+			      <li class="nav-item active">
 			        <a class="nav-link" href="sobre.aspx">Sobre Nós<span class="sr-only">(página atual)</span></a>
 			      </li>
 
@@ -35,9 +35,6 @@
 			        <a class="nav-link" href="contato.html">Contato <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="loginCliente.aspx" method="POST">
-			      <button class="btn btn-primary" type="submit">Sou Cliente</button>
-			    </form>
 			  </div>
 			</nav>
 		</div>
@@ -45,27 +42,29 @@
 
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
-			<img src="logoTeste.png" width="350"> <br>
-			<h3>Logue como empresa!</h3>
+			<img src="imgs/logoTeste.png" width="150"> <br><br> <h2>Sobre a Servitiba:</h2>
+			<br> Nós somos uma empresa focada em agilizar a sua procura de serviços localizados
+			próximos a você e proporcionar a intermediação de contato entre você e o fornecedor. 
+
+			<hr>
+
+			<h2>A equipe:</h2>
 			<br>
-			<form method="POST" action="#" runat="server">
-				<div class="form-group">
-					<input type="text" id="login" runat="server" placeholder="Login" class="form-control"> <br><br>
-					<input type="password" id="senha"  runat="server" placeholder="Senha" class="form-control">
-					<br>
-					<input type="submit" onserverclick="autenticar" value="Login" class="btn btn-dark" runat="server">
-					<br>
-					<small id="emailHelp" class="form-text text-muted">Sua empresa não tem login? <a href="empresaCadastro.aspx">Cadastre-a</a>!</small>
-				</div>
-			</form>
-		</div>		
+
+			<img src="imgs/leonardo.jpg" class="equipe"> Leonardo Felipe Comar <br><br>
+			<img src="imgs/lucas.jpg" class="equipe"> Lucas Mattei Malfertheiner <br><br>
+			<img src="imgs/ronaldo.jpg" class="equipe"> Ronaldo Bini da Silva Jr <br><br>
+			<img src="imgs/nicolas.jpg" class="equipe"> Nicolas Chueh Sourient <br><br>
+			<img src="imgs/victor.jpg" class="equipe"> Victor Rochadel Gantzel <br><br>
+
 	</div>
-	<br><br>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer id="myFooter">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="logoTeste.png" width="250"> </a></h2>
+                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="imgs/logoTeste.png" width="250"> </a></h2>
                 </div>
                 <div class="col-sm-2">
                     <h5>Inicio</h5>
@@ -95,6 +94,7 @@
                     <a href="https://programadorviking.com.br/">
                         <button type="button" class="btn btn-default">Contato</button>
                     </a>
+                    
                 </div>
             </div>
         </div>

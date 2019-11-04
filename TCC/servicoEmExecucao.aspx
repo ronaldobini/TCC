@@ -182,7 +182,7 @@
             </div>
         </div>
         <div class="footer-copyright">
-            <p>© 2019 Copyright - Nome do sistema</p>
+            <p>© 2019 Copyright - Servitiba</p>
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
