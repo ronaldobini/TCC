@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-	<title>Cadastrar Colaborador</title>
+	<title>Gerenciamento de Serviços</title>
 </head>
 <body>
 	<div class="top_cliente">
@@ -37,7 +37,7 @@
 			        <a class="nav-link" href="pedidosEmExecucao.html">Pedidos Em Execução <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item active">
+			      <li class="nav-item">
 			        <a class="nav-link" href="cadastrarColaborador.html">Cadastrar Colaborador <span class="sr-only">(página atual)</span></a>
 			      </li>
 
@@ -49,7 +49,7 @@
 			        <a class="nav-link" href="saldoEmpresa.html">Saldo da Empresa <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item">
+			      <li class="nav-item active">
 			        <a class="nav-link" href="crudServico.html">Gerenciamento de Serviços<span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
@@ -64,86 +64,73 @@
 	<div class="conteudo_solicitacoes_cliente">
 		<div class="conteudo_index_cliente_int">
 			<div class="solicitacaoPrestador_int">
-				Cadastre um novo colaborador <br><br>
+				Adicone, remova ou edite um serviço! <br><br>
 				<form>
 				  <div class="form-row">
 			    <div class="form-group col-md-6">
-			      <label for="inputEmail4">Login</label>
-			      <input type="text" class="form-control" id="inputEmail4" placeholder="Login">
+			      <label for="inputEmail4">Nome do Serviço</label>
+			      <input type="text" class="form-control" id="inputEmail4" placeholder="Breve nome">
 			    </div>
 			    <div class="form-group col-md-6">
-			      <label for="inputPassword4">Senha</label>
-			      <input type="password" class="form-control" id="inputPassword4" placeholder="Senha">
+			      <label for="inputPassword4">Preço do Serviço</label>
+			      <input type="text" class="form-control" id="inputPassword4" placeholder="R$">
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
-			      <label for="inputEmail4">Nome Completo</label>
-			      <input type="text" class="form-control" id="inputEmail4" placeholder="Nome completo">
+			      <label for="inputEmail4">Descrição breve sobre o mesmo </label><br>
+			      	<textarea rows="6" cols="85" placeholder="Detalhe o serviço (método de resolução, etc...)"></textarea>
 			    </div>
 			    <div class="form-group col-md-6">
-			      <label for="inputPassword4">E-mail</label>
-			      <input type="email" class="form-control" id="inputPassword4" placeholder="exemplo@exemplo.com.br">
+			      <label for="inputPassword4">Tempo aproximado de conclusão</label>
+			      <input type="text" class="form-control" id="inputPassword4" placeholder="Tempo / Dias">
 			    </div>
 			  </div>
 
-			  <div class="form-row">
-			    <div class="form-group col-md-6">
-			      <label for="inputEmail4">CPF</label>
-			      <input type="text" class="form-control" id="inputEmail4" placeholder="Apenas números">
-			    </div>
-			    <div class="form-group col-md-6">
-			      <label for="inputPassword4">CEP</label>
-			      <input type="text" class="form-control" id="inputPassword4" placeholder="Apenas números">
-			    </div>
-			  </div>
-
-			  <div class="form-row">
-			    <div class="form-group col-md-6">
-			      <label for="inputEmail4">Endereço</label>
-			      <input type="text" class="form-control" id="inputEmail4" placeholder="Endereço">
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputPassword4">Complemento</label>
-			      <input type="text" class="form-control" id="inputPassword4" placeholder="Complemento">
-			    </div>
-			    <div class="form-group col-md-4">
-			      <label for="inputPassword4">Número</label>
-			      <input type="text" class="form-control" id="inputPassword4" placeholder="Número">
-			    </div>
-			  </div>
-
-			  <div class="form-row">
-			    <div class="form-group col-md-6">
-			      <label for="inputEmail4">Telefone</label>
-			      <input type="tel" class="form-control" id="inputEmail4" placeholder="xxxx-xxxx">
-			    </div>
-			    <div class="form-group col-md-6">
-			      <label for="inputPassword4">Celular</label>
-			      <input type="text" class="form-control telefone" id="inputPassword4" placeholder="(XX)x xxxx-xxxx">
-			    </div>
-			  </div> <br>
-
-			  <div class="form-row">
-			    <select class="form-control col-md-4">
-			    	<option>Cidade...</option>
-			    </select>
-			    <select class="form-control col-md-4">
-			    	<option>Função...</option>
-			    </select>
-			    <select class="form-control col-md-4">
-			    	<option>Formação...</option>
-			    </select>
-			  </div>
-				  </div>
+			
 				  <a href=""><button type="submit" class="btn btn-success">Cadastrar</button></a>
-				</form>
+				</form> <br><br>
+
+				<table class="table table-dark">
+				  <thead>
+				    <tr>
+				      <th scope="col">Serviço</th>
+				      <th scope="col">Preço</th>
+				      <th scope="col">Tempo de conclusão</th>
+				      <th scope="col">Editar</th>
+				      <th scope="col">Excluir</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th>Pintura do Capô</th>
+				      <td>R$500</td>
+				      <td>5 Dias</td>
+				      <td><a href=""><img src="edit.png"></a></td>
+				      <td><a href=""><img src="x-button.png"></a></td>
+				    </tr>
+				    <tr>
+				      <th>Pintura do Capô</th>
+				      <td>R$500</td>
+				      <td>5 Dias</td>
+				      <td><a href=""><img src="edit.png"></a></td>
+				      <td><a href=""><img src="x-button.png"></a></td>
+				    </tr>
+				    <tr>
+				      <th>Pintura do Capô</th>
+				      <td>R$500</td>
+				      <td>5 Dias</td>
+				      <td><a href=""><img src="edit.png"></a></td>
+				      <td><a href=""><img src="x-button.png"></a></td>
+				    </tr>
+				  </tbody>
+				</table>
 			</div>
 		</div>
 	</div>
 
-	<br><br><br><br><br><br><br><br>
+	<br>
 	<footer id="myFooter">
         <div class="container">
             <div class="row">
