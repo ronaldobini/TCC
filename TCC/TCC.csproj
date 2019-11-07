@@ -165,6 +165,7 @@
     <Content Include="servicoEmExecucao.aspx" />
     <Content Include="servicosFinalizados.aspx" />
     <Content Include="sobre.aspx" />
+    <Content Include="testes.aspx" />
     <Content Include="userEmpCadastro.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
@@ -279,6 +280,13 @@
     </Compile>
     <Compile Include="sobre.aspx.designer.cs">
       <DependentUpon>sobre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testes.aspx.cs">
+      <DependentUpon>testes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testes.aspx.designer.cs">
+      <DependentUpon>testes.aspx</DependentUpon>
     </Compile>
     <Compile Include="userEmpCadastro.aspx.cs">
       <DependentUpon>userEmpCadastro.aspx</DependentUpon>

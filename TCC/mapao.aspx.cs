@@ -18,21 +18,32 @@ namespace TCC
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            listaCats = new CategoriaDAO().selectAllCategorias();
-            //mostrar = (int)Session["iddd"];
-            catPost = Int32.Parse(categoria.Value);
+           
+            //Preencher categorias            
+            if (categorias.Items.Count == 0)
+            {
+                listaCats = new CategoriaDAO().selectAllCategorias();
+                categorias.Items.Insert(0, new ListItem("Todos", "0"));
+                foreach (Categoria cat in listaCats)
+                {
+                    categorias.Items.Insert(cat.Ordem, new ListItem(cat.Descricao, cat.Id.ToString()));
+                }
+            }
+             
+
+
+            //IF FILTRO VAZIO MOSTRAR TODOS OS PONTOS
+            catPost = Int32.Parse(categorias.SelectedValue); 
             pesqPost = pesq.Value;
             if (pesqPost.Length == 0 && catPost == 0)
             {
-                pesqPost = "";
-                catPost = 0;
 
                 List<Empresa> listaEmpresas = new List<Empresa>();
-                listaEmpresas = new EmpresaDAO().selectAllEmpsFiltradas(catPost, pesqPost);
+                listaEmpresas = new EmpresaDAO().selectAllEmps();
                 if (listaEmpresas != null) { 
                     foreach (Empresa empresa in listaEmpresas)
                     {
-                        string servicosEmp = pegarSevicos(empresa.Id);
+                        string servicosEmp = pegarSevicos(empresa.Id, catPost);
                         int repMedia = (empresa.RepAtendimento + empresa.RepQualidade + empresa.RepTempo) / 3;
                         listaPontos.Add(new MapPoint(empresa.Lat, empresa.Lon, empresa.RazaoSocial, empresa.DescEmpresa + "<br>" + servicosEmp, repMedia, 1, 1));
                     }
@@ -40,10 +51,14 @@ namespace TCC
                 }
             }
 
+
+
+
         }
 
-        private string pegarSevicos(int id)
+        private string pegarSevicos(int id, int catEscolhida)
         {
+            int verificaCat = 0;
             string results = "";
             List<EmpresaServico> servs = new List<EmpresaServico>();
             servs = new EmpresaServicoDAO().selectEmpServPorIDEmp(id);
@@ -51,26 +66,44 @@ namespace TCC
             foreach (EmpresaServico serv in servs)
             {
                 results = results + "<br>" + serv.Desc;
+                if(serv.IdCat == catEscolhida || catEscolhida == 0)
+                {
+                    verificaCat = 1;
+                }
             }
+
+            if(verificaCat != 1)
+            {
+                results = "foraDaCategoria";
+            }
+           
+
             return results;
         }
+
+      
 
         public void filtrar(object sender, EventArgs e)
         {
             pesqPost = pesq.Value;
+            catPost = Int32.Parse(categorias.SelectedValue);
             List<Empresa> listaEmpresas = new List<Empresa>();
             listaEmpresas = new EmpresaDAO().selectAllEmpsFiltradas(catPost, pesqPost);
 
+            
 
             if (listaEmpresas != null)
             {
                 foreach (Empresa empresa in listaEmpresas)
                 {
-                    //mostrar = empresa.RazaoSocial;
-
-                    int repMedia = (empresa.RepAtendimento + empresa.RepQualidade + empresa.RepTempo) / 3;
-
-                    listaPontos.Add(new MapPoint(empresa.Lat, empresa.Lon, empresa.RazaoSocial, empresa.DescEmpresa, repMedia, 1, 1));
+                    
+                    string servicosEmp = pegarSevicos(empresa.Id, catPost);
+                    if (servicosEmp != "foraDaCategoria")
+                    {
+                        int repMedia = (empresa.RepAtendimento + empresa.RepQualidade + empresa.RepTempo) / 3;
+                        listaPontos.Add(new MapPoint(empresa.Lat, empresa.Lon, empresa.RazaoSocial, empresa.DescEmpresa + "<br>" + servicosEmp, repMedia, 1, 1));
+                    }
+                   
                 }
             }
 

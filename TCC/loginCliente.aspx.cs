@@ -56,6 +56,7 @@ namespace TCC
                         Session["sNome"] = logando.Nome;
                         Session["sRep"] = logando.Reputacao;
                         Session["sNivel"] = logando.Nivel;
+                        
                         Response.Redirect("mapao.aspx");
                 }
                     else

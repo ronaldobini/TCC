@@ -98,15 +98,8 @@
 			<div class="conteudo_index_cliente_int_l">
 				Qual serviço você deseja hoje? <br><br>
 				<form id="mapao" runat="server" method="post" action="#">
-					<select class="form-control form-control-lg" id="categoria" runat="server">
-                        
-                      <option runat="server" value="0">
-					    Todas
-                      </option>
-                      
-
-					  
-					</select>
+					
+                    <asp:DropDownList ID="categorias" runat="server"></asp:DropDownList>
 					<br><br>
 					
                     <input type="text" id="pesq" name="pesq" runat="server"/>
