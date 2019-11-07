@@ -25,11 +25,11 @@
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="index.aspx">Pagina inicial<span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="principal.html">Pagina inicial<span class="sr-only">(página atual)</span></a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="sobre.aspx">Sobre Nós<span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="sobre.html">Sobre Nós<span class="sr-only">(página atual)</span></a>
 			      </li>
 
 			      <li class="nav-item">
@@ -43,69 +43,85 @@
 
 	<div class="conteudo_pagina_cadastro">
 		<div class="conteudo_pagina_cadastro_int">
-			<img src="imgs/logoTeste.png" width="100"><br>
+			<img src="logoMenor.png" width="100" class="logoMenor"><br>
 			<h3>Cadastre sua empresa no Servitiba!</h3>
-			<form method="POST" action="userEmpCadastro.aspx" runat="server">
+			<form method="POST" action="#" runat="server">
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="cnpj">CNPJ</label>
-			      <input type="text" runat="server" class="form-control" id="cnpj" placeholder="CNPJ">
+			      <input type="text"  runat="server" class="form-control" id="cnpj" placeholder="CNPJ">
 			    </div>
 			    <div class="form-group col-md-6">
 			      <label for="razaoSocial">Razão Social</label>
-			      <input type="text" runat="server" class="form-control" id="razaoSocial" placeholder="Razão Social">
+			      <input type="text"  runat="server" class="form-control" id="razaoSocial" placeholder="Razão Social">
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="tel">Telefone</label>
-			      <input type="tel" runat="server" class="form-control" id="tel" placeholder="xxxx-xxxx">
+			      <input type="tel"  runat="server" class="form-control" id="tel" placeholder="xxxx-xxxx">
 			    </div>
 			    <div class="form-group col-md-6">
 			      <label for="cel">Celular</label>
-			      <input type="text" runat="server" class="form-control telefone" id="cel" placeholder="(XX)x xxxx-xxxx">
+			      <input type="text" runat="server"  class="form-control telefone" id="cel" placeholder="(XX)x xxxx-xxxx">
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-12">
 			      <label for="cep">CEP</label>
-			      <input type="tel" runat="server" class="form-control" id="cep" placeholder="CEP">
+			      <input type="tel" runat="server"  class="form-control" id="cep" placeholder="CEP">
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="endereco">Endereço</label>
-			      <input type="text" runat="server" class="form-control" id="endereco" placeholder="Endereço">
+			      <input type="text"  runat="server" class="form-control" id="endereco" placeholder="Endereço">
 			    </div>
 			    <div class="form-group col-md-2">
 			      <label for="complemento">Complemento</label>
-			      <input type="text" runat="server" class="form-control" id="complemento" placeholder="Complemento">
+			      <input type="text" runat="server"  class="form-control" id="complemento" placeholder="Complemento">
 			    </div>
 			    <div class="form-group col-md-4">
-			      <label for="num">Número</label>
-			      <input type="text" runat="server" class="form-control" id="num" placeholder="Número">
+			      <label for="numero">Número</label>
+			      <input type="text" runat="server"  class="form-control" id="numero" placeholder="Número">
+			    </div>
+			  </div>
+
+			  <div class="form-row">
+			    <div class="form-group col-md-2">
+			      <label for="inputEmail4">Latitude</label>
+			      <input type="text" runat="server"  class="form-control" id="inputEmail4" placeholder="Latitude">
+			    </div>
+			    <div class="form-group col-md-2">
+			      <label for="inputPassword4">Longitude</label>
+			      <input type="text"  runat="server" class="form-control" id="inputPassword4" placeholder="Longitude">
+			    </div>
+			    <div class="form-group col-md-8">
+			      <label for="descricao">Descrição da Empresa</label> <br>
+			      <textarea runat="server" name="message" rows="5" id="descricao" cols="60"></textarea>
 			    </div>
 			  </div>
 
 			  <br>
 
 			  
-			  <button type="submit" class="btn btn-primary">Próximo</button>
+			  <button type="submit" runat="server" onserverclick="cadastrar" class="btn btn-primary">Próximo</button>
+
 			  <small id="emailHelp" class="form-text text-muted">Sua empresa já é cadastrada? <a href="loginEmpresa.html">Faça Login</a>!</small>
 			  <small id="emailHelp" class="form-text text-muted">Não tem login? Solicite ao seu superior!</small>
 			</form>
 		</div>		
 	</div>
-	<br>
+	<br><br><br><br><br>
     <footer id="myFooter">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="logoTeste.png" width="250"> </a></h2>
+                    <h2 class="logo"><a href="https://programadorviking.com.br/"><img src="logoMenor.png" width="250" class="logoMenor"></a></h2>
                 </div>
                 <div class="col-sm-2">
                     <h5>Inicio</h5>

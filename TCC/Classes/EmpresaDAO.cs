@@ -12,9 +12,9 @@ namespace TCC.Classes
         {
             //Vou deixar bem separado o que é oq pra ficar mais claro
             string sql = "INSERT INTO empresa (id, id_diretor, id_comercial, id_tecnico, cnpj, razao_social," +
-                "telefone1, telefone2, endereco, numero, complemento, cep, cidade, inicio_empresa, descricao_empresa," +
-                "qtd_funcionarios, reputacao_tempo, reputacao_qualidade, reputacao_atendimento, reputacao_quantidade," +
-                "reputacao_fiscal, zona_atendimento, data_cadastro, block) " +
+                "telefone1, telefone2, endereco, numero, complemento, cep, lat, lon, id_cidade, inicio_empresa, descricao_empresa," +
+                "qtd_funcionarios, reputacao_tempo, reputacao_qualidade, reputacao_atendimento, reputacao_fiscal, qtd_servicos," +
+                "zona_atendimento, data_cadastro, block) " +
                 " VALUES( " +
                 " NULL, " +
                 "'" + emp.IdDiretor + "'," +
@@ -30,22 +30,23 @@ namespace TCC.Classes
                 "'" + emp.Cep + "'," +
                 "'" + emp.Lat + "'," +
                 "'" + emp.Lon + "'," +
-                "'" + emp.Cidade + "'," +
+                "'" + emp.IdCidade + "'," +
                 "'" + emp.InicioEmpresa + "'," +
                 "'" + emp.DescEmpresa + "'," +
                 "'" + emp.QtdFuncionarios + "'," +
                 "'" + emp.RepTempo + "'," +
                 "'" + emp.RepQualidade + "'," +
                 "'" + emp.RepAtendimento + "'," +
-                "'" + emp.RepQuantidade + "'," +
                 "'" + emp.RepFiscal + "'," +
+                "'" + emp.QtdServ + "'," +
                 "'" + emp.ZonaAtendimento + "'," +
                 "'" + emp.DataCadastro.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
-                "'" + emp.Block + "'," +
+                "'" + emp.Block + "'" +
                 "); ";
 
             MySqlConnection conn = new Conn().conectar();
-            new Conn().executar(sql, conn);
+
+            string msg = new Conn().executar(sql, conn);
             conn.Close();
         }
         public void updateEmpresa(Empresa emp)
@@ -64,15 +65,15 @@ namespace TCC.Classes
                 "cep = '" + emp.Cep + "'," +
                 "lat = '" + emp.Lat + "'," +
                 "lon = '" + emp.Lon + "'," +
-                "cidade = '" + emp.Cidade + "', " +
+                "id_cidade = '" + emp.IdCidade + "', " +
                 "inicio_empresa = '" + emp.InicioEmpresa.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
                 "descricao_empresa = '" + emp.DescEmpresa + "'," +
                 "qtd_funcionarios = '" + emp.QtdFuncionarios + "'," +
                 "reputacao_tempo = '" + emp.RepTempo + "'," +
                 "reputacao_qualidade = '" + emp.RepQualidade + "'," +
                 "reputacao_atendimento = '" + emp.RepAtendimento + "'," +
-                "reputacao_quantidade = '" + emp.RepQuantidade + "'," +
                 "reputacao_fiscal= '" + emp.RepFiscal + "'," +
+                "qtd_servicos = '" + emp.QtdServ + "'," +
                 "zona_atendimento = '" + emp.ZonaAtendimento + "'," +
                 "data_cadastro = '" + emp.DataCadastro.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
                 "block = " + emp.Block +
@@ -117,7 +118,19 @@ namespace TCC.Classes
             conn.Close();
             return emp;
         }
-
+        public Empresa selectEmpPorRazaoSocial(String razaoSocial)
+        {
+            string sql = "SELECT * FROM empresa WHERE razao_social = " + razaoSocial;
+            Empresa emp = new Empresa();
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            while (reader.Read() && reader.HasRows)
+            {
+                emp = preencherEmp(reader);
+            }
+            conn.Close();
+            return emp;
+        }
 
         public List<Empresa> selectAllEmps()
         {
@@ -182,15 +195,15 @@ namespace TCC.Classes
             emp.Cep = reader.GetString(11);
             emp.Lat = reader.GetString(12);
             emp.Lon = reader.GetString(13);
-            emp.Cidade = reader.GetString(14);
+            emp.IdCidade = reader.GetInt32(14);
             emp.InicioEmpresa = reader.GetDateTime(15);
             emp.DescEmpresa = reader.GetString(16);
             emp.QtdFuncionarios = reader.GetInt32(17);
             emp.RepTempo = reader.GetInt32(18);
             emp.RepQualidade = reader.GetInt32(19);
             emp.RepAtendimento = reader.GetInt32(20);
-            emp.RepQuantidade = reader.GetInt32(21);
-            emp.RepFiscal = reader.GetInt32(22);
+            emp.RepFiscal = reader.GetInt32(21);
+            emp.QtdServ = reader.GetInt32(22);
             emp.ZonaAtendimento = reader.GetString(23);
             emp.DataCadastro = reader.GetDateTime(24);
             emp.Block = reader.GetInt32(25);

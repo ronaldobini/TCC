@@ -75,7 +75,7 @@ namespace TCC
             emp.Cep = reader.GetString(11);
             emp.Lat = reader.GetString(12);
             emp.Lon = reader.GetString(13);
-            emp.Cidade = reader.GetString(14);
+            emp.IdCidade = reader.GetInt32(14);
             emp.InicioEmpresa = reader.GetDateTime(15);
             emp.DescEmpresa = reader.GetString(16);
             emp.QtdFuncionarios = reader.GetInt32(17);

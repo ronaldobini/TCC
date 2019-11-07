@@ -21,7 +21,7 @@ namespace TCC.Classes
         private string cep;
         private string lat;
         private string lon;
-        private string cidade;
+        private int idCidade;
         private DateTime inicioEmpresa;
         private string descEmpresa;
         private int qtdFuncionarios;
@@ -36,7 +36,7 @@ namespace TCC.Classes
         private int block;
 
         public Empresa(int id, int idDiretor, int idComercial, int idTecnico, string cnpj, string razaoSocial,
-            string tel1, string tel2, string endereco, int numero, string complemento, string cep, string lat, string lon, string cidade,
+            string tel1, string tel2, string endereco, int numero, string complemento, string cep, string lat, string lon, int idCidade,
             DateTime inicioEmpresa, string descEmpresa, int qtdFuncionarios, int repTempo, int repQualidade, int repAtendimento,
             int repQuantidade, int repFiscal, int qtdServ, string zonaAtendimento, DateTime dataCadastro, int block)
         {
@@ -54,7 +54,7 @@ namespace TCC.Classes
             this.cep = cep;
             this.lat = lat;
             this.lon = lon;
-            this.cidade = cidade;
+            this.idCidade = idCidade;
             this.inicioEmpresa = inicioEmpresa;
             this.descEmpresa = descEmpresa;
             this.qtdFuncionarios = qtdFuncionarios;
@@ -87,7 +87,7 @@ namespace TCC.Classes
         public string Cep { get => cep; set => cep = value; }
         public string Lat { get => lat; set => lat = value; }
         public string Lon { get => lon; set => lon = value; }
-        public string Cidade { get => cidade; set => cidade = value; }
+        public int IdCidade { get => idCidade; set => idCidade = value; }
         public DateTime InicioEmpresa { get => inicioEmpresa; set => inicioEmpresa = value; }
         public string DescEmpresa { get => descEmpresa; set => descEmpresa = value; }
         public int QtdFuncionarios { get => qtdFuncionarios; set => qtdFuncionarios = value; }

@@ -74,7 +74,7 @@ namespace TCC.Classes
             }
             return result;
         }
-        public MySqlDataReader consultar(string sql,MySqlConnection conn)
+        public MySqlDataReader consultar(string sql, MySqlConnection conn)
         {
             string result = "-";
             MySqlDataReader reader = null;
@@ -88,6 +88,22 @@ namespace TCC.Classes
                 result = "ERRO: " + e;
             }
             return reader;
+
+        }
+        public string consultarErros(string sql, MySqlConnection conn)
+        {
+            string result = "-";
+            MySqlDataReader reader = null;
+            try
+            {
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                reader = command.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                result = "ERRO: " + e;
+            }
+            return result;
 
         }
         public void fechaConn(MySqlConnection conn)

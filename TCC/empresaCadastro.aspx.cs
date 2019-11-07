@@ -18,6 +18,7 @@ namespace TCC
         private string postEnd;
         private string postComplemento;
         private int postNum;
+        private string postDesc;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,11 +34,16 @@ namespace TCC
             postCel = cel.Value;
             postEnd = endereco.Value;
             postComplemento = complemento.Value;
-            postNum = Int32.Parse(num.Value);
-            Empresa emp = new Empresa(0, 0, 0, 0, postCnpj, postRazaoSocial, postTel, postCel, postEnd, postNum, postComplemento, postCep,
-                "000", "000", "cidade", DateTime.Now, "desc", 1, 1, 1, 1, 1, 1, 1, "centro", DateTime.Now, 0);
-
+            postNum = Int32.Parse(numero.Value);
+            postDesc = descricao.Value;
+            Cidade cid = new Cidade();
+            //cid = new CidadeDAO().selectCidadePorNome(postCid);
+            Empresa emp = new Empresa(1, 1, 1, 1, postCnpj, postRazaoSocial, postTel, postCel, postEnd, postNum, postComplemento, postCep,
+                "000", "000", 1, DateTime.Now, postDesc , 1, 1, 1, 1, 1, 1, 1, "centro", DateTime.Now, 0);
             new EmpresaDAO().insertEmpresa(emp);
+                emp = new EmpresaDAO().selectEmpPorRazaoSocial(postRazaoSocial);
+            Session["empId"] = emp.Id;
+            Response.Redirect("userEmpCadastro.aspx");
         }
     }
 }
