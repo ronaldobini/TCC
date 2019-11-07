@@ -99,10 +99,10 @@
 				Qual serviço você deseja hoje? <br><br>
 				<form id="mapao" runat="server" method="post" action="#">
 					
-                    <asp:DropDownList ID="categorias" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="categorias" runat="server" class="form-control form-control-lg"></asp:DropDownList>
 					<br><br>
 					
-                    <input type="text" id="pesq" name="pesq" runat="server"/>
+                    <input type="text" class="form-control" id="pesq" name="pesq" runat="server"/>
                     <br><br>
 				    <button class="btn btn-success" runat="server"  onserverclick="filtrar">Buscar</button> <br><br>
 
