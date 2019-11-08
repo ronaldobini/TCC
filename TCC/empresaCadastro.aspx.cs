@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -38,10 +39,11 @@ namespace TCC
             postDesc = descricao.Value;
             Cidade cid = new Cidade();
             //cid = new CidadeDAO().selectCidadePorNome(postCid);
+            MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
             Empresa emp = new Empresa(1, 1, 1, 1, postCnpj, postRazaoSocial, postTel, postCel, postEnd, postNum, postComplemento, postCep,
-                "000", "000", 1, DateTime.Now, postDesc , 1, 1, 1, 1, 1, 1, 1, "centro", DateTime.Now, 0);
+                "000", "000", 1, mysqldt, postDesc , 1, 1, 1, 1, 1, 1, 1, "centro", mysqldt, 0);
             new EmpresaDAO().insertEmpresa(emp);
-                emp = new EmpresaDAO().selectEmpPorRazaoSocial(postRazaoSocial);
+            emp = new EmpresaDAO().selectEmpPorCNPJ(postCnpj);
             Session["empId"] = emp.Id;
             Response.Redirect("userEmpCadastro.aspx");
         }

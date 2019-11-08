@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySql.Data.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace TCC.Classes
                 "'" + emp.Lat + "'," +
                 "'" + emp.Lon + "'," +
                 "'" + emp.IdCidade + "'," +
-                "'" + emp.InicioEmpresa + "'," +
+                "'" + emp.InicioEmpresa.ToString() + "'," +
                 "'" + emp.DescEmpresa + "'," +
                 "'" + emp.QtdFuncionarios + "'," +
                 "'" + emp.RepTempo + "'," +
@@ -40,7 +41,7 @@ namespace TCC.Classes
                 "'" + emp.RepFiscal + "'," +
                 "'" + emp.QtdServ + "'," +
                 "'" + emp.ZonaAtendimento + "'," +
-                "'" + emp.DataCadastro.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
+                "'" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "'," +
                 "'" + emp.Block + "'" +
                 "); ";
 
@@ -66,7 +67,7 @@ namespace TCC.Classes
                 "lat = '" + emp.Lat + "'," +
                 "lon = '" + emp.Lon + "'," +
                 "id_cidade = '" + emp.IdCidade + "', " +
-                "inicio_empresa = '" + emp.InicioEmpresa.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
+                "inicio_empresa = '" + emp.InicioEmpresa.ToString() + "'," +
                 "descricao_empresa = '" + emp.DescEmpresa + "'," +
                 "qtd_funcionarios = '" + emp.QtdFuncionarios + "'," +
                 "reputacao_tempo = '" + emp.RepTempo + "'," +
@@ -75,7 +76,7 @@ namespace TCC.Classes
                 "reputacao_fiscal= '" + emp.RepFiscal + "'," +
                 "qtd_servicos = '" + emp.QtdServ + "'," +
                 "zona_atendimento = '" + emp.ZonaAtendimento + "'," +
-                "data_cadastro = '" + emp.DataCadastro.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
+                "data_cadastro = '" + emp.DataCadastro.ToString() + "'," +
                 "block = " + emp.Block +
                 " WHERE id  = " + emp.Id + " ";
 
@@ -121,6 +122,19 @@ namespace TCC.Classes
         public Empresa selectEmpPorRazaoSocial(String razaoSocial)
         {
             string sql = "SELECT * FROM empresa WHERE razao_social = " + razaoSocial;
+            Empresa emp = new Empresa();
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            while (reader.Read() && reader.HasRows)
+            {
+                emp = preencherEmp(reader);
+            }
+            conn.Close();
+            return emp;
+        }
+        public Empresa selectEmpPorCNPJ(String cnpj)
+        {
+            string sql = "SELECT * FROM empresa WHERE cnpj = " + cnpj;
             Empresa emp = new Empresa();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
@@ -196,7 +210,8 @@ namespace TCC.Classes
             emp.Lat = reader.GetString(12);
             emp.Lon = reader.GetString(13);
             emp.IdCidade = reader.GetInt32(14);
-            emp.InicioEmpresa = reader.GetDateTime(15);
+
+            emp.InicioEmpresa = reader.GetMySqlDateTime(15);
             emp.DescEmpresa = reader.GetString(16);
             emp.QtdFuncionarios = reader.GetInt32(17);
             emp.RepTempo = reader.GetInt32(18);
@@ -205,7 +220,7 @@ namespace TCC.Classes
             emp.RepFiscal = reader.GetInt32(21);
             emp.QtdServ = reader.GetInt32(22);
             emp.ZonaAtendimento = reader.GetString(23);
-            emp.DataCadastro = reader.GetDateTime(24);
+            emp.DataCadastro = reader.GetMySqlDateTime(24);
             emp.Block = reader.GetInt32(25);
 
             return emp;

@@ -20,13 +20,26 @@ namespace TCC.Classes
             conn.Close();
             return cid;
         }
+        public Cidade selectCidadePorId(int id)
+        {
+            string sql = "SELECT * FROM cidade WHERE id = " + id;
+            Cidade cid = new Cidade();
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            while (reader.Read() && reader.HasRows)
+            {
+                cid = preencherCid(reader);
+            }
+            conn.Close();
+            return cid;
+        }
         public Cidade selectCidadePorNome(string nome)
         {
             string sql = "SELECT * FROM cidade WHERE nome = " + nome;
             Cidade cid = new Cidade();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
-            while (reader.Read() && reader.HasRows)
+            while (reader != null && reader.HasRows && reader.Read() )
             {
                 cid = preencherCid(reader);
             }

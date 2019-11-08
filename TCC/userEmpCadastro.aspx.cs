@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,12 +19,12 @@ namespace TCC
         private string postCep;
         private string postEnd;
         private string postComplemento;
-        private string postNum;
+        private int postNum;
         private string postTel;
         private string postCel;
-        private string postCidade;
-        private string postFunc;
-        private string postFormacao;
+        private string postCidade = "Curitiba";
+        private string postFunc = "ainda n";
+        private string postFormacao = "ainda n";
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -38,14 +39,24 @@ namespace TCC
             postCep = cep.Value;
             postEnd = endereco.Value;
             postComplemento = complemento.Value;
-            postNum = numero.Value;
+            postNum = Int32.Parse(numero.Value);
             postTel = tel.Value;
             postCel = cel.Value;
             //postCidade = cidade.Value;
             //postFunc = funcao.Value;
             //postFormacao = formacao.Value;
-
-            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, 0, 5, postFunc, 10, 0, "", postFormacao, 0);
+            int idEmp = 2;
+            //if ((int)Session["empId"] != null)
+            //{
+            //    idEmp = (int)Session["empIp"];
+            //}
+            MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
+            
+            Usuario user = new Usuario(0,postLogin,postSenha, postNome,postEmail,postCpf,postTel,postCel,postEnd,postNum,postComplemento,
+                postCep, new CidadeDAO().selectCidadePorNome(postCidade),"0", mysqldt, new MySqlDateTime(),0,0,0);
+            new UsuarioDAO().insertUser(user);
+            user = new UsuarioDAO().selectUserLogin(postLogin);
+            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, user.Id, idEmp, postFunc, 10, 0, "", postFormacao, 0);
 
             new UsuarioEmpresaDAO().insertUserEmp(userEmp);
 

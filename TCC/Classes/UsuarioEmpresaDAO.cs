@@ -21,11 +21,11 @@ namespace TCC.Classes
                 "'" + userEmp.QtdServicos + "'," +
                 "'" + userEmp.NivelEscolar + "'," +
                 "'" + userEmp.Formacao + "'," +
-                "'" + userEmp.RepMedia + "'," +
+                "'" + userEmp.RepMedia + "'" +
                 ");";
 
             MySqlConnection conn = new Conn().conectar();
-            new Conn().executar(sql, conn);
+            string msg = new Conn().executar(sql, conn);
             conn.Close();
 
         }
@@ -39,7 +39,7 @@ namespace TCC.Classes
                 " qtd_servicos = '" + userEmp.QtdServicos + "'," +
                 " nivel_escolar = '" + userEmp.NivelEscolar + "'," +
                 " formacao = '" + userEmp.Formacao + "'," +
-                " reputacao_media = '" + userEmp.RepMedia + "'," +
+                " reputacao_media = '" + userEmp.RepMedia + "'" +
                 " WHERE id = " + userEmp.Id + " ";
 
             MySqlConnection conn = new Conn().conectar();

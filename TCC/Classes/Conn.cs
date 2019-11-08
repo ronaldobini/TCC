@@ -40,7 +40,7 @@ namespace TCC.Classes
             password = "UFPRtcc2019";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + "; Allow Zero Datetime=true";
 
 
             try

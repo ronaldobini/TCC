@@ -41,7 +41,7 @@ namespace TCC.Classes
                 "" + serv.RepQualidade + "," +
                 "" + serv.RepAtendimento + "," +
                 "'" + serv.ObsFinUser + "'," +
-                "'" + serv.ObsFinEmp + "'," +
+                "'" + serv.ObsFinEmp + "'" +
                 "); ";
 
             MySqlConnection conn = new Conn().conectar();
@@ -68,7 +68,7 @@ namespace TCC.Classes
                 "reputacao-qualidade = " + serv.RepQualidade + "," +
                 "reputacao-atendimento = " + serv.RepAtendimento + "," +
                 "obs_finais_usuario = " + serv.ObsFinUser + "," +
-                "obs_finais_empresa = " + serv.ObsFinEmp + "," +
+                "obs_finais_empresa = " + serv.ObsFinEmp + "" +
                 " WHERE id  = " + serv.Id + " ";
 
             MySqlConnection conn = new Conn().conectar();

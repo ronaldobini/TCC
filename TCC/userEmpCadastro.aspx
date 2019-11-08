@@ -120,7 +120,7 @@
 			  </div><br>
 
 			  
-			  <button type="submit" class="btn btn-success">Cadastrar Empresa</button>
+			  <button type="submit" runat="server" onserverclick="cadastrar"  class ="btn btn-success">Cadastrar Empresa</button>
 			  <small id="emailHelp" class="form-text text-muted">Sua empresa já é cadastrada? <a href="loginEmpresa.html">Faça Login</a>!</small>
 			  <small id="emailHelp" class="form-text text-muted">Não tem login? Solicite ao seu superior!</small>
 			</form>

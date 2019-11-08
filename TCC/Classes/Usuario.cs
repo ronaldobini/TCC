@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,10 +21,10 @@ namespace TCC.Classes
         private int numero;
         private string complemento;
         private string cep;
-        private string cidade;
+        private Cidade cidade;
         private string reputacao;
-        private DateTime dataCadastro;
-        private DateTime ultimoLogin;
+        private MySqlDateTime dataCadastro;
+        private MySqlDateTime ultimoLogin;
         private int errosSenha;
         private int block;
         private int nivel;
@@ -34,7 +35,7 @@ namespace TCC.Classes
         }
         public Usuario(int id, string login, string senha, string nome, string email,
             string cpf, string tel1, string tel2, string endereco, int numero, string complemento,
-            string cep, string cidade, string reputacao, DateTime dataCadastro, DateTime ultimoLogin,
+            string cep, Cidade cidade, string reputacao, MySqlDateTime dataCadastro, MySqlDateTime ultimoLogin,
             int errosSenha, int block, int nivel)
         {
             this.id = id;
@@ -70,10 +71,10 @@ namespace TCC.Classes
         public int Numero { get => numero; set => numero = value; }
         public string Complemento { get => complemento; set => complemento = value; }
         public string Cep { get => cep; set => cep = value; }
-        public string Cidade { get => cidade; set => cidade = value; }
+        public Cidade Cidade { get => cidade; set => cidade = value; }
         public string Reputacao { get => reputacao; set => reputacao = value; }
-        public DateTime DataCadastro { get => dataCadastro; set => dataCadastro = value; }
-        public DateTime UltimoLogin { get => ultimoLogin; set => ultimoLogin = value; }
+        public MySqlDateTime DataCadastro { get => dataCadastro; set => dataCadastro = value; }
+        public MySqlDateTime UltimoLogin { get => ultimoLogin; set => ultimoLogin = value; }
         public int ErrosSenha { get => errosSenha; set => errosSenha = value; }
         public int Block { get => block; set => block = value; }
         public int Nivel { get => nivel; set => nivel = value; }

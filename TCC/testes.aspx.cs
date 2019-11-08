@@ -76,7 +76,7 @@ namespace TCC
             emp.Lat = reader.GetString(12);
             emp.Lon = reader.GetString(13);
             emp.IdCidade = reader.GetInt32(14);
-            emp.InicioEmpresa = reader.GetDateTime(15);
+            emp.InicioEmpresa = reader.GetMySqlDateTime(15);
             emp.DescEmpresa = reader.GetString(16);
             emp.QtdFuncionarios = reader.GetInt32(17);
             emp.RepTempo = reader.GetInt32(18);
@@ -85,7 +85,7 @@ namespace TCC
             emp.RepQuantidade = reader.GetInt32(21);
             emp.RepFiscal = reader.GetInt32(22);
             emp.ZonaAtendimento = reader.GetString(23);
-            emp.DataCadastro = reader.GetDateTime(24);
+            emp.DataCadastro = reader.GetMySqlDateTime(24);
             emp.Block = reader.GetInt32(25);
 
             return emp;

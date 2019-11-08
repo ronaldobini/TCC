@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,7 +23,7 @@ namespace TCC.Classes
         private string lat;
         private string lon;
         private int idCidade;
-        private DateTime inicioEmpresa;
+        private MySqlDateTime inicioEmpresa;
         private string descEmpresa;
         private int qtdFuncionarios;
         private int repTempo;
@@ -32,13 +33,13 @@ namespace TCC.Classes
         private int repFiscal;
         private int qtdServ;
         private string zonaAtendimento;
-        private DateTime dataCadastro;
+        private MySqlDateTime dataCadastro;
         private int block;
 
         public Empresa(int id, int idDiretor, int idComercial, int idTecnico, string cnpj, string razaoSocial,
             string tel1, string tel2, string endereco, int numero, string complemento, string cep, string lat, string lon, int idCidade,
-            DateTime inicioEmpresa, string descEmpresa, int qtdFuncionarios, int repTempo, int repQualidade, int repAtendimento,
-            int repQuantidade, int repFiscal, int qtdServ, string zonaAtendimento, DateTime dataCadastro, int block)
+            MySqlDateTime inicioEmpresa, string descEmpresa, int qtdFuncionarios, int repTempo, int repQualidade, int repAtendimento,
+            int repQuantidade, int repFiscal, int qtdServ, string zonaAtendimento, MySqlDateTime dataCadastro, int block)
         {
             this.id = id;
             this.idDiretor = idDiretor;
@@ -88,7 +89,7 @@ namespace TCC.Classes
         public string Lat { get => lat; set => lat = value; }
         public string Lon { get => lon; set => lon = value; }
         public int IdCidade { get => idCidade; set => idCidade = value; }
-        public DateTime InicioEmpresa { get => inicioEmpresa; set => inicioEmpresa = value; }
+        public MySqlDateTime InicioEmpresa { get => inicioEmpresa; set => inicioEmpresa = value; }
         public string DescEmpresa { get => descEmpresa; set => descEmpresa = value; }
         public int QtdFuncionarios { get => qtdFuncionarios; set => qtdFuncionarios = value; }
         public int RepTempo { get => repTempo; set => repTempo = value; }
@@ -97,7 +98,7 @@ namespace TCC.Classes
         public int RepQuantidade { get => repQuantidade; set => repQuantidade = value; }
         public int RepFiscal { get => repFiscal; set => repFiscal = value; }
         public string ZonaAtendimento { get => zonaAtendimento; set => zonaAtendimento = value; }
-        public DateTime DataCadastro { get => dataCadastro; set => dataCadastro = value; }
+        public MySqlDateTime DataCadastro { get => dataCadastro; set => dataCadastro = value; }
         public int Block { get => block; set => block = value; }
         public int QtdServ { get => qtdServ; set => qtdServ = value; }
     }

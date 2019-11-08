@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,7 +27,7 @@ namespace TCC
             string loginPost = loginC.Value;
             string senhaPost = senhaC.Value;
             Usuario user = new Usuario(0,loginPost, senhaPost, nomePost, emailPost, cpfPost, "tel1","tel2",
-                endPost,numPost,"complemento","cep","cidade","0.0", DateTime.Now, DateTime.Now, 0, 0, 0);
+                endPost,numPost,"complemento","cep",new Cidade(),"0.0", new MySqlDateTime(), new MySqlDateTime(), 0, 0, 0);
 
             new UsuarioDAO().insertUser(user);
         }

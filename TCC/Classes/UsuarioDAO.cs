@@ -29,10 +29,10 @@ namespace TCC.Classes
                 " '" + user.Numero + "', " + // Numero
                 " '" + user.Complemento + "', " + // Complemento
                 " '" + user.Cep + "', " + // Cep
-                " '" + user.Cidade + "', " + // Cidade
+                " '" + user.Cidade.Nome + "', " + // Cidade
                 " '" + user.Reputacao + "', " + // Reputacao
-                " '" + user.DataCadastro.ToString("MM/dd/yyyy HH:mm:ss") + "', " + // Data Cadastro
-                " '" + user.UltimoLogin.ToString("MM/dd/yyyy HH:mm:ss") + "', " + // Data Ultimo Login
+                " '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "', " + // Data Cadastro
+                " '" + user.UltimoLogin.ToString() + "', " + // Data Ultimo Login
                 " '" + user.ErrosSenha + "', " + // Erros Senha
                 " '" + user.Block + "', " + // Block
                 " '" + user.Nivel + "' " + // Nivel Acesso
@@ -56,10 +56,10 @@ namespace TCC.Classes
                 " `numero` = '" + user.Numero + "', " +
                 " `complemento` = '" + user.Complemento + "', " +
                 " `cep` = '" + user.Cep + "', " +
-                " `cidade` = '" + user.Cidade + "', " +
+                " `cidade` = '" + user.Cidade.Nome + "', " +
                 " `reputacao` = '" + user.Reputacao + "', " +
-                " `data_cadastro` = '" + user.DataCadastro.ToString("MM/dd/yyyy HH:mm:ss") + "', " +
-                " `ultimo_login` = '" + user.UltimoLogin.ToString("MM/dd/yyyy HH:mm:ss") + "', " +
+                " `data_cadastro` = '" + user.DataCadastro.ToString() + "', " +
+                " `ultimo_login` = '" + user.UltimoLogin.ToString() + "', " +
                 " `erros_senha` = '" + user.ErrosSenha + "', " +
                 " `block` = '" + user.Block + "', " +
                 " `nivel_acesso` = '" + user.Nivel + "' " +
@@ -168,10 +168,10 @@ namespace TCC.Classes
             user.Numero = reader.GetInt32(9);
             user.Complemento = reader.GetString(10);
             user.Cep = reader.GetString(11);
-            user.Cidade = reader.GetString(12);
+            user.Cidade = new CidadeDAO().selectCidadePorNome(reader.GetString(12));
             user.Reputacao = reader.GetString(13);
-            user.DataCadastro = reader.GetDateTime(14);
-            user.UltimoLogin = reader.GetDateTime(15);
+            user.DataCadastro = reader.GetMySqlDateTime(14);
+            user.UltimoLogin = reader.GetMySqlDateTime(15);
             user.ErrosSenha = reader.GetInt32(16);
             user.Block = reader.GetInt32(17);
             user.Nivel = reader.GetInt32(18);

@@ -17,7 +17,7 @@ namespace TCC.Classes
                 " " + servTec.IdServ + ", " +
                 " " + servTec.IdTec + ", " +
                 " " + servTec.RepServ + ", " +
-                " '" + servTec.ObsUser + "', " +
+                " '" + servTec.ObsUser + "' " +
                 "); ";
 
             MySqlConnection conn = new Conn().conectar();
