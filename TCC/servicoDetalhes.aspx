@@ -1,82 +1,98 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="servicoDetalhes.aspx.cs" Inherits="TCC.servicoDetalhes" %>
+
 <!DOCTYPE html>
-<html>
-<head>
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-	<title>Buscar Serviço</title>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/estilo.css">
+  <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+  <title>Chat</title>
 </head>
 <body>
-	<div class="top_cliente">
-		<div class="top_int_cliente">
-			<img src="logo.png" height="120">
-		</div>
-	</div>
+    <div class="top_cliente">
+    <div class="top_int_cliente">
+      <img src="logo.png" height="120">
+    </div>
+  </div>
 
-	<div class="menu">
-		<div class="menu_int">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			  
-			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-			    <span class="navbar-toggler-icon"></span>
-			  </button>
+  <div class="menu">
+    <div class="menu_int">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item">
-			        <a class="nav-link" href="indexCliente.html">Buscar Serviço <span class="sr-only">(página atual)</span></a>
-			      </li>
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="indexPrestador.html">Lista de Pedidos <span class="sr-only">(página atual)</span></a>
+            </li>
 
-			      <li class="nav-item">
-			        <a class="nav-link" href="solicitacoesCliente.html">Solicitações <span class="sr-only">(página atual)</span></a>
-			      </li>
+            <li class="nav-item">
+              <a class="nav-link" href="PedidosAceitos.html">Pedidos Aceitos <span class="sr-only">(página atual)</span></a>
+            </li>
 
-			      <li class="nav-item">
-			        <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
-			      </li>
-			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
-			      <button class="btn btn-outline-danger" type="submit">Sair</button>
-			    </form>
-			  </div>
-			</nav>
-		</div>
-	</div>
-	
-	<div class="conteudo_index_cliente">
-		<div class="conteudo_index_cliente_int">
-			<br><br>
+            <li class="nav-item">
+              <a class="nav-link" href="pedidosEmExecucao.html">Pedidos Em Execução <span class="sr-only">(página atual)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="cadastrarColaborador.html">Cadastrar Colaborador <span class="sr-only">(página atual)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="gerenciarColaboradores.html">Gerenciar Colaboradores <span class="sr-only">(página atual)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="saldoEmpresa.html">Saldo da Empresa <span class="sr-only">(página atual)</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="crudServico.html">Gerenciamento de Serviços<span class="sr-only">(página atual)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
+            <button class="btn btn-outline-danger" type="submit">Sair</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div class="conteudo_relatorio_cliente">
+    <div class="conteudo_solicitacao_cliente_int">
+      
+        <br><br>
         <div class="panel">
           <form>
             <div class="form-row">
               <div class="form-group col-md-3">
                 <label for="inputEmail4">Empresa</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="" disabled>
+                <font color="blue"><%=nomeEmpresa %></font>
               </div>
               <div class="form-group col-md-3">
-                <label for="inputPassword4">Cliente</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="" disabled>
+                  <label for="inputPassword4">Cliente</label>
+                  <font color="blue"><%=nomeCliente %></font>
               </div>
               <div class="form-group col-md-3">
-                <label for="inputPassword4">Preço</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="" disabled>
+                  <label for="inputPassword4">Preço</label>
+                  <font color="red"><%=valor %></font>
               </div>
               <div class="form-group col-md-3">
-                <label for="inputPassword4">Previsão de Término</label>
-                <input type="date" class="form-control" id="inputPassword4" disabled>
+                  <label for="inputPassword4">Previsão de Término</label>
+                  <font color="red"><%=dataEstimada %></font>
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-group col-md-3">
-                <label for="inputEmail4">Prioridade</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="" disabled>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Descrição usuario</label> <br>
+            <div class="form-row">            
+              <div class="form-group col-md-5">
+                <label for="inputEmail4">Descrição Cliente</label> <br>
                 <textarea rows="6" cols="100" disabled>
-                At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+                <%=descUsu %>
                 </textarea>
               </div>
             </div>
@@ -90,7 +106,7 @@
         <table class="table table-dark">
           <thead>
             <tr>
-              <td scope="row" colspan="2">Chat com a empresa</td>
+              <td scope="row" colspan="2">Chat com o cliente</td>
             </tr>
           </thead>
           <tbody>
@@ -127,14 +143,13 @@
     
       
     </div>
-  </div> <br><br>
+  </div>
 
-
-	<footer id="myFooter">
+<footer id="myFooter">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="logoMenor.png" width="250" class="logoMenor"></a></h2>
+                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="logoMenor.png" width="250" class="logoMenor"> </a></h2>
                 </div>
                 <div class="col-sm-2">
                     <h5>Inicio</h5>
