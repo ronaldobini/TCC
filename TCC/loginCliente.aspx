@@ -54,6 +54,7 @@
 					<input type="submit" onserverclick="autenticar" value="Login" class="btn btn-success" runat="server">
 					<br>
 					<small id="emailHelp" class="form-text text-muted">Não tem login? <a href="clienteCadastro.aspx">Cadastre-se!</a></small>
+                    <font color="red"><%=mensagem %></font>
 				</div>
 			</form>
 		</div>		

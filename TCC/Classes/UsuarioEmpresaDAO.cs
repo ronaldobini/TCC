@@ -103,8 +103,7 @@ namespace TCC.Classes
             else
             {
                 //Se nao for encontrado login
-                //userEmp.Id = -1;
-                //userEmp.Senha = "!!xxxxxxx!!";
+                userEmp.Id = -1;
             }
             conn.Close();
             return userEmp;

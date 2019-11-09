@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +8,7 @@ namespace TCC.Classes
 {
     public class Log
     {
+        
         private int id;
         private string acao;
         private DateTime tempo;

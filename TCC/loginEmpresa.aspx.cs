@@ -53,21 +53,37 @@ namespace TCC
                 String senha = logando.Senha;
                 if (senha.Equals(senhaPost))
                 {
-                    mensagem = "Login e senha OK";
-                    Session["sId"] = logando.Id;
-                    Session["sNome"] = logando.Nome;
-                    Session["sNivelEmp"] = empresa.NivelEmp;
-                    Session["sFuncao"] = empresa.Funcao;
-                    Session["sIdEmp"] = empresa.IdEmpresa;
-                    Response.Redirect("indexPrestador.aspx");
+                    if (empresa.Id > 0)
+                    {
+                        mensagem = "Login e senha OK";
+                        Session["sId"] = logando.Id;
+                        Session["sNome"] = logando.Nome;
+                        Session["sNivelEmp"] = empresa.NivelEmp;
+                        Session["sFuncao"] = empresa.Funcao;
+                        Session["sIdEmp"] = empresa.IdEmpresa;
+                        new LogDAO().logit("Login Empresa",(int)logando.Id);
+                        Response.Redirect("indexPrestador.aspx");
+                    }
+                    else
+                    {
+                        mensagem = "Você não está cadastrado em uma empresa";
+                        ++contaErros;
+                        logando = null;
+                        if (contaErros >= 5)
+                        {
+                            mensagem = "Tentativas esgotadas";
+                        }
+                    }
+                   
                 }
                 else
                 {
+                    mensagem = "Dados Incorretos";
                     ++contaErros;
                     logando = null;
                     if (contaErros >= 5)
                     {
-
+                        mensagem = "Tentativas esgotadas";
                     }
                 }
             }

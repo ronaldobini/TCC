@@ -77,15 +77,16 @@
 			        <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="loginCliente.aspx" method="POST">
+			    
 <% if (Session["sId"] == null){ %>
-			        <button class="btn btn-outline-success" type="submit">Logue para solicitar um serviço</button>
+			        <a href="loginCliente.aspx"> <button class="btn btn-outline-success" type="submit">Logue para solicitar um serviço</button></a>
+                    
 <% }else{ %>
                     <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %></font></a>
-                    <button class="btn btn-outline-danger" type="submit">Sair</button>
+                    <a href="Logout.aspx"><button class="btn btn-outline-danger">Sair</button></a>
 <% } %>
 			      
-			    </form>
+			    
 			  </div>
 			</nav>
 		</div>

@@ -56,11 +56,13 @@ namespace TCC
                         Session["sNome"] = logando.Nome;
                         Session["sRep"] = logando.Reputacao;
                         Session["sNivel"] = logando.Nivel;
-                        
-                        Response.Redirect("mapao.aspx");
+                        new LogDAO().logit("Login Cliente", (int)logando.Id);
+
+                    Response.Redirect("mapao.aspx");
                 }
                     else
                     {
+                        mensagem = "Dados Incorretos";
                         ++contaErros;
                         logando = null;
                         if (contaErros >= 5)

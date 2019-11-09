@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySql.Data.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace TCC.Classes
         {
             string sql = "INSERT INTO log(id, acao, tempo, id_user) VALUES (NULL," +
                 "'" + log.Acao + "'," +
-                "'" + log.Tempo + "'," +
+                "'" + log.Tempo.ToString("yyyy/MM/dd hh:mm:ss") + "'," +
                 "" + log.IdUser + "" +
                 ") ";
             MySqlConnection conn = new Conn().conectar();
@@ -57,5 +58,19 @@ namespace TCC.Classes
             log.IdUser = reader.GetInt32(3);
             return log;
         }
+
+
+        public void logit(string acao, int idUser)
+        {
+            DateTime agora = DateTime.Now;
+            Log lg = new Log();
+            lg.Acao = acao;
+            lg.IdUser = idUser;
+            lg.Tempo = agora;
+            insertLog(lg);
+        }
+
+
+
     }
 }
