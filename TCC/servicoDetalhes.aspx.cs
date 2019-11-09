@@ -14,8 +14,8 @@ namespace TCC
         public int servicoget = 1;
         public string nomeEmpresa = " - ";
         public string nomeCliente = " - ";
-        public double valor = " A definir ";
-        public datetime dataEstimada  = " A definir ";
+        public double valor = 0.0;
+        public DateTime dataEstimada;
         protected void Page_Load(object sender, EventArgs e)
         {
 
