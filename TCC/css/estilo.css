@@ -9,10 +9,14 @@ body {
 	margin-top: 25px;
 }
 
+.logoMenor {
+	border-radius: 25px;
+}
+
 .top_int {
 	width: 1300px;
 	height: 120px;
-	background-color: #2a7382;
+	background-color: #5937c2;
 	margin: auto;
 	text-align: center;
 	line-height: 120px;
@@ -29,7 +33,7 @@ body {
 .top_int_cliente {
 	width: 100%;
 	height: 120px;
-	background-color: #2a7382;
+	background-color: #5937c2;
 	margin: auto;
 	text-align: center;
 	line-height: 120px;
@@ -64,13 +68,15 @@ body {
 .conteudo_index_cliente_int {
 	width: 100%;
 	min-height: 600px;
+	padding: 50px;
 	height: auto;
 	margin: auto;
 	text-align: center;
 }
 .conteudo_solicitacao_cliente_int {
 	width: 100%;
-	height: 600px;
+	min-height: 600px;
+	height: auto;
 	margin: auto;
 	text-align: center;
 	padding: 25px;
@@ -78,7 +84,7 @@ body {
 
 .conteudo_solicitacao_cliente_int {
 	width: 100%;
-	height: 600px;
+	height: auto;
 	margin: auto;
 	text-align: center;
 }
@@ -95,9 +101,6 @@ body {
 	width: 70%;
 	height: 600px;
 	float: left;
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-top: 50px;
 }
 
 -----------------------------------
@@ -280,4 +283,14 @@ tbody tr:hover {
 .equipe {
 	width: 100px;
 	border-radius: 50px;
+}
+
+.chat_empresa {
+	background-color: #55a1ed;
+	color: black;
+}
+
+.chat_cliente {
+	background-color: #5ae0a8;
+	color: black;
 }

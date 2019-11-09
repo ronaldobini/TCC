@@ -51,18 +51,20 @@ namespace TCC.Classes
             conn.Close();
             return chatMs;
         }
-        public ChatMensagem selectChatMIdChatC(int id)
+        public List<ChatMensagem> selectChatMIdChatC(int id)
         {
             string sql = "SELECT * FROM chat_mensagens WHERE id_chat_contrato = " + id;
             ChatMensagem chatM = new ChatMensagem();
+            List<ChatMensagem> chatMs = new List<ChatMensagem>();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
             while (reader.Read() && reader.HasRows)
             {
                 chatM = preencherChatM(reader);
+                chatMs.Add(chatM);
             }
             conn.Close();
-            return chatM;
+            return chatMs;
         }
         private ChatMensagem preencherChatM(MySqlDataReader reader)
         {

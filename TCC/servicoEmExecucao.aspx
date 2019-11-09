@@ -129,7 +129,7 @@
 				      <td><%=datIni %></td>
 				      <td><%=datFim %></td>                        
 				      <td><%=situ %></td>
-				      <td><a href="servico.aspx"><img src="imgs/more.png"></a></td>
+				      <td><a href="servicoDetalhes.aspx"><img src="imgs/more.png"></a></td>
 				    </tr>
 
 <%

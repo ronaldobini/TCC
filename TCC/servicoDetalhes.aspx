@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="servicoDetalhes.aspx.cs" Inherits="TCC.servicoDetalhes" %>
 
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,81 +21,100 @@
   </div>
 
   <div class="menu">
-    <div class="menu_int">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+		<div class="menu_int">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			  
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
 
-        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="indexPrestador.html">Lista de Pedidos <span class="sr-only">(página atual)</span></a>
-            </li>
+			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item">
+			        <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
+			      </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="PedidosAceitos.html">Pedidos Aceitos <span class="sr-only">(página atual)</span></a>
-            </li>
+			      <li class="nav-item active">
+			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+			      </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="pedidosEmExecucao.html">Pedidos Em Execução <span class="sr-only">(página atual)</span></a>
-            </li>
+                   <li class="nav-item">
+			        <a class="nav-link" href="servicosFinalizados.aspx">Serviços Finalizados <span class="sr-only">(página atual)</span></a>
+			      </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="cadastrarColaborador.html">Cadastrar Colaborador <span class="sr-only">(página atual)</span></a>
-            </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="servicoCadastro.aspx">Gerenciar Serviços <span class="sr-only">(página atual)</span></a>
+			      </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="gerenciarColaboradores.html">Gerenciar Colaboradores <span class="sr-only">(página atual)</span></a>
-            </li>
+                   <li class="nav-item">
+			        <a class="nav-link" href="empresaColaboradores.aspx">Gerenciar Colaboradores <span class="sr-only">(página atual)</span></a>
+			      </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="saldoEmpresa.html">Saldo da Empresa <span class="sr-only">(página atual)</span></a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="crudServico.html">Gerenciamento de Serviços<span class="sr-only">(página atual)</span></a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
-            <button class="btn btn-outline-danger" type="submit">Sair</button>
-          </form>
-        </div>
-      </nav>
-    </div>
-  </div>
+                   <li class="nav-item">
+			        <a class="nav-link" href="empresaFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
+			      </li>
+			    </ul>
+                   <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
+			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
+			      <button class="btn btn-outline-danger" type="submit">Sair</button>
+			    </form>
+			  </div>
+			</nav>
+		</div>
+	</div>
   
   <div class="conteudo_relatorio_cliente">
     <div class="conteudo_solicitacao_cliente_int">
       
         <br><br>
         <div class="panel">
-          <form>
+          <form runat="server">
             <div class="form-row">
-              <div class="form-group col-md-3">
-                <label for="inputEmail4">Empresa</label>
+              <div class="form-group col-md-2">
+                <label for="inputEmail4">Situação:</label>
+                <font color="blue"><%=sitS %></font>
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputEmail4">Empresa:</label>
                 <font color="blue"><%=nomeEmpresa %></font>
               </div>
-              <div class="form-group col-md-3">
-                  <label for="inputPassword4">Cliente</label>
+              <div class="form-group col-md-2">
+                  <label for="inputPassword4">Cliente:</label>
                   <font color="blue"><%=nomeCliente %></font>
               </div>
-              <div class="form-group col-md-3">
-                  <label for="inputPassword4">Preço</label>
-                  <font color="red"><%=valor %></font>
+              <div class="form-group col-md-2">
+                  <label for="inputPassword4">Preço:</label>
+                  <asp:textbox id="txValor" runat="server" ></asp:textbox>
               </div>
-              <div class="form-group col-md-3">
-                  <label for="inputPassword4">Previsão de Término</label>
-                  <font color="red"><%=dataEstimada %></font>
+              <div class="form-group col-md-2">
+                  <label for="inputPassword4">Previsão:</label>
+                  <asp:textbox id="txDataEstimada" runat="server" ></asp:textbox>
               </div>
             </div>
+              <br /><br /><br />
             <div class="form-row">            
-              <div class="form-group col-md-5">
+              <div class="form-group col-md-6">
                 <label for="inputEmail4">Descrição Cliente</label> <br>
-                <textarea rows="6" cols="100" disabled>
+                <textarea rows="6" cols="100" <%=disabled %>>
                 <%=descUsu %>
                 </textarea>
+              </div>
+              <div class="form-group col-md-4">
+                <table id="funcs">
+                    <tr><th style="width:100px;">Nome Técnico</th><th style="width:100px;">Formação</th><th style="width:100px;">Cpf</th><th style="width:100px;">Tel</th></tr>
+                    <%  
+                        foreach (var tec in listaEmpServ)
+                        {
+
+                            TCC.Classes.UsuarioEmpresa ue = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(tec.IdTec);
+                            TCC.Classes.Usuario uu = new TCC.Classes.UsuarioDAO().selectUser(tec.IdTec);
+                    %>
+                        <tr><td><%=uu.Nome %></td><td><%=ue.Formacao %></td><td><%=uu.Cpf %></td><td><%=uu.Tel1 %></td></tr>
+                    <%
+                        }
+
+                     %>
+                </table>
               </div>
             </div>
           </form>
@@ -110,26 +131,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="chat_empresa">
-              <th scope="row"><img src="">Bla bla bla bla (Empresa)</th>
-              <th scope="row"></th>
-            </tr>
+              <%
+                  foreach (var msg in listaChat) {
+                      
+                            TCC.Classes.Usuario uum = new TCC.Classes.UsuarioDAO().selectUser(msg.IdUser);
+                      TCC.Classes.UsuarioEmpresa uem = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(msg.IdUser);
+              %>
             <tr class="chat_cliente">
               <th scope="row"></th>
-              <th scope="row">Blo blo blo blo (Cliente)</th>
-            </tr>
-            <tr class="chat_empresa">
-              <th scope="row">Bla bla bla bla (Empresa)</th>
-              <th scope="row"></th>
-            </tr>
-            <tr class="chat_empresa">
-              <th scope="row">Bla bla bla bla (Empresa)</th>
-              <th scope="row"></th>
-            </tr>
-            <tr class="chat_cliente">
-              <th scope="row"></th>
-              <th scope="row">Blo blo blo blo (Cliente)</th>
-            </tr>
+              <th scope="row"><%=uum.Nome %> (<%=uem.Funcao %>): <%=msg.Mensagem %> </th>
+            </tr>     
+              <%
+                  }
+              %>
           </tbody>
         </table>
 
