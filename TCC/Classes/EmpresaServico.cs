@@ -30,7 +30,9 @@ namespace TCC.Classes
 
         public int Id { get => id; set => id = value; }
         public int IdEmp { get => idEmp; set => idEmp = value; }
+        public Empresa Empresa { get; set; }
         public int IdCat { get => idCat; set => idCat = value; }
+        public Categoria Categoria { get; set; }
         public string Desc { get => desc; set => desc = value; }
         public double ValorAprox { get => valorAprox; set => valorAprox = value; }
         public string TempoAprox { get => tempoAprox; set => tempoAprox = value; }

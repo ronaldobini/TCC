@@ -30,7 +30,9 @@ namespace TCC.Classes
 
         public int Id { get => id; set => id = value; }
         public int IdChatC { get => idChatC; set => idChatC = value; }
+        public ChatContrato ChatContrato { get; set; }
         public int IdUser { get => idUser; set => idUser = value; }
+        public Usuario Usuario { get; set; }
         public DateTime Tempo { get => tempo; set => tempo = value; }
         public string Mensagem { get => mensagem; set => mensagem = value; }
         public int Situacao { get => situacao; set => situacao = value; }

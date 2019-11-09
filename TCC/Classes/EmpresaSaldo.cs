@@ -9,6 +9,7 @@ namespace TCC.Classes
     {
         private int id;
         private int idEmp;
+        public Empresa empresa { get; set; }
         private double saldoLiberado;
         private double saldoPendente;
         private double saldoTotalHistorico;

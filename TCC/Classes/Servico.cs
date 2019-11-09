@@ -60,11 +60,15 @@ namespace TCC.Classes
         }
 
         public int Id { get => id; set => id = value; }
+        public Usuario Usuario { get; set; }
         public int IdUser { get => idUser; set => idUser = value; }
+        public Empresa Empresa { get; set; }
         public int IdEmp { get => idEmp; set => idEmp = value; }
+        public UsuarioEmpresa Representante { get; set; }
         public int IdRepresEmp { get => idRepresEmp; set => idRepresEmp = value; }
         public DateTime DataIni { get => dataIni; set => dataIni = value; }
         public int IdCat { get => idCat; set => idCat = value; }
+        public EmpresaServico EmpresaServico { get; set; }
         public int IdEmpSer { get => idEmpSer; set => idEmpSer = value; }
         public string DescUser { get => descUser; set => descUser = value; }
         public int Prioridade { get => prioridade; set => prioridade = value; }

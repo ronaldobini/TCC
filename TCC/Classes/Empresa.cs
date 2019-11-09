@@ -10,8 +10,11 @@ namespace TCC.Classes
     {
         private int id;
         private int idDiretor;
+        public UsuarioEmpresa diretor { get; set; }
         private int idComercial;
+        public UsuarioEmpresa representanteComercial { get; set; }
         private int idTecnico;
+        public UsuarioEmpresa representateTecnico { get; set; }
         private string cnpj;
         private string razaoSocial;
         private string tel1;
@@ -23,6 +26,7 @@ namespace TCC.Classes
         private string lat;
         private string lon;
         private int idCidade;
+        public Cidade cidade { get; set; }
         private MySqlDateTime inicioEmpresa;
         private string descEmpresa;
         private int qtdFuncionarios;

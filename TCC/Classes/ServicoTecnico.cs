@@ -28,7 +28,9 @@ namespace TCC.Classes
 
         public int Id { get => id; set => id = value; }
         public int IdServ { get => idServ; set => idServ = value; }
+        public Servico Servico { get; set; }
         public int IdTec { get => idTec; set => idTec = value; }
+        public UsuarioEmpresa Tecnico{ get; set; }
         public int RepServ { get => repServ; set => repServ = value; }
         public string ObsUser { get => obsUser; set => obsUser = value; }
     }
