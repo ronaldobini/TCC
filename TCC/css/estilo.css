@@ -88,6 +88,11 @@ body {
 	margin: auto;
 	text-align: center;
 }
+.conteudo_solicitacao_cliente_int2 {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
 
 .conteudo_index_cliente_int_l {
 	width: 30%;
@@ -141,6 +146,13 @@ body {
 
 .solicitacaoPrestador_int {
 	padding: 60px;
+}
+
+.solicitacaoPrestador_int2 {
+    padding-top: 0px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .img_map {
@@ -293,4 +305,17 @@ tbody tr:hover {
 .chat_cliente {
 	background-color: #5ae0a8;
 	color: black;
+}
+.center-md6 {
+    margin-left: 25%;
+}
+
+.footer-good {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }

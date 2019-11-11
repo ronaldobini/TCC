@@ -84,7 +84,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cadastrarServico.aspx" />
     <Content Include="empresaCadastro.aspx" />
+    <Content Include="gerenciarServicos.aspx" />
     <Content Include="loginEmpresa.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="old_cliente.aspx" />
@@ -173,6 +175,13 @@
     <Content Include="index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cadastrarServico.aspx.cs">
+      <DependentUpon>cadastrarServico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cadastrarServico.aspx.designer.cs">
+      <DependentUpon>cadastrarServico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Categoria.cs" />
     <Compile Include="Classes\CategoriaDAO.cs" />
     <Compile Include="Classes\ChatContrato.cs" />
@@ -212,6 +221,13 @@
     </Compile>
     <Compile Include="empresaCadastro.aspx.designer.cs">
       <DependentUpon>empresaCadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gerenciarServicos.aspx.cs">
+      <DependentUpon>gerenciarServicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gerenciarServicos.aspx.designer.cs">
+      <DependentUpon>gerenciarServicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="loginEmpresa.aspx.cs">
       <DependentUpon>loginEmpresa.aspx</DependentUpon>

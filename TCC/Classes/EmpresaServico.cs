@@ -13,12 +13,13 @@ namespace TCC.Classes
         private string desc;
         private double valorAprox;
         private string tempoAprox;
+        private string tags;
 
         public EmpresaServico()
         {
         }
 
-        public EmpresaServico(int id, int idEmp, int idCat, string desc, double valorAprox, string tempoAprox)
+        public EmpresaServico(int id, int idEmp, int idCat, string desc, double valorAprox, string tempoAprox,string tags)
         {
             this.id = id;
             this.idEmp = idEmp;
@@ -26,6 +27,7 @@ namespace TCC.Classes
             this.desc = desc;
             this.valorAprox = valorAprox;
             this.tempoAprox = tempoAprox;
+            this.tags = tags;
         }
 
         public int Id { get => id; set => id = value; }
@@ -36,5 +38,6 @@ namespace TCC.Classes
         public string Desc { get => desc; set => desc = value; }
         public double ValorAprox { get => valorAprox; set => valorAprox = value; }
         public string TempoAprox { get => tempoAprox; set => tempoAprox = value; }
+        public string Tags { get; set; }
     }
 }

@@ -8,10 +8,10 @@ namespace TCC.Classes
 {
     public class CategoriaDAO
     {
-        public Categoria selectCat(Categoria cat)
+        public Categoria selectCat(int id)
         {
-            string sql = "SELECT * FROM categoria WHERE id = " + cat.Id;
-
+            string sql = "SELECT * FROM categoria WHERE id = " + id;
+            Categoria cat = new Categoria();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
             while (reader.Read() && reader.HasRows)

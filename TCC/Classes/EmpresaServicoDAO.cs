@@ -10,14 +10,8 @@ namespace TCC.Classes
     {
         public void insertEmpServ(EmpresaServico empServ)
         {
-            string sql = "INSERT INTO empresa_servicos(id, id_empresa, id_categoria, descricao, valor_aprox, tempo_aprox) " +
-                "VALUES (NULL," +
-                "" + empServ.IdEmp + "," +
-                "" + empServ.IdCat + "," +
-                "" + empServ.Desc + "," +
-                "" + empServ.ValorAprox + "," +
-                "" + empServ.TempoAprox + "" +
-                ") ";
+            string sql = "INSERT INTO empresa_servicos(id, id_empresa, id_categoria, descricao, valor_aprox, tempo_aprox,tags) " +
+                "VALUES (NULL," + empServ.Empresa.Id+ "," + empServ.Categoria.Id+ ", \" "+ empServ.Desc + "\"," +  empServ.ValorAprox + ",\""+empServ.TempoAprox + "\",\""+empServ.Tags+"\") ";
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
             conn.Close();
@@ -25,12 +19,7 @@ namespace TCC.Classes
         public void updateEmpServ(EmpresaServico empServ)
         {
             string sql = "UPDATE empresa_servicos " +
-                "SET id_empresa = " + empServ.IdEmp + "," +
-                "id_categoria = " + empServ.IdCat + "," +
-                "descricao = " + empServ.Desc + "," +
-                "valor_aprox = " + empServ.ValorAprox + "," +
-                "tempo_aprox = " + empServ.TempoAprox + "" +
-                " WHERE id = " + empServ.Id + " ";
+                "SET id_empresa = " + empServ.Empresa.Id + ",id_categoria = " + empServ.Categoria.Id + ",descricao =\"" + empServ.Desc + "\",valor_aprox = " + empServ.ValorAprox + ",tempo_aprox = \"" + empServ.TempoAprox + "\" WHERE id = " + empServ.Id ;
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
             conn.Close();
@@ -42,18 +31,18 @@ namespace TCC.Classes
             new Conn().executar(sql, conn);
             conn.Close();
         }
-        public EmpresaServico selectEmpServ(EmpresaServico empServ)
+        public EmpresaServico selectEmpServ(int idSerivco)
         {
-            string sql = "SELECT * FROM empresa_servicos WHERE id = " + empServ.Id;
-
+            string sql = "SELECT * FROM empresa_servicos WHERE id = " + idSerivco;
+            EmpresaServico servico = new EmpresaServico();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
             while (reader.Read() && reader.HasRows)
             {
-                empServ = preencherEmpServ(reader);
+                servico = preencherEmpServ(reader);
             }
             conn.Close();
-            return empServ;
+            return servico;
         }
         public string selectDescPorId(int id)
         {
