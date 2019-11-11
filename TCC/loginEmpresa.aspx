@@ -45,7 +45,7 @@
 
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
-			<img src="logoTeste.png" width="350"> <br>
+			<img src="imgs/logoTeste.png" width="350"> <br>
 			<h3>Logue como empresa!</h3>
 			<br>
 			<form method="POST" action="#" runat="server">

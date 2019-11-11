@@ -21,6 +21,7 @@ namespace TCC
             {
                 Response.Redirect("loginEmpresa.aspx");
             }
+            Session["editando"] = 0;
             int idEmpresa = (int)Session["sIdEmp"];
             listaDeServicos = banco.selectEmpServPorIDEmp(idEmpresa);
         }
@@ -31,11 +32,13 @@ namespace TCC
             {
                 Response.Redirect("loginEmpresa.aspx");
             }
-
+            Session["editando"] = 4;
             string nameOfControl = (sender as HtmlAnchor).Name.ToString();
             
             int idEmpresa = (int)Session["sIdEmp"];
             listaDeServicos = banco.selectEmpServPorIDEmp(idEmpresa);
+            int i = servico.Id;
+            Response.Redirect("cadastrarServico.aspx");
         }
 
         protected void Remover(object sender, EventArgs e)

@@ -75,7 +75,7 @@
                 </a>
                 <br>
                 <br>
-
+                <form method="POST" action="#" runat="server">
                 <table class="table table-dark">
                     <thead>
                         <tr>
@@ -97,16 +97,24 @@
                             <td><%=servico.ValorAprox %></td>
                             <td><%=servico.TempoAprox %></td>
                             <td>
-                                <a href="cadastrarServico.aspx?Id=<%=servico.Id %>" onserverclick="editar"   data-value="<%=servico.Id%>">
+                                <a href="" runat="server" onserverclick="Editar"  data-value="<%=servico.Id%>">
+                                <img src="imgs/edit.png" ></a>
+                            </td>
+                            <td>
+                                <a href="" runat="server" onserverclick="Remover"  data-value="<%=servico.Id%>">
+                                <img src="imgs/x-button.png" id="btn-confirm" ></a>
+                                <%--<a href="cadastrarServico.aspx?Id=<%=servico.Id %>" onserverclick="editar"   data-value="<%=servico.Id%>">
                                 <img src="imgs/edit.png" ></a></td>
                             <td><a href="" data-value="<%=servico.Id%>">
-                                <img src="imgs/x-button.png" id="btn-confirm" ></a></td>
+                                <img src="imgs/x-button.png" id="btn-confirm" ></a></td>--%>
+                            </td>
                         </tr>
                         <%
                             }
                         %>
                     </tbody>
                 </table>
+                    </form>
             </div>
         </div>
     </div>
@@ -130,7 +138,7 @@
     <br>
  	  <footer id="sticky-footer" class="py-4 bg-dark text-white-50 footer-good">
     <div class="container text-center">
-      <small>Copyright &copy; Your Website</small>
+      <small>Copyright &copy; Servitiba</small>
     </div>
   </footer>
     <script>

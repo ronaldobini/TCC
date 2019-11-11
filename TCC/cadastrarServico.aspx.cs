@@ -70,5 +70,9 @@ namespace TCC
             Response.Redirect("gerenciarServicos.aspx");
 
         }
+        public void Editar(object sender, EventArgs e)
+        {
+            int i = 1;
+        }
     }
 }

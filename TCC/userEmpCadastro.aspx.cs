@@ -46,10 +46,10 @@ namespace TCC
             //postFunc = funcao.Value;
             //postFormacao = formacao.Value;
             int idEmp = 2;
-            //if ((int)Session["empId"] != null)
-            //{
-            //    idEmp = (int)Session["empIp"];
-            //}
+            if (Session["empId"] != null)
+            {
+                idEmp = (int)Session["empId"];
+            }
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
             
             Usuario user = new Usuario(0,postLogin,postSenha, postNome,postEmail,postCpf,postTel,postCel,postEnd,postNum,postComplemento,
@@ -60,6 +60,7 @@ namespace TCC
 
             new UsuarioEmpresaDAO().insertUserEmp(userEmp);
 
+            Response.Redirect("loginEmpresa.aspx");
 
         }
     }

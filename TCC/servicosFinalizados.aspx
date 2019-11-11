@@ -42,7 +42,7 @@
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="servicoCadastro.aspx">Gerenciar Serviços <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="gerenciarServicos.aspx">Gerenciar Serviços <span class="sr-only">(página atual)</span></a>
 			      </li>
 
                    <li class="nav-item">

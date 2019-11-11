@@ -102,9 +102,14 @@
                         </div>
                     </div>
 
-
-
-                    <button type="submit" runat="server" onserverclick="SubmitForm" class="btn btn-primary">Cadastrar</button>
+                    <% if (Session["editando"] != null && (int)Session["editando"] == 0)
+                             { %>
+                        <button type="submit" runat="server" onserverclick="SubmitForm" class="btn btn-primary">Cadastrar</button>
+                     <% }
+                             else
+                             { %>
+                        <button type="submit" runat="server" onserverclick="Editar" class="btn btn-primary">Editar</button>
+                    <%} %>
                 </form>
                 <br />
                 <br />
