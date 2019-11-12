@@ -8,20 +8,25 @@
     <title></title>
 </head>
 <body>
+
+
+
     <form id="form1" runat="server">
-        <div>
-            <%
-                foreach (var emp in lista)
-                {
-                    %>
+        
+         <asp:button id="bt1"
+           Text="texto"
+           CommandName="comando1"
+           CommandArgument="popozao"
+           OnCommand="clicou" 
+           runat="server"/>
 
-                        <p><%=emp.DescEmpresa %></p>            
+         
 
-                    <%
-                }
-
-            %>
-        </div>
     </form>
+
+
+   
+
+    <%=url %>
 </body>
 </html>
