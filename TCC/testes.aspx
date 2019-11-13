@@ -9,14 +9,14 @@
 </head>
 <body>
 
-
+   
 
     <form id="form1" runat="server">
         
          <asp:button id="bt1"
            Text="texto"
            CommandName="comando1"
-           CommandArgument="popozao"
+           CommandArgument='<%=var %>'
            OnCommand="clicou" 
            runat="server"/>
 
@@ -24,9 +24,9 @@
 
     </form>
 
-
+    <%=url %>
    
 
-    <%=url %>
+  
 </body>
 </html>

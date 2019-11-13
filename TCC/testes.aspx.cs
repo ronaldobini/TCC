@@ -14,6 +14,8 @@ namespace TCC
     {
 
         public List<Empresa> lista = new List<Empresa>();
+        public string var = "ssss";
+
         public string url = "-";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -29,6 +31,7 @@ namespace TCC
         {
 
             url = e.CommandArgument.ToString();
+            int i = 9;
 
         }
 

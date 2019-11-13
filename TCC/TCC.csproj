@@ -86,6 +86,7 @@
   <ItemGroup>
     <Content Include="cadastrarServico.aspx" />
     <Content Include="empresaCadastro.aspx" />
+    <Content Include="empresaDetalhes.aspx" />
     <Content Include="gerenciarServicos.aspx" />
     <Content Include="loginEmpresa.aspx" />
     <Content Include="Logout.aspx" />
@@ -221,6 +222,13 @@
     </Compile>
     <Compile Include="empresaCadastro.aspx.designer.cs">
       <DependentUpon>empresaCadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="empresaDetalhes.aspx.cs">
+      <DependentUpon>empresaDetalhes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empresaDetalhes.aspx.designer.cs">
+      <DependentUpon>empresaDetalhes.aspx</DependentUpon>
     </Compile>
     <Compile Include="gerenciarServicos.aspx.cs">
       <DependentUpon>gerenciarServicos.aspx</DependentUpon>

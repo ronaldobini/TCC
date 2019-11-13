@@ -99,9 +99,9 @@ namespace TCC.Classes
             conn.Close();
             return empServ;
         }
-        public List<EmpresaServico> selectAllEmpresaSaldo()
+        public List<EmpresaServico> selectAllServicoPorEmpresa(int idEmpresa)
         {
-            string sql = "SELECT * FROM empresa_servicos";
+            string sql = "SELECT * FROM empresa_servicos WHERE id_empresa = "+idEmpresa;
             List<EmpresaServico> empServs = new List<EmpresaServico>();
             EmpresaServico empServ = new EmpresaServico();
             MySqlDataReader reader = null;
