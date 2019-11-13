@@ -87,20 +87,27 @@
 				  </thead>
 				  <tbody>
                        <%
-                            foreach (var col in colaboradores)
-                            {
-
+                           int count = 0;
+                           foreach (var col in colaboradores)
+                           {
                         %>
 				    <tr>
-				      <th scope="row"><%col.Id %></th>
-				      <td><%col.Nome%></td>
-				      <td><%col.Funcao%></td>
-				      <td><%col.DataCadastro%></td>
-				      <td><a href="verDadosColaborador.html"><img src="binoculars.png"></a></td>
-				      <td><a href="editarColaborador.html"><img src="edit.png"></a></td>
-				      <td><a href=""><img src="delete.png"></a></td>
+				      <th scope="row"><%=col.Id %></th>
+				      <td><%=col.Nome%></td>
+				      <td><%=col.UserEmp.Funcao%></td>
+				      <td><%=col.DataCadastro%></td>
+				      <td><a href="verDadosColaborador.html"><img src="imgs/binoculars.png"></a></td>
+				      <td><a href="editarColaborador.html"><img src="imgs/edit.png"></a></td>
+				      <td><a href=""><img src="imgs/delete.png"></a></td> 
+                        
+                            <%  Response.Write("<asp:ImageButton id=" + col.Id + " runat='server'" +
+                          " AlternateText='ImageButton 1'" +
+                          " ImageUrl='imgs/delete.png'" +
+                          " OnClick='ImageButton_Click'/>"); %>
+
 				    </tr>
-                      <%} %>
+                      <%
+                          } %>
 				  </tbody>
 				</table>
 			</div>

@@ -27,7 +27,7 @@ namespace TCC
             string loginPost = loginC.Value;
             string senhaPost = senhaC.Value;
             Usuario user = new Usuario(0,loginPost, senhaPost, nomePost, emailPost, cpfPost, "tel1","tel2",
-                endPost,numPost,"complemento","cep",new Cidade(),"0.0", new MySqlDateTime(), new MySqlDateTime(), 0, 0, 0);
+                endPost,numPost,"complemento","cep",new Cidade(),"0.0", new MySqlDateTime(), new MySqlDateTime(), 0, 0, 0,null);
 
             new UsuarioDAO().insertUser(user);
         }

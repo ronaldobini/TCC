@@ -108,9 +108,10 @@ namespace TCC.Classes
             conn.Close();
             return userEmp;
         }
-        public UsuarioEmpresa selectUserIdEmpresa(int idEmpresa)
+        public List<UsuarioEmpresa> selectUsersIdEmpresa(int idEmpresa)
         {
             string sql = "SELECT * FROM usuario_empresa WHERE id_empresa = '" + idEmpresa + "'";
+            List<UsuarioEmpresa> usersEmp = new List<UsuarioEmpresa>();
             UsuarioEmpresa userEmp = new UsuarioEmpresa();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
@@ -120,6 +121,7 @@ namespace TCC.Classes
                 while (reader.Read() && reader.HasRows)
                 {
                     userEmp = preencherUserEmp(reader);
+                    usersEmp.Add(userEmp);
                 }
             }
             else
@@ -129,7 +131,7 @@ namespace TCC.Classes
                 //userEmp.Senha = "!!xxxxxxx!!";
             }
             conn.Close();
-            return userEmp;
+            return usersEmp;
         }
 
         public List<UsuarioEmpresa> selectAllUsers()

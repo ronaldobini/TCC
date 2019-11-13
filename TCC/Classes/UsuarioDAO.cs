@@ -175,6 +175,7 @@ namespace TCC.Classes
             user.ErrosSenha = reader.GetInt32(16);
             user.Block = reader.GetInt32(17);
             user.Nivel = reader.GetInt32(18);
+            user.UserEmp = new UsuarioEmpresaDAO().selectUserIdUser(user.Id);
             return user;
         }
 
