@@ -85,8 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cadastrarServico.aspx" />
+    <Content Include="empresaColaboradores.aspx" />
     <Content Include="empresaCadastro.aspx" />
-    <Content Include="empresaDetalhes.aspx" />
     <Content Include="gerenciarServicos.aspx" />
     <Content Include="loginEmpresa.aspx" />
     <Content Include="Logout.aspx" />
@@ -216,19 +216,19 @@
     <Compile Include="Classes\MapPoint.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\UsuarioDAO.cs" />
+    <Compile Include="empresaColaboradores.aspx.cs">
+      <DependentUpon>empresaColaboradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empresaColaboradores.aspx.designer.cs">
+      <DependentUpon>empresaColaboradores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="empresaCadastro.aspx.cs">
       <DependentUpon>empresaCadastro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="empresaCadastro.aspx.designer.cs">
       <DependentUpon>empresaCadastro.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="empresaDetalhes.aspx.cs">
-      <DependentUpon>empresaDetalhes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="empresaDetalhes.aspx.designer.cs">
-      <DependentUpon>empresaDetalhes.aspx</DependentUpon>
     </Compile>
     <Compile Include="gerenciarServicos.aspx.cs">
       <DependentUpon>gerenciarServicos.aspx</DependentUpon>
