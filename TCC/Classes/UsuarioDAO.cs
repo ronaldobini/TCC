@@ -70,9 +70,9 @@ namespace TCC.Classes
             conn.Close();
         }
 
-        public void deleteUser(Usuario user)
+        public void deleteUser(int id)
         {
-            string sql = "DELETE FROM usuario WHERE id = " + user.Id;
+            string sql = "DELETE FROM usuario WHERE id = " + id;
 
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);

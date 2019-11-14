@@ -44,85 +44,121 @@
 	<div class="conteudo_pagina_cadastro">
 		<div class="conteudo_pagina_cadastro_int">
 			<img src="logoTeste.png" width="100"><br>
-			<h3>Cadastre o Gerente da Empresa!</h3>
-			
+            <%if (id == -1)
+                {
+                    %>
+			<h3>Cadastre o Gerente da Empresa</h3>
+			<% }
+                else{
+
+                    %>
+            <h3>Editar Colaborador</h3>
+			<% }
+                %>
 			<form method="POST" action="#" runat="server">
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="login">Login</label>
-			      <input type="text" runat="server" class="form-control" id="login" placeholder="Login">
+                    <asp:TextBox ID="login" class="form-control"  placeholder="Endereço" runat="server"></asp:TextBox>
+			      <%--<input type="text" runat="server" class="form-control" id="login" placeholder="Login">--%>
 			    </div>
 			    <div class="form-group col-md-6">
 			      <label for="senha">Senha</label>
-			      <input type="password" runat="server" class="form-control" id="senha" placeholder="Senha">
+                    <asp:TextBox ID="senha" class="form-control"  placeholder="Endereço" runat="server"></asp:TextBox>
+			      <%--<input type="password" runat="server" class="form-control" id="senha" placeholder="Senha">--%>
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="nomCompleto">Nome Completo</label>
-			      <input type="text" runat="server" class="form-control" id="nomCompleto" placeholder="Nome completo">
+                    <asp:TextBox ID="nomCompleto" class="form-control"  placeholder="Endereço" runat="server"></asp:TextBox>
+			      <%--<input type="text" runat="server" class="form-control" id="nomCompleto" placeholder="Nome completo">--%>
 			    </div>
 			    <div class="form-group col-md-6">
 			      <label for="email">E-mail</label>
-			      <input type="email" runat="server" class="form-control" id="email" placeholder="exemplo@exemplo.com.br">
+                    <asp:TextBox ID="email" class="form-control"  placeholder="Endereço" runat="server"></asp:TextBox>
+			      <%--<input type="email" runat="server" class="form-control" id="email" placeholder="exemplo@exemplo.com.br">--%>
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="cpf">CPF</label>
-			      <input type="text" runat="server" class="form-control" id="cpf" placeholder="Apenas números">
+                    <asp:TextBox ID="cpf" class="form-control"  placeholder="Endereço" runat="server"></asp:TextBox>
+			      <%--<input type="text" runat="server" class="form-control" id="cpf" placeholder="Apenas números">--%>
 			    </div>
 			    <div class="form-group col-md-6">
 			      <label for="cep">CEP</label>
-			      <input type="text" runat="server" class="form-control" id="cep" placeholder="Apenas números">
+                    <asp:TextBox ID="cep" class="form-control"  placeholder="Endereço" runat="server"></asp:TextBox>
+			      <%--<input type="text" runat="server" class="form-control" id="cep" placeholder="Apenas números">--%>
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="endereco">Endereço</label>
-			      <input type="text" runat="server" class="form-control" id="endereco" placeholder="Endereço">
+                    <asp:TextBox ID="endereco" class="form-control"  placeholder="Endereço" runat="server"></asp:TextBox>
+			      <%--<input type="text" runat="server" class="form-control" id="endereco" placeholder="Endereço">--%>
 			    </div>
 			    <div class="form-group col-md-2">
 			      <label for="complemento">Complemento</label>
-			      <input type="text" runat="server" class="form-control" id="complemento" placeholder="Complemento">
+                    <asp:TextBox ID="complemento" class="form-control"  placeholder="Casa" runat="server"></asp:TextBox>
+			      <%--<input type="text" runat="server" class="form-control" id="complemento" placeholder="Complemento">--%>
 			    </div>
 			    <div class="form-group col-md-4">
 			      <label for="numero">Número</label>
-			      <input type="text" runat="server" class="form-control" id="numero" placeholder="Número">
+                    <asp:TextBox ID="numero" class="form-control"  placeholder="123" runat="server"></asp:TextBox>
+			      <%--<input type="text" runat="server" class="form-control" id="numero" placeholder="Número">--%>
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="tel">Telefone</label>
-			      <input type="tel" runat="server" class="form-control" id="tel" placeholder="xxxx-xxxx">
+                    <asp:TextBox ID="tel" class="form-control telefone"  placeholder="(XX)x xxxx-xxxx" runat="server"></asp:TextBox>
+			      <%--<input type="tel" runat="server" class="form-control" id="tel" placeholder="xxxx-xxxx">--%>
 			    </div>
 			    <div class="form-group col-md-6">
 			      <label for="cel">Celular</label>
-			      <input type="text" runat="server" class="form-control telefone" id="cel" placeholder="(XX)x xxxx-xxxx">
+                    <asp:TextBox ID="cel" class="form-control telefone"  placeholder="(XX)x xxxx-xxxx" runat="server"></asp:TextBox>
+			      <%--<input type="text" runat="server" class="form-control telefone" id="cel" placeholder="(XX)x xxxx-xxxx">--%>
+
 			    </div>
-			  </div> <br>
+			  </div>
 
 			  <div class="form-row">
-			    <select class="form-control col-md-4">
-			    	<option>Cidade...</option>
-			    </select>
-			    <select class="form-control col-md-4">
-			    	<option>Função...</option>
-			    </select>
-			    <select class="form-control col-md-4">
-			    	<option>Formação...</option>
-			    </select>
-			  </div><br>
+			    <asp:DropDownList id="cidadesDD" Runat="Server">
+                  <asp:ListItem/>
+                </asp:DropDownList>
 
-			  
+			    <%--<select class="form-control col-md-4">
+			    	<option>Função...</option>
+			    </select>--%>
+			      <label for="cel">Funçao</label>
+                 <asp:TextBox ID="funcao" class="form-control"  placeholder="Funçao" runat="server"></asp:TextBox>
+			    <%--<select class="form-control col-md-4">
+			    	<option>Formação...</option>
+			    </select>--%>
+			      <label for="cel">Formaçao</label>
+                  <asp:TextBox ID="formacao" class="form-control"  placeholder="Formaçao" runat="server"></asp:TextBox>
+			  </div>
+
+			  <%if (id == -1)
+                {
+                    %>
 			  <button type="submit" runat="server" onserverclick="cadastrar"  class ="btn btn-success">Cadastrar Empresa</button>
-			  <small id="emailHelp" class="form-text text-muted">Sua empresa já é cadastrada? <a href="loginEmpresa.html">Faça Login</a>!</small>
-			  <small id="emailHelp" class="form-text text-muted">Não tem login? Solicite ao seu superior!</small>
+			<% }
+                else{
+
+                    %>
+			  <button type="submit" runat="server" onserverclick="editar" class ="btn btn-success">Editar</button>
+			<% }
+                %>
+
+			  <small id="a" class="form-text text-muted">Sua empresa já é cadastrada? <a href="loginEmpresa.html">Faça Login</a>!</small>
+			  <small id="b" class="form-text text-muted">Não tem login? Solicite ao seu superior!</small>
 			</form>
 		</div>		
 	</div>

@@ -90,21 +90,21 @@
                            int count = 0;
                            foreach (var col in colaboradores)
                            {
+                               string linkEdit = "userEmpCadastro.aspx?id=" + col.Id;
+                               string id = col.Nome;
                         %>
 				    <tr>
 				      <th scope="row"><%=col.Id %></th>
 				      <td><%=col.Nome%></td>
 				      <td><%=col.UserEmp.Funcao%></td>
 				      <td><%=col.DataCadastro%></td>
-				      <td><a href="verDadosColaborador.html"><img src="imgs/binoculars.png"></a></td>
-				      <td><a href="editarColaborador.html"><img src="imgs/edit.png"></a></td>
-				      <td><a href=""><img src="imgs/delete.png"></a></td> 
-                        
-                            <%  Response.Write("<asp:ImageButton id=" + col.Id + " runat='server'" +
-                          " AlternateText='ImageButton 1'" +
-                          " ImageUrl='imgs/delete.png'" +
-                          " OnClick='ImageButton_Click'/>"); %>
-
+				      <td><a href="verDadosColaborador.html"><img src="imgs/binoculars.png"/></a></td>
+				      <td><a href="<%=linkEdit %>"><img src="imgs/edit.png"/></a></td>
+				      <td><a href="deletarColaborador.html"><img src="imgs/delete.png"/></a></td>
+                        <%--asp:ImageButton ID='d_<%=id%>'
+                            ImageUrl="imgs/delete.png"
+                            AlternateText="No Image available"
+                            OnClick="ImageButton_Click" runat="server" /> --%>
 				    </tr>
                       <%
                           } %>

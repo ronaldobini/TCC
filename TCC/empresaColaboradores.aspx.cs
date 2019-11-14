@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TCC.Classes;
+using System.Data;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace TCC
 {
@@ -21,21 +24,19 @@ namespace TCC
             Session["editando"] = 0;
             int idEmpresa = (int)Session["sIdEmp"];
             List<UsuarioEmpresa> colUserEmp = new UsuarioEmpresaDAO().selectUsersIdEmpresa(idEmpresa);
+            
             foreach (var cue in colUserEmp)
             {
                 colaboradores.Add(new UsuarioDAO().selectUser(cue.IdUsuario));
             }
             string massa = "testando";
+
+
         }
-        protected void ImageButton_Click(object sender, EventArgs e)
+        protected void remove(object sender, EventArgs e)
         {
-            sender.ToString();
-            e.ToString();
-            if (Session["sIdEmp"] == null)
-            {
-                Response.Redirect("loginEmpresa.aspx");
-            }
-            int idEmpresa = (int)Session["sIdEmp"];
+            int id = 0;
+            new UsuarioDAO().deleteUser(id);
         }
     }
 }
