@@ -59,20 +59,19 @@ namespace TCC.Classes
 
         }
 
-        public string executar(string sql, MySqlConnection conn)
+        public bool executar(string sql, MySqlConnection conn)
         {
-            string result = "-";
+            
             try
             {
                 MySqlCommand command = new MySqlCommand(sql, conn);
                 command.ExecuteNonQuery();
-                result = "OK comando sql executado com sussesso";
+                return true;
             }
             catch (Exception e)
             {
-                result = "ERRO: " + e;
+                return false;
             }
-            return result;
         }
         public MySqlDataReader consultar(string sql, MySqlConnection conn)
         {

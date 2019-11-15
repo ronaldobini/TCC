@@ -69,7 +69,7 @@
             <div class="solicitacaoPrestador_int">
                 <br />
                 <br />
-                <form runat="server">
+                <form method="post" action="#" runat="server">
                     <div class="container ">
 
                         <div class="form-group ">
@@ -102,13 +102,13 @@
                         </div>
                     </div>
 
-                    <% if (Session["editando"] != null && (int)Session["editando"] == 0)
+                    <% if (servico.Id== 0)
                              { %>
-                        <button type="submit" runat="server" onserverclick="SubmitForm" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" runat="server" onserverclick="Cadastrar" class="btn btn-primary">Cadastrar</button>
                      <% }
                              else
                              { %>
-                        <button type="submit" runat="server" onserverclick="Editar" class="btn btn-primary">Editar</button>
+                        <button type="submit" runat="server" onserverclick="Editar" class="btn btn-primary">Salvar</button>
                     <%} %>
                 </form>
                 <br />

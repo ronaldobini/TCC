@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <%
+         <%--   <%
                 if (funcao.Equals("delUser"))
                 {
 
@@ -22,7 +22,7 @@
                     %>
             <button type="submit" runat="server" onserverclick="deleteSolicUser"  class ="btn btn-success">Excluir Solicitacao</button>
             <%}%>
-            <%--<button type="submit" runat="server" onserverclick="voltar"  class ="btn btn-success">Voltar</button>--%>
+            <%--<button type="submit" runat="server" onserverclick="voltar"  class ="btn btn-success">Voltar</button>--%>--%>
         </div>
     </form>
 </body>

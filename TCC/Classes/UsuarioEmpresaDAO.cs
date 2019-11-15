@@ -25,7 +25,10 @@ namespace TCC.Classes
                 ");";
 
             MySqlConnection conn = new Conn().conectar();
-            string msg = new Conn().executar(sql, conn);
+            if (new Conn().executar(sql, conn))
+            {
+                string msg = "Sucesso ao cadastrar usuario";
+            }
             conn.Close();
 
         }
