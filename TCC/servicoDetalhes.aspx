@@ -34,7 +34,7 @@
 			        <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item active">
+			      <li class="nav-item ">
 			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
 			      </li>
 
@@ -51,7 +51,10 @@
 			      </li>
 
                    <li class="nav-item">
-			        <a class="nav-link" href="empresaFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="gerenciarFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
+			      </li>
+                     <li class="nav-item active">
+			        <a class="nav-link" >Detalhes Serviço <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
                    <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
@@ -70,6 +73,14 @@
         <div class="panel">
           <form runat="server">
             <div class="form-row">
+              <div class="form-group col-md-2">
+                <label for="inputEmail4">Num. Serviço:</label>
+                <font color="blue"><%=servicoget %></font>
+              </div>
+                <div class="form-group col-md-2">
+                <label for="inputEmail4">Desc. Serviço:</label>
+                <font color="blue"><%=descServ %></font>
+              </div>
               <div class="form-group col-md-2">
                 <label for="inputEmail4">Situação:</label>
                 <font color="blue"><%=sitS %></font>

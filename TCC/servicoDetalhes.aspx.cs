@@ -12,6 +12,7 @@ namespace TCC
     {
 
         public int servicoget = 0;
+        public string descServ = "-";
         public string nomeEmpresa = " - ";
         public string nomeCliente = " - ";
         public double valor = 0.0;
@@ -31,6 +32,7 @@ namespace TCC
                 Servico serv = new ServicoDAO().selectServico(servicoget);
                 Empresa emp = new EmpresaDAO().selectEmp(serv.IdEmp);
                 Usuario usu = new UsuarioDAO().selectUser(serv.IdUser);
+                descServ = new EmpresaServicoDAO().selectDescPorId(serv.IdEmpSer);
                 listaEmpServ = new ServicoTecnicoDAO().selectServTecsServ(serv.Id);
                 ChatContrato chatContrato = new ChatContratoDAO().selectChatCIdServ(serv.Id);
 

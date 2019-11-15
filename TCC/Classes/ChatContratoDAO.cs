@@ -93,10 +93,17 @@ namespace TCC.Classes
         private ChatContrato preencherChatC(MySqlDataReader reader)
         {
             ChatContrato chatC = new ChatContrato();
-            chatC.Id = reader.GetInt32(0);
-            chatC.IdServ = reader.GetInt32(1);
-            chatC.IdUser = reader.GetInt32(2);
-            chatC.IdUserEmp = reader.GetInt32(3);
+            if (reader.Read() && reader.HasRows)
+            {
+                chatC.Id = reader.GetInt32(0);
+                chatC.IdServ = reader.GetInt32(1);
+                chatC.IdUser = reader.GetInt32(2);
+                chatC.IdUserEmp = reader.GetInt32(3);
+            }
+            else
+            {
+
+            }
             return chatC;
         }
     }
