@@ -20,7 +20,7 @@
 		</div>
 	</div>
    
-	<div class="menu">
+	 <div class="menu">
 		<div class="menu_int">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			  
@@ -30,21 +30,26 @@
 
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item">
-			        <a class="nav-link" href="indexCliente.html">Buscar Serviço <span class="sr-only">(página atual)</span></a>
+			      <li class="nav-item active">
+			        <a class="nav-link" href="mapao.aspx">Buscar Serviço <span class="sr-only">(página atual)</span></a>
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="solicitacoesCliente.html">Solicitações <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="solicitacoesCliente.aspx">Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item">
-			        <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
-			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
-			      <button class="btn btn-outline-danger" type="submit">Sair</button>
-			    </form>
+			    
+<% if (Session["sId"] == null){ %>
+                    <a href="cadastroCliente.aspx" style="margin-right:30px;"> <button class="btn btn-primary" type="submit">Cadastre-se para solicitar um serviço</button></a>
+			        <a href="loginCliente.aspx"> <button class="btn btn-outline-success" type="submit">Login</button></a>
+                    
+<% }else{ %>
+                    <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %></font></a>
+                    <a href="Logout.aspx"><button class="btn btn-outline-danger">Sair</button></a>
+<% } %>
+			      
+			    
 			  </div>
 			</nav>
 		</div>

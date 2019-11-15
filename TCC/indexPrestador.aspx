@@ -116,6 +116,7 @@
 
         string servico = new TCC.Classes.EmpresaServicoDAO().selectDescPorId(idEmpSer);
 
+        string linkServDet = "servicoDetalhes.aspx?idSerDet="+idServico;
 
 
 %>
@@ -129,7 +130,7 @@
 				      <td><%=resumo %></td>
 				      <td><%=dataFimEst %></td> 
 				      <td><a href=""><img src="imgs/checked.png"></a> --- <a href=""><img src="imgs/x-button.png"></a></td>
-				      <td><a href="servicoDetalhes.aspx"><img src="imgs/more.png"></a></td>
+				      <td><a href="<%=linkServDet %>"><img src="imgs/more.png"></a></td>
 				    </tr>	
                       
 <%

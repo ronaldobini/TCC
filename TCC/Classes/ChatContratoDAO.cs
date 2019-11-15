@@ -63,6 +63,21 @@ namespace TCC.Classes
             conn.Close();
             return chatCs;
         }
+
+        public int selectUltimoId()
+        {
+            string sql = "SELECT * FROM chat_contrato order by id desc";
+            int contrato = 0;
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            if (reader.Read() && reader.HasRows)
+            {
+                contrato = reader.GetInt32(0);
+            }
+            conn.Close();
+            return contrato;
+        }
+
         public ChatContrato selectChatCIdServ(int id)
         {
             string sql = "SELECT * FROM chat_contrato WHERE id_servico = " + id;

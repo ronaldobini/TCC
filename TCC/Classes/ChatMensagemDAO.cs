@@ -14,9 +14,9 @@ namespace TCC.Classes
                 "VALUES(NULL," +
                 "" + chatM.IdChatC + "," +
                 "" + chatM.IdUser + "," +
-                "" + chatM.Tempo + "," +
-                "" + chatM.Mensagem + "," +
-                "" + chatM.Situacao + "," +
+                " '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "', " + // Data Agora
+                "'" + chatM.Mensagem + "'," +
+                "" + chatM.Situacao + "" +
                 ")";
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
