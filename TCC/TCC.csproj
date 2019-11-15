@@ -88,6 +88,7 @@
     <Content Include="excluir.aspx" />
     <Content Include="empresaColaboradores.aspx" />
     <Content Include="empresaCadastro.aspx" />
+    <Content Include="empresaDetalhes.aspx" />
     <Content Include="gerenciarServicos.aspx" />
     <Content Include="imgs\conversation.png" />
     <Content Include="imgs\saposentado.png" />
@@ -169,6 +170,7 @@
     <Content Include="loginCliente.aspx" />
     <Content Include="mapao.aspx" />
     <Content Include="prestador.aspx" />
+    <Content Include="servicoContratar.aspx" />
     <Content Include="servicoDetalhes.aspx" />
     <Content Include="servicoEmExecucao.aspx" />
     <Content Include="servicosFinalizados.aspx" />
@@ -241,6 +243,13 @@
     <Compile Include="empresaCadastro.aspx.designer.cs">
       <DependentUpon>empresaCadastro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="empresaDetalhes.aspx.cs">
+      <DependentUpon>empresaDetalhes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="empresaDetalhes.aspx.designer.cs">
+      <DependentUpon>empresaDetalhes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="gerenciarServicos.aspx.cs">
       <DependentUpon>gerenciarServicos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -304,6 +313,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="servicoContratar.aspx.cs">
+      <DependentUpon>servicoContratar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="servicoContratar.aspx.designer.cs">
+      <DependentUpon>servicoContratar.aspx</DependentUpon>
     </Compile>
     <Compile Include="servicoDetalhes.aspx.cs">
       <DependentUpon>servicoDetalhes.aspx</DependentUpon>

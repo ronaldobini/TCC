@@ -13,12 +13,13 @@
 	<title>Buscar Serviço</title>
 </head>
 <body>
+    <center>
     <div class="top_cliente">
 		<div class="top_int_cliente">
 			<img src="logo.png" height="120">
 		</div>
 	</div>
-
+   
 	<div class="menu">
 		<div class="menu_int">
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -51,33 +52,44 @@
 	
 	<div class="conteudo_index_cliente">
 		<div class="conteudo_index_cliente_int">
-			Detalhes da empresa selecionada
+             
+			Contratar:
+            <hr />
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <table>
-                        <tr><th>Serviço</th><th>Contratar</th></tr>
+                        <tr><th style="width:200px;">Serviço</th><th style="width:200px;">Preço Médio</th><th style="width:200px;">Tempo Médio</th><th style="width:200px;">Contratar</th></tr>
                         <%foreach (var serv in servs)
-                            { %>
+                            {
+                                string linkContratar = "servicoContratar.aspx?idEmpEsc="+(getEmpresaMapa)+"&idSerEsc="+(serv.Id);
+                                int i = 0;
+                        %>
 
-                        <tr><td><%=serv.Desc %></td><td>CONTRATAR</td></tr>                        
+                        
+
+                        <tr><td><%=serv.Desc %></td><td><%=serv.ValorAprox %></td><td><%=serv.TempoAprox %></td><td><a href="<%=linkContratar %>">Contratar </a></td></tr>                        
                         
                         <% } %>
                     </table>
                 </div>
             </div>
+            <br /><br /><br /><br />
 
 
+            Detalhes:
+            <hr />
 
 			  <div class="form-row">
+                  <div class="form-group col-md-2">
+			      <label for="inputPassword4">Razão Social</label><br>
+			      <font color="blue"><h3><%=razaoSocial %></h3></font>
+			    </div>
 			    <div class="form-group col-md-2">
 			      <label for="inputEmail4">CNPJ</label><br>
 			      <font color="blue"><%=cnpj %></font>
 			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputPassword4">Razão Social</label><br>
-			      <font color="blue"><%=razaoSocial %></font>
-			    </div>
+			    
                  <div class="form-group col-md-2">
 			     <label for="inputEmail4">Diretor</label><br>
 			     <font color="blue"><%=diretor %></font>

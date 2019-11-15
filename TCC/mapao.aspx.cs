@@ -45,7 +45,9 @@ namespace TCC
                     {
                         string servicosEmp = pegarSevicos(empresa.Id, catPost);
                         int repMedia = (empresa.RepAtendimento + empresa.RepQualidade + empresa.RepTempo) / 3;
-                        listaPontos.Add(new MapPoint(empresa.Lat, empresa.Lon, empresa.RazaoSocial, empresa.DescEmpresa + "<br>" + servicosEmp, repMedia, 1, 1));
+                        int limitDesc = 1;
+                        if (empresa.DescEmpresa.Length > 12) limitDesc = 12; else limitDesc = empresa.DescEmpresa.Length;
+                        listaPontos.Add(new MapPoint(empresa.Lat, empresa.Lon, empresa.RazaoSocial, empresa.DescEmpresa.Substring(0, limitDesc) +"(...)" + "<br>" + servicosEmp, repMedia, 1, empresa.Id));
                     }
                     
                 }
