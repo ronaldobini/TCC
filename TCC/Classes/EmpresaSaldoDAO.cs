@@ -27,7 +27,7 @@ namespace TCC.Classes
                 "SET id_empresa = " + empSal.IdEmp + "," +
                 "saldo_liberado = " + empSal.SaldoLiberado + "," +
                 "saldo_pendente = " + empSal.SaldoPendente + "," +
-                "salto_total_historico = " + empSal.SaldoTotalHistorico + "" +
+                "saldo_total_historico = " + empSal.SaldoTotalHistorico + "" +
                 " WHERE id = " + empSal.Id + " ";
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
@@ -39,19 +39,6 @@ namespace TCC.Classes
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
             conn.Close();
-        }
-        public EmpresaSaldo selectEmpSaldo(EmpresaSaldo empSal)
-        {
-            string sql = "SELECT * FROM empresa_saldo WHERE id = " + empSal.Id;
-
-            MySqlConnection conn = new Conn().conectar();
-            MySqlDataReader reader = new Conn().consultar(sql, conn);
-            while (reader.Read() && reader.HasRows)
-            {
-                empSal = preencherEmpSaldo(reader);
-            }
-            conn.Close();
-            return empSal;
         }
         
         public List<EmpresaSaldo> selectEmpresaSaldosPorIDEmp(int id)
@@ -71,14 +58,14 @@ namespace TCC.Classes
             return empSals;
         }
 
-        //teste
+
         public EmpresaSaldo selectSaldoEmpresa(int idEmp)
         {
-            string sql = "SELECT * FROM empresa_saldo WHERE id = " + idEmp;
+            string sql = "SELECT * FROM empresa_saldo WHERE id_empresa = " + idEmp;
             EmpresaSaldo empSal = new EmpresaSaldo();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
-            while (reader.Read() && reader.HasRows)
+            if (reader.Read() && reader.HasRows)
             {
                 empSal = preencherEmpSaldo(reader);
             }

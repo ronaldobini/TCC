@@ -84,18 +84,24 @@
 				  </thead>
 				  <tbody>
 <%
-
+    
     foreach (var serv in servsDB)
     {
 
         int idServico = serv.Id;
+        string link = "servicoDetalhes.aspx?idSerDet=" + idServico;
         int idCliente = serv.IdUser;
-        int idEmpSer = serv.IdEmpSer;
-        string resumo = serv.DescUser;
-        DateTime datIni = serv.DataIni;
-        DateTime datFim = serv.DataFim;
-        int sit = serv.Sit;
 
+        TCC.Classes.Usuario user = new TCC.Classes.UsuarioDAO().selectUser(idCliente);
+        string cliente = user.Nome;
+
+        int idEmpSer = serv.IdEmpSer;
+        string servico = new TCC.Classes.EmpresaServicoDAO().selectDescPorId(idEmpSer);
+
+        double valor = serv.Valor;
+        DateTime datIni = serv.DataIni;
+
+        int sit = serv.Sit;
         string situ = "-";
         if (sit == 1)
         {
@@ -103,28 +109,21 @@
         }else if (sit == 2)
         {
             situ = "<font color=blue>Aguardando Aceite</font>";
-        }else if (sit == -1)
+        }else if (sit == 3)
         {
-            situ = "<font color=red>Problemas</font>";
+            situ = "<font color=green>Finalizado</font>";
         }
-
-        TCC.Classes.Usuario user = new TCC.Classes.UsuarioDAO().selectUser(idCliente);
-        string cliente = user.Nome;
-
-        string servico = new TCC.Classes.EmpresaServicoDAO().selectDescPorId(idEmpSer);
-
 
 
 %>
 				    <tr>
 				      <th scope="row"><%=idServico %></th>
-				      <td><%=cliente %></td>
 				      <td><%=servico %></td>
-				      <td><%=resumo %></td>
-				      <td><%=datIni %></td>
-				      <td><%=datFim %></td>                        
+				      <td><%=cliente %></td>
+				      <td><%=valor %></td>
+				      <td><%=datIni %></td>                      
 				      <td><%=situ %></td>
-				      <td><a href="servicoDetalhes.aspx"><img src="imgs/more.png"></a></td>
+				      <td><a href="<%=link%>"><img src="imgs/more.png"></a></td>
 				    </tr>
 
 <%
@@ -162,14 +161,14 @@
 				      </div>
 				      <div class="modal-body">
 				        <div>
-				        	<form>
+				        	<form runat="server">
 				        		Conta: <input type="text" name=""/> <br/><br/>
 				        		Agência: <input type="text" name=""/> <br/><br/>
 				        		Operação: <input type="text" name=""/> <br/><br/>
 				        		Banco: <input type="text" name=""/> <br/><br/>
-                                Valor: <input type="text" name=""/> <br/><br/>
+                                Valor: <input runat="server" id="valor" type="text" name="valor"/> <br/><br/>
 
-				        		<input type="submit" name="" value="Confirmar" class="btn btn-success"/>
+				        		<input runat="server" onserverclick="atualizarSaldo" type="submit" name="" value="Confirmar"  class="btn btn-success"/>
 
 				        	</form>
 				        </div>
