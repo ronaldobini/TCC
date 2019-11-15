@@ -38,7 +38,7 @@ namespace TCC.Classes
             mapPoint = "{ position: new google.maps.LatLng(" + lat + ", " + lon + "),type: '" + tipoS + "'," +
                 "infos: '<b>" + titulo + " </b><br>" + servicos + " <br><br> " +
                 "Reputacao: " + reputacaoMedia + "<br>" + notaBarra +
-                "<br><a href=contratar.aspx?empresa=" + idEmpresa + ">Detalhes </a>' }";
+                "<br><a href=empresaDetalhes.aspx?idEmpDet=" + idEmpresa + ">Detalhes </a>' }";
 
 
         }

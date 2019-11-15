@@ -11,7 +11,9 @@ namespace TCC
     public partial class empresaDetalhes : System.Web.UI.Page
     {
 
-        public int getEmpresaMapa = 2;
+        
+
+        public int getEmpresaMapa = 0;
 
         public string cnpj = "-";
         public string razaoSocial = "-";
@@ -39,36 +41,50 @@ namespace TCC
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Request.QueryString["idEmpDet"] != null)
+            {
+                getEmpresaMapa = Int32.Parse(Request.QueryString["idEmpDet"]);
 
-            Empresa emp = new EmpresaDAO().selectEmp(getEmpresaMapa);
+                Empresa emp = new EmpresaDAO().selectEmp(getEmpresaMapa);
 
-            cnpj = emp.Cnpj;
-            razaoSocial = emp.RazaoSocial;
-            telefone1 = emp.Tel1;
-            telefone2 = emp.Tel2;
-            endereco = emp.Endereco;
-            numero = emp.Numero.ToString();
-            complemento = emp.Complemento;
-            cep = emp.Cep;
-            qtdFunc = emp.QtdFuncionarios.ToString();
-            repQ = emp.RepQualidade.ToString();
-            repA = emp.RepAtendimento.ToString();
-            repT = emp.RepTempo.ToString();
-            cadastro = emp.DataCadastro.ToString();
-            descricao = emp.DescEmpresa;
-
-
-
-            Usuario ueDiretor = new UsuarioDAO().selectUser(emp.IdDiretor);
-            Usuario ueComercial = new UsuarioDAO().selectUser(emp.IdComercial);
-            Usuario ueTecnico = new UsuarioDAO().selectUser(emp.IdTecnico);
+                cnpj = emp.Cnpj;
+                razaoSocial = emp.RazaoSocial;
+                telefone1 = emp.Tel1;
+                telefone2 = emp.Tel2;
+                endereco = emp.Endereco;
+                numero = emp.Numero.ToString();
+                complemento = emp.Complemento;
+                cep = emp.Cep;
+                qtdFunc = emp.QtdFuncionarios.ToString();
+                repQ = emp.RepQualidade.ToString();
+                repA = emp.RepAtendimento.ToString();
+                repT = emp.RepTempo.ToString();
+                cadastro = emp.DataCadastro.ToString();
+                descricao = emp.DescEmpresa;
 
 
-            diretor = ueDiretor.Nome;
-            comercial = ueComercial.Nome;
-            tecnico = ueTecnico.Nome;
 
-            servs = new EmpresaServicoDAO().selectAllServicoPorEmpresa(emp.Id);
+                Usuario ueDiretor = new UsuarioDAO().selectUser(emp.IdDiretor);
+                Usuario ueComercial = new UsuarioDAO().selectUser(emp.IdComercial);
+                Usuario ueTecnico = new UsuarioDAO().selectUser(emp.IdTecnico);
+
+
+                diretor = ueDiretor.Nome;
+                comercial = ueComercial.Nome;
+                tecnico = ueTecnico.Nome;
+
+                servs = new EmpresaServicoDAO().selectAllServicoPorEmpresa(emp.Id);
+
+
+            }
+            else
+            {
+                razaoSocial = "ERRO AO OBTER A EMPRESA A PARTIR DO MAPA";
+                descricao = "ERRO AO OBTER A EMPRESA A PARTIR DO MAPA";
+            }
+
+
+            
 
 
 
