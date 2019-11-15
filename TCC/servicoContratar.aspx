@@ -63,10 +63,10 @@
             <div class="form-group ">
                 <label for="descricao">O que você espera do serviço?</label>
                 <br>                            
-                <asp:TextBox type="text" runat="server" rows="6" cols="85" class="form-control col-md-6 " style="margin-left: 25%;" id="descuser" placeholder="(...)"></asp:TextBox>
+                <asp:TextBox type="text" runat="server" class="form-control col-md-6 " style=" width:30%;" id="descuser" placeholder="(...)"></asp:TextBox>
             </div>
 
-            <Button runat="server" onserverclick="cadastrarServ"/>
+            <Button runat="server" class="btn btn-primary" onserverclick="cadastrarServ">Solicitar Serviço</Button>
 
         </div>
     </form>

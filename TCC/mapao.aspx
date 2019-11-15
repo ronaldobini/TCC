@@ -73,13 +73,11 @@
 			        <a class="nav-link" href="solicitacoesCliente.aspx">Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item">
-			        <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
-			      </li>
 			    </ul>
 			    
 <% if (Session["sId"] == null){ %>
-			        <a href="loginCliente.aspx"> <button class="btn btn-outline-success" type="submit">Logue para solicitar um serviço</button></a>
+                    <a href="cadastroCliente.aspx" style="margin-right:30px;"> <button class="btn btn-primary" type="submit">Cadastre-se para solicitar um serviço</button></a>
+			        <a href="loginCliente.aspx"> <button class="btn btn-outline-success" type="submit">Login</button></a>
                     
 <% }else{ %>
                     <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %></font></a>

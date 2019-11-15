@@ -61,10 +61,11 @@ namespace TCC
         public void cadastrarServ(object sender, EventArgs e)
         {
             string descUser = descuser.Text;
-            int i = 0;
-            Servico novoServ = new Servico(0,(int)Session["sId"],getEmpresaEscolhida,emp.IdComercial,new DateTime(),serv.IdCat,serv.Id,descUser,0,serv.ValorAprox, new DateTime(), new DateTime(), 0,0,0,0,0,0,"-","-");
+            Categoria cat = new Categoria();
+            cat.Id = serv.IdCat;
+            Servico novoServ = new Servico(0,(int)Session["sId"],getEmpresaEscolhida,emp.IdComercial,new DateTime(),cat,serv.Id,descUser,0,serv.ValorAprox, new DateTime(), new DateTime(), 0,0,0,0,0,0,"-","-");
             new ServicoDAO().insertServico(novoServ);
-            //insertservico
+            Response.Redirect("solicitacoesCliente.aspx");
         }
 
 

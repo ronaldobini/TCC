@@ -19,35 +19,40 @@
         </div>
     </div>
 
-    <div class="menu">
-        <div class="menu_int">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="menu">
+		<div class="menu_int">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			  
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item ">
+			        <a class="nav-link" href="mapao.aspx">Buscar Serviço <span class="sr-only">(página atual)</span></a>
+			      </li>
 
-                <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="indexCliente.html">Buscar Serviço <span class="sr-only">(página atual)</span></a>
-                        </li>
+			      <li class="nav-item active">
+			        <a class="nav-link" href="solicitacoesCliente.aspx">Solicitações <span class="sr-only">(página atual)</span></a>
+			      </li>
 
-                        <li class="nav-item active">
-                            <a class="nav-link" href="solicitacoesCliente.html">Solicitações <span class="sr-only">(página atual)</span></a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
-                        <button class="btn btn-outline-danger" type="submit">Sair</button>
-                    </form>
-                </div>
-            </nav>
-        </div>
-    </div>
+			    </ul>
+			    
+<% if (Session["sId"] == null){ %>
+                    <a href="cadastroCliente.aspx"> <button class="btn" type="submit">Cadastra-se para solicitar um serviço</button></a>
+			        <a href="loginCliente.aspx"> <button class="btn btn-outline-success" type="submit">Login</button></a>
+                    
+<% }else{ %>
+                    <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %></font></a>
+                    <a href="Logout.aspx"><button class="btn btn-outline-danger">Sair</button></a>
+<% } %>
+			      
+			    
+			  </div>
+			</nav>
+		</div>
+	</div>
 
     <div class="conteudo_solicitacoes_cliente">
         <div class="conteudo_solicitacao_cliente_int">
@@ -102,27 +107,32 @@
                             <%if (sol.Sit == 0) //Em solicitacao/negociacao para aceite da empresa
                                 {
                             %>
-                            <img src="imgs/pause.png">
+                            <img src="imgs/circular-clock.png">
                             <%}
                                 else if (sol.Sit == 1) //Aceito pela empresa/em execucao
                                 {
                             %>
-                            <img src="imgs/checked.png">
+                            <img src="imgs/play.png">
                             <%}
                                 else if (sol.Sit == 2) //Executado pela empresa/esperando aceite do user
                                 {
                             %>
-                            <img src="imgs/saposentado.png">
+                            <img src="imgs/circular-clock.png">
                             <%}
                                 else if (sol.Sit == 3) //Fechado
                                 {
                             %>
-                            <img src="imgs/saposentado.png">
+                            <img src="imgs/checked.png">
                             <%}
-                                else if (sol.Sit == -1) //Em discussao/problemas juridicos
+                                else if (sol.Sit == -1) //Negado
                                 {
                             %>
-                            <img src="imgs/saposentado.png">
+                            <img src="imgs/x-button.png">
+                            <%}
+                                else if (sol.Sit == -2) //Em discussao/problemas juridicos
+                                {
+                            %>
+                            <img src="imgs/pause.png">
                             <%}
                             %>
                                 </td>

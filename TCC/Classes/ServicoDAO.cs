@@ -19,21 +19,22 @@ namespace TCC.Classes
         public void insertServico(Servico serv)
         {
             //Vou deixar bem separado o que é oq pra ficar mais claro
-            string sql = "INSERT INTO servico (id, id_usuairo, id_empresa, id_repres_empresa, data_inicio, id_categoria, id_empresa_servico," +
+            string sql = "INSERT INTO servico (id, id_usuario, id_empresa, id_repres_empresa, data_inicio, id_categoria, id_empresa_servico," +
                 "descricao_usuario,prioridade, valor, data_fim_estimada,data_fim, situacao, aceite_usuario, aceite_empresa," +
-                "reputacao_tempo, reputacao_qualidade,reputacao_atendimento, obs_finais_usuario	,obs_finais_empresa) " +
+                "reputacao_tempo, reputacao_qualidade,reputacao_atendimento, obs_finais_usuario, obs_finais_empresa) " +
                 " VALUES( " +
                 " NULL, " +
                 "" + serv.IdUser + "," +
                 "" + serv.IdEmp + "," +
                 "" + serv.IdRepresEmp + "," +
-                "" + serv.DataIni.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
+                "'" + serv.DataIni.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
                 "" + serv.Categoria.Id + "," +
                 "" + serv.IdEmpSer + "," +
                 "'" + serv.DescUser + "'," +
                 "" + serv.Prioridade + "," +
                 "" + serv.Valor + "," +
-                "" + serv.DataFim.ToString("MM/dd/yyyy HH:mm:ss") + "," +
+                "'" + serv.DataFimEst.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
+                "'" + serv.DataFim.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
                 "" + serv.Sit + "," +
                 "" + serv.AceiteUser + "," +
                 "" + serv.AceiteEmp + "," +
