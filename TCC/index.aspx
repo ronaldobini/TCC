@@ -42,7 +42,7 @@
 
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
-			<img src="imgs/logoTeste.png" width="350"> <br><br>
+			<img src="imgs/logoComprida.png" width="650"> <br><br>
 			<form method="POST" action="mapao.aspx">
 				<div class="form-group">
 					<input type="" name="" placeholder="Nome Completo" class="form-control"> <br><br>
@@ -64,36 +64,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="imgs/logoTeste.png" width="250"> </a></h2>
+                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="imgs/logoSimples.png" width="250"> </a></h2>
                 </div>
-                <div class="col-sm-2">
-                    <h5>Inicio</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Home</a></li>
-                        <li><a href="https://bit.ly/front-end-curso-completo-promocao-01">Cursos</a></li>
-                        <li><a href="https://programadorviking.com.br/">Downloads</a></li>
-                    </ul>
+                <div class="col-sm-2"><br /><br /><br />
+                    <h3>Inicio</h3>
                 </div>
-                <div class="col-sm-2">
-                    <h5>Sobre-nós</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Informações da Empresa</a></li>
-                        <li><a href="https://programadorviking.com.br/">Contato</a></li>
-                        <li><a href="https://programadorviking.com.br/">Blog</a></li>
-                    </ul>
+                <div class="col-sm-2"><br /><br /><br />
+                    <h3>Sobre-nós</h3>
                 </div>
-                <div class="col-sm-2">
-                    <h5>Suporte</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">FAQ</a></li>
-                        <li><a href="https://programadorviking.com.br/">Telefones</a></li>
-                        <li><a href="https://programadorviking.com.br/">Chat</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <a href="https://programadorviking.com.br/">
-                        <button type="button" class="btn btn-default">Contato</button>
-                    </a>
+                <div class="col-sm-2"><br /><br /><br />
+                    <h3>Suporte</h3>
                 </div>
             </div>
         </div>

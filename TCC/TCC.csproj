@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cadastrarServico.aspx" />
+    <Content Include="contato.aspx" />
     <Content Include="excluir.aspx" />
     <Content Include="empresaColaboradores.aspx" />
     <Content Include="empresaCadastro.aspx" />
@@ -223,6 +224,13 @@
     <Compile Include="Classes\MapPoint.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\UsuarioDAO.cs" />
+    <Compile Include="contato.aspx.cs">
+      <DependentUpon>contato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contato.aspx.designer.cs">
+      <DependentUpon>contato.aspx</DependentUpon>
+    </Compile>
     <Compile Include="excluir.aspx.cs">
       <DependentUpon>excluir.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
