@@ -148,7 +148,7 @@ namespace TCC.Classes
 
         public List<Empresa> selectAllEmps()
         {
-            string sql = "SELECT * FROM empresa";
+            string sql = "SELECT * FROM empresa WHERE block = 0";
             List<Empresa> emps = new List<Empresa>();
             Empresa emp = new Empresa();
             MySqlDataReader reader = null;

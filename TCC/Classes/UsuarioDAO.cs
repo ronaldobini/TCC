@@ -72,8 +72,8 @@ namespace TCC.Classes
 
         public void deleteUser(int id)
         {
-            string sql = "DELETE FROM usuario WHERE id = " + id;
-
+            //string sql = "DELETE FROM usuario WHERE id = " + id;
+            string sql = "UPDATE usuario SET block = 1 WHERE id = " + id;
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
             conn.Close();
@@ -93,7 +93,7 @@ namespace TCC.Classes
         }
         public Usuario selectUser(int id)
         {
-            string sql = "SELECT * FROM usuario WHERE id = " + id;
+            string sql = "SELECT * FROM usuario WHERE block = 0 AND id = " + id;
             Usuario user = new Usuario();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
@@ -132,7 +132,7 @@ namespace TCC.Classes
 
         public List<Usuario> selectAllUsers()
         {
-            string sql = "SELECT * FROM usuario";
+            string sql = "SELECT * FROM usuario WHERE block = 0";
             List<Usuario> users = new List<Usuario>();
             Usuario user = new Usuario();
             MySqlDataReader reader = null;

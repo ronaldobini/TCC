@@ -21,7 +21,7 @@ namespace TCC
             {
                 Response.Redirect("loginEmpresa.aspx");
             }
-            Session["editando"] = 0;
+            
             int idEmpresa = (int)Session["sIdEmp"];
             List<UsuarioEmpresa> colUserEmp = new UsuarioEmpresaDAO().selectUsersIdEmpresa(idEmpresa);
             
@@ -29,14 +29,6 @@ namespace TCC
             {
                 colaboradores.Add(new UsuarioDAO().selectUser(cue.IdUsuario));
             }
-            string massa = "testando";
-
-
-        }
-        protected void remove(object sender, EventArgs e)
-        {
-            int id = 0;
-            new UsuarioDAO().deleteUser(id);
         }
     }
 }
