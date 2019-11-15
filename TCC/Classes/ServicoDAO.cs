@@ -28,7 +28,7 @@ namespace TCC.Classes
                 "" + serv.IdEmp + "," +
                 "" + serv.IdRepresEmp + "," +
                 "" + serv.DataIni.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
-                "" + serv.IdCat + "," +
+                "" + serv.Categoria.Id + "," +
                 "" + serv.IdEmpSer + "," +
                 "'" + serv.DescUser + "'," +
                 "" + serv.Prioridade + "," +
@@ -55,7 +55,7 @@ namespace TCC.Classes
                 "id_empresa = " + serv.IdEmp + "," +
                 "id_repres_empresa = " + serv.IdRepresEmp + "," +
                 "data_inicio = " + serv.DataIni + "," +
-                "id_categoria = " + serv.IdCat + "," +
+                "id_categoria = " + serv.Categoria.Id + "," +
                 "descricao_usuario = " + serv.DescUser + "," +
                 "prioridade = " + serv.Prioridade + "," +
                 "valor = " + serv.Valor + "," +
@@ -76,9 +76,9 @@ namespace TCC.Classes
             conn.Close();
         }
 
-        public void deleteServico(Servico serv)
+        public void deleteServico(int id)
         {
-            string sql = "DELETE FROM servico WHERE id = " + serv.Id;
+            string sql = "UPDATE servico SET situacao = -1 WHERE id = " + id;
 
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
@@ -114,7 +114,7 @@ namespace TCC.Classes
 
         public List<Servico> selectAllServs()
         {
-            string sql = "SELECT * FROM empresa";
+            string sql = "SELECT * FROM servico";
             List<Servico> servs = new List<Servico>();
             Servico serv = new Servico();
             MySqlDataReader reader = null;
@@ -135,7 +135,7 @@ namespace TCC.Classes
 
         public List<Servico> selectAllServsUser(int idUser)
         {
-            string sql = "SELECT * FROM empresa WHERE id_usuario = " + idUser;
+            string sql = "SELECT * FROM servico WHERE id_usuario = " + idUser;
             List<Servico> servs = new List<Servico>();
             Servico serv = new Servico();
             MySqlDataReader reader = null;
@@ -226,7 +226,7 @@ namespace TCC.Classes
 
         public List<Servico> selectAllServsRepresEmp(int idRepEmp)
         {
-            string sql = "SELECT * FROM empresa WHERE id_usuario = " + idRepEmp;
+            string sql = "SELECT * FROM servico WHERE id_usuario = " + idRepEmp;
             List<Servico> servs = new List<Servico>();
             Servico serv = new Servico();
             MySqlDataReader reader = null;
@@ -250,7 +250,7 @@ namespace TCC.Classes
             serv.IdEmp = reader.GetInt32(2);
             serv.IdRepresEmp = reader.GetInt32(3);
             serv.DataIni = reader.GetDateTime(4);
-            serv.IdCat = reader.GetInt32(5);
+            serv.Categoria = new CategoriaDAO().selectCat(reader.GetInt32(5));
             serv.IdEmpSer = reader.GetInt32(6);
             serv.DescUser = reader.GetString(7);
             serv.Prioridade = reader.GetInt32(8);

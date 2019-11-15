@@ -11,7 +11,16 @@
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
 
-	<title>Cadastro de Gerente</title>
+	
+    <%if (id == -1)
+                {
+                    %><title>Cadastro de Gerente</title>
+			<% }
+                else{
+
+                    %><title>Editar Colaborador</title>
+			<% }
+                %>
 </head>
 <body>
 	<div class="menu_principal">

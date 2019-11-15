@@ -89,6 +89,8 @@
     <Content Include="empresaColaboradores.aspx" />
     <Content Include="empresaCadastro.aspx" />
     <Content Include="gerenciarServicos.aspx" />
+    <Content Include="imgs\conversation.png" />
+    <Content Include="imgs\saposentado.png" />
     <Content Include="loginEmpresa.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="old_cliente.aspx" />
@@ -171,6 +173,7 @@
     <Content Include="servicoEmExecucao.aspx" />
     <Content Include="servicosFinalizados.aspx" />
     <Content Include="sobre.aspx" />
+    <Content Include="solicitacoesCliente.aspx" />
     <Content Include="testes.aspx" />
     <Content Include="userEmpCadastro.aspx" />
     <Content Include="Web.config" />
@@ -329,6 +332,13 @@
     </Compile>
     <Compile Include="sobre.aspx.designer.cs">
       <DependentUpon>sobre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="solicitacoesCliente.aspx.cs">
+      <DependentUpon>solicitacoesCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="solicitacoesCliente.aspx.designer.cs">
+      <DependentUpon>solicitacoesCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="testes.aspx.cs">
       <DependentUpon>testes.aspx</DependentUpon>

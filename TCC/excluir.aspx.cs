@@ -25,6 +25,11 @@ namespace TCC
             new UsuarioDAO().deleteUser(id);
             Response.Redirect("empresaColaboradores.aspx");
         }
+        protected void deleteSolicUser(object sender, EventArgs e)
+        {
+            new ServicoDAO().deleteServico(id);
+            Response.Redirect("solicitacoesCliente.aspx");
+        }
 
     }
 }

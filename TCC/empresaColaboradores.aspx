@@ -87,7 +87,6 @@
 				  </thead>
 				  <tbody>
                        <%
-                           int count = 0;
                            foreach (var col in colaboradores)
                            {
                                if (col.Id != 0)

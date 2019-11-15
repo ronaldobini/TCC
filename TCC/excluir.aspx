@@ -16,9 +16,12 @@
 
                 %>
 
-            <button type="submit" runat="server" onserverclick="deleteUser"  class ="btn btn-success">Excluir</button>
+            <button type="submit" runat="server" onserverclick="deleteUser"  class ="btn btn-success">Excluir Usuario</button>
             <%}
-                %>
+                else if(funcao.Equals("delSolicUser")){
+                    %>
+            <button type="submit" runat="server" onserverclick="deleteSolicUser"  class ="btn btn-success">Excluir Solicitacao</button>
+            <%}%>
             <%--<button type="submit" runat="server" onserverclick="voltar"  class ="btn btn-success">Voltar</button>--%>
         </div>
     </form>
