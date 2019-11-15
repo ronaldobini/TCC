@@ -89,6 +89,7 @@
     <Content Include="empresaColaboradores.aspx" />
     <Content Include="empresaCadastro.aspx" />
     <Content Include="empresaDetalhes.aspx" />
+    <Content Include="gerenciarFinancas.aspx" />
     <Content Include="gerenciarServicos.aspx" />
     <Content Include="imgs\conversation.png" />
     <Content Include="imgs\saposentado.png" />
@@ -249,6 +250,13 @@
     </Compile>
     <Compile Include="empresaDetalhes.aspx.designer.cs">
       <DependentUpon>empresaDetalhes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gerenciarFinancas.aspx.cs">
+      <DependentUpon>gerenciarFinancas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gerenciarFinancas.aspx.designer.cs">
+      <DependentUpon>gerenciarFinancas.aspx</DependentUpon>
     </Compile>
     <Compile Include="gerenciarServicos.aspx.cs">
       <DependentUpon>gerenciarServicos.aspx</DependentUpon>
