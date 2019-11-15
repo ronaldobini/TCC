@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.Types;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -65,6 +66,18 @@ namespace TCC
             cat.Id = serv.IdCat;
             Servico novoServ = new Servico(0,(int)Session["sId"],getEmpresaEscolhida,emp.IdComercial,new DateTime(),cat,serv.Id,descUser,0,serv.ValorAprox, new DateTime(), new DateTime(), 0,0,0,0,0,0,"-","-");
             new ServicoDAO().insertServico(novoServ);
+
+            int idNovoServ = new ServicoDAO().selectUltimoId();
+
+            ChatContrato chatNovo = new ChatContrato(0, idNovoServ, (int)Session["sId"], emp.IdComercial);
+            new ChatContratoDAO().insertChatContrato(chatNovo);
+
+            int idNovoCont = new ChatContratoDAO().selectUltimoId();
+
+            
+            ChatMensagem chatMens = new ChatMensagem(0, idNovoCont, emp.IdComercial, new DateTime(), "Obrigado pela solicitação, qualquer dúvida não hesite em perguntar!", 0);
+            new ChatMensagemDAO().insertChatM(chatMens);
+
             Response.Redirect("solicitacoesCliente.aspx");
         }
 

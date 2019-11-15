@@ -14,7 +14,8 @@ namespace TCC.Classes
         // 1 = aceito pela empresa / em execucao 
         // 2 = executado pela empresa, aguardando aceite do usuario
         // 3 = fechado
-        // -1 =  em discussao / problemas juridicos
+        // -1 =  recusado pela empresa
+        // -2 =  em discussao / problemas juridicos
 
         public void insertServico(Servico serv)
         {
@@ -49,6 +50,9 @@ namespace TCC.Classes
             new Conn().executar(sql, conn);
             conn.Close();
         }
+
+       
+
         public void updateServico(Servico serv)
         {
             string sql = "UPDATE servico " +
@@ -107,6 +111,20 @@ namespace TCC.Classes
             while (reader.Read() && reader.HasRows)
             {
                 serv = preencherServ(reader);
+            }
+            conn.Close();
+            return serv;
+        }
+
+        public int selectUltimoId()
+        {
+            string sql = "SELECT * FROM servico order by id desc";
+            int serv = 0;
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            if (reader.Read() && reader.HasRows)
+            {
+                serv = reader.GetInt32(0);
             }
             conn.Close();
             return serv;
