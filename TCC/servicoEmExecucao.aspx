@@ -104,13 +104,13 @@
         string situ = "-";
         if (sit == 1)
         {
-            situ = "<font color=orange>Pendente Cliente</font>";
+            situ = "<font color=white>Pendente Aceite / Pagamento</font>";
         }else if (sit == 2)
         {
-            situ = "<font color=blue>Executando</font>";
+            situ = "<font color=orange>Executando</font>";
         }else if (sit == 3)
         {
-            situ = "<font color=blue>Pendente Aceite Final</font>";
+            situ = "<font color=green>Pendente Aceite Final</font>";
         }else if (sit == -2)
         {
             situ = "<font color=red>Problemas</font>";
@@ -121,7 +121,7 @@
 
         string servico = new TCC.Classes.EmpresaServicoDAO().selectDescPorId(idEmpSer);
 
-
+        string linkServDet = "servicoDetalhes.aspx?idSerDet="+idServico;
 
 %>
 				    <tr>
@@ -132,7 +132,7 @@
 				      <td><%=datIni %></td>
 				      <td><%=datFim %></td>                        
 				      <td><%=situ %></td>
-				      <td><a href="servicoDetalhes.aspx"><img src="imgs/more.png"></a></td>
+				      <td><a href="<%=linkServDet %>"><img src="imgs/more.png"></a></td>
 				    </tr>
 
 <%

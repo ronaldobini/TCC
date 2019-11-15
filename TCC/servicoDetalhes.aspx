@@ -58,32 +58,7 @@
 			        <a class="nav-link" >Detalhes Serviço <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-                    <% if (sit == 0)
-                        {
-                    %>
-                            if(Session["sIdEmp"] != null){
-                                <button class="btn btn-sucess" type="submit">Atualizar</button>
-                                <button class="btn btn-sucess" type="submit">Aprovar</button>
-                            }
-
-                    <%
-                        }else if (sit == 1) { 
-                    %>
-                        if(Session["sCliente"] != null){
-                            <button class="btn btn-sucess" type="submit">Aprovar e Pagar</button>
-                        }
-
-                    <%
-                        }else if (sit == 3) { 
-                    %>
-                        if(Session["sCliente"] != null){
-                            <button class="btn btn-sucess" type="submit">Serviço executado como previsto</button>
-                            <button class="btn btn-outline-danger" type="submit">Tive problemas</button>
-                        }
-
-                    <%
-                        }
-                    %>
+                    
 			    </ul>
                    <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
 			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
@@ -142,15 +117,18 @@
                 <table id="funcs">
                     <tr><th style="width:100px;">Nome Técnico</th><th style="width:100px;">Formação</th><th style="width:100px;">Cpf</th><th style="width:100px;">Tel</th></tr>
                     <%  
-                        foreach (var tec in listaEmpServ)
+                        if (listaServTec != null)
                         {
+                            foreach (var tec in listaServTec)
+                            {
 
-                            TCC.Classes.UsuarioEmpresa ue = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(tec.IdTec);
-                            TCC.Classes.Usuario uu = new TCC.Classes.UsuarioDAO().selectUser(tec.IdTec);
-                    %>
-                        <tr><td><%=uu.Nome %></td><td><%=ue.Formacao %></td><td><%=uu.Cpf %></td><td><%=uu.Tel1 %></td></tr>
-                    <%
+                                TCC.Classes.UsuarioEmpresa ue = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(tec.IdTec);
+                                TCC.Classes.Usuario uu = new TCC.Classes.UsuarioDAO().selectUser(tec.IdTec);
+                                    %>
+                                        <tr><td><%=uu.Nome %></td><td><%=ue.Formacao %></td><td><%=uu.Cpf %></td><td><%=uu.Tel1 %></td></tr>
+                                    <%
                         }
+                    }
 
                      %>
                 </table>
@@ -159,7 +137,52 @@
           </form>
 
           
-        </div> <br> <hr> <br>
+        </div> <br> 
+        <hr />
+
+                    <% if (sit == 0)
+                        {
+                             if(Session["sIdEmp"] != null){
+                    %>
+                           
+                                <button class="btn btn-success" type="submit">Atualizar</button>
+                                <button class="btn btn-success" type="submit">Aprovar</button>
+                            
+                    <%
+                            }
+                        }else if (sit == 1) { 
+                            if(Session["sCliente"] != null){
+                    %>
+                            
+                                <button class="btn btn-success" type="submit">Aprovar e Pagar</button>
+                           
+
+                    <%
+                             }
+                        }else if (sit == 2) { 
+                            if(Session["sIdEmp"] != null){
+                    %>
+                            
+                                <button class="btn btn-success" type="submit">Finalizar</button>
+                           
+
+                    <%
+                             }
+                        }else if (sit == 3) { 
+                            if(Session["sCliente"] != null){
+                    %>
+                            
+                                <button class="btn btn-success" type="submit">Serviço executado como previsto</button>
+                                <button class="btn btn-outline-danger" type="submit">Tive problemas</button>
+                           
+
+                    <%
+                             }
+                        }
+                    %>
+        
+        <hr> <br>
+        
         
         Chat: <br><br> <br>
 
@@ -171,17 +194,21 @@
           </thead>
           <tbody>
               <%
-                  foreach (var msg in listaChat) {
-                      
-                            TCC.Classes.Usuario uum = new TCC.Classes.UsuarioDAO().selectUser(msg.IdUser);
-                      TCC.Classes.UsuarioEmpresa uem = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(msg.IdUser);
-              %>
-            <tr class="chat_cliente">
-              <th scope="row"></th>
-              <th scope="row"><%=uum.Nome %> (<%=uem.Funcao %>): <%=msg.Mensagem %> </th>
-            </tr>     
-              <%
-                  }
+                if (listaChat != null)
+                {
+                    foreach (var msg in listaChat)
+                    {
+
+                        TCC.Classes.Usuario uum = new TCC.Classes.UsuarioDAO().selectUser(msg.IdUser);
+                        TCC.Classes.UsuarioEmpresa uem = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(msg.IdUser);
+                          %>
+                        <tr class="chat_cliente">
+                          <th scope="row"></th>
+                          <th scope="row"><%=uum.Nome %> (<%=uem.Funcao %>): <%=msg.Mensagem %> </th>
+                        </tr>     
+                          <%
+                    }
+                }
               %>
           </tbody>
         </table>

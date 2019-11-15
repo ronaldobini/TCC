@@ -97,6 +97,7 @@
                                 if (sol.Id != 0)
                                 {
                                     string linkDel = "excluir.aspx?id=" + sol.Id + "&funcao=delSolicUser";
+                                    string linkServDet = "servicoDetalhes.aspx?idSerDet="+sol.Id;
                         %>
                         <tr>
                             <th scope="row"><%=sol.Id %></th>
@@ -141,7 +142,7 @@
                             <%}
                             %>
                                 </td>
-                            <td><a href="chatCliente.aspx">
+                            <td><a href="<%=linkServDet %>">
                                 <img src="imgs/conversation.png" /></a></td>
                             <td><a href="<%=linkDel %>">
                                 <img src="imgs/delete.png" /></a></td>

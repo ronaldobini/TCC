@@ -18,7 +18,7 @@ namespace TCC
         public double valor = 0.0;
         public int sit = -3;
         public DateTime dataEstimada;
-        public List<ServicoTecnico> listaEmpServ;
+        public List<ServicoTecnico> listaServTec;
         public List<ChatMensagem> listaChat;
         public string descUsu = " - ";
         public string sitS = " - ";
@@ -34,7 +34,7 @@ namespace TCC
                 Empresa emp = new EmpresaDAO().selectEmp(serv.IdEmp);
                 Usuario usu = new UsuarioDAO().selectUser(serv.IdUser);
                 descServ = new EmpresaServicoDAO().selectDescPorId(serv.IdEmpSer);
-                listaEmpServ = new ServicoTecnicoDAO().selectServTecsServ(serv.Id);
+                listaServTec = new ServicoTecnicoDAO().selectServTecsServ(serv.Id);
                 ChatContrato chatContrato = new ChatContratoDAO().selectChatCIdServ(serv.Id);
 
                 listaChat = new ChatMensagemDAO().selectChatMIdChatC(chatContrato.Id);
