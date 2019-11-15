@@ -19,17 +19,19 @@ namespace TCC.Classes
         public void updateEmpServ(EmpresaServico empServ)
         {
             string sql = "UPDATE empresa_servicos " +
-                "SET id_empresa = " + empServ.Empresa.Id + ",id_categoria = " + empServ.Categoria.Id + ",descricao =\"" + empServ.Desc + "\",valor_aprox = " + empServ.ValorAprox + ",tempo_aprox = \"" + empServ.TempoAprox + "\" WHERE id = " + empServ.Id ;
+                "SET id_empresa = " + empServ.Empresa.Id + ",id_categoria = " + empServ.Categoria.Id + ",descricao =\"" + empServ.Desc + "\",valor_aprox = " + empServ.ValorAprox + ",tempo_aprox = \"" + empServ.TempoAprox + "\" ,tags=\""+empServ.Tags+"\" WHERE id = " + empServ.Id ;
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
             conn.Close();
         }
-        public void deleteEmpServ(EmpresaServico empServ)
+        public bool deleteEmpServ(EmpresaServico empServ)
         {
             string sql = "DELETE FROM empresa_servicos WHERE id = " + empServ.Id;
             MySqlConnection conn = new Conn().conectar();
-            new Conn().executar(sql, conn);
+            bool sucesso =new Conn().executar(sql, conn);
             conn.Close();
+            return sucesso;
+
         }
         public EmpresaServico selectEmpServ(int idSerivco)
         {
@@ -124,6 +126,7 @@ namespace TCC.Classes
             empServ.Desc = reader.GetString(3);
             empServ.ValorAprox = reader.GetDouble(4);
             empServ.TempoAprox = reader.GetString(5);
+            empServ.Tags = reader.GetString(6);
             return empServ;
         }
     }

@@ -46,8 +46,10 @@ namespace TCC.Classes
                 "); ";
 
             MySqlConnection conn = new Conn().conectar();
-
-            string msg = new Conn().executar(sql, conn);
+            if (new Conn().executar(sql, conn))
+            {
+                string msg = "Sucesso ao cadastrar empresa";
+            }
             conn.Close();
         }
         public void updateEmpresa(Empresa emp)
@@ -166,7 +168,7 @@ namespace TCC.Classes
 
         public List<Empresa> selectAllEmpsFiltradas(int cat, string pesq)
         {
-            string sql = "SELECT * FROM empresa WHERE (descricao_empresa like '%" + pesq+ "%' or razao_social like '%" + pesq + "%')";
+            string sql = "SELECT * FROM empresa WHERE (descricao_empresa like '%" + pesq + "%' or razao_social like '%" + pesq + "%')";
             List<Empresa> emps = new List<Empresa>();
             Empresa emp = new Empresa();
             MySqlDataReader reader = null;
@@ -185,7 +187,7 @@ namespace TCC.Classes
                 emps = null;
             }
 
-            
+
             conn.Close();
             return emps;
         }

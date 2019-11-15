@@ -62,118 +62,110 @@
             </nav>
         </div>
     </div>
-    
+
     <div class="conteudo_solicitacoes_cliente">
         <div class="conteudo_index_cliente_int2">
             <div class="solicitacaoPrestador_int2">
                 <br>
                 <br>
                 <a href="cadastrarServico.aspx">
-                    <button class="btn btn-success">                        
+                    <button class="btn btn-success">
                         Cadastrar Novo Serviço
                     </button>
                 </a>
                 <br>
                 <br>
-                <form method="POST" action="#" runat="server">
-                <table class="table table-dark">
-                    <thead>
-                        <tr>
-                            <th scope="col">Serviço</th>
-                            <th scope="col">Preço</th>
-                            <th scope="col">Tempo de conclusão</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Excluir</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <%
-                            foreach (var servico in listaDeServicos)
-                            {
+                <%if (statusOperação == 1)
+                    { %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong> Sucesso ao realizar operação.</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <%}
+                    else
+                    {
+                        if (statusOperação == 2)
+                        {
+                %>
 
-                        %>
-                        <tr>
-                            <th><%=servico.Desc %></th>
-                            <td><%=servico.ValorAprox %></td>
-                            <td><%=servico.TempoAprox %></td>
-                            <td>
-                                <a href="" runat="server" onserverclick="Editar"  data-value="<%=servico.Id%>">
-                                <img src="imgs/edit.png" ></a>
-                            </td>
-                            <td>
-                                <a href="" runat="server" onserverclick="Remover"  data-value="<%=servico.Id%>">
-                                <img src="imgs/x-button.png" id="btn-confirm" ></a>
-                                <%--<a href="cadastrarServico.aspx?Id=<%=servico.Id %>" onserverclick="editar"   data-value="<%=servico.Id%>">
-                                <img src="imgs/edit.png" ></a></td>
-                            <td><a href="" data-value="<%=servico.Id%>">
-                                <img src="imgs/x-button.png" id="btn-confirm" ></a></td>--%>
-                            </td>
-                        </tr>
-                        <%
-                            }
-                        %>
-                    </tbody>
-                </table>
-                    </form>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Erro ao realizar operação.</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <%
+                        }
+                    } %>
+                
+                <form method="POST" action="#" runat="server">
+                    <table class="table table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Serviço</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Tempo de conclusão</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Excluir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%
+                                foreach (var servico in listaDeServicos)
+                                {
+                                    var linkEditar = "cadastrarServico.aspx?Id=" + servico.Id;
+                                    var linkExcluir = "excluir.aspx?Id=" + servico.Id + "&funcao=deleteServicoEmpresa";
+                            %>
+                            <tr>
+                                <th><%=servico.Desc %></th>
+                                <td><%=servico.ValorAprox %></td>
+                                <td><%=servico.TempoAprox %></td>
+                                <td>
+                                    <a href="<%=linkEditar %>">
+                                        <img src="imgs/edit.png" /></a>
+                                </td>
+                                <td>
+                                    <a href="<%=linkExcluir %>">
+                                        <img src="imgs/x-button.png" id="btn-confirm" /></a>
+                                </td>
+                            </tr>
+                            <%
+
+                                }
+                            %>
+                        </tbody>
+                    </table>
+                </form>
             </div>
         </div>
     </div>
 
-    
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="mi-modal">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Confirmar a exclusão?</h4>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" id="modal-btn-si">Sim</button>
-        <button type="button" class="btn btn-primary" id="modal-btn-no">Não</button>
-      </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="mi-modal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Confirmar a exclusão?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="modal-btn-si">Sim</button>
+                    <button type="button" class="btn btn-primary" id="modal-btn-no">Não</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
     <br>
- 	  <footer id="sticky-footer" class="py-4 bg-dark text-white-50 footer-good">
-    <div class="container text-center">
-      <small>Copyright &copy; Servitiba</small>
-    </div>
-  </footer>
-    <script>
-        $(function () {
-            console.log("entrou");
-            var modalConfirm = function (callback) {
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50 footer-good">
+        <div class="container text-center">
+            <small>Copyright &copy; Servitiba</small>
+        </div>
+    </footer>
 
-                $("#btn-confirm").on("click", function () {
-                    $("#mi-modal").modal('show');
-                });
-
-                $("#modal-btn-si").on("click", function () {
-                    callback(true);
-                    $("#mi-modal").modal('hide');
-                });
-
-                $("#modal-btn-no").on("click", function () {
-                    callback(false);
-                    $("#mi-modal").modal('hide');
-                });
-            };
-
-            modalConfirm(function (confirm) {
-                if (confirm) {
-                    //Acciones si el usuario confirma
-                    $("#result").html("CONFIRMADO");
-                } else {
-                    //Acciones si el usuario no confirma
-                    $("#result").html("NO CONFIRMADO");
-                }
-            });
-        });
-        
-    </script>
 </body>
 
-    
+
 </html>

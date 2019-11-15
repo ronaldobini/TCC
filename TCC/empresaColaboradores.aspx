@@ -92,7 +92,7 @@
                                if (col.Id != 0)
                                {
                                    string linkEdit = "userEmpCadastro.aspx?id=" + col.Id;
-                                   string linkDel = "excluir.aspx?id=" + col.Id + "&funcao=delUser";
+                                   string linkDel = "excluir.aspx?id=" + col.Id + "&funcao=deleteUser";
                                    string id = col.Nome;
                         %>
 				    <tr>
