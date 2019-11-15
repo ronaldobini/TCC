@@ -90,8 +90,11 @@
                            int count = 0;
                            foreach (var col in colaboradores)
                            {
-                               string linkEdit = "userEmpCadastro.aspx?id=" + col.Id;
-                               string id = col.Nome;
+                               if (col.Id != 0)
+                               {
+                                   string linkEdit = "userEmpCadastro.aspx?id=" + col.Id;
+                                   string linkDel = "excluir.aspx?id=" + col.Id + "&funcao=delUser";
+                                   string id = col.Nome;
                         %>
 				    <tr>
 				      <th scope="row"><%=col.Id %></th>
@@ -100,13 +103,14 @@
 				      <td><%=col.DataCadastro%></td>
 				      <td><a href="verDadosColaborador.html"><img src="imgs/binoculars.png"/></a></td>
 				      <td><a href="<%=linkEdit %>"><img src="imgs/edit.png"/></a></td>
-				      <td><a href="deletarColaborador.html"><img src="imgs/delete.png"/></a></td>
+				      <td><a href="<%=linkDel %>"><img src="imgs/delete.png"/></a></td>
                         <%--asp:ImageButton ID='d_<%=id%>'
                             ImageUrl="imgs/delete.png"
                             AlternateText="No Image available"
                             OnClick="ImageButton_Click" runat="server" /> --%>
 				    </tr>
                       <%
+                              }
                           } %>
 				  </tbody>
 				</table>
