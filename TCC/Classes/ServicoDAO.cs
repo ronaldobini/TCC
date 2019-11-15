@@ -11,9 +11,10 @@ namespace TCC.Classes
 
         //Situacao Servico
         // 0 = em solicitacao/negociacao para aceite da empresa
-        // 1 = aceito pela empresa / em execucao 
-        // 2 = executado pela empresa, aguardando aceite do usuario
-        // 3 = fechado
+        // 1 = pendente cliente / aceito pela empresa 
+        // 2 = em execucao / aceito e pago pelo usuario
+        // 3 = aceite final do usuario / executado pela empresa
+        // 4 = finalizado
         // -1 =  recusado pela empresa
         // -2 =  em discussao / problemas juridicos
 
@@ -189,7 +190,7 @@ namespace TCC.Classes
 
         public List<Servico> selectAllServsEmpSolic(int idEmp)
         {
-            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao = 0 ";
+            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao in (0) ";
             List<Servico> servs = new List<Servico>();
             Servico serv = new Servico();
             MySqlDataReader reader = null;
@@ -207,7 +208,7 @@ namespace TCC.Classes
 
         public List<Servico> selectAllServsEmpExe(int idEmp)
         {
-            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao in (1,2,-1) ";
+            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao in (1,2,3,-2) ";
             List<Servico> servs = new List<Servico>();
             Servico serv = new Servico();
             MySqlDataReader reader = null;
@@ -226,7 +227,7 @@ namespace TCC.Classes
         // teste
         public List<Servico> selectServsEmpExePendFechado(int idEmp)
         {
-            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao in (1,2,3) ";
+            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao in (1,2,3,4) ";
             List<Servico> servs = new List<Servico>();
             Servico serv = new Servico();
             MySqlDataReader reader = null;
@@ -245,7 +246,7 @@ namespace TCC.Classes
 
         public List<Servico> selectAllServsEmpFin(int idEmp)
         {
-            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao = 3 ";
+            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao = 4 ";
             List<Servico> servs = new List<Servico>();
             Servico serv = new Servico();
             MySqlDataReader reader = null;

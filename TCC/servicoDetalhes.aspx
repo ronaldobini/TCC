@@ -53,9 +53,37 @@
                    <li class="nav-item">
 			        <a class="nav-link" href="gerenciarFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
 			      </li>
-                     <li class="nav-item active">
+
+                  <li class="nav-item active">
 			        <a class="nav-link" >Detalhes Serviço <span class="sr-only">(página atual)</span></a>
 			      </li>
+
+                    <% if (sit == 0)
+                        {
+                    %>
+                            if(Session["sIdEmp"] != null){
+                                <button class="btn btn-sucess" type="submit">Atualizar</button>
+                                <button class="btn btn-sucess" type="submit">Aprovar</button>
+                            }
+
+                    <%
+                        }else if (sit == 1) { 
+                    %>
+                        if(Session["sCliente"] != null){
+                            <button class="btn btn-sucess" type="submit">Aprovar e Pagar</button>
+                        }
+
+                    <%
+                        }else if (sit == 3) { 
+                    %>
+                        if(Session["sCliente"] != null){
+                            <button class="btn btn-sucess" type="submit">Serviço executado como previsto</button>
+                            <button class="btn btn-outline-danger" type="submit">Tive problemas</button>
+                        }
+
+                    <%
+                        }
+                    %>
 			    </ul>
                    <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
 			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">

@@ -104,11 +104,14 @@
         string situ = "-";
         if (sit == 1)
         {
-            situ = "<font color=orange>Executando</font>";
+            situ = "<font color=orange>Pendente Cliente</font>";
         }else if (sit == 2)
         {
-            situ = "<font color=blue>Aguardando Aceite</font>";
-        }else if (sit == -1)
+            situ = "<font color=blue>Executando</font>";
+        }else if (sit == 3)
+        {
+            situ = "<font color=blue>Pendente Aceite Final</font>";
+        }else if (sit == -2)
         {
             situ = "<font color=red>Problemas</font>";
         }

@@ -56,7 +56,8 @@ namespace TCC
                         Session["sNome"] = logando.Nome;
                         Session["sRep"] = logando.Reputacao;
                         Session["sNivel"] = logando.Nivel;
-                        new LogDAO().logit("Login Cliente", (int)logando.Id);
+                        Session["sCliente"] = 1;
+                    new LogDAO().logit("Login Cliente", (int)logando.Id);
 
                     Response.Redirect("mapao.aspx");
                 }

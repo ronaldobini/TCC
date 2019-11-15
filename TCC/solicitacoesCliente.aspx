@@ -109,17 +109,22 @@
                             %>
                             <img src="imgs/circular-clock.png">
                             <%}
-                                else if (sol.Sit == 1) //Aceito pela empresa/em execucao
-                                {
-                            %>
-                            <img src="imgs/play.png">
-                            <%}
-                                else if (sol.Sit == 2) //Executado pela empresa/esperando aceite do user
+                                else if (sol.Sit == 1) //pendente aceite cliente
                                 {
                             %>
                             <img src="imgs/circular-clock.png">
                             <%}
-                                else if (sol.Sit == 3) //Fechado
+                                else if (sol.Sit == 2) //Executando
+                                {
+                            %>
+                            <img src="imgs/play.png">
+                            <%}
+                                else if (sol.Sit == 3) //pendente aceite final
+                                {
+                            %>
+                            <img src="imgs/circular-clock.png">
+                            <%}
+                                else if (sol.Sit == 4) //finalizado
                                 {
                             %>
                             <img src="imgs/checked.png">

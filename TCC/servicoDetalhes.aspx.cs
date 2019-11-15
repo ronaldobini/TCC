@@ -16,6 +16,7 @@ namespace TCC
         public string nomeEmpresa = " - ";
         public string nomeCliente = " - ";
         public double valor = 0.0;
+        public int sit = -3;
         public DateTime dataEstimada;
         public List<ServicoTecnico> listaEmpServ;
         public List<ChatMensagem> listaChat;
@@ -44,7 +45,7 @@ namespace TCC
                 txValor.Text = serv.Valor.ToString();
                 txDataEstimada.Text = serv.DataFimEst.ToString();
                 descUsu = serv.DescUser;
-                int sit = serv.Sit;
+                sit = serv.Sit;
 
                 if (sit == 0)
                 {
@@ -55,7 +56,7 @@ namespace TCC
                 }
                 else if (sit == 1)
                 {
-                    sitS = "Pendente aceite do Cliente";
+                    sitS = "Aceito pela empresa / Pendente aceite do Cliente";
                     disabled = "disabled";
                     txValor.Enabled = false;
                     txDataEstimada.Enabled = false;
@@ -68,6 +69,13 @@ namespace TCC
                     txDataEstimada.Enabled = false;
                 }
                 else if (sit == 3)
+                {
+                    sitS = "Serviço Executado / Aguardando aceite do Cliente";
+                    disabled = "disabled";
+                    txValor.Enabled = false;
+                    txDataEstimada.Enabled = false;
+                }
+                else if (sit == 4)
                 {
                     sitS = "Finalizado";
                     disabled = "disabled";
