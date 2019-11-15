@@ -223,6 +223,25 @@ namespace TCC.Classes
             return servs;
         }
 
+        // teste
+        public List<Servico> selectServsEmpExePendFechado(int idEmp)
+        {
+            string sql = "SELECT * FROM servico WHERE id_empresa = " + idEmp + " AND situacao in (1,2,3) ";
+            List<Servico> servs = new List<Servico>();
+            Servico serv = new Servico();
+            MySqlDataReader reader = null;
+            MySqlConnection conn = new Conn().conectar();
+            reader = new Conn().consultar(sql, conn);
+
+            while (reader.Read() && reader.HasRows)
+            {
+                serv = preencherServ(reader);
+                servs.Add(serv);
+            }
+            conn.Close();
+            return servs;
+        }
+
 
         public List<Servico> selectAllServsEmpFin(int idEmp)
         {
