@@ -65,14 +65,14 @@
 	<div class="conteudo_relatorio_cliente">
 		<div class="conteudo_solicitacao_cliente_int">
 			
-				<br><br>
+				<br/><br/>
 				<div class="panel">
 					
 
 					
-				</div> <br> <hr> <br>
+				</div> <br/> <hr/> <br/>
 				
-				<img src="imgs/checked.png"/> Serviços Finalizados: <br><br> <br>
+				<img src="imgs/checked.png"/> Serviços Finalizados: <br/><br/> <br/>
 
 				<table class="table table-dark">
 				  <thead>

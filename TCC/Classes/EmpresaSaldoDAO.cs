@@ -70,6 +70,22 @@ namespace TCC.Classes
             conn.Close();
             return empSals;
         }
+
+        //teste
+        public EmpresaSaldo selectSaldoEmpresa(int idEmp)
+        {
+            string sql = "SELECT * FROM empresa_saldo WHERE id = " + idEmp;
+            EmpresaSaldo empSal = new EmpresaSaldo();
+            MySqlConnection conn = new Conn().conectar();
+            MySqlDataReader reader = new Conn().consultar(sql, conn);
+            while (reader.Read() && reader.HasRows)
+            {
+                empSal = preencherEmpSaldo(reader);
+            }
+            conn.Close();
+            return empSal;
+        }
+
         public List<EmpresaSaldo> selectAllEmpresaSaldo()
         {
             string sql = "SELECT * FROM empresa_saldo";

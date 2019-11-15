@@ -135,13 +135,53 @@
 				</table>
         </div>
     </div>
+    <%
+        double liberado = empSaldo.SaldoLiberado;
+        double pendente = empSaldo.SaldoPendente;
+        double totHist = empSaldo.SaldoTotalHistorico;
+    %>
         <table class="table table-dark">
 		    <tr>
 		        <th scope="row">TOTALIZADORES:</th>
-			    <td>Liberado: R$3000</td>
-			    <td>Pendente: R$1500</td>
-			    <td>Total histórico: R$4500</td>
+			    <td>Liberado: R$<%=liberado%></td>
+			    <td>Pendente: R$<%=pendente %></td>
+			    <td>Total histórico: R$<%=totHist %></td>
 			</tr>
 		</table>
+
+        		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-x1">Sacar Dinheiro</button>
+
+				<div class="modal fade bd-example-modal-x1" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Sacar Dinheiro</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <div>
+				        	<form>
+				        		Conta: <input type="text" name=""/> <br/><br/>
+				        		Agência: <input type="text" name=""/> <br/><br/>
+				        		Operação: <input type="text" name=""/> <br/><br/>
+				        		Banco: <input type="text" name=""/> <br/><br/>
+                                Valor: <input type="text" name=""/> <br/><br/>
+
+				        		<input type="submit" name="" value="Confirmar" class="btn btn-success"/>
+
+				        	</form>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+    
+        
 </body>
 </html>
