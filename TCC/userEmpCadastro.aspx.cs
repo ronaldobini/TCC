@@ -26,6 +26,7 @@ namespace TCC
         private string postFunc = "ainda n";
         private string postFormacao = "ainda n";
         public int id = -1;
+        public string tituloDaPag = "";
         public Usuario col;
         protected void Page_Load(object sender, EventArgs e)
         {
