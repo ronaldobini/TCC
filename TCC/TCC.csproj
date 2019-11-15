@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cadastrarCliente.aspx" />
     <Content Include="cadastrarServico.aspx" />
     <Content Include="contato.aspx" />
     <Content Include="excluir.aspx" />
@@ -184,6 +185,13 @@
     <Content Include="index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cadastrarCliente.aspx.cs">
+      <DependentUpon>cadastrarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cadastrarCliente.aspx.designer.cs">
+      <DependentUpon>cadastrarCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="cadastrarServico.aspx.cs">
       <DependentUpon>cadastrarServico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
