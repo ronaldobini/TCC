@@ -26,7 +26,7 @@ namespace TCC
             {
                 int SS_empresa = (int)Session["sIdEmp"];
                 //puxa lista do banco de dados
-                servsDB = new ServicoDAO().selectAllServsEmpSolic(SS_empresa);
+                servsDB = new ServicoDAO().selectAllServsEmpExe(SS_empresa);
             }
             else
             {

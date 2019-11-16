@@ -30,6 +30,9 @@
 
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
+
+                   <% if (Session["sIdEmp"] != null)
+                       { %> 
 			      <li class="nav-item">
 			        <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
@@ -53,6 +56,17 @@
                    <li class="nav-item">
 			        <a class="nav-link" href="gerenciarFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
 			      </li>
+                   <%}else{ %>
+
+                     <li class="nav-item ">
+			        <a class="nav-link" href="mapao.aspx">Buscar Serviço <span class="sr-only">(página atual)</span></a>
+			      </li>
+
+			      <li class="nav-item ">
+			        <a class="nav-link" href="solicitacoesCliente.aspx">Solicitações <span class="sr-only">(página atual)</span></a>
+			      </li>
+
+                    <%} %>
 
                   <li class="nav-item active">
 			        <a class="nav-link"><font color=green>Detalhes Serviço</font> <span class="sr-only">(página atual)</span></a>
@@ -228,9 +242,9 @@
 
         <br><br>
 
-        <textarea placeholder="Escreva aqui sua mensagem..." rows="6" cols="100"></textarea>
+        <textarea runat="server" id="msgUser" placeholder="Escreva aqui sua mensagem..." rows="6" cols="100"></textarea>
         <br><br>
-        <a href="chat.html"><button class="btn btn-primary">Enviar</button></a>
+        <input type="submit" runat="server" value="Enviar" onserverclick="enviarMsg" class="btn btn-primary">
 
       </div>
     

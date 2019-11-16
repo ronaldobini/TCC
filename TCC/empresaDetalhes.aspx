@@ -93,7 +93,16 @@
                 <td><%=diretor %></td>
                 <td><%=comercial %></td>
               </tr>
-            </table> <br /><br />
+            </table>
+
+             <table class="table table-dark centralizarConteudoTabelas">
+                
+                <tr>
+                    <td><center><%=repA %></td>
+                    <td><center><%=repQ %></td>
+                    <td><center><%=repT %></td>
+                </tr>
+            </table><br /><br />
 
             <table class="table table-dark centralizarConteudoTabelas">
               <tr>
@@ -115,24 +124,28 @@
                 <th>Telefone 2</th>
                 <th>CEP</th>
                 <th>Quantidade de Funcionários</th>
-                <th>Reputação Fiscal</th>
+                <th>Quantidade de Serviços Executados</th>
+                <th>Reputação</th>
               </tr>
               <tr>
                 <td><%=telefone2 %></td>
                 <td><%=cep %></td>
                 <td><%=qtdFunc %></td>
-                <td><%=repA %></td>
+                <td><%=qtdServ %></td>                
               </tr>
+                
             </table> <br /><br />
+
+           
 
             <table class="table table-dark centralizarConteudoTabelas">
               <tr>
                 <th>Data do Cadastro</th>
-                <th>Serviço Selecionado</th>
+                <th>Zona de atendimento</th>
               </tr>
               <tr>
                 <td><%=cadastro %></td>
-                <td><%=razaoSocial %></td>
+                <td><%=zona %></td>
               </tr>
             </table>
 

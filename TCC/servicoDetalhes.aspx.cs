@@ -23,7 +23,8 @@ namespace TCC
         public string descUsu = " - ";
         public string sitS = " - ";
         public string disabled = "disabled";
-
+        public int contratoID = 0;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["idSerDet"] != null)
@@ -38,7 +39,7 @@ namespace TCC
                 ChatContrato chatContrato = new ChatContratoDAO().selectChatCIdServ(serv.Id);
 
                 listaChat = new ChatMensagemDAO().selectChatMIdChatC(chatContrato.Id);
-
+                contratoID = chatContrato.Id;
 
                 nomeEmpresa = emp.RazaoSocial;
                 nomeCliente = usu.Nome;
@@ -50,55 +51,7 @@ namespace TCC
                 descUsu = serv.DescUser;
                 sit = serv.Sit;
 
-                if (sit == 0)
-                {
-                    sitS = "Em solicitação, pendente aceite da empresa e acordo de preço e previsão";
-                    disabled = " ";
-                    txValor.Enabled = true;
-                    txDataEstimada.Enabled = true;
-                }
-                else if (sit == 1)
-                {
-                    sitS = "Aceito pela empresa, pendente aceite do Cliente";
-                    disabled = "disabled";
-                    txValor.Enabled = false;
-                    txDataEstimada.Enabled = false;
-                }
-                else if (sit == 2)
-                {
-                    sitS = "Em execução pela empresa!";
-                    disabled = "disabled";
-                    txValor.Enabled = false;
-                    txDataEstimada.Enabled = false;
-                }
-                else if (sit == 3)
-                {
-                    sitS = "Serviço Executado pela empresa, aguardando aceite do Cliente";
-                    disabled = "disabled";
-                    txValor.Enabled = false;
-                    txDataEstimada.Enabled = false;
-                }
-                else if (sit == 4)
-                {
-                    sitS = "Serviço finalizado";
-                    disabled = "disabled";
-                    txValor.Enabled = false;
-                    txDataEstimada.Enabled = false;
-                }
-                else if (sit == -1)
-                {
-                    sitS = "Recusado pela Empresa";
-                    disabled = "disabled";
-                    txValor.Enabled = false;
-                    txDataEstimada.Enabled = false;
-                }
-                else if (sit == -2)
-                {
-                    sitS = "Contestado / Em discussão";
-                    disabled = "disabled";
-                    txValor.Enabled = false;
-                    txDataEstimada.Enabled = false;
-                }
+                verificarSit();
             }
             else
             {
@@ -139,19 +92,22 @@ namespace TCC
         {
             new ServicoDAO().updateSit(1,servicoget);
             mensagem.Text = "Aprovado com sucesso! Pendente aprovação do usuário.";
-            
+            sit = 1;
+
         }
 
         public void empresaReprove(object sender, EventArgs e)
         {
             new ServicoDAO().updateSit(-1, servicoget);
             mensagem.Text = "Serviço reprovado!";
+            sit = -1;
         }
 
         public void empresaEnd(object sender, EventArgs e)
         {
             new ServicoDAO().updateSit(3, servicoget);
             mensagem.Text = "Serviço enviado para aprovação final do usuário!";
+            sit = 3;
 
         }
 
@@ -161,18 +117,86 @@ namespace TCC
             new ServicoDAO().updateSit(2, servicoget);
             mensagem.Text = "Aprovado com sucesso! Redirecionando para o pagamento...";
             //Response.Redirect("pagamento.aspx");
+            sit = 2;
         }
 
         public void clienteEnd(object sender, EventArgs e)
         {
             new ServicoDAO().updateSit(4, servicoget);
             mensagem.Text = "Aprovado com sucesso! Serviço está finalizado.";
+            sit = 4;
         }
 
         public void anyProblem(object sender, EventArgs e)
         {
             new ServicoDAO().updateSit(-2, servicoget);
             mensagem.Text = "Você contestou esse serviço. A discussão será pelo chat com intervenção da Servitiba.";
+        }
+
+
+        public void enviarMsg(object sender, EventArgs e)
+        {
+            string msgForm = msgUser.Value;
+            ChatMensagem cm = new ChatMensagem(0,contratoID,(int)Session["sId"],DateTime.Now,msgForm,0);
+            new ChatMensagemDAO().insertChatM(cm);
+            listaChat = new ChatMensagemDAO().selectChatMIdChatC(contratoID);
+        }
+        
+
+
+
+
+        public void verificarSit()
+        {
+            if (sit == 0)
+            {
+                sitS = "Em solicitação, pendente aceite da empresa e acordo de preço e previsão";
+                disabled = " ";
+                txValor.Enabled = true;
+                txDataEstimada.Enabled = true;
+            }
+            else if (sit == 1)
+            {
+                sitS = "Aceito pela empresa, pendente aceite do Cliente";
+                disabled = "disabled";
+                txValor.Enabled = false;
+                txDataEstimada.Enabled = false;
+            }
+            else if (sit == 2)
+            {
+                sitS = "Em execução pela empresa!";
+                disabled = "disabled";
+                txValor.Enabled = false;
+                txDataEstimada.Enabled = false;
+            }
+            else if (sit == 3)
+            {
+                sitS = "Serviço Executado pela empresa, aguardando aceite do Cliente";
+                disabled = "disabled";
+                txValor.Enabled = false;
+                txDataEstimada.Enabled = false;
+            }
+            else if (sit == 4)
+            {
+                sitS = "Serviço finalizado";
+                disabled = "disabled";
+                txValor.Enabled = false;
+                txDataEstimada.Enabled = false;
+            }
+            else if (sit == -1)
+            {
+                sitS = "Recusado pela Empresa";
+                disabled = "disabled";
+                txValor.Enabled = false;
+                txDataEstimada.Enabled = false;
+            }
+            else if (sit == -2)
+            {
+                sitS = "Contestado / Em discussão";
+                disabled = "disabled";
+                txValor.Enabled = false;
+                txDataEstimada.Enabled = false;
+            }
         }
 
 

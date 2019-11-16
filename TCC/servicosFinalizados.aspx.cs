@@ -11,7 +11,7 @@ namespace TCC
     public partial class servicosFinalizados : System.Web.UI.Page
     {
         public List<Servico> servsDB = new List<Servico>();
-        DateTime dataFimEst;
+        public DateTime datFimR;
         public DateTime datIni;
         public DateTime datFim;
 
@@ -25,7 +25,7 @@ namespace TCC
             {
                 int SS_empresa = (int)Session["sIdEmp"];
                 //puxa lista do banco de dados
-                servsDB = new ServicoDAO().selectAllServsEmpSolic(SS_empresa);
+                servsDB = new ServicoDAO().selectAllServsEmpFin(SS_empresa);
             }
             else
             {

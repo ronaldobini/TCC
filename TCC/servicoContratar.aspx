@@ -62,8 +62,9 @@
              <br /> <br />
             <div class="form-group ">
                 <label for="descricao">O que você espera do serviço?</label>
-                <br>                            
-                <asp:TextBox type="text" runat="server" class="form-control col-md-6 " style=" width:30%;" id="descuser" placeholder="(...)"></asp:TextBox>
+                <br> 
+                
+                <textarea runat="server" id="descuserForm" placeholder="Escreva com detalhes o que espera da empresa neste serviço (...)" rows="6" cols="100"></textarea>
             </div>
 
             <Button runat="server" class="btn btn-primary" onserverclick="cadastrarServ">Solicitar Serviço</Button>

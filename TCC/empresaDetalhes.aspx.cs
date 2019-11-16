@@ -24,6 +24,7 @@ namespace TCC
         public string complemento = "-";
         public string cep = "-";
         public string qtdFunc = "-";
+        public string qtdServ = "-";
         public string repQ = "-";
         public string repA = "-";
         public string repT = "-";
@@ -32,6 +33,9 @@ namespace TCC
         public string diretor = "-";
         public string comercial = "-";
         public string tecnico = "-";
+        public string zona = "-";
+
+
 
         public List<EmpresaServico> servs;
 
@@ -61,8 +65,18 @@ namespace TCC
                 repT = emp.RepTempo.ToString();
                 cadastro = emp.DataCadastro.ToString();
                 descricao = emp.DescEmpresa;
+                qtdServ = emp.QtdServ.ToString();
+                zona = emp.ZonaAtendimento;
 
-
+                repQ = "Atendimento (" + repQ + "%)<div class=\"progress\" style=\"width:85px; height: 7px;\">" +
+                                  "<div class=\"progress-bar progress-bar-striped progress-bar-animated role=\"progressbar\" style=\"width: " + repQ + "%\"; aria-valuenow=\"" + repQ + "\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>" +
+                                "</div>";
+                repA = "Qualidade (" + repA + "%)<div class=\"progress\" style=\"width:85px; height: 7px;\">" +
+                                  "<div class=\"progress-bar progress-bar-striped progress-bar-animated role=\"progressbar\" style=\"width: " + repA + "%\"; aria-valuenow=\"" + repA + "\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>" +
+                                "</div>";
+                repT = "Tempo (" + repT + "%)<div class=\"progress\" style=\"width:85px; height: 7px;\">" +
+                                  "<div class=\"progress-bar progress-bar-striped progress-bar-animated role=\"progressbar\" style=\"width: " + repT + "%\"; aria-valuenow=\"" + repT + "\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>" +
+                                "</div>";
 
                 Usuario ueDiretor = new UsuarioDAO().selectUser(emp.IdDiretor);
                 Usuario ueComercial = new UsuarioDAO().selectUser(emp.IdComercial);

@@ -61,7 +61,7 @@ namespace TCC
 
         public void cadastrarServ(object sender, EventArgs e)
         {
-            string descUser = descuser.Text;
+            string descUser = descuserForm.Value;
             Categoria cat = new Categoria();
             cat.Id = serv.IdCat;
             Servico novoServ = new Servico(0,(int)Session["sId"],getEmpresaEscolhida,emp.IdComercial,DateTime.Now, cat,serv.Id,descUser,0,serv.ValorAprox, new DateTime(), new DateTime(), 0,0,0,0,0,0,"-","-");
