@@ -82,6 +82,18 @@ namespace TCC.Classes
             conn.Close();
         }
 
+        public void updateServicoValor(double valor, DateTime dataPrev, int idServ)
+        {
+            string sql = "UPDATE servico " +
+                "SET valor = " + valor + ", " +
+                "data_fim_estimada = '" + dataPrev + "'" +
+                "WHERE id  = " + idServ + " ";
+
+            MySqlConnection conn = new Conn().conectar();
+            new Conn().executar(sql, conn);
+            conn.Close();
+        }
+
         public void deleteServico(int id)
         {
             string sql = "UPDATE servico SET situacao = -1 WHERE id = " + id;

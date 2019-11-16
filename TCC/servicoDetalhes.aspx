@@ -146,8 +146,9 @@
                              if(Session["sIdEmp"] != null){
                     %>
                            
-                                <button class="btn btn-success" type="submit">Atualizar</button>
-                                <button class="btn btn-success" type="submit">Aprovar</button>
+                                <button runat="server" onserverclick="empresaUpdate" class="btn btn-success" type="submit">Atualizar</button>
+                                <button runat="server" onserverclick="empresaAprove" class="btn btn-success" type="submit">Aprovar</button>        
+                                <button runat="server" onserverclick="empresaReprove" class="btn btn-success" type="submit">Recusar</button>
                             
                     <%
                             }
@@ -155,7 +156,7 @@
                             if(Session["sCliente"] != null){
                     %>
                             
-                                <button class="btn btn-success" type="submit">Aprovar e Pagar</button>
+                                <button runat="server" onserverclick="clientePay" class="btn btn-success" type="submit">Aprovar e Pagar</button>
                            
 
                     <%
@@ -164,8 +165,8 @@
                             if(Session["sIdEmp"] != null){
                     %>
                             
-                                <button class="btn btn-success" type="submit">Finalizar</button>
-                           
+                                <button runat="server" onserverclick="empresaEnd" class="btn btn-success" type="submit">Finalizar</button>
+                                <button runat="server" onserverclick="anyProblem" class="btn btn-outline-danger" type="submit">Tive problemas com o Cliente</button>
 
                     <%
                              }
@@ -173,12 +174,20 @@
                             if(Session["sCliente"] != null){
                     %>
                             
-                                <button class="btn btn-success" type="submit">Serviço executado como previsto</button>
-                                <button class="btn btn-outline-danger" type="submit">Tive problemas</button>
+                                <button runat="server" onserverclick="clienteEnd" class="btn btn-success" type="submit">Serviço executado como previsto</button>
+                                <button runat="server" onserverclick="clienteProblem" class="btn btn-outline-danger" type="submit">Tive problemas</button>
                            
 
                     <%
                              }
+                       }else if (sit == 4) { 
+                            
+                    %>
+                               
+                                <button runat="server" onserverclick="anyProblem" class="btn btn-outline-danger" type="submit">Tive problemas depois de finalizar</button>
+
+                    <%
+                             
                         }
                     %>
         

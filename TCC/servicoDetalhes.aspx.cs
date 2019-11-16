@@ -112,12 +112,61 @@ namespace TCC
         }
 
 
+        public string corrigiData(string sss)
+        {
+            sss = sss.Substring(0, 2);
+
+            return sss;
+        }
+
+        public void empresaUpdate(object sender, EventArgs e)
+        {
+            double valor = double.Parse(txValor.Text);
+
+            //string dataCorrigida = corrigiData(txDataEstimada.Text);
+
+            DateTime prev = DateTime.Parse("16/11/2019 00:00:00");
+
+
+
+
+        }
 
 
         public void empresaAprove(object sender, EventArgs e)
         {
 
         }
+
+        public void empresaReprove(object sender, EventArgs e)
+        {
+
+        }
+
+        public void empresaEnd(object sender, EventArgs e)
+        {
+
+        }
+
+
+        public void ClienteAprove(object sender, EventArgs e)
+        {
+
+        }
+
+        public void ClienteEnd(object sender, EventArgs e)
+        {
+
+        }
+
+        public void anyProblem(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
 
 
     }
