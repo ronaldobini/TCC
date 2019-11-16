@@ -94,6 +94,18 @@ namespace TCC.Classes
             conn.Close();
         }
 
+        public void updateSit(int sit, int idServ)
+        {
+            string sql = "UPDATE servico " +
+                "SET sit = " + sit + " " +
+                "WHERE id  = " + idServ + " ";
+
+            MySqlConnection conn = new Conn().conectar();
+            new Conn().executar(sql, conn);
+            conn.Close();
+        }
+
+
         public void deleteServico(int id)
         {
             string sql = "UPDATE servico SET situacao = -1 WHERE id = " + id;

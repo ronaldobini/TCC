@@ -127,14 +127,14 @@ namespace TCC
 
             DateTime prev = DateTime.Parse("16/11/2019 00:00:00");
 
-
-
-
+            new ServicoDAO().updateServicoValor(valor,prev, servicoget);
+            mensagem.Text="Atualizado com sucesso!";
         }
 
 
         public void empresaAprove(object sender, EventArgs e)
         {
+
 
         }
 

@@ -55,7 +55,7 @@
 			      </li>
 
                   <li class="nav-item active">
-			        <a class="nav-link" >Detalhes Serviço <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link"><font color=green>Detalhes Serviço</font> <span class="sr-only">(página atual)</span></a>
 			      </li>
 
                     
@@ -139,7 +139,7 @@
           </form>
 
           
-        </div> <br> 
+        </div> <br> <hr /> 
 
                     <% if (sit == 0)
                         {
@@ -190,6 +190,9 @@
                              
                         }
                     %>
+
+                    <br />
+                    <font color="green"><asp:Label ID="mensagem" runat="server"></asp:Label></font>
         
         <hr> <br>
         
