@@ -87,12 +87,12 @@
                         <asp:TextBox type="text" runat="server" Rows="6" cols="85" class="form-control " required ID="endereco" placeholder="Endereco"></asp:TextBox>
 
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-4">
                         <label for="inputPassword4">Complemento</label>
                         <asp:TextBox type="text" runat="server" Rows="6" cols="85" class="form-control " required  ID="complemento" placeholder="Complemento"></asp:TextBox>
 
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-2">
                         <label for="inputPassword4">Número</label>
                         <asp:TextBox type="text" runat="server" Rows="6" cols="85" class="form-control  " required ID="numero" placeholder="Numero"></asp:TextBox>
 

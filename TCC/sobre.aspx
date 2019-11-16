@@ -7,9 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css"/>
 	<title>Sobre Nós</title>
 </head>
 <body>
@@ -32,7 +32,7 @@
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="contato.html">Contato <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="contato.aspx">Contato <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
 			  </div>
@@ -43,24 +43,25 @@
 
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
-			<img src="imgs/logoSimples.png" width="200"> <br/><br/> <h2>Sobre a Servitiba:</h2>
-			<br> Nós somos uma empresa focada em agilizar a sua procura de serviços localizados
+			<img src="imgs/logoSimples.png" width="200"/> <br/><br/> <h2>Sobre a Servitiba:</h2>
+			<br/> Nós somos uma empresa focada em agilizar a sua procura de serviços localizados
 			próximos a você e proporcionar a intermediação de contato entre você e o fornecedor. 
 
-			<hr>
+			<hr/>
 
 			<h2>A equipe:</h2>
-			<br>
+			<br/>
 
-			<img src="imgs/leonardo.jpg" class="equipe"> <br/><h6 class="name_equip">Leonardo Felipe Comar</h6> <br/><br/>
-			<img src="imgs/lucas.jpg" class="equipe"> <br/><h6 class="name_equip">Lucas Mattei Malfertheiner</h6> <br/><br/>
-			<img src="imgs/ronaldo.jpg" class="equipe"> <br/><h6 class="name_equip">Ronaldo Bini da Silva Jr</h6> <br/><br/>
-			<img src="imgs/nicolas.jpg" class="equipe"> <br/><h6 class="name_equip">Nicolas Chueh Sourient</h6> <br/><br/>
-			<img src="imgs/victor.jpg" class="equipe"> <br/><h6 class="name_equip">Victor Rochadel Gantzel</h6> <br/><br/>
+			<img src="imgs/leonardo.jpg" class="equipe"/> <br/><h6>Leonardo Felipe Comar</h6> <br/><br/>
+			<img src="imgs/lucas.jpg" class="equipe"/> <br/><h6>Lucas Mattei Malfertheiner</h6> <br/><br/>
+			<img src="imgs/ronaldo.jpg" class="equipe"/> <br/><h6>Ronaldo Bini da Silva Jr</h6> <br/><br/>
+			<img src="imgs/nicolas.jpg" class="equipe"/> <br/><h6>Nicolas Chueh Sourient</h6> <br/><br/>
+			<img src="imgs/victor.jpg" class="equipe"/> <br/><h6>Victor Rochadel Gantzel</h6> <br/><br/>
 
-	</div>
+	    </div>
+    </div>
 
-	<br><br><br>
+	<br/><br/><br/>
     <div class="footerTest">
         <div class="footerTest_int">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
