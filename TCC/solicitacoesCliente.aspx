@@ -7,9 +7,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css"/>
     <title>Solicitações</title>
 </head>
 <body>
@@ -79,11 +79,11 @@
                         <img src="imgs/circular-clock.png" /></a>
 
                 </div>
-                <br>
-                <hr>
+                <br/>
+                <hr/>
 
-                <br>
-                <br>
+                <br/>
+                <br/>
                 <table class="table table-dark">
                     <thead>
                         <tr>
