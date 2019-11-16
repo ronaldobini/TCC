@@ -110,5 +110,15 @@ namespace TCC
 
 
         }
+
+
+
+
+        public void empresaAprove(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

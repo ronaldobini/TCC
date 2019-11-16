@@ -17,17 +17,24 @@ namespace TCC
         {
 
 
-            //mudar pra session
-            int SS_empresa = (int)Session["sIdEmp"];
+            //SAFE SESSION
+
+            if (Session["sIdEmp"] != null)
+            {
+                int SS_empresa = (int)Session["sIdEmp"];
+                //puxa lista do banco de dados
+                servsDB = new ServicoDAO().selectAllServsEmpSolic(SS_empresa);
+            }
+            else
+            {
+                Response.Redirect("loginEmpresa.aspx");
+            }
 
 
-            //puxa lista do banco de dados
-            servsDB = new ServicoDAO().selectAllServsEmpExe(SS_empresa);
 
 
 
 
-           
 
 
         }
