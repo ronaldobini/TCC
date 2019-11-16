@@ -57,7 +57,7 @@
 	<div class="conteudo_pagina_principal_2">
 		<div class="conteudo_pagina_principal_2_int">
 			<div class="botao_esq"><a href="loginCliente.aspx"><button class="btn btn-success">Login</button></a></div>
-			<div class="botao_dir"><a href="cadastroCliente.html"><button class="btn btn-success">Cadastrar-se</button></a></div>
+			<div class="botao_dir"><a href="cadastrarUsuario.aspx"><button class="btn btn-success">Cadastrar-se</button></a></div>
 		</div>
 	</div>
     <footer id="myFooter">

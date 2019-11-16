@@ -18,10 +18,10 @@ namespace TCC
         public EmpresaDAO empresaDAO = new EmpresaDAO();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["sIdEmp"] == null)
-            //{
-            //    Response.Redirect("loginEmpresa.aspx");
-            //}
+            if (Session["sIdEmp"] == null)
+            {
+                Response.Redirect("loginEmpresa.aspx");
+            }
             if (!IsPostBack)
             {
                 if (Request["id"] != null)

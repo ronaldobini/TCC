@@ -12,10 +12,10 @@ namespace TCC.Classes
         public void insertUser(Usuario user)
         {
             //Vou deixar bem separado o que é oq pra ficar mais claro
-            string sql = "INSERT INTO `usuario` (`id`, `login`, `senha`, `nome`, `email`, " +
-                " `cpf`, `telefone1`, `telefone2`, `endereco`, `numero`, `complemento`, " +
-                " `cep`, `cidade`, `reputacao`, `data_cadastro`, `ultimo_login`, `erros_senha`, " +
-                " `block`, `nivel_acesso`) " +
+            string sql = "INSERT INTO usuario (id, login, senha, nome, email, " +
+                " cpf, telefone1, telefone2, endereco, numero, complemento, " +
+                " cep, id_cidade, reputacao, data_cadastro, ultimo_login, erros_senha, " +
+                " block, nivel_acesso) " +
                 " VALUES( " + 
                 " NULL, " + // ID
                 " '" + user.Login + "', " + // Login
@@ -26,16 +26,16 @@ namespace TCC.Classes
                 " '" + user.Tel1 + "', " + // Tel1
                 " '" + user.Tel2 + "', " + // Tel2
                 " '" + user.Endereco + "', " + // Endereco
-                " '" + user.Numero + "', " + // Numero
+                " " + user.Numero + ", " + // Numero
                 " '" + user.Complemento + "', " + // Complemento
                 " '" + user.Cep + "', " + // Cep
-                " '" + user.Cidade.Nome + "', " + // Cidade
-                " '" + user.Reputacao + "', " + // Reputacao
+                " " + user.Cidade.Id + ", " + // Cidade
+                " " + user.Reputacao + ", " + // Reputacao
                 " '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "', " + // Data Cadastro
                 " '" + user.UltimoLogin.ToString() + "', " + // Data Ultimo Login
-                " '" + user.ErrosSenha + "', " + // Erros Senha
-                " '" + user.Block + "', " + // Block
-                " '" + user.Nivel + "' " + // Nivel Acesso
+                " " + user.ErrosSenha + ", " + // Erros Senha
+                " " + user.Block + ", " + // Block
+                " " + user.Nivel + " " + // Nivel Acesso
                 "); ";
             
             MySqlConnection conn = new Conn().conectar();
@@ -168,8 +168,8 @@ namespace TCC.Classes
             user.Numero = reader.GetInt32(9);
             user.Complemento = reader.GetString(10);
             user.Cep = reader.GetString(11);
-            user.Cidade = new CidadeDAO().selectCidadePorNome(reader.GetString(12));
-            user.Reputacao = reader.GetString(13);
+            user.Cidade = new CidadeDAO().selectCidadePorId(reader.GetInt32(11));
+            user.Reputacao = reader.GetInt32(11);
             user.DataCadastro = reader.GetMySqlDateTime(14);
             user.UltimoLogin = reader.GetMySqlDateTime(15);
             user.ErrosSenha = reader.GetInt32(16);

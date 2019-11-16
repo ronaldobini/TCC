@@ -82,7 +82,7 @@ namespace TCC
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
 
             Usuario user = new Usuario(0, postLogin, postSenha, postNome, postEmail, postCpf, postTel, postCel, postEnd, postNum, postComplemento,
-                postCep, new CidadeDAO().selectCidadePorNome(postCidade), "0", mysqldt, new MySqlDateTime(), 0, 0, 0, null);
+                postCep, new CidadeDAO().selectCidadePorNome(postCidade), 0, mysqldt, new MySqlDateTime(), 0, 0, 0, null);
             new UsuarioDAO().insertUser(user);
             
 
