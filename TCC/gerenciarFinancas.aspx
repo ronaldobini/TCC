@@ -15,7 +15,7 @@
 <body>
     <div class="top_cliente">
 		<div class="top_int_cliente">
-			Servitiba
+			<img src="imgs/logoComprida.png" width="300"/>
 		</div>
 	</div>
     <div class="menu">
@@ -36,7 +36,7 @@
 			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-                   <li class="nav-item active">
+                   <li class="nav-item">
 			        <a class="nav-link" href="servicosFinalizados.aspx">Serviços Finalizados <span class="sr-only">(página atual)</span></a>
 			      </li>
 
@@ -48,8 +48,8 @@
 			        <a class="nav-link" href="empresaColaboradores.aspx">Gerenciar Colaboradores <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-                   <li class="nav-item">
-			        <a class="nav-link" href="empresaFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
+                   <li class="nav-item active">
+			        <a class="nav-link" href="gerenciarFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
                    <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
@@ -184,6 +184,12 @@
 				  </div>
 				</div>
 
+    <br /><br />
+    <div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
+        </div>
+    </div>
     
         
 </body>

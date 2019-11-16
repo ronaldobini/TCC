@@ -15,7 +15,7 @@
 <body>
     <div class="top_cliente">
         <div class="top_int_cliente">
-            Servitiba
+           <img src="imgs/logoComprida.png" width="300"/>
         </div>
     </div>
 
@@ -158,12 +158,12 @@
     </div>
 
 
-    <br>
-    <footer id="sticky-footer" class="py-4 bg-dark text-white-50 footer-good">
-        <div class="container text-center">
-            <small>Copyright &copy; Servitiba</small>
+    <br><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
-    </footer>
+    </div>
 
 </body>
 

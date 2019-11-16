@@ -15,7 +15,7 @@
 <body>
 	<div class="top_cliente">
 		<div class="top_int_cliente">
-			Servitiba
+			<img src="imgs/logoComprida.png" width="300"/>
 		</div>
 	</div>
 
@@ -143,11 +143,11 @@
 		</div>
 	</div>
 
-
-	<div class="footer">
-		<div class="footer_int">
-			Rodapé teste. Aqui terá um rodapé.
-		</div>
-	</div>
+    <br /><br /><br /><br /><br /><br /><br /><br />
+	<div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
+        </div>
+    </div>
 </body>
 </html>

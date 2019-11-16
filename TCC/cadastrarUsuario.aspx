@@ -22,16 +22,16 @@
 
                 <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="principal.html">Pagina inicial<span class="sr-only">(página atual)</span></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.aspx">Pagina inicial<span class="sr-only">(página atual)</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="sobre.html">Sobre Nós<span class="sr-only">(página atual)</span></a>
+                            <a class="nav-link" href="sobre.aspx">Sobre Nós<span class="sr-only">(página atual)</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contato.html">Contato <span class="sr-only">(página atual)</span></a>
+                            <a class="nav-link" href="contato.aspx">Contato <span class="sr-only">(página atual)</span></a>
                         </li>
                     </ul>
                 </div>
@@ -41,7 +41,7 @@
 
     <div class="conteudo_pagina_cadastro">
         <div class="conteudo_pagina_cadastro_int">
-            <img src="logoTeste.png" width="100"><br>
+            <img src="imgs/logoSimples.png" width="100"><br>
             <h3>Cadastre-se!</h3>            
                 <form method="post" action="#" runat="server">
                 <div class="form-row">
@@ -119,56 +119,18 @@
 
 
                  <button type="submit" runat="server" onserverclick="Cadastrar" class="btn btn-primary">Cadastrar</button>
-                <small id="emailHelp" class="form-text text-muted">Já tem cadastro? <a href="login.html">Faça Login</a>! ou <a href="principal.html">de uma Espiadinha</a>!</small>
             </form>
         </div>
+    </div><br /><br />
+    <div class="centralizar"><small id="emailHelp" class="form-text text-muted">Já tem cadastro? <a href="loginCliente.aspx">Faça Login</a>! ou <a href="index.aspx">de uma Espiadinha</a>!</small></div>
+    <br><br />
+    <br>
+    <br>
+    <div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
+        </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/">
-                        <img src="logoMenor.png" width="250" class="logoMenor">
-                    </a></h2>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Inicio</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Home</a></li>
-                        <li><a href="https://bit.ly/front-end-curso-completo-promocao-01">Cursos</a></li>
-                        <li><a href="https://programadorviking.com.br/">Downloads</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Sobre-nós</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Informações da Empresa</a></li>
-                        <li><a href="https://programadorviking.com.br/">Contato</a></li>
-                        <li><a href="https://programadorviking.com.br/">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Suporte</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">FAQ</a></li>
-                        <li><a href="https://programadorviking.com.br/">Telefones</a></li>
-                        <li><a href="https://programadorviking.com.br/">Chat</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <a href="https://programadorviking.com.br/">
-                        <button type="button" class="btn btn-default">Contato</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <p>© 2019 Copyright - Nome do sistema</p>
-        </div>
-    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>

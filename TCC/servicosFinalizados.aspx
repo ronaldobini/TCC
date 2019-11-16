@@ -15,7 +15,7 @@
 <body>
     <div class="top_cliente">
 		<div class="top_int_cliente">
-			Servitiba
+			<img src="imgs/logoComprida.png" width="300"/>
 		</div>
 	</div>
 
@@ -134,48 +134,10 @@
 			
 		</div>
 	</div>
-
-<footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="logoTeste.png" width="250"> </a></h2>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Inicio</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Home</a></li>
-                        <li><a href="https://bit.ly/front-end-curso-completo-promocao-01">Cursos</a></li>
-                        <li><a href="https://programadorviking.com.br/">Downloads</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Sobre-nós</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Informações da Empresa</a></li>
-                        <li><a href="https://programadorviking.com.br/">Contato</a></li>
-                        <li><a href="https://programadorviking.com.br/">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Suporte</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">FAQ</a></li>
-                        <li><a href="https://programadorviking.com.br/">Telefones</a></li>
-                        <li><a href="https://programadorviking.com.br/">Chat</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <a href="https://programadorviking.com.br/">
-                        <button type="button" class="btn btn-default">Contato</button>
-                    </a>
-                </div>
-            </div>
+    <br /><br /><br /><br />
+<div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
-        <div class="footer-copyright">
-            <p>© 2019 Copyright - Servitiba</p>
-        </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
 </body>

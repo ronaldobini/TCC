@@ -16,7 +16,7 @@
     <center>
     <div class="top_cliente">
 		<div class="top_int_cliente">
-			<img src="logo.png" height="120">
+			<img src="imgs/logoComprida.png" width="300"/>
 		</div>
 	</div>
    
@@ -56,165 +56,100 @@
 	</div>
 	
 	<div class="conteudo_index_cliente">
-		<div class="conteudo_index_cliente_int">
+		<div class="conteudo_tabelas_centralizar">
              
-			Contratar:
-            <hr />
+			   <br /> Contratar:<br /><br />
+            
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <table>
-                        <tr><th style="width:200px;">Serviço</th><th style="width:200px;">Preço Médio</th><th style="width:200px;">Tempo Médio</th><th style="width:200px;">Contratar</th></tr>
-                        <%foreach (var serv in servs)
-                            {
-                                string linkContratar = "servicoContratar.aspx?idEmpEsc="+(getEmpresaMapa)+"&idSerEsc="+(serv.Id);
-                                int i = 0;
-                        %>
+                        <table>
+                            <tr><th style="width:200px;">Serviço</th><th style="width:200px;">Preço Médio</th><th style="width:200px;">Tempo Médio</th><th style="width:200px;">Contratar</th></tr>
+                            <%foreach (var serv in servs)
+                                {
+                                    string linkContratar = "servicoContratar.aspx?idEmpEsc="+(getEmpresaMapa)+"&idSerEsc="+(serv.Id);
+                                    int i = 0;
+                            %>
 
                         
 
-                        <tr><td><%=serv.Desc %></td><td><%=serv.ValorAprox %></td><td><%=serv.TempoAprox %></td><td><a href="<%=linkContratar %>">Contratar </a></td></tr>                        
+                            <tr><td><%=serv.Desc %></td><td><%=serv.ValorAprox %></td><td><%=serv.TempoAprox %></td><td><a href="<%=linkContratar %>">Contratar </a></td></tr>                        
                         
-                        <% } %>
-                    </table>
-                </div>
-            </div>
-            <br /><br /><br /><br />
+                            <% } %>
+                        </table>
+            <br /><br />
 
-
-            Detalhes:
             <hr />
+            Detalhes:<br /><br />
 
-			  <div class="form-row">
-                  <div class="form-group col-md-2">
-			      <label for="inputPassword4">Razão Social</label><br>
-			      <font color="blue"><h3><%=razaoSocial %></h3></font>
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputEmail4">CNPJ</label><br>
-			      <font color="blue"><%=cnpj %></font>
-			    </div>
-			    
-                 <div class="form-group col-md-2">
-			     <label for="inputEmail4">Diretor</label><br>
-			     <font color="blue"><%=diretor %></font>
-			    </div>
-			  </div><br>
-              
+            <table class="table table-dark centralizarConteudoTabelas">
+              <tr>
+                <th>Razão Social</th>
+                <th>CNPJ</th>
+                <th>Diretor</th>
+                <th>Representante Comercial</th>
+              </tr>
+              <tr>
+                <td><%=razaoSocial %></td>
+                <td><%=cnpj %></td>
+                <td><%=diretor %></td>
+                <td><%=comercial %></td>
+              </tr>
+            </table> <br /><br />
 
-			  <div class="form-row">                
-                  <div class="form-group col-md-2">
-			      <label for="inputEmail4">Representante Comercial</label><br>
-			      <font color="blue"><%=comercial %></font>
-			    </div>
-                 <div class="form-group col-md-2">
-			      <label for="inputEmail4">Representante Técnico</label><br>
-			      <font color="blue"><%=tecnico %></font>
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputEmail4">Telefone 1</label><br>
-			      <font color="blue"><%=telefone1 %></font>
-			    </div>
-			    
-			  </div><br>
+            <table class="table table-dark centralizarConteudoTabelas">
+              <tr>
+                <th>Representante Técnico</th>
+                <th>Telefone 1</th>
+                <th>Endereço</th>
+                <th>Complemento</th>
+              </tr>
+              <tr>
+                <td><%=tecnico %></td>
+                <td><%=telefone1 %></td>
+                <td><%=endereco %>, <%=numero %></td>
+                <td><%=complemento %></td>
+              </tr>
+            </table> <br /><br />
 
-			  <div class="form-row">
-			    <div class="form-group col-md-2">
-			      <label for="inputEmail4">Endereço</label><br>
-			      <font color="blue"><%=endereco %>, <%=numero %></font>
-			    </div>			   
-			    <div class="form-group col-md-2">
-			      <label for="inputPassword4">Complemento</label><br>
-			      <font color="blue"><%=complemento %></font>
-			    </div>
-                <div class="form-group col-md-2">
-			      <label for="inputPassword4">Telefone 2</label><br>
-			      <font color="blue"><%=telefone2 %></font>
-			    </div>
-			  </div><br>
+            <table class="table table-dark centralizarConteudoTabelas">
+              <tr>
+                <th>Telefone 2</th>
+                <th>CEP</th>
+                <th>Quantidade de Funcionários</th>
+                <th>Reputação Fiscal</th>
+              </tr>
+              <tr>
+                <td><%=telefone2 %></td>
+                <td><%=cep %></td>
+                <td><%=qtdFunc %></td>
+                <td><%=repA %></td>
+              </tr>
+            </table> <br /><br />
 
-			  <div class="form-row">
-			    <div class="form-group col-md-2">
-			      <label for="inputEmail4">CEP</label><br>
-			      <font color="blue"><%=cep %></font>
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputPassword4">Quantidade de Funcionários</label><br>
-			      <font color="blue"><%=qtdFunc %></font>
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputPassword4">Reputação Fiscal</label><br>
-			      <font color="blue"><%=repA %></font>
-			    </div>
-			  </div><br>
+            <table class="table table-dark centralizarConteudoTabelas">
+              <tr>
+                <th>Data do Cadastro</th>
+                <th>Serviço Selecionado</th>
+              </tr>
+              <tr>
+                <td><%=cadastro %></td>
+                <td><%=razaoSocial %></td>
+              </tr>
+            </table>
 
-			  <div class="form-row">
-			    <div class="form-group col-md-2">
-			      <label for="inputEmail4">Data do Cadastro</label><br>
-			      <font color="blue"><%=cadastro %></font>
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputEmail4">Serviço Selecionado</label><br>
-			      <font color="blue"><%=razaoSocial %></font>
-			    </div>
-			  </div><br><br>
 
-			  <div class="form-row">
-			    <div class="form-group col-md-6">
 			      <label for="inputPassword4">Descrição da empresa</label> <br>
 			      <textarea rows="6" cols="85" disabled><%=descricao %></textarea>
-			    </div>
-			  </div>
-
 			
 	         
 		</div>
 	</div>
+        <br /><br />
 
 
-
-	<footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="logoMenor.png" width="250" class="logoMenor"> </a></h2>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Inicio</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Home</a></li>
-                        <li><a href="https://bit.ly/front-end-curso-completo-promocao-01">Cursos</a></li>
-                        <li><a href="https://programadorviking.com.br/">Downloads</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Sobre-nós</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Informações da Empresa</a></li>
-                        <li><a href="https://programadorviking.com.br/">Contato</a></li>
-                        <li><a href="https://programadorviking.com.br/">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Suporte</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">FAQ</a></li>
-                        <li><a href="https://programadorviking.com.br/">Telefones</a></li>
-                        <li><a href="https://programadorviking.com.br/">Chat</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <a href="https://programadorviking.com.br/">
-                        <button type="button" class="btn btn-default">Contato</button>
-                    </a>
-                </div>
-            </div>
+	<div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
-        <div class="footer-copyright">
-            <p>© 2019 Copyright - Nome do sistema</p>
-        </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
 </body>
 </html>

@@ -45,7 +45,7 @@
 
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
-			<img src="imgs/logoTeste.png" width="350"> <br><br>
+			<img src="imgs/logoSimples.png" width="250"> <br><br>
 			<form runat="server" method="post" action="#">
 				<div class="form-group">
 					<input type="text" name="" placeholder="Login" class="form-control" id="login" runat="server"> <br><br>
@@ -53,54 +53,16 @@
 					<br>
 					<input type="submit" onserverclick="autenticar" value="Login" class="btn btn-success" runat="server">
 					<br>
-					<small id="emailHelp" class="form-text text-muted">Não tem login? <a href="clienteCadastro.aspx">Cadastre-se!</a></small>
+					<small id="emailHelp" class="form-text text-muted">Não tem login? <a href="cadastrarUsuario.aspx">Cadastre-se!</a></small>
                     <font color="red"><%=mensagem %></font>
 				</div>
 			</form>
 		</div>		
-	</div>
-    <footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="imgs/logoTeste.png" width="250"> </a></h2>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Inicio</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Home</a></li>
-                        <li><a href="https://bit.ly/front-end-curso-completo-promocao-01">Cursos</a></li>
-                        <li><a href="https://programadorviking.com.br/">Downloads</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Sobre-nós</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Informações da Empresa</a></li>
-                        <li><a href="https://programadorviking.com.br/">Contato</a></li>
-                        <li><a href="https://programadorviking.com.br/">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Suporte</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">FAQ</a></li>
-                        <li><a href="https://programadorviking.com.br/">Telefones</a></li>
-                        <li><a href="https://programadorviking.com.br/">Chat</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <a href="https://programadorviking.com.br/">
-                        <button type="button" class="btn btn-default">Contato</button>
-                    </a>
-                </div>
-            </div>
+	</div> <br /><br /><br /><br /><br />
+    <div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
-        <div class="footer-copyright">
-            <p>© 2019 Copyright - Servitiba</p>
-        </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
 </body>
 </html>

@@ -36,7 +36,7 @@
 
                 <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="index.aspx">Pagina inicial<span class="sr-only">(página atual)</span></a>
                         </li>
 
@@ -45,7 +45,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="contato.html">Contato <span class="sr-only">(página atual)</span></a>
+                            <a class="nav-link" href="contato.aspx">Contato <span class="sr-only">(página atual)</span></a>
                         </li>
                     </ul>
                 </div>
@@ -55,7 +55,7 @@
 
     <div class="conteudo_pagina_cadastro">
         <div class="conteudo_pagina_cadastro_int">
-            <img src="logoTeste.png" width="100"><br>
+            <img src="imgs/logoSimples.png" width="100"><br>
             <%if (id == -1)
                 {
             %>
@@ -139,23 +139,22 @@
                         <%--<input type="text" runat="server" class="form-control telefone" id="cel" placeholder="(XX)x xxxx-xxxx">--%>
                     </div>
                 </div>
-
+                <br />
                 <div class="form-row">
                     <asp:DropDownList ID="cidadesDD" runat="Server">
                         <asp:ListItem />
                     </asp:DropDownList>
-
                     <%--<select class="form-control col-md-4">
 			    	<option>Função...</option>
 			    </select>--%>
                     <label for="cel">Funçao</label>
-                    <asp:TextBox ID="funcao" class="form-control" placeholder="Funçao" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="funcao" class="form-control" placeholder="Funçao" runat="server"></asp:TextBox><br /><br />
                     <%--<select class="form-control col-md-4">
 			    	<option>Formação...</option>
 			    </select>--%>
                     <label for="cel">Formaçao</label>
                     <asp:TextBox ID="formacao" class="form-control" placeholder="Formaçao" runat="server"></asp:TextBox>
-                </div>
+                </div><br />
 
                 <%if (id == -1)
                     {
@@ -179,50 +178,10 @@
     <br>
     <br>
     <br>
-    <footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/">
-                        <img src="imgs/logoTeste.png" width="250">
-                    </a></h2>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Inicio</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Home</a></li>
-                        <li><a href="https://bit.ly/front-end-curso-completo-promocao-01">Cursos</a></li>
-                        <li><a href="https://programadorviking.com.br/">Downloads</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Sobre-nós</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Informações da Empresa</a></li>
-                        <li><a href="https://programadorviking.com.br/">Contato</a></li>
-                        <li><a href="https://programadorviking.com.br/">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Suporte</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">FAQ</a></li>
-                        <li><a href="https://programadorviking.com.br/">Telefones</a></li>
-                        <li><a href="https://programadorviking.com.br/">Chat</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <a href="https://programadorviking.com.br/">
-                        <button type="button" class="btn btn-default">Contato</button>
-                    </a>
-                </div>
-            </div>
+    <div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
-        <div class="footer-copyright">
-            <p>© 2019 Copyright - Servitiba</p>
-        </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
 </body>
 </html>

@@ -29,7 +29,7 @@
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="contato.html">Contato <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="contato.aspx">Contato <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
 			    <form class="form-inline my-2 my-lg-0" action="loginEmpresa.aspx" method="POST">
@@ -60,28 +60,16 @@
 			<div class="botao_dir"><a href="cadastrarUsuario.aspx"><button class="btn btn-success">Cadastrar-se</button></a></div>
 		</div>
 	</div>
-    <footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="imgs/logoSimples.png" width="250"> </a></h2>
-                </div>
-                <div class="col-sm-2"><br /><br /><br />
-                    <h3>Inicio</h3>
-                </div>
-                <div class="col-sm-2"><br /><br /><br />
-                    <h3>Sobre-nós</h3>
-                </div>
-                <div class="col-sm-2"><br /><br /><br />
-                    <h3>Suporte</h3>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <p>© 2019 Copyright - Servitiba</p>
-        </div>
-    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <br /><br /><br />
+
+    <div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
+        </div>
+    </div>
+    
 </body>
 </html>

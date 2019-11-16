@@ -67,19 +67,35 @@ body {
 
 .conteudo_index_cliente_int {
 	width: 100%;
-	min-height: 600px;
 	padding: 50px;
 	height: auto;
 	margin: auto;
 	text-align: center;
 }
+
+.testBody {
+    background-color: #b3b3b3;
+    
+}
+
+.conteudo_tabelas_centralizar{
+    width:1040px;
+    height:auto;
+    margin:auto;
+}
+
+.centralizarConteudoTabelas{
+    text-align: center;
+}
+
+
 .conteudo_solicitacao_cliente_int {
-	width: 100%;
-	min-height: 600px;
-	height: auto;
-	margin: auto;
-	text-align: center;
-	padding: 25px;
+    width: 100%;
+    min-height: 600px;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    padding: 25px;
 }
 
 .conteudo_solicitacao_cliente_int {
@@ -106,13 +122,29 @@ body {
 	width: 70%;
 	height: 600px;
 	float: left;
+    padding:25px;
+}
+
+.caixinha {
+    background-color: #a9abaa;
+    color: black;
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+    padding: 20px;
+    margin-right: 15px;
+}
+
+
+.testeText {
+    border-radius:15px;
 }
 
 -----------------------------------
 
 .conteudo_relatorio_cliente {
-	width: 100%;
-	height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .conteudo_relatorio_cliente_int {
@@ -205,8 +237,8 @@ body {
 }
 
 tbody tr:hover {
- background-color: #ffffff;
- color: black;
+    background-color: #a9abaa;
+    color: black;
 }
 
 .footer {
@@ -241,13 +273,11 @@ tbody tr:hover {
 .conteudo_pagina_principal {
 	width: 100%;
 	height: auto;
-	min-height: 700px; 
 }
 
 .conteudo_pagina_principal_int {
 	width: 1040px;
 	height: auto;
-	min-height: 700px;
 	text-align: center;
 	margin: auto;
 	padding: 100px;
@@ -255,13 +285,13 @@ tbody tr:hover {
 
 .conteudo_pagina_principal_2 {
 	width: 100%;
-	height: 150px;
+	height: auto;
 	min-height: 150px;
 }
 
 .conteudo_pagina_principal_2_int {
 	width: 1040px;
-	height: 150px;
+	height: auto;
 	min-height: 150px;
 	margin: auto;
 	text-align: center;
@@ -279,17 +309,23 @@ tbody tr:hover {
 
 .conteudo_pagina_cadastro {
 	width: 100%;
-	height: 700px;
-	min-height: 700px; 
+	height: auto;
 }
 
 .conteudo_pagina_cadastro_int {
 	width: 1040px;
-	height: 700px;
-	min-height: 700px;
+	height: auto;
 	text-align: center;
 	margin: auto;
 	padding: 15px;
+}
+
+.conteudo_pagina_principal_empresa {
+    background-color: #b3b3b3;
+}
+
+.centralizar {
+    text-align: center;
 }
 
 .equipe {
@@ -318,4 +354,23 @@ tbody tr:hover {
     background-color: red;
     color: white;
     text-align: center;
+}
+
+.footerTest {
+    width: 100%;
+    height: 70px;
+    background-color: #3c3d41;
+}
+
+.footerTest_int {
+    width: 1040px;;
+    height: 70px;
+    margin: auto;
+    text-align: center;
+    padding-top:25px;
+    color:lightgrey;
+}
+
+.img_rodape {
+    margin-left:20px;
 }

@@ -85,10 +85,10 @@
 		</div>
 	</div>
     <%=mensagem %>
-	<div class="footer">
-		<div class="footer_int">
-			Rodapé teste. Aqui terá um rodapé.
-		</div>
-	</div>
+	<div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
+        </div>
+    </div>
 </body>
 </html>

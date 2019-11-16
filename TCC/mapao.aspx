@@ -10,6 +10,9 @@
     <meta charset="utf-8" />
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -19,8 +22,6 @@
       html, body {
         margin: 0;
         padding: 0;
-        height: 100%;
-        width: 100%;
       }
       #map {
         height: 400px;
@@ -50,7 +51,7 @@
 
     	<div class="top_cliente">
 		<div class="top_int_cliente">
-			Nome do Sistema
+			<img src="imgs/logoComprida.png" width="300"/>
 		</div>
 	</div>
 
@@ -76,7 +77,7 @@
 			    </ul>
 			    
 <% if (Session["sId"] == null){ %>
-                    <a href="cadastroCliente.aspx" style="margin-right:30px;"> <button class="btn btn-primary" type="submit">Cadastre-se para solicitar um serviço</button></a>
+                    <a href="cadastrarUsuario.aspx" style="margin-right:30px;"> <button class="btn btn-primary" type="submit">Cadastre-se para solicitar um serviço</button></a>
 			        <a href="loginCliente.aspx"> <button class="btn btn-outline-success" type="submit">Login</button></a>
                     
 <% }else{ %>
@@ -189,14 +190,14 @@
 		</div>
 	</div>
 
-
-	<div class="footer">
-		<div class="footer_int">
-			Rodapé teste. Aqui terá um rodapé.
-		</div>
-	</div>
+    <br /><br />
+	<div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
+        </div>
+    </div>
 
     
-     <p><%=mostrar%></p>
+     
 </body>
 </html>

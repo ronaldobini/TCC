@@ -16,7 +16,7 @@
 <body>
     <div class="top_cliente">
     <div class="top_int_cliente">
-      <img src="logo.png" height="120">
+      <img src="imgs/logoComprida.png" width="300"/>
     </div>
   </div>
 
@@ -76,28 +76,28 @@
         <div class="panel">
           <form runat="server">
             <div class="form-row">
-              <div class="form-group col-md-2">
-                <label for="inputEmail4">Num. Serviço:</label>
+              <div class="form-group col-md-2 caixinha">
+                <label for="inputEmail4">Num. Serviço:</label><br />
                 <font color="blue"><%=servicoget %></font>
               </div>
-                <div class="form-group col-md-2">
-                <label for="inputEmail4">Desc. Serviço:</label>
+                <div class="form-group col-md-2 caixinha">
+                <label for="inputEmail4">Desc. Serviço:</label><br />
                 <font color="blue"><%=descServ %></font>
               </div>
-              <div class="form-group col-md-2">
-                <label for="inputEmail4">Situação:</label>
+              <div class="form-group col-md-2 caixinha">
+                <label for="inputEmail4">Situação:</label><br />
                 <font color="blue"><%=sitS %></font>
               </div>
-              <div class="form-group col-md-2">
-                <label for="inputEmail4">Empresa:</label>
+              <div class="form-group col-md-2 caixinha">
+                <label for="inputEmail4">Empresa:</label><br />
                 <font color="blue"><%=nomeEmpresa %></font>
               </div>
-              <div class="form-group col-md-2">
-                  <label for="inputPassword4">Cliente:</label>
+              <div class="form-group col-md-2 caixinha">
+                  <label for="inputPassword4">Cliente:</label><br />
                   <font color="blue"><%=nomeCliente %></font>
               </div>
               <div class="form-group col-md-2">
-                  <label for="inputPassword4">Preço:</label>
+                  <label for="inputPassword4">Preço:</label><br />
                   <asp:textbox id="txValor" runat="server" ></asp:textbox>
               </div>
               <div class="form-group col-md-2">
@@ -105,17 +105,19 @@
                   <asp:textbox id="txDataEstimada" runat="server" ></asp:textbox>
               </div>
             </div>
-              <br /><br /><br />
+              <br />
             <div class="form-row">            
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Descrição Cliente</label> <br>
-                <textarea rows="6" cols="100" <%=disabled %>>
+                <textarea rows="6" cols="90" <%=disabled %> class="testeText">
                 <%=descUsu %>
                 </textarea>
               </div>
               <div class="form-group col-md-4">
-                <table id="funcs">
+                  <br /><br />
+                <table id="funcs" class="table table-dark">
                     <tr><th style="width:100px;">Nome Técnico</th><th style="width:100px;">Formação</th><th style="width:100px;">Cpf</th><th style="width:100px;">Tel</th></tr>
+                    <tr><td>a</td><td>a</td><td>a</td><td>a</td></tr>
                     <%  
                         if (listaServTec != null)
                         {
@@ -138,7 +140,6 @@
 
           
         </div> <br> 
-        <hr />
 
                     <% if (sit == 0)
                         {
@@ -225,48 +226,10 @@
     </div>
   </div>
 
-<footer id="myFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2 class="logo"><a href="https://programadorviking.com.br/"> <img src="logoMenor.png" width="250" class="logoMenor"> </a></h2>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Inicio</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Home</a></li>
-                        <li><a href="https://bit.ly/front-end-curso-completo-promocao-01">Cursos</a></li>
-                        <li><a href="https://programadorviking.com.br/">Downloads</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Sobre-nós</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">Informações da Empresa</a></li>
-                        <li><a href="https://programadorviking.com.br/">Contato</a></li>
-                        <li><a href="https://programadorviking.com.br/">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Suporte</h5>
-                    <ul>
-                        <li><a href="https://programadorviking.com.br/">FAQ</a></li>
-                        <li><a href="https://programadorviking.com.br/">Telefones</a></li>
-                        <li><a href="https://programadorviking.com.br/">Chat</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <a href="https://programadorviking.com.br/">
-                        <button type="button" class="btn btn-default">Contato</button>
-                    </a>
-                </div>
-            </div>
+<div class="footerTest">
+        <div class="footerTest_int">
+            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
-        <div class="footer-copyright">
-            <p>© 2019 Copyright - Nome do sistema</p>
-        </div>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
 </body>
 </html>
