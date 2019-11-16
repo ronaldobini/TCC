@@ -54,9 +54,7 @@
 			      </li>
 			    </ul>
                    <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
-			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
-			      <button class="btn btn-outline-danger" type="submit">Sair</button>
-			    </form>
+			    <a href="Logout.aspx"><button class="btn btn-outline-danger">Sair</button></a>
 			  </div>
 			</nav>
 		</div>
@@ -98,9 +96,9 @@
         int idCliente = serv.IdUser;
         int idEmpSer = serv.IdEmpSer;
         string resumo = serv.DescUser;
-        DateTime datIni = serv.DataIni;
-        DateTime datFim = serv.DataFimEst;
-        DateTime datFimR = serv.DataFim;
+        datIni = serv.DataIni;
+        datFim = serv.DataFimEst;
+        datFimR = serv.DataFim;
         double notaMedia = serv.RepQualidade;
 
         TCC.Classes.Usuario user = new TCC.Classes.UsuarioDAO().selectUser(idCliente);

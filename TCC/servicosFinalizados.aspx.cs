@@ -5,12 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TCC.Classes;
-
+using MySql.Data.Types;
 namespace TCC
 {
     public partial class servicosFinalizados : System.Web.UI.Page
     {
         public List<Servico> servsDB = new List<Servico>();
+        DateTime dataFimEst;
+        public DateTime datIni;
+        public DateTime datFim;
 
         protected void Page_Load(object sender, EventArgs e)
         {

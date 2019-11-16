@@ -29,14 +29,14 @@ namespace TCC.Classes
                 "" + serv.IdUser + "," +
                 "" + serv.IdEmp + "," +
                 "" + serv.IdRepresEmp + "," +
-                "'" + serv.DataIni.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
+                "'" + serv.DataIni + "'," +
                 "" + serv.Categoria.Id + "," +
                 "" + serv.IdEmpSer + "," +
                 "'" + serv.DescUser + "'," +
                 "" + serv.Prioridade + "," +
                 "" + serv.Valor + "," +
-                "'" + serv.DataFimEst.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
-                "'" + serv.DataFim.ToString("MM/dd/yyyy HH:mm:ss") + "'," +
+                "'" + serv.DataFimEst + "'," +
+                "'" + serv.DataFim + "'," +
                 "" + serv.Sit + "," +
                 "" + serv.AceiteUser + "," +
                 "" + serv.AceiteEmp + "," +
@@ -86,9 +86,9 @@ namespace TCC.Classes
         {
             string sql = "UPDATE servico " +
                 "SET valor = " + valor + ", " +
-                "data_fim_estimada = '" + dataPrev + "'" +
+                "data_fim_estimada = '" + dataPrev.ToString("yyyy-MM-dd HH:mm:ss") + "' " +
                 "WHERE id  = " + idServ + " ";
-
+            string tst = dataPrev.ToString("yyyy-MM-dd HH:mm:ss");
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
             conn.Close();
@@ -97,7 +97,7 @@ namespace TCC.Classes
         public void updateSit(int sit, int idServ)
         {
             string sql = "UPDATE servico " +
-                "SET sit = " + sit + " " +
+                "SET situacao = " + sit + " " +
                 "WHERE id  = " + idServ + " ";
 
             MySqlConnection conn = new Conn().conectar();
@@ -312,14 +312,23 @@ namespace TCC.Classes
             serv.IdUser = reader.GetInt32(1);
             serv.IdEmp = reader.GetInt32(2);
             serv.IdRepresEmp = reader.GetInt32(3);
-            serv.DataIni = reader.GetDateTime(4);
+            try
+            {
+                serv.DataIni = DateTime.Parse(reader.GetMySqlDateTime(4).Value.ToString());
+                serv.DataFimEst = DateTime.Parse(reader.GetMySqlDateTime(10).Value.ToString());
+                serv.DataFim = DateTime.Parse(reader.GetMySqlDateTime(11).Value.ToString());
+            }
+            catch (Exception e)
+            {
+                serv.DataIni = new DateTime();
+                serv.DataFimEst = new DateTime();
+                serv.DataFim = new DateTime();
+            }
             serv.Categoria = new CategoriaDAO().selectCat(reader.GetInt32(5));
             serv.IdEmpSer = reader.GetInt32(6);
             serv.DescUser = reader.GetString(7);
             serv.Prioridade = reader.GetInt32(8);
             serv.Valor = reader.GetDouble(9);
-            serv.DataFimEst = reader.GetDateTime(10);
-            serv.DataFim = reader.GetDateTime(11);
             serv.Sit = reader.GetInt32(12);
             serv.AceiteUser = reader.GetInt32(13);
             serv.AceiteEmp = reader.GetInt32(14);

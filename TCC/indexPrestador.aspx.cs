@@ -5,12 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TCC.Classes;
+using MySql.Data.Types;
 
 namespace TCC
 {
     public partial class indexPrestador : System.Web.UI.Page
     {
         public List<Servico> servsDB = new List<Servico>();
+        public DateTime dataFimEst;
 
         protected void Page_Load(object sender, EventArgs e)
         {

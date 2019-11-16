@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="servicoDetalhes.aspx.cs" Inherits="TCC.servicoDetalhes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="servicoDetalhes.aspx.cs" Inherits="TCC.servicoDetalhes" enableEventValidation="true"%>
 
 
 
@@ -61,9 +61,7 @@
                     
 			    </ul>
                    <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
-			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
-			      <button class="btn btn-outline-danger" type="submit">Sair</button>
-			    </form>
+			    <a href="Logout.aspx"><button class="btn btn-outline-danger">Sair</button></a>
 			  </div>
 			</nav>
 		</div>
@@ -74,7 +72,7 @@
       
         <br><br>
         <div class="panel">
-          <form runat="server">
+          <form runat="server" action="#">
             <div class="form-row">
               <div class="form-group col-md-2 caixinha">
                 <label for="inputEmail4">Num. Serviço:</label><br />
@@ -101,7 +99,7 @@
                   <asp:textbox id="txValor" runat="server" ></asp:textbox>
               </div>
               <div class="form-group col-md-2">
-                  <label for="inputPassword4">Previsão:</label>
+                  <label for="inputPassword4">Previsão:</label><br />
                   <asp:textbox id="txDataEstimada" runat="server" ></asp:textbox>
               </div>
             </div>
@@ -136,17 +134,19 @@
                 </table>
               </div>
             </div>
-          </form>
+          
 
           
         </div> <br> <hr /> 
+
+        
 
                     <% if (sit == 0)
                         {
                              if(Session["sIdEmp"] != null){
                     %>
                            
-                                <button runat="server" onserverclick="empresaUpdate" class="btn btn-success" type="submit">Atualizar</button>
+                                <input runat="server" onserverclick="empresaUpdate" class="btn btn-success" type="submit" value="Atualizar" />
                                 <button runat="server" onserverclick="empresaAprove" class="btn btn-success" type="submit">Aprovar</button>        
                                 <button runat="server" onserverclick="empresaReprove" class="btn btn-success" type="submit">Recusar</button>
                             
@@ -175,7 +175,7 @@
                     %>
                             
                                 <button runat="server" onserverclick="clienteEnd" class="btn btn-success" type="submit">Serviço executado como previsto</button>
-                                <button runat="server" onserverclick="clienteProblem" class="btn btn-outline-danger" type="submit">Tive problemas</button>
+                                <button runat="server" onserverclick="anyProblem" class="btn btn-outline-danger" type="submit">Tive problemas</button>
                            
 
                     <%
@@ -234,7 +234,7 @@
 
       </div>
     
-      
+      </form>
     </div>
   </div>
 

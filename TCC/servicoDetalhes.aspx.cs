@@ -42,42 +42,45 @@ namespace TCC
 
                 nomeEmpresa = emp.RazaoSocial;
                 nomeCliente = usu.Nome;
-                txValor.Text = serv.Valor.ToString();
-                txDataEstimada.Text = serv.DataFimEst.ToString();
+                if (!IsPostBack)
+                {
+                    txValor.Text = serv.Valor.ToString();
+                    txDataEstimada.Text = serv.DataFimEst.ToString();
+                }
                 descUsu = serv.DescUser;
                 sit = serv.Sit;
 
                 if (sit == 0)
                 {
-                    sitS = "Em solicitação / negociação para aceite da empresa";
+                    sitS = "Em solicitação, pendente aceite da empresa e acordo de preço e previsão";
                     disabled = " ";
                     txValor.Enabled = true;
                     txDataEstimada.Enabled = true;
                 }
                 else if (sit == 1)
                 {
-                    sitS = "Aceito pela empresa / Pendente aceite do Cliente";
+                    sitS = "Aceito pela empresa, pendente aceite do Cliente";
                     disabled = "disabled";
                     txValor.Enabled = false;
                     txDataEstimada.Enabled = false;
                 }
                 else if (sit == 2)
                 {
-                    sitS = "Em execução";
+                    sitS = "Em execução pela empresa!";
                     disabled = "disabled";
                     txValor.Enabled = false;
                     txDataEstimada.Enabled = false;
                 }
                 else if (sit == 3)
                 {
-                    sitS = "Serviço Executado / Aguardando aceite do Cliente";
+                    sitS = "Serviço Executado pela empresa, aguardando aceite do Cliente";
                     disabled = "disabled";
                     txValor.Enabled = false;
                     txDataEstimada.Enabled = false;
                 }
                 else if (sit == 4)
                 {
-                    sitS = "Finalizado";
+                    sitS = "Serviço finalizado";
                     disabled = "disabled";
                     txValor.Enabled = false;
                     txDataEstimada.Enabled = false;
@@ -125,43 +128,51 @@ namespace TCC
 
             //string dataCorrigida = corrigiData(txDataEstimada.Text);
 
-            DateTime prev = DateTime.Parse("16/11/2019 00:00:00");
+            DateTime prev = DateTime.Parse(txDataEstimada.Text);
 
             new ServicoDAO().updateServicoValor(valor,prev, servicoget);
-            mensagem.Text="Atualizado com sucesso!";
+            mensagem.Text="Dados atualizados com sucesso!";
         }
 
 
         public void empresaAprove(object sender, EventArgs e)
         {
-
-
+            new ServicoDAO().updateSit(1,servicoget);
+            mensagem.Text = "Aprovado com sucesso! Pendente aprovação do usuário.";
+            
         }
 
         public void empresaReprove(object sender, EventArgs e)
         {
-
+            new ServicoDAO().updateSit(-1, servicoget);
+            mensagem.Text = "Serviço reprovado!";
         }
 
         public void empresaEnd(object sender, EventArgs e)
         {
+            new ServicoDAO().updateSit(3, servicoget);
+            mensagem.Text = "Serviço enviado para aprovação final do usuário!";
 
         }
 
 
-        public void ClienteAprove(object sender, EventArgs e)
+        public void clientePay(object sender, EventArgs e)
         {
-
+            new ServicoDAO().updateSit(2, servicoget);
+            mensagem.Text = "Aprovado com sucesso! Redirecionando para o pagamento...";
+            //Response.Redirect("pagamento.aspx");
         }
 
-        public void ClienteEnd(object sender, EventArgs e)
+        public void clienteEnd(object sender, EventArgs e)
         {
-
+            new ServicoDAO().updateSit(4, servicoget);
+            mensagem.Text = "Aprovado com sucesso! Serviço está finalizado.";
         }
 
         public void anyProblem(object sender, EventArgs e)
         {
-
+            new ServicoDAO().updateSit(-2, servicoget);
+            mensagem.Text = "Você contestou esse serviço. A discussão será pelo chat com intervenção da Servitiba.";
         }
 
 

@@ -96,7 +96,7 @@
         int idCliente = serv.IdUser;
         int idEmpSer = serv.IdEmpSer;
         string resumo = serv.DescUser;
-        DateTime dataFimEst = serv.DataFimEst;
+        dataFimEst = serv.DataFimEst;
         int sit = serv.Sit;
 
         string situ = "-";

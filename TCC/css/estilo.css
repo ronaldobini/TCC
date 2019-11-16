@@ -129,11 +129,13 @@ body {
     background-color: #a9abaa;
     color: black;
     width: 200px;
-    height: 100px;
+    height: 125px;
     border-radius: 15px;
     padding: 20px;
     margin-right: 15px;
 }
+
+    
 
 
 .testeText {
