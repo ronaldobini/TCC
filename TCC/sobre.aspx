@@ -40,9 +40,10 @@
 		</div>
 	</div>
 
+
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
-			<img src="imgs/logoSimples.png" width="200"> <br><br> <h2>Sobre a Servitiba:</h2>
+			<img src="imgs/logoSimples.png" width="200"> <br/><br/> <h2>Sobre a Servitiba:</h2>
 			<br> Nós somos uma empresa focada em agilizar a sua procura de serviços localizados
 			próximos a você e proporcionar a intermediação de contato entre você e o fornecedor. 
 
@@ -51,11 +52,11 @@
 			<h2>A equipe:</h2>
 			<br>
 
-			<img src="imgs/leonardo.jpg" class="equipe"> Leonardo Felipe Comar <br><br>
-			<img src="imgs/lucas.jpg" class="equipe"> Lucas Mattei Malfertheiner <br><br>
-			<img src="imgs/ronaldo.jpg" class="equipe"> Ronaldo Bini da Silva Jr <br><br>
-			<img src="imgs/nicolas.jpg" class="equipe"> Nicolas Chueh Sourient <br><br>
-			<img src="imgs/victor.jpg" class="equipe"> Victor Rochadel Gantzel <br><br>
+			<img src="imgs/leonardo.jpg" class="equipe"> <br/><h6 class="name_equip">Leonardo Felipe Comar</h6> <br/><br/>
+			<img src="imgs/lucas.jpg" class="equipe"> <br/><h6 class="name_equip">Lucas Mattei Malfertheiner</h6> <br/><br/>
+			<img src="imgs/ronaldo.jpg" class="equipe"> <br/><h6 class="name_equip">Ronaldo Bini da Silva Jr</h6> <br/><br/>
+			<img src="imgs/nicolas.jpg" class="equipe"> <br/><h6 class="name_equip">Nicolas Chueh Sourient</h6> <br/><br/>
+			<img src="imgs/victor.jpg" class="equipe"> <br/><h6 class="name_equip">Victor Rochadel Gantzel</h6> <br/><br/>
 
 	</div>
 
@@ -65,5 +66,6 @@
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
     </div>
+
 </body>
 </html>

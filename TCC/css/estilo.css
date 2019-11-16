@@ -271,12 +271,12 @@ tbody tr:hover {
 }
 
 .conteudo_pagina_principal {
-	width: 100%;
+	width: auto;
 	height: auto;
 }
 
 .conteudo_pagina_principal_int {
-	width: 1040px;
+	width: auto;
 	height: auto;
 	text-align: center;
 	margin: auto;
@@ -363,7 +363,7 @@ tbody tr:hover {
 }
 
 .footerTest_int {
-    width: 1040px;;
+    width: auto;
     height: 70px;
     margin: auto;
     text-align: center;
@@ -373,4 +373,9 @@ tbody tr:hover {
 
 .img_rodape {
     margin-left:20px;
+}
+
+
+.name_equip {
+    margin-top: 3px;
 }
