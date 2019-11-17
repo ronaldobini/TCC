@@ -158,6 +158,7 @@ namespace TCC.Classes
             int atualT = emp.RepTempo;
 
             int qtdServs = emp.QtdServ;
+            if (qtdServs == 0) qtdServs = 1;
 
             double repuCalculadaQ = 0.0;
             repuCalculadaQ = ((atualQ * qtdServs) + rQua) / (qtdServs);
