@@ -59,7 +59,7 @@
             <%if (id == -1)
                 {
             %>
-            <h3>Cadastre o Gerente da Empresa</h3>
+            <h3>Cadastre novo colaborador</h3>
             <% }
                 else
                 {

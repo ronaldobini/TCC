@@ -65,7 +65,7 @@ namespace TCC.Classes
                 " ,complemento = '" + user.Complemento + "', " +
                 " cep = '" + user.Cep + "', " +
                 " id_cidade = " + user.Cidade.Id +
-                " ,reputacao = " + user.Reputacao + "', " +
+                " ,reputacao = " + user.Reputacao + ", " +
                 " erros_senha = " + user.ErrosSenha+
                 " ,block = " + user.Block +
                 " ,qtd_servicos = " + user.QtdServicos + 
