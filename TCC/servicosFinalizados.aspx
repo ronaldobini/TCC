@@ -31,7 +31,7 @@
 			    <ul class="navbar-nav mr-auto">
 			        <% if ((int)Session["sNivelEmp"] > 1)
                       {%>
-			      <li class="nav-item active">
+			      <li class="nav-item">
 			        <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
 
@@ -39,7 +39,7 @@
 			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-                   <li class="nav-item">
+                   <li class="nav-item active">
 			        <a class="nav-link" href="servicosFinalizados.aspx">Serviços Finalizados <span class="sr-only">(página atual)</span></a>
 			      </li>
 
