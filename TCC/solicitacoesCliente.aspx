@@ -149,7 +149,7 @@
                             %>
                                 </td>
                             <td><a href="<%=linkServDet %>">
-                                <img src="imgs/detalhes.png" /></a></td>
+                                <img src="imgs/more.png" /></a></td>
                             <td><a href="<%=linkDel %>">
                                 <img src="imgs/delete.png" /></a></td>
 
