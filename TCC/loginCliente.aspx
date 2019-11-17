@@ -36,7 +36,7 @@
 			      </li>
 			    </ul>
 			    <form class="form-inline my-2 my-lg-0" action="loginEmpresa.aspx" method="POST">
-			      <button class="btn btn-outline-primary" type="submit">Sou Empresa</button>
+			      <button class="btn btn-primary" type="submit">Sou Empresa</button>
 			    </form>
 			  </div>
 			</nav>
