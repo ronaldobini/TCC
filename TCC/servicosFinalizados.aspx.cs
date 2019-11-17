@@ -17,8 +17,6 @@ namespace TCC
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
             //SAFE SESSION
 
             if (Session["sIdEmp"] != null)
@@ -31,13 +29,6 @@ namespace TCC
             {
                 Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
             }
-
-
-
-
-
-
-
 
         }
     }

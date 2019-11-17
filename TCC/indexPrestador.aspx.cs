@@ -28,16 +28,6 @@ namespace TCC
             {
                 Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
             }
-
-
-            
-
-
-
-
-
-
-
         }
     }
 }
