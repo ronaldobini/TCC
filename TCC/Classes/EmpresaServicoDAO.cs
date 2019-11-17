@@ -10,8 +10,8 @@ namespace TCC.Classes
     {
         public void insertEmpServ(EmpresaServico empServ)
         {
-            string sql = "INSERT INTO empresa_servicos(id, id_empresa, id_categoria, descricao, valor_aprox, tempo_aprox,tags) " +
-                "VALUES (NULL," + empServ.Empresa.Id+ "," + empServ.Categoria.Id+ ", \" "+ empServ.Desc + "\"," +  empServ.ValorAprox + ",\""+empServ.TempoAprox + "\",\""+empServ.Tags+"\") ";
+            string sql = "INSERT INTO empresa_servicos(id, id_empresa, id_categoria, descricao, valor_aprox, tempo_aprox,tags,fl_ativo) " +
+                "VALUES (NULL," + empServ.Empresa.Id+ "," + empServ.Categoria.Id+ ", \" "+ empServ.Desc + "\"," +  empServ.ValorAprox + ",\""+empServ.TempoAprox + "\",\""+empServ.Tags+"\",0) ";
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
             conn.Close();
@@ -19,16 +19,25 @@ namespace TCC.Classes
         public void updateEmpServ(EmpresaServico empServ)
         {
             string sql = "UPDATE empresa_servicos " +
-                "SET id_empresa = " + empServ.Empresa.Id + ",id_categoria = " + empServ.Categoria.Id + ",descricao =\"" + empServ.Desc + "\",valor_aprox = " + empServ.ValorAprox + ",tempo_aprox = \"" + empServ.TempoAprox + "\" ,tags=\""+empServ.Tags+"\" WHERE id = " + empServ.Id ;
+                "SET id_empresa = " + empServ.Empresa.Id + ",id_categoria = " + empServ.Categoria.Id + ",descricao =\"" + empServ.Desc + "\",valor_aprox = " + empServ.ValorAprox + ",tempo_aprox = \"" + empServ.TempoAprox + "\" ,tags=\""+empServ.Tags+"\" fl_ativo=0 WHERE id = " + empServ.Id ;
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
             conn.Close();
         }
         public bool deleteEmpServ(EmpresaServico empServ)
         {
-            string sql = "DELETE FROM empresa_servicos WHERE id = " + empServ.Id;
+            string sql = "Update  empresa_servicos set fl_ativo=1 WHERE id = " + empServ.Id;
             MySqlConnection conn = new Conn().conectar();
             bool sucesso =new Conn().executar(sql, conn);
+            conn.Close();
+            return sucesso;
+
+        }
+        public bool ReabrirServico(int id)
+        {
+            string sql = "Update  empresa_servicos set fl_ativo=0 WHERE id = " +id;
+            MySqlConnection conn = new Conn().conectar();
+            bool sucesso = new Conn().executar(sql, conn);
             conn.Close();
             return sucesso;
 
@@ -127,6 +136,7 @@ namespace TCC.Classes
             empServ.ValorAprox = reader.GetDouble(4);
             empServ.TempoAprox = reader.GetString(5);
             empServ.Tags = reader.GetString(6);
+            empServ.FlAtivo = reader.GetInt16(7);
             return empServ;
         }
     }

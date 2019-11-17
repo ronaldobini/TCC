@@ -12,10 +12,15 @@
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <title>Home Page</title>
 </head>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 <body>
     <div class="top_cliente">
         <div class="top_int_cliente">
-           <img src="imgs/logoComprida.png" width="300"/>
+            <img src="imgs/logoComprida.png" width="300" />
         </div>
     </div>
 
@@ -78,10 +83,10 @@
                 <%if (statusOperação == 1)
                     { %>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong> Sucesso ao realizar operação.</strong>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
+                    <strong><%=msg %></strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <%}
                     else
@@ -91,15 +96,16 @@
                 %>
 
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong>Erro ao realizar operação.</strong>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
+                    <strong><%=msg %></strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <%
                         }
                     } %>
                 
+
                 <form method="POST" action="#" runat="server">
                     <table class="table table-dark">
                         <thead>
@@ -126,10 +132,16 @@
                                     <a href="<%=linkEditar %>">
                                         <img src="imgs/edit.png" /></a>
                                 </td>
-                                <td>
-                                    <a href="<%=linkExcluir %>">
-                                        <img src="imgs/x-button.png" id="btn-confirm" /></a>
-                                </td>
+                                <%if (servico.FlAtivo == 0)
+                                    { %>
+                                <td><a data-toggle="tooltip" data-placement="top" title="Desativar servico" href="<%=linkExcluir %>">
+                                    <img src="imgs/delete.png" /></a></td>
+                                <%}
+                                    else
+                                    { %>
+                                <td><a data-toggle="tooltip" data-placement="top" title="Reativar servico" href="gerenciarServicos.aspx?funcao=Reativar&id=<%=servico.Id %>">
+                                    <img src="imgs/nonstop.png" /></a></td>
+                                <%} %>
                             </tr>
                             <%
 
@@ -158,10 +170,11 @@
     </div>
 
 
-    <br><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
     <div class="footer-good">
         <div class="footerTest_int">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
+            © 2019 Copyright - Servitiba
+            <img src="imgs/logoSimples.png" width="30" class="img_rodape" />
         </div>
     </div>
 

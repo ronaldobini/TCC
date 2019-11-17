@@ -61,6 +61,69 @@ namespace TCC.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sucesso ao reativar serviço!.
+        /// </summary>
+        internal static string ativarServicoSucesso {
+            get {
+                return ResourceManager.GetString("ativarServicoSucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Erro ao cadastrar serviço!.
+        /// </summary>
+        internal static string cadastrarServicoErro {
+            get {
+                return ResourceManager.GetString("cadastrarServicoErro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sucesso ao cadastrar serviço!.
+        /// </summary>
+        internal static string cadastrarServicoSucesso {
+            get {
+                return ResourceManager.GetString("cadastrarServicoSucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Erro ao desativar serviço!.
+        /// </summary>
+        internal static string desativarServicoErro {
+            get {
+                return ResourceManager.GetString("desativarServicoErro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sucesso ao desativar serviço!.
+        /// </summary>
+        internal static string desativarServicoSucesso {
+            get {
+                return ResourceManager.GetString("desativarServicoSucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Sucesso ao editar serviço!.
+        /// </summary>
+        internal static string editarServicoSucesso {
+            get {
+                return ResourceManager.GetString("editarServicoSucesso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Erro ao desativar serviço!.
+        /// </summary>
+        internal static string erroDesativarServico {
+            get {
+                return ResourceManager.GetString("erroDesativarServico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Acorreu um erro inesperado!.
         /// </summary>
         internal static string ErroInesperado {
@@ -99,18 +162,18 @@ namespace TCC.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Colaborador desativado com sucesso!.
         /// </summary>
-        internal static string sucessoDesativarServ {
+        internal static string sucessoDesativarColaborador {
             get {
-                return ResourceManager.GetString("sucessoDesativarServ", resourceCulture);
+                return ResourceManager.GetString("sucessoDesativarColaborador", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Colaborador ativado com sucesso!.
         /// </summary>
-        internal static string sucessoReativarEmp {
+        internal static string sucessoReativarColaborador {
             get {
-                return ResourceManager.GetString("sucessoReativarEmp", resourceCulture);
+                return ResourceManager.GetString("sucessoReativarColaborador", resourceCulture);
             }
         }
     }
