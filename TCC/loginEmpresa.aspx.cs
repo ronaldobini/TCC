@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TCC.Classes;
+using TCC.Properties;
 
 namespace TCC
 {
@@ -12,10 +13,16 @@ namespace TCC
     {
         public string mensagem = " ";
         private int contaErros = 0;
+        public int statusOperação = 0;
+        public string msg = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["sit"] != null && Request.QueryString["msg"] != null)
+            {
+                statusOperação = Int32.Parse(Request.QueryString["sit"]);
+                msg = Mensagens.ResourceManager.GetString(Request.QueryString["msg"]);
+            }
         }
 
         public void autenticar(object sender, EventArgs e)

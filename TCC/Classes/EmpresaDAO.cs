@@ -9,8 +9,9 @@ namespace TCC.Classes
 {
     public class EmpresaDAO
     {
-        public void insertEmpresa(Empresa emp)
+        public string insertEmpresa(Empresa emp)
         {
+            string msg = "";
             //Vou deixar bem separado o que é oq pra ficar mais claro
             string sql = "INSERT INTO empresa (id, id_diretor, id_comercial, id_tecnico, cnpj, razao_social," +
                 "telefone1, telefone2, endereco, numero, complemento, cep, lat, lon, id_cidade, inicio_empresa, descricao_empresa," +
@@ -48,9 +49,15 @@ namespace TCC.Classes
             MySqlConnection conn = new Conn().conectar();
             if (new Conn().executar(sql, conn))
             {
-                string msg = "Sucesso ao cadastrar empresa";
+                 msg = "Sucesso ao cadastrar empresa";
+            }
+            else
+            {
+                 msg = "Erro ao cadastrar empresa";
+
             }
             conn.Close();
+            return msg;
         }
         public void updateEmpresa(Empresa emp)
         {

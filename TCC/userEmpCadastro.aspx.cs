@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TCC.Classes;
+using TCC.Properties;
 
 namespace TCC
 {
@@ -29,6 +30,8 @@ namespace TCC
         public int id = -1;
         public string tituloDaPag = "";
         public Usuario col;
+        public int statusOperação = 0;
+        public string msg = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["sIdEmp"] == null)
@@ -146,9 +149,24 @@ namespace TCC
             user = new UsuarioDAO().selectUserLogin(postLogin);
             UsuarioEmpresa userEmp = new UsuarioEmpresa(0, user.Id, idEmp, postFunc, cargoSelecionado, 0, descEscolar, formacao.Text, 0, postEscolar,0);
 
-            new UsuarioEmpresaDAO().insertUserEmp(userEmp);
+            if(new UsuarioEmpresaDAO().insertUserEmp(userEmp))
+            {
+                if (Session["sId"] == null)
+                {
+                    Response.Redirect("loginEmpresa.aspx?sit=1&msg=sucessoCadastrarEmpresa");
+                }
+                else
+                {
+                    Response.Redirect("empresaColaboradores.aspx?sit=1&msg=sucessoCadastrarColaborador");
+                }
+            }
+            else
+            {
+                
+                statusOperação = 2;
+                msg = Mensagens.ResourceManager.GetString("ErroInesperado");
+            }
 
-            Response.Redirect("empresaColaboradores.aspx");
 
         }
         public void editar(object sender, EventArgs e)

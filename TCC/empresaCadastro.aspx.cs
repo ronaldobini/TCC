@@ -44,7 +44,7 @@ namespace TCC
                 "000", "000", 1, mysqldt, postDesc , 1, 1, 1, 1, 1, 1, 1, "centro", mysqldt, 0);
             new EmpresaDAO().insertEmpresa(emp);
             emp = new EmpresaDAO().selectEmpPorCNPJ(postCnpj);
-            Session["empId"] = emp.Id;
+            Session["sIdEmp"] = emp.Id;
             Response.Redirect("userEmpCadastro.aspx");
         }
     }

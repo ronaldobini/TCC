@@ -61,7 +61,43 @@ namespace TCC.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Colaborador desativado com sucesso.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Acorreu um erro inesperado!.
+        /// </summary>
+        internal static string ErroInesperado {
+            get {
+                return ResourceManager.GetString("ErroInesperado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Favor realizar login!.
+        /// </summary>
+        internal static string sessaoInvalida {
+            get {
+                return ResourceManager.GetString("sessaoInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Colaborador cadastrado com sucesso!.
+        /// </summary>
+        internal static string sucessoCadastrarColaborador {
+            get {
+                return ResourceManager.GetString("sucessoCadastrarColaborador", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Empresa cadastrada com sucesso favor realizar login!.
+        /// </summary>
+        internal static string sucessoCadastrarEmpresa {
+            get {
+                return ResourceManager.GetString("sucessoCadastrarEmpresa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Colaborador desativado com sucesso!.
         /// </summary>
         internal static string sucessoDesativarServ {
             get {
@@ -70,7 +106,7 @@ namespace TCC.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Colaborador ativado com sucesso.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Colaborador ativado com sucesso!.
         /// </summary>
         internal static string sucessoReativarEmp {
             get {

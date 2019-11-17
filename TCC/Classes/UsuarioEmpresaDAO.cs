@@ -43,7 +43,7 @@ namespace TCC.Classes
             conn.Close();
             return msg;
         }
-        public string insertUserEmp(UsuarioEmpresa userEmp)
+        public bool insertUserEmp(UsuarioEmpresa userEmp)
         {
             string msg = "";
             string sql = "INSERT INTO usuario_empresa(id, id_usuario,id_empresa, funcao, nivel_empresa, qtd_servicos, nivel_escolar," +
@@ -61,17 +61,10 @@ namespace TCC.Classes
                 ","+userEmp.IdEscolar+",0);";
 
             MySqlConnection conn = new Conn().conectar();
-            if (new Conn().executar(sql, conn))
-            {
-                 msg = "Sucesso ao cadastrar usuario";
-            }
-            else
-            {
-                msg = "Erro ao cadastrar usuario";
-
-            }
+            var status = new Conn().executar(sql, conn);
+           
             conn.Close();
-            return msg;
+            return status;
         }
         public void updateUsuarioEmpresa(UsuarioEmpresa userEmp)
         {
