@@ -44,8 +44,8 @@
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
 			<img src="imgs/logoSimples.png" width="200"/> <br/><br/> <h2>Sobre a Servitiba:</h2>
-			<br/> Nós somos uma empresa focada em agilizar a sua procura de serviços localizados
-			próximos a você e proporcionar a intermediação de contato entre você e o fornecedor. 
+			<br/> Nós somos uma empresa focada em agilizar a sua busca de serviços localizados
+			próximos e proporcionar a intermediação entre você e o prestador de serviço.
 
 			<hr/>
 

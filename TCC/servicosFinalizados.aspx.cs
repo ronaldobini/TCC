@@ -29,7 +29,7 @@ namespace TCC
             }
             else
             {
-                Response.Redirect("loginEmpresa.aspx");
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
             }
 
 

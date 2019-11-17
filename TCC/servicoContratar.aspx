@@ -37,10 +37,6 @@
 			      <li class="nav-item">
 			        <a class="nav-link" href="solicitacoesCliente.html">Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
-
-			      <li class="nav-item">
-			        <a class="nav-link" href="relatoriosCliente.html">Relatórios <span class="sr-only">(página atual)</span></a>
-			      </li>
 			    </ul>
 			    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
 			      <button class="btn btn-outline-danger" type="submit">Sair</button>

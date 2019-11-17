@@ -20,7 +20,7 @@ namespace TCC
         {
             if (Session["sIdEmp"] == null)
             {
-                Response.Redirect("loginEmpresa.aspx");
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
             }
             if (!IsPostBack)
             {

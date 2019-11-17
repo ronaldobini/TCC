@@ -20,10 +20,10 @@ namespace TCC
         {
             if (Session["sIdEmp"] == null)
             {
-                Response.Redirect("loginEmpresa.aspx");
-
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
             }
-            if(Request.QueryString["sucesso"] != null)
+
+            if (Request.QueryString["sucesso"] != null)
             statusOperação = Int32.Parse(Request.QueryString["sucesso"]);
 
             int idEmpresa = (int)Session["sIdEmp"];

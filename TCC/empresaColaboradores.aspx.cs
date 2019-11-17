@@ -19,9 +19,9 @@ namespace TCC
         {
             if (Session["sIdEmp"] == null)
             {
-                Response.Redirect("loginEmpresa.aspx");
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
             }
-            
+
             int idEmpresa = (int)Session["sIdEmp"];
             List<UsuarioEmpresa> colUserEmp = new UsuarioEmpresaDAO().selectUsersIdEmpresa(idEmpresa);
             
