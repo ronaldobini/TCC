@@ -289,6 +289,13 @@ tbody tr:hover {
 	padding: 50px;
 }
 
+.tamanho_campos {
+    height:auto;
+    width: 300px;
+    text-align:center;
+    margin:auto;
+}
+
 .conteudo_pagina_principal_2 {
 	width: 100%;
 	height: auto;

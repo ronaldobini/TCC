@@ -43,14 +43,16 @@
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
 			<img src="imgs/logoComprida.png" width="650"> <br><br>
-			<form method="POST" action="mapao.aspx">
-				<div class="form-group">
-					<input type="" name="" placeholder="Nome Completo" class="form-control"> <br><br>
-					<input type="" name="" placeholder="CEP" class="form-control">
-					<small id="emailHelp" class="form-text text-muted">Sem cadastro, sem burocracias! Experimente dar apenas uma espiadinha!</small> <br>
-					<input type="submit" name="" value="Espiar" class="btn btn-primary">
-				</div>
-			</form>
+            <div class="tamanho_campos">
+			    <form method="POST" action="mapao.aspx">
+				    <div class="form-group">
+					    <input type="" name="" placeholder="Nome Completo" class="form-control"> <br><br>
+					    <input type="" name="" placeholder="CEP" class="form-control">
+					    <small id="emailHelp" class="form-text text-muted">Sem cadastro, sem burocracias! Experimente dar apenas uma espiadinha!</small> <br>
+					    <input type="submit" name="" value="Espiar" class="btn btn-primary">
+				    </div>
+			    </form>
+            </div>
 		</div>		
 	</div>
 
@@ -66,7 +68,7 @@
     <br /><br /><br />
 
     <div class="footerTest">
-        <div class="footerTest_int">
+        <div class="footer-good">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
     </div>

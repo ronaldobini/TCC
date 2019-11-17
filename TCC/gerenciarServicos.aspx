@@ -160,7 +160,7 @@
 
     <br><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <div class="footer-good">
-        <div class="footerTest_int">
+        <div class="footer-good">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
     </div>

@@ -114,7 +114,7 @@
     <div class="centralizar"><small id="emailHelp" class="form-text text-muted">Sua empresa já é cadastrada? <a href="loginEmpresa.aspx">Faça Login</a>!</small>
 			  <small id="emailHelp" class="form-text text-muted">Não tem login? Solicite ao seu superior!</small></div>
 	<br><br>
-   <div class="footerTest">
+   <div class="footer-good">
         <div class="footerTest_int">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
