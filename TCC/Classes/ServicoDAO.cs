@@ -115,7 +115,7 @@ namespace TCC.Classes
                 "reputacao_qualidade = " + repuQ + ", " +
                 "reputacao_atendimento = " + repuA + ", " +
                 "reputacao_tempo = " + repuT + ", " +
-                "obs_finais_usuario = " + obsFinais + " " +
+                "obs_finais_usuario = '" + obsFinais + "' " +
                 "WHERE id  = " + idServ + " ";
 
             string sql2 = "UPDATE usuario " +

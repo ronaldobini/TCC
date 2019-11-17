@@ -97,7 +97,7 @@ namespace TCC
             new ServicoDAO().updateSit(1,servicoget);
             mensagem.Text = "Aprovado com sucesso! Pendente aprovação do usuário.";
             sit = 1;
-
+            verificarSit();
         }
 
         public void empresaReprove(object sender, EventArgs e)
@@ -109,6 +109,7 @@ namespace TCC
             new ServicoDAO().updateSit(-1, servicoget);
             mensagem.Text = "Serviço reprovado!";
             sit = -1;
+            verificarSit();
         }
 
         public void empresaEnd(object sender, EventArgs e)
@@ -126,7 +127,7 @@ namespace TCC
             new ServicoDAO().updateFinalEmp(3, servicoget, idCli, repuCli, obsFinais);
             mensagem.Text = "Serviço enviado para aprovação final do usuário!";
             sit = 3;
-
+            verificarSit();
         }
 
 
@@ -136,6 +137,7 @@ namespace TCC
             mensagem.Text = "Aprovado com sucesso! Redirecionando para o pagamento...";
             //Response.Redirect("pagamento.aspx");
             sit = 2;
+            verificarSit();
         }
 
         public void clienteEnd(object sender, EventArgs e)
@@ -149,12 +151,15 @@ namespace TCC
             new ServicoDAO().updateFinalCli(4, servicoget,idCli,serv.IdEmp,formRepQ,formRepA,formRepT,obsFinais);
             mensagem.Text = "Aprovado com sucesso! Serviço está finalizado.";
             sit = 4;
+            verificarSit();
         }
 
         public void anyProblem(object sender, EventArgs e)
         {
             new ServicoDAO().updateSit(-2, servicoget);
             mensagem.Text = "Você contestou esse serviço. A discussão será pelo chat com intervenção da Servitiba.";
+            sit = -2;
+            verificarSit();
         }
 
 
