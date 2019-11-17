@@ -71,7 +71,7 @@ namespace TCC
             };
                 banco.insertEmpServ(Novoservico);
             
-            Response.Redirect("gerenciarServicos.aspx");
+            Response.Redirect("gerenciarServicos.aspx?sit=1&msg=cadastrarServicoSucesso");
 
         }
         public void Editar(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace TCC
                 Id = Int32.Parse(idServico.Value)
             };
             banco.updateEmpServ(Novoservico);
-            Response.Redirect("gerenciarServicos.aspx");
+            Response.Redirect("gerenciarServicos.aspx?sit=1&msg=editarServicoSucesso");
 
         }
     }

@@ -36,7 +36,7 @@ namespace TCC
         {
             new UsuarioEmpresaDAO().DesativarUsuario(id);
 
-            Response.Redirect("empresaColaboradores.aspx?sit=1&msg=sucessoDesativarServ");
+            Response.Redirect("empresaColaboradores.aspx?sit=1&msg=sucessoDesativarColaborador");
         }
         protected void deleteServicoEmpresa(int idServico)
         {
@@ -44,11 +44,11 @@ namespace TCC
             var servico = bancoServico.selectEmpServ(idServico);
             if (bancoServico.deleteEmpServ(servico))
             {
-                Response.Redirect("gerenciarServicos.aspx?sucesso=1");
+                Response.Redirect("gerenciarServicos.aspx?sit=1&msg=desativarServicoSucesso");
             }
             else
             {
-                Response.Redirect("gerenciarServicos.aspx?sucesso=2");
+                Response.Redirect("gerenciarServicos.aspx?sit=2&msg=desativarServicoErro");
             }
 
             

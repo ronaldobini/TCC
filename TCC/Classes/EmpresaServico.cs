@@ -14,6 +14,7 @@ namespace TCC.Classes
         private double valorAprox;
         private string tempoAprox;
         private string tags;
+        private short flAtivo;
 
         public EmpresaServico()
         {
@@ -31,6 +32,7 @@ namespace TCC.Classes
         }
 
         public int Id { get => id; set => id = value; }
+        public short FlAtivo { get => flAtivo; set => flAtivo = value; }
         public int IdEmp { get => idEmp; set => idEmp = value; }
         public Empresa Empresa { get; set; }
         public int IdCat { get => idCat; set => idCat = value; }
