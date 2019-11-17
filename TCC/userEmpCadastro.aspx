@@ -10,20 +10,20 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-    
+
     <%
-            if (id == -1)
-            {
-                tituloDaPag = "Cadastro de Gerente";
-            }
-            else
-            {
-                tituloDaPag = "Editar Colaborador";
-            }
+        if (id == -1)
+        {
+            tituloDaPag = "Cadastro de Gerente";
+        }
+        else
+        {
+            tituloDaPag = "Editar Colaborador";
+        }
     %>
-    
+
     <title><%=tituloDaPag %></title>
-   
+
 </head>
 <body>
     <div class="menu_principal">
@@ -73,33 +73,33 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="login">Login</label>
-                        <asp:TextBox ID="login" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="login" class="form-control" placeholder="Login" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="senha">Senha</label>
-                        <asp:TextBox ID="senha" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox type="password" ID="senha" class="form-control" placeholder="Senha" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="nomCompleto">Nome Completo</label>
-                        <asp:TextBox ID="nomCompleto" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="nomCompleto" class="form-control" placeholder="Nome Completo" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">E-mail</label>
-                        <asp:TextBox ID="email" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="email" class="form-control" type="email" placeholder="E-mail" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="cpf">CPF</label>
-                        <asp:TextBox ID="cpf" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="cpf" class="form-control" placeholder="CPF" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="cep">CEP</label>
-                        <asp:TextBox ID="cep" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="cep" class="form-control" placeholder="CEP" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
@@ -110,42 +110,63 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="complemento">Complemento</label>
-                        <asp:TextBox ID="complemento" class="form-control" placeholder="Casa" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="complemento" class="form-control" placeholder="Complemento" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="numero">Número</label>
-                        <asp:TextBox ID="numero" class="form-control" placeholder="123" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="numero" class="form-control" placeholder="Número da casa" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="tel">Telefone</label>
-                        <asp:TextBox ID="tel" class="form-control telefone" placeholder="(XX)x xxxx-xxxx" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="tel" class="form-control telefone" placeholder="Telefone" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="cel">Celular</label>
-                        <asp:TextBox ID="cel" class="form-control telefone" placeholder="(XX)x xxxx-xxxx" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="cel" class="form-control telefone" placeholder="Telefone" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <br />
                 <div class="form-row">
-                    <label for="cidadesDD">Cidade</label>
-                    <asp:DropDownList CssClass="form-control" ID="cidadesDD" runat="Server">
-                        <asp:ListItem />
-                    </asp:DropDownList>
-                    
-                    <label for="cel">Funçao</label>
-                    <asp:TextBox ID="funcao" class="form-control" placeholder="Funçao" runat="server"></asp:TextBox><br /><br />
+                    <div class="form-group col-md-6">
+                        <label for="cidadesDD">Cidade</label>
+                        <asp:DropDownList CssClass="form-control" ID="cidadesDD" runat="Server">
+                            <asp:ListItem />
+                        </asp:DropDownList>
+                    </div>
 
-                    <label for="cidadesDD">Escolaridade</label>
-                    <asp:DropDownList CssClass="form-control" ID="Escolaridade" runat="Server">
-                        <asp:ListItem />
-                    </asp:DropDownList>
+                    <div class="form-group col-md-6">
+                        <label for="Cargo">Cargo</label>
+                        <asp:DropDownList CssClass="form-control" ID="Cargo" runat="Server">
+                            <asp:ListItem />
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="funcao">Funçao</label>
+                        <asp:TextBox ID="funcao" class="form-control" placeholder="Função" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Escolaridade">Escolaridade</label>
+                        <asp:DropDownList CssClass="form-control" ID="Escolaridade" runat="Server">
+                            <asp:ListItem />
+                        </asp:DropDownList>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="formacao">Formaçao</label>
+                        <asp:TextBox ID="formacao" class="form-control" placeholder="Formaçao" runat="server"></asp:TextBox>
+                    </div>
 
-                    <label for="cel">Formaçao</label>
-                    <asp:TextBox ID="formacao" class="form-control" placeholder="Formaçao" runat="server"></asp:TextBox>
-                </div><br />
+                    <br />
+                    <br />
+
+
+
+                </div>
+                <br />
 
                 <%if (id == -1)
                     {
@@ -159,7 +180,8 @@
                 <button type="submit" runat="server" onserverclick="editar" class="btn btn-success">Editar</button>
                 <% }
                 %>
-
+                
+                <button type="submit" runat="server" onserverclick="Voltar" class="btn btn-primary">Voltar</button>
             </form>
         </div>
     </div>
@@ -169,7 +191,8 @@
     <br>
     <div class="footerTest">
         <div class="footerTest_int">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
+            © 2019 Copyright - Servitiba
+            <img src="imgs/logoSimples.png" width="30" class="img_rodape" />
         </div>
     </div>
 </body>

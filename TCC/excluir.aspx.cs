@@ -34,7 +34,7 @@ namespace TCC
         }
         protected void deleteUser(int id)
         {
-            new UsuarioDAO().deleteUser(id);
+            new UsuarioEmpresaDAO().DesativarUsuario(id);
 
             Response.Redirect("empresaColaboradores.aspx");
         }

@@ -30,5 +30,6 @@ namespace TCC
                 colaboradores.Add(new UsuarioDAO().selectUser(cue.IdUsuario));
             }
         }
+       
     }
 }

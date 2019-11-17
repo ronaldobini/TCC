@@ -8,11 +8,46 @@ namespace TCC.Classes
 {
     public class UsuarioEmpresaDAO
     {
+        public string DesativarUsuario(int id)
+        {
+            string msg = "";
+            string sql = String.Format("update usuario_empresa set fl_ativo=1 where id={0}", id);
+            MySqlConnection conn = new Conn().conectar();
+            if (new Conn().executar(sql, conn))
+            {
+                msg = "Sucesso ao cadastrar usuario";
+            }
+            else
+            {
+                msg = "Erro ao cadastrar usuario";
+
+            }
+            conn.Close();
+            return msg;
+        }
+
+        public string ReativarUsuario(int id)
+        {
+            string msg = "";
+            string sql = String.Format("update usuario_empresa set fl_ativo=0 where id={0}", id);
+            MySqlConnection conn = new Conn().conectar();
+            if (new Conn().executar(sql, conn))
+            {
+                msg = "Sucesso ao cadastrar usuario";
+            }
+            else
+            {
+                msg = "Erro ao cadastrar usuario";
+
+            }
+            conn.Close();
+            return msg;
+        }
         public string insertUserEmp(UsuarioEmpresa userEmp)
         {
             string msg = "";
             string sql = "INSERT INTO usuario_empresa(id, id_usuario,id_empresa, funcao, nivel_empresa, qtd_servicos, nivel_escolar," +
-                " formacao, reputacao_media,id_escolaridade)" +
+                " formacao, reputacao_media,id_escolaridade,fl_ativo)" +
                 " VALUES (" +
                 " NULL," +
                 "'" + userEmp.IdUsuario + "'," +
@@ -23,7 +58,7 @@ namespace TCC.Classes
                 "'" + userEmp.NivelEscolar + "'," +
                 "'" + userEmp.Formacao + "'," +
                 "'" + userEmp.RepMedia + "'" +
-                ","+userEmp.IdEscolar+");";
+                ","+userEmp.IdEscolar+",0);";
 
             MySqlConnection conn = new Conn().conectar();
             if (new Conn().executar(sql, conn))
@@ -176,6 +211,7 @@ namespace TCC.Classes
             userEmp.Formacao = reader.GetString(7);
             userEmp.RepMedia = reader.GetInt32(8);
             userEmp.IdEscolar = reader.GetInt32(9);
+            userEmp.FlAtivo = reader.GetInt16(10);
 
             return userEmp;
         }
