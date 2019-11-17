@@ -168,8 +168,8 @@ namespace TCC.Classes
             user.Numero = reader.GetInt32(9);
             user.Complemento = reader.GetString(10);
             user.Cep = reader.GetString(11);
-            user.Cidade = new CidadeDAO().selectCidadePorId(reader.GetInt32(11));
-            user.Reputacao = reader.GetInt32(11);
+            user.Cidade = new CidadeDAO().selectCidadePorId(reader.GetInt32(12));
+            user.Reputacao = reader.GetInt32(13);
             user.DataCadastro = reader.GetMySqlDateTime(14);
             user.UltimoLogin = reader.GetMySqlDateTime(15);
             user.ErrosSenha = reader.GetInt32(16);

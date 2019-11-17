@@ -31,13 +31,15 @@
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
 
-                   <% if (Session["sIdEmp"] != null)
+                   <% if (Session["sIdEmp"] != null )
                        { %> 
-			      <li class="nav-item">
+			      <% if ((int)Session["sNivelEmp"] > 1)
+                      {%>
+			      <li class="nav-item active">
 			        <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-			      <li class="nav-item ">
+			      <li class="nav-item">
 			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
 			      </li>
 
@@ -48,7 +50,9 @@
 			      <li class="nav-item">
 			        <a class="nav-link" href="gerenciarServicos.aspx">Gerenciar Serviços <span class="sr-only">(página atual)</span></a>
 			      </li>
-
+                     <% }
+                if ((int)Session["sNivelEmp"] > 2)
+                {%>
                    <li class="nav-item">
 			        <a class="nav-link" href="empresaColaboradores.aspx">Gerenciar Colaboradores <span class="sr-only">(página atual)</span></a>
 			      </li>
@@ -56,6 +60,16 @@
                    <li class="nav-item">
 			        <a class="nav-link" href="gerenciarFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
 			      </li>
+
+                    <% }
+                    else
+                    { %>
+
+                    <li class="nav-item">
+			            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+			        </li>
+
+                    <% } %>
                    <%}else{ %>
 
                      <li class="nav-item ">

@@ -92,7 +92,7 @@
                             <th scope="col">Categoria</th>
                             <th scope="col">Data da Solicitação</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Chat</th>
+                            <th scope="col">Detalhes</th>
                             <th scope="col">Cancelar</th>
                         </tr>
                     </thead>
@@ -149,7 +149,7 @@
                             %>
                                 </td>
                             <td><a href="<%=linkServDet %>">
-                                <img src="imgs/conversation.png" /></a></td>
+                                <img src="imgs/detalhes.png" /></a></td>
                             <td><a href="<%=linkDel %>">
                                 <img src="imgs/delete.png" /></a></td>
 
