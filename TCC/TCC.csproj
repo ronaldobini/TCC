@@ -96,10 +96,12 @@
     <Content Include="empresaColaboradores.aspx" />
     <Content Include="empresaCadastro.aspx" />
     <Content Include="empresaDetalhes.aspx" />
+    <Content Include="gerenciar.aspx" />
     <Content Include="gerenciarFinancas.aspx" />
     <Content Include="gerenciarServicos.aspx" />
     <Content Include="imgs\conversation.png" />
     <Content Include="imgs\saposentado.png" />
+    <Content Include="loginAdm.aspx" />
     <Content Include="loginEmpresa.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="old_cliente.aspx" />
@@ -280,6 +282,13 @@
     <Compile Include="empresaDetalhes.aspx.designer.cs">
       <DependentUpon>empresaDetalhes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="gerenciar.aspx.cs">
+      <DependentUpon>gerenciar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gerenciar.aspx.designer.cs">
+      <DependentUpon>gerenciar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="gerenciarFinancas.aspx.cs">
       <DependentUpon>gerenciarFinancas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,6 +302,13 @@
     </Compile>
     <Compile Include="gerenciarServicos.aspx.designer.cs">
       <DependentUpon>gerenciarServicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginAdm.aspx.cs">
+      <DependentUpon>loginAdm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginAdm.aspx.designer.cs">
+      <DependentUpon>loginAdm.aspx</DependentUpon>
     </Compile>
     <Compile Include="loginEmpresa.aspx.cs">
       <DependentUpon>loginEmpresa.aspx</DependentUpon>
