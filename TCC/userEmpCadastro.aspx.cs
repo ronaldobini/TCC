@@ -20,6 +20,7 @@ namespace TCC
         private string postEnd;
         private string postComplemento;
         private int postNum;
+        private int postEscolar;
         private string postTel;
         private string postCel;
         private string postCidade = "Curitiba";
@@ -30,6 +31,10 @@ namespace TCC
         public Usuario col;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["sIdEmp"] == null)
+            {
+                Response.Redirect("loginEmpresa.aspx");
+            }
             if (Request.QueryString["id"] != null)
             {
                 id = Int32.Parse(Request.QueryString["id"]);
@@ -50,17 +55,32 @@ namespace TCC
                     //cidade.Text = col.Cidade.Nome;
                     funcao.Text = col.UserEmp.Funcao;
                     formacao.Text = col.UserEmp.Formacao;
+                    Escolaridade.SelectedValue = col.UserEmp.IdEscolar.ToString();
+                    cidadesDD.SelectedValue = col.Cidade.Id.ToString();
+
+
                 }
             }
-            List<Cidade> cidades = new CidadeDAO().selectAllCids();
-            cidadesDD.DataTextField = "nome";
-            cidadesDD.DataValueField = "id";
-            cidadesDD.DataSource = cidades;
-            cidadesDD.DataBind();
+
+            List<Escolaridade> escolaridades = new Escolaridade().ListarEscolaridades();
+                    Escolaridade.DataTextField = "descricao";
+                    Escolaridade.DataValueField = "IdEscolaridade";
+                    Escolaridade.DataSource = escolaridades;
+                    Escolaridade.DataBind();
+
+                    List<Cidade> cidades = new CidadeDAO().selectAllCids();
+                    cidadesDD.DataTextField = "nome";
+                    cidadesDD.DataValueField = "id";
+                    cidadesDD.DataSource = cidades;
+                    cidadesDD.DataBind();
 
         }
         public void cadastrar(object sender, EventArgs e)
         {
+            if (Session["sIdEmp"] == null)
+            {
+                Response.Redirect("loginEmpresa.aspx");
+            }
             postLogin = login.Text;
             postSenha = senha.Text;
             postNome = nomCompleto.Text;
@@ -72,25 +92,25 @@ namespace TCC
             postNum = Int32.Parse(numero.Text);
             postTel = tel.Text;
             postCel = cel.Text;
-            //postCidade = cidade.Value;
-            //postFunc = funcao.Value;
-            //postFormacao = formacao.Value;
-            int idEmp = 2;
-            if (Session["empId"] != null)
+            postFunc = funcao.Text;
+            postEscolar = Int32.Parse(Escolaridade.SelectedValue);
+            string descEscolar = new Escolaridade().EscolherEscolaridade(postEscolar).Descricao;
+            int idEmp = 0;
+            if (Session["sIdEmp"] != null)
             {
-                idEmp = (int)Session["empId"];
+                idEmp = (int)Session["sIdEmp"];
             }
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
-            
-            Usuario user = new Usuario(0,postLogin,postSenha, postNome,postEmail,postCpf,postTel,postCel,postEnd,postNum,postComplemento,
-                postCep, new CidadeDAO().selectCidadePorNome(postCidade),0, mysqldt, new MySqlDateTime(),0,0,0,null);
-            new UsuarioDAO().insertUser(user);
+            Cidade cidade = new CidadeDAO().selectCidadePorNome(postCidade);
+            Usuario user = new Usuario(0, postLogin, postSenha, postNome, postEmail, postCpf, postTel, postCel, postEnd, postNum, postComplemento,
+                postCep, cidade, 0, mysqldt, new MySqlDateTime(), 0, 0, 0, null);
+            var msg = new UsuarioDAO().insertUser(user);
             user = new UsuarioDAO().selectUserLogin(postLogin);
-            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, user.Id, idEmp, postFunc, 10, 0, "", postFormacao, 0);
+            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, user.Id, idEmp, postFunc, 10, 0, descEscolar, formacao.Text, 0, postEscolar);
 
             new UsuarioEmpresaDAO().insertUserEmp(userEmp);
 
-            Response.Redirect("loginEmpresa.aspx");
+            Response.Redirect("empresaColaboradores.aspx");
 
         }
         public void editar(object sender, EventArgs e)
@@ -106,19 +126,18 @@ namespace TCC
             col.Numero = Int32.Parse(numero.Text);
             col.Tel1 = tel.Text;
             col.Tel2 = cel.Text;
-            //postCidade = cidade.Value;
-            //postFunc = funcao.Value;
-            //postFormacao = formacao.Value;
+            postEscolar = Int32.Parse(Escolaridade.SelectedValue);
+            string descEscolar = new Escolaridade().EscolherEscolaridade(postEscolar).Descricao;
             int idEmp = -1;
             if (Session["empId"] != null)
             {
                 idEmp = (int)Session["empId"];
             }
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
-            
+
             new UsuarioDAO().updateUser(col);
 
-            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, col.Id, idEmp, postFunc, 10, 0, "", postFormacao, 0);
+            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, col.Id, idEmp, postFunc, 10, 0, descEscolar, postFormacao, 0, postEscolar);
 
             new UsuarioEmpresaDAO().updateUsuarioEmpresa(userEmp);
 

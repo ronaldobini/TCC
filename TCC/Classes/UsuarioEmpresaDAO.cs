@@ -8,10 +8,11 @@ namespace TCC.Classes
 {
     public class UsuarioEmpresaDAO
     {
-        public void insertUserEmp(UsuarioEmpresa userEmp)
+        public string insertUserEmp(UsuarioEmpresa userEmp)
         {
+            string msg = "";
             string sql = "INSERT INTO usuario_empresa(id, id_usuario,id_empresa, funcao, nivel_empresa, qtd_servicos, nivel_escolar," +
-                " formacao, reputacao_media)" +
+                " formacao, reputacao_media,id_escolaridade)" +
                 " VALUES (" +
                 " NULL," +
                 "'" + userEmp.IdUsuario + "'," +
@@ -22,15 +23,20 @@ namespace TCC.Classes
                 "'" + userEmp.NivelEscolar + "'," +
                 "'" + userEmp.Formacao + "'," +
                 "'" + userEmp.RepMedia + "'" +
-                ");";
+                ","+userEmp.IdEscolar+");";
 
             MySqlConnection conn = new Conn().conectar();
             if (new Conn().executar(sql, conn))
             {
-                string msg = "Sucesso ao cadastrar usuario";
+                 msg = "Sucesso ao cadastrar usuario";
+            }
+            else
+            {
+                msg = "Erro ao cadastrar usuario";
+
             }
             conn.Close();
-
+            return msg;
         }
         public void updateUsuarioEmpresa(UsuarioEmpresa userEmp)
         {
@@ -43,7 +49,7 @@ namespace TCC.Classes
                 " nivel_escolar = '" + userEmp.NivelEscolar + "'," +
                 " formacao = '" + userEmp.Formacao + "'," +
                 " reputacao_media = '" + userEmp.RepMedia + "'" +
-                " WHERE id = " + userEmp.Id + " ";
+                "id_escolar="+userEmp.IdEscolar+" WHERE id = " + userEmp.Id + " ";
 
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);

@@ -9,7 +9,7 @@ namespace TCC.Classes
 {
     public class UsuarioDAO
     {
-        public void insertUser(Usuario user)
+        public string insertUser(Usuario user)
         {
             //Vou deixar bem separado o que é oq pra ficar mais claro
             string sql = "INSERT INTO usuario (id, login, senha, nome, email, " +
@@ -37,10 +37,19 @@ namespace TCC.Classes
                 " " + user.Block + ", " + // Block
                 " " + user.Nivel + " " + // Nivel Acesso
                 "); ";
-            
+            string msg = "";
             MySqlConnection conn = new Conn().conectar();
-            new Conn().executar(sql, conn);
+            if (new Conn().executar(sql, conn))
+            {
+                msg = "Sucesso ao cadastrar usuario";
+            }
+            else
+            {
+                msg = "Sucesso ao cadastrar usuario";
+
+            }
             conn.Close();
+            return msg;
         }
         public void updateUser(Usuario user)
         {
@@ -168,8 +177,8 @@ namespace TCC.Classes
             user.Numero = reader.GetInt32(9);
             user.Complemento = reader.GetString(10);
             user.Cep = reader.GetString(11);
-            user.Cidade = new CidadeDAO().selectCidadePorId(reader.GetInt32(11));
-            user.Reputacao = reader.GetInt32(11);
+            user.Cidade = new CidadeDAO().selectCidadePorId(reader.GetInt32(12));
+            user.Reputacao = reader.GetInt32(13);
             user.DataCadastro = reader.GetMySqlDateTime(14);
             user.UltimoLogin = reader.GetMySqlDateTime(15);
             user.ErrosSenha = reader.GetInt32(16);

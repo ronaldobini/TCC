@@ -63,15 +63,18 @@
 		</div>
 	</div>
 	
-	<div class="conteudo_relatorio_cliente">
-		<div class="conteudo_solicitacao_cliente_int">
-			
-				<br><br>
-				<div class="panel">
-					Colaboradores
-
-					
-				</div> <br> <hr> <br>
+	<div class="conteudo_solicitacoes_cliente">
+        <div class="conteudo_index_cliente_int2">
+            <div class="solicitacaoPrestador_int2">
+			<br>
+                <br>
+                <a href="userEmpCadastro.aspx">
+                    <button class="btn btn-success">
+                        Cadastrar Novo Colaborador
+                    </button>
+                </a>
+                <br>
+                <hr> <br>
 
 				<table class="table table-dark">
 				  <thead>
@@ -118,8 +121,7 @@
 			
 		</div>
 	</div>
-    <br /><br /><br /><br />
-<div class="footerTest">
+<div class="footer-good">
         <div class="footerTest_int">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>

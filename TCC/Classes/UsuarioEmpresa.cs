@@ -15,10 +15,12 @@ namespace TCC.Classes
         private int qtdServicos;
         private string nivelEscolar;
         private string formacao;
-        private int repMedia;        
+        private int repMedia;
+        private int idEscolar;
         public UsuarioEmpresa(int id, int idUsuario, int idEmpresa, string funcao, int nivelEmp, int qtdServicos,
-            string nivelEscolar, string formacao, int repMedia)
+            string nivelEscolar, string formacao, int repMedia, int idEscolar)
         {
+            this.idEscolar = idEscolar;
             this.id = id;
             this.idUsuario = idUsuario;
             this.idEmpresa = idEmpresa;
@@ -43,9 +45,10 @@ namespace TCC.Classes
         public int NivelEmp { get => nivelEmp; set => nivelEmp = value; }
         public int QtdServicos { get => qtdServicos; set => qtdServicos = value; }
         public string NivelEscolar { get => nivelEscolar; set => nivelEscolar = value; }
-        public Escolaridade Escolaridade { get; set; }
+        public Escolaridade Escolaridade { get ; set; }
         public string Formacao { get => formacao; set => formacao = value; }
         public int RepMedia { get => repMedia; set => repMedia = value; }
+        public int IdEscolar { get =>idEscolar; set => idEscolar=value; }
 
     }
 }

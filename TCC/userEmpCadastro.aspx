@@ -74,12 +74,10 @@
                     <div class="form-group col-md-6">
                         <label for="login">Login</label>
                         <asp:TextBox ID="login" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
-                        <%--<input type="text" runat="server" class="form-control" id="login" placeholder="Login">--%>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="senha">Senha</label>
                         <asp:TextBox ID="senha" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
-                        <%--<input type="password" runat="server" class="form-control" id="senha" placeholder="Senha">--%>
                     </div>
                 </div>
 
@@ -87,12 +85,10 @@
                     <div class="form-group col-md-6">
                         <label for="nomCompleto">Nome Completo</label>
                         <asp:TextBox ID="nomCompleto" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
-                        <%--<input type="text" runat="server" class="form-control" id="nomCompleto" placeholder="Nome completo">--%>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">E-mail</label>
                         <asp:TextBox ID="email" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
-                        <%--<input type="email" runat="server" class="form-control" id="email" placeholder="exemplo@exemplo.com.br">--%>
                     </div>
                 </div>
 
@@ -100,12 +96,10 @@
                     <div class="form-group col-md-6">
                         <label for="cpf">CPF</label>
                         <asp:TextBox ID="cpf" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
-                        <%--<input type="text" runat="server" class="form-control" id="cpf" placeholder="Apenas números">--%>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="cep">CEP</label>
                         <asp:TextBox ID="cep" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
-                        <%--<input type="text" runat="server" class="form-control" id="cep" placeholder="Apenas números">--%>
                     </div>
                 </div>
 
@@ -113,17 +107,14 @@
                     <div class="form-group col-md-6">
                         <label for="endereco">Endereço</label>
                         <asp:TextBox ID="endereco" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
-                        <%--<input type="text" runat="server" class="form-control" id="endereco" placeholder="Endereço">--%>
                     </div>
                     <div class="form-group col-md-2">
                         <label for="complemento">Complemento</label>
                         <asp:TextBox ID="complemento" class="form-control" placeholder="Casa" runat="server"></asp:TextBox>
-                        <%--<input type="text" runat="server" class="form-control" id="complemento" placeholder="Complemento">--%>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="numero">Número</label>
                         <asp:TextBox ID="numero" class="form-control" placeholder="123" runat="server"></asp:TextBox>
-                        <%--<input type="text" runat="server" class="form-control" id="numero" placeholder="Número">--%>
                     </div>
                 </div>
 
@@ -131,27 +122,27 @@
                     <div class="form-group col-md-6">
                         <label for="tel">Telefone</label>
                         <asp:TextBox ID="tel" class="form-control telefone" placeholder="(XX)x xxxx-xxxx" runat="server"></asp:TextBox>
-                        <%--<input type="tel" runat="server" class="form-control" id="tel" placeholder="xxxx-xxxx">--%>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="cel">Celular</label>
                         <asp:TextBox ID="cel" class="form-control telefone" placeholder="(XX)x xxxx-xxxx" runat="server"></asp:TextBox>
-                        <%--<input type="text" runat="server" class="form-control telefone" id="cel" placeholder="(XX)x xxxx-xxxx">--%>
                     </div>
                 </div>
                 <br />
                 <div class="form-row">
-                    <asp:DropDownList ID="cidadesDD" runat="Server">
+                    <label for="cidadesDD">Cidade</label>
+                    <asp:DropDownList CssClass="form-control" ID="cidadesDD" runat="Server">
                         <asp:ListItem />
                     </asp:DropDownList>
-                    <%--<select class="form-control col-md-4">
-			    	<option>Função...</option>
-			    </select>--%>
+                    
                     <label for="cel">Funçao</label>
                     <asp:TextBox ID="funcao" class="form-control" placeholder="Funçao" runat="server"></asp:TextBox><br /><br />
-                    <%--<select class="form-control col-md-4">
-			    	<option>Formação...</option>
-			    </select>--%>
+
+                    <label for="cidadesDD">Escolaridade</label>
+                    <asp:DropDownList CssClass="form-control" ID="Escolaridade" runat="Server">
+                        <asp:ListItem />
+                    </asp:DropDownList>
+
                     <label for="cel">Formaçao</label>
                     <asp:TextBox ID="formacao" class="form-control" placeholder="Formaçao" runat="server"></asp:TextBox>
                 </div><br />
@@ -159,7 +150,7 @@
                 <%if (id == -1)
                     {
                 %>
-                <button type="submit" runat="server" onserverclick="cadastrar" class="btn btn-success">Cadastrar Empresa</button>
+                <button type="submit" runat="server" onserverclick="cadastrar" class="btn btn-success">Cadastrar Funcionario</button>
                 <% }
                     else
                     {
@@ -169,8 +160,6 @@
                 <% }
                 %>
 
-                <small id="a" class="form-text text-muted">Sua empresa já é cadastrada? <a href="loginEmpresa.html">Faça Login</a>!</small>
-                <small id="b" class="form-text text-muted">Não tem login? Solicite ao seu superior!</small>
             </form>
         </div>
     </div>

@@ -351,9 +351,10 @@ tbody tr:hover {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
     color: white;
     text-align: center;
+    color: lightgrey;
+    background-color: #3c3d41;
 }
 
 .footerTest {
