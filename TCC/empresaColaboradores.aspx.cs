@@ -8,6 +8,7 @@ using TCC.Classes;
 using System.Data;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using System.Web.Services;
 
 namespace TCC
 {
@@ -30,6 +31,13 @@ namespace TCC
                 colaboradores.Add(new UsuarioDAO().selectUser(cue.IdUsuario));
             }
         }
-       
+        [WebMethod]
+        public void Reativar(int id)
+        {
+            var s = id;
+
+            Response.Redirect("empresaColaboradores.aspx");
+        }
     }
+    
 }

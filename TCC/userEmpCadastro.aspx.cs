@@ -139,7 +139,7 @@ namespace TCC
                 postCep, cidade, 0, mysqldt, new MySqlDateTime(), 0, 0, 0, null);
             var msg = new UsuarioDAO().insertUser(user);
             user = new UsuarioDAO().selectUserLogin(postLogin);
-            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, user.Id, idEmp, postFunc, cargoSelecionado, 0, descEscolar, formacao.Text, 0, postEscolar);
+            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, user.Id, idEmp, postFunc, cargoSelecionado, 0, descEscolar, formacao.Text, 0, postEscolar,0);
 
             new UsuarioEmpresaDAO().insertUserEmp(userEmp);
 
@@ -172,7 +172,7 @@ namespace TCC
 
             new UsuarioDAO().updateUser(col);
 
-            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, col.Id, idEmp, postFunc, cargoSelecionado, 0, descEscolar, formacao.Text, 0, postEscolar);
+            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, col.Id, idEmp, postFunc, cargoSelecionado, 0, descEscolar, formacao.Text, 0, postEscolar,0);
 
             new UsuarioEmpresaDAO().updateUsuarioEmpresa(userEmp);
 

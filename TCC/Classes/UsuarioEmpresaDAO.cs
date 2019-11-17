@@ -11,7 +11,7 @@ namespace TCC.Classes
         public string DesativarUsuario(int id)
         {
             string msg = "";
-            string sql = String.Format("update usuario_empresa set fl_ativo=1 where id={0}", id);
+            string sql = String.Format("update usuario_empresa set fl_ativo=1 where id_usuario={0}", id);
             MySqlConnection conn = new Conn().conectar();
             if (new Conn().executar(sql, conn))
             {
