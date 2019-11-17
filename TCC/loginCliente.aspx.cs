@@ -55,7 +55,7 @@ namespace TCC
                         Session["sId"] = logando.Id;
                         Session["sNome"] = logando.Nome;
                         Session["sRep"] = logando.Reputacao;
-                        Session["sNivel"] = logando.Nivel;
+                        Session["sQtdServicos"] = logando.QtdServicos;
                         Session["sCliente"] = 1;
                         Session["sFuncao"] = Session["sRep"];
                     new LogDAO().logit("Login Cliente", (int)logando.Id);
