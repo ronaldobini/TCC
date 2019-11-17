@@ -72,6 +72,7 @@
                 <%
                         }
                     } %>
+            <div class="tamanho_campos">
 			<form method="POST" action="#" runat="server">
 				<div class="form-group">
 					<input type="text" id="login" runat="server" placeholder="Login" class="form-control"> <br><br>
@@ -83,9 +84,10 @@
                     <font color="red"><%=mensagem %></font>
 				</div>
 			</form>
+                </div>
 		</div>		
 	</div><br /><br /><br />
-    <div class="footerTest">
+    <div class="footer-good">
         <div class="footerTest_int">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>

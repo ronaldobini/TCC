@@ -85,7 +85,7 @@
 		</div>
 	</div>
     <%=mensagem %>
-	<div class="footerTest">
+	<div class="footer-good">
         <div class="footerTest_int">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>

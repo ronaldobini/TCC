@@ -95,7 +95,7 @@
 				      <th scope="col">Resumo</th>
 				      <th scope="col">Data do início</th>
 				      <th scope="col">Data Fim</th>
-				      <th scope="col">Situ</th>
+				      <th scope="col">Status</th>
 				      <th scope="col">Detalhes</th>
 				    </tr>
 				  </thead>
@@ -159,7 +159,7 @@
 		</div>
 	</div>
     <br /><br /><br /><br />
-<div class="footerTest">
+<div class="footer-good">
         <div class="footerTest_int">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>

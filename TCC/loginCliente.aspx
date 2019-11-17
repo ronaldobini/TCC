@@ -36,7 +36,7 @@
 			      </li>
 			    </ul>
 			    <form class="form-inline my-2 my-lg-0" action="loginEmpresa.aspx" method="POST">
-			      <button class="btn btn-outline-primary" type="submit">Sou Empresa</button>
+			      <button class="btn btn-primary" type="submit">Sou Empresa</button>
 			    </form>
 			  </div>
 			</nav>
@@ -46,6 +46,7 @@
 	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
 			<img src="imgs/logoSimples.png" width="250"> <br><br>
+            <div class="tamanho_campos">
 			<form runat="server" method="post" action="#">
 				<div class="form-group">
 					<input type="text" name="" placeholder="Login" class="form-control" id="login" runat="server"> <br><br>
@@ -57,9 +58,10 @@
                     <font color="red"><%=mensagem %></font>
 				</div>
 			</form>
+                </div>
 		</div>		
 	</div> <br /><br /><br /><br /><br />
-    <div class="footerTest">
+    <div class="footer-good">
         <div class="footerTest_int">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>

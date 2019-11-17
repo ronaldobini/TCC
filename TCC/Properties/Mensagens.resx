@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ativarServicoSucesso" xml:space="preserve">
+    <value>Sucesso ao reativar serviço!</value>
+  </data>
+  <data name="cadastrarServicoErro" xml:space="preserve">
+    <value>Erro ao cadastrar serviço!</value>
+  </data>
+  <data name="cadastrarServicoSucesso" xml:space="preserve">
+    <value>Sucesso ao cadastrar serviço!</value>
+  </data>
+  <data name="desativarServicoErro" xml:space="preserve">
+    <value>Erro ao desativar serviço!</value>
+  </data>
+  <data name="desativarServicoSucesso" xml:space="preserve">
+    <value>Sucesso ao desativar serviço!</value>
+  </data>
+  <data name="editarServicoSucesso" xml:space="preserve">
+    <value>Sucesso ao editar serviço!</value>
+  </data>
+  <data name="erroDesativarServico" xml:space="preserve">
+    <value>Erro ao desativar serviço!</value>
+  </data>
   <data name="ErroInesperado" xml:space="preserve">
     <value>Acorreu um erro inesperado!</value>
   </data>
@@ -129,10 +150,10 @@
   <data name="sucessoCadastrarEmpresa" xml:space="preserve">
     <value>Empresa cadastrada com sucesso favor realizar login!</value>
   </data>
-  <data name="sucessoDesativarServ" xml:space="preserve">
+  <data name="sucessoDesativarColaborador" xml:space="preserve">
     <value>Colaborador desativado com sucesso!</value>
   </data>
-  <data name="sucessoReativarEmp" xml:space="preserve">
+  <data name="sucessoReativarColaborador" xml:space="preserve">
     <value>Colaborador ativado com sucesso!</value>
   </data>
 </root>

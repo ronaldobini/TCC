@@ -175,7 +175,7 @@ namespace TCC.Classes
 
         public List<Empresa> selectAllEmpsFiltradas(int cat, string pesq)
         {
-            string sql = "SELECT * FROM empresa WHERE (descricao_empresa like '%" + pesq + "%' or razao_social like '%" + pesq + "%')";
+            string sql = String.Format("SELECT distinct a.id,a.id_diretor,a.id_comercial,a.id_tecnico,a.cnpj,a.razao_social,a.telefone1,a.telefone2,a.endereco,a.numero,a.complemento,a.cep,a.lat,a.lon,a.id_cidade,a.inicio_empresa,a.descricao_empresa,a.qtd_funcionarios,a.reputacao_tempo,a.reputacao_qualidade,a.reputacao_atendimento,a.reputacao_fiscal,a.qtd_servicos,a.zona_atendimento,a.data_cadastro,a.block FROM empresa a join empresa_servicos b on a.id = b.id_empresa WHERE (descricao_empresa like '%{0}%' or razao_social like '%{0}%' or b.tags like '%{0}%' or b.descricao like '%{0}%' or b.id_categoria={1} and b.fl_ativo=0 and a.block=0)", pesq,cat);
             List<Empresa> emps = new List<Empresa>();
             Empresa emp = new Empresa();
             MySqlDataReader reader = null;

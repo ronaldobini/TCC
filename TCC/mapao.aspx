@@ -10,12 +10,12 @@
     <meta charset="utf-8" />
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
 
 
     <style>
@@ -96,15 +96,15 @@
 	<div class="conteudo_index_cliente">
 		<div class="conteudo_index_cliente_int">
 			<div class="conteudo_index_cliente_int_l">
-				Qual serviço você deseja hoje? <br><br>
+				Qual serviço você deseja hoje? <br/><br/>
 				<form id="mapao" runat="server" method="post" action="#">
 					
                     <asp:DropDownList ID="categorias" runat="server" class="form-control form-control-lg"></asp:DropDownList>
-					<br><br>
+					<br/><br/>
 					
                     <input type="text" class="form-control" id="pesq" name="pesq" runat="server"/>
-                    <br><br>
-				    <button class="btn btn-success" runat="server"  onserverclick="filtrar">Buscar</button> <br><br>
+                    <br/><br/>
+				    <button class="btn btn-success" runat="server"  onserverclick="filtrar">Buscar</button> <br/><br/>
 
 				</form>
 				
@@ -191,7 +191,7 @@
 	</div>
 
     <br /><br />
-	<div class="footerTest">
+	<div class="footer-good">
         <div class="footerTest_int">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>

@@ -74,7 +74,7 @@ namespace TCC
         {
             new UsuarioEmpresaDAO().ReativarUsuario(id);
 
-            Response.Redirect("empresaColaboradores.aspx?sit=1&msg=sucessoReativarEmp");
+            Response.Redirect("empresaColaboradores.aspx?sit=1&msg=sucessoReativarColaborador");
         }
     }
 

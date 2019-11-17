@@ -126,7 +126,7 @@
     <br><br />
     <br>
     <br>
-    <div class="footerTest">
+    <divclass="footer-good">
         <div class="footerTest_int">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
         </div>
