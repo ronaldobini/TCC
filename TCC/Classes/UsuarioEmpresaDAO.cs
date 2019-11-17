@@ -40,16 +40,14 @@ namespace TCC.Classes
         }
         public void updateUsuarioEmpresa(UsuarioEmpresa userEmp)
         {
-            string sql = "UPDATE empresa " +
-                " SET id_usuario = " + userEmp.IdUsuario + "," +
-                " id_empresa = '" + userEmp.IdEmpresa + "'," +
-                " funcao = '" + userEmp.Funcao + "'," +
-                " nivel_empresa = '" + userEmp.NivelEmp + "'," +
-                " qtd_servicos = '" + userEmp.QtdServicos + "'," +
+            string sql = "UPDATE usuario_empresa " +
+                " SET  funcao = '" + userEmp.Funcao + "'," +
+                " nivel_empresa = " + userEmp.NivelEmp + "," +
+                " qtd_servicos = " + userEmp.QtdServicos + "," +
                 " nivel_escolar = '" + userEmp.NivelEscolar + "'," +
                 " formacao = '" + userEmp.Formacao + "'," +
-                " reputacao_media = '" + userEmp.RepMedia + "'" +
-                "id_escolar="+userEmp.IdEscolar+" WHERE id = " + userEmp.Id + " ";
+                " reputacao_media = " + userEmp.RepMedia + 
+                ",id_escolaridade=" + userEmp.IdEscolar+ " WHERE id_usuario = " + userEmp.IdUsuario + " ";
 
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
@@ -177,6 +175,8 @@ namespace TCC.Classes
             userEmp.NivelEscolar = reader.GetString(6);
             userEmp.Formacao = reader.GetString(7);
             userEmp.RepMedia = reader.GetInt32(8);
+            userEmp.IdEscolar = reader.GetInt32(9);
+
             return userEmp;
         }
 

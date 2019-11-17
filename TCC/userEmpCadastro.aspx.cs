@@ -33,7 +33,7 @@ namespace TCC
         {
             if (Session["sIdEmp"] == null)
             {
-                Response.Redirect("loginEmpresa.aspx");
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
             }
             if (Request.QueryString["id"] != null)
             {
@@ -55,14 +55,8 @@ namespace TCC
                     //cidade.Text = col.Cidade.Nome;
                     funcao.Text = col.UserEmp.Funcao;
                     formacao.Text = col.UserEmp.Formacao;
-                    Escolaridade.SelectedValue = col.UserEmp.IdEscolar.ToString();
-                    cidadesDD.SelectedValue = col.Cidade.Id.ToString();
-
-
-                }
-            }
-
-            List<Escolaridade> escolaridades = new Escolaridade().ListarEscolaridades();
+                   
+                    List<Escolaridade> escolaridades = new Escolaridade().ListarEscolaridades();
                     Escolaridade.DataTextField = "descricao";
                     Escolaridade.DataValueField = "IdEscolaridade";
                     Escolaridade.DataSource = escolaridades;
@@ -73,6 +67,13 @@ namespace TCC
                     cidadesDD.DataValueField = "id";
                     cidadesDD.DataSource = cidades;
                     cidadesDD.DataBind();
+                    Escolaridade.SelectedValue = col.UserEmp.IdEscolar.ToString();
+                    cidadesDD.SelectedValue = col.Cidade.Id.ToString();
+
+                }
+            }
+
+           
 
         }
         public void cadastrar(object sender, EventArgs e)
@@ -127,17 +128,18 @@ namespace TCC
             col.Tel1 = tel.Text;
             col.Tel2 = cel.Text;
             postEscolar = Int32.Parse(Escolaridade.SelectedValue);
+            postFunc = funcao.Text;
             string descEscolar = new Escolaridade().EscolherEscolaridade(postEscolar).Descricao;
             int idEmp = -1;
-            if (Session["empId"] != null)
+            if (Session["sIdEmp"] != null)
             {
-                idEmp = (int)Session["empId"];
+                idEmp = (int)Session["sIdEmp"];
             }
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
 
             new UsuarioDAO().updateUser(col);
 
-            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, col.Id, idEmp, postFunc, 10, 0, descEscolar, postFormacao, 0, postEscolar);
+            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, col.Id, idEmp, postFunc, 10, 0, descEscolar, formacao.Text, 0, postEscolar);
 
             new UsuarioEmpresaDAO().updateUsuarioEmpresa(userEmp);
 

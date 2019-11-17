@@ -61,6 +61,7 @@ namespace TCC
                         Session["sNivelEmp"] = empresa.NivelEmp;
                         Session["sFuncao"] = empresa.Funcao;
                         Session["sIdEmp"] = empresa.IdEmpresa;
+                        Session.Timeout = 20;
                         new LogDAO().logit("Login Empresa",(int)logando.Id);
                         Response.Redirect("indexPrestador.aspx");
                     }

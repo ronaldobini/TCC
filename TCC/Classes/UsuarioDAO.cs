@@ -53,26 +53,25 @@ namespace TCC.Classes
         }
         public void updateUser(Usuario user)
         {
-            string sql = "UPDATE `usuario` " +
-                " SET `login` = '" + user.Login + "', " +
-                " `senha` = '" + user.Senha + "'," +
-                "  `nome` = '" + user.Nome + "', " +
-                " `email` = '" + user.Email + "',  " +
-                " `cpf` = '" + user.Cpf + "', " +
-                " `telefone1` = '" + user.Tel1 + "', " +
-                " `telefone2` = '" + user.Tel2 + "', " +
-                " `endereco` = '" + user.Endereco + "', " +
-                " `numero` = '" + user.Numero + "', " +
-                " `complemento` = '" + user.Complemento + "', " +
-                " `cep` = '" + user.Cep + "', " +
-                " `cidade` = '" + user.Cidade.Nome + "', " +
-                " `reputacao` = '" + user.Reputacao + "', " +
-                " `data_cadastro` = '" + user.DataCadastro.ToString() + "', " +
-                " `ultimo_login` = '" + user.UltimoLogin.ToString() + "', " +
-                " `erros_senha` = '" + user.ErrosSenha + "', " +
-                " `block` = '" + user.Block + "', " +
-                " `nivel_acesso` = '" + user.Nivel + "' " +
-                " WHERE id  = '" + user.Id + "' ";
+            string sql = "UPDATE usuario" +
+                " SET senha = '" + user.Senha + "'," +
+                "  nome = '" + user.Nome + "', " +
+                " email = '" + user.Email + "',  " +
+                " cpf = '" + user.Cpf + "', " +
+                " telefone1= '" + user.Tel1 + "', " +
+                " telefone2 = '" + user.Tel2 + "', " +
+                " endereco = '" + user.Endereco + "', " +
+                " numero = " + user.Numero +
+                " ,complemento = '" + user.Complemento + "', " +
+                " cep = '" + user.Cep + "', " +
+                " id_cidade = " + user.Cidade.Id +
+                " ,reputacao = " + user.Reputacao + 
+                " ,data_cadastro = '" + user.DataCadastro.ToString() + "', " +
+                " ultimo_login = '" + user.UltimoLogin.ToString() + "', " +
+                " erros_senha = " + user.ErrosSenha+
+                " ,block = " + user.Block +
+                " ,nivel_acesso = " + user.Nivel + 
+                " WHERE id  = " + user.Id ;
 
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
