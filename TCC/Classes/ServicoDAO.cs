@@ -94,6 +94,55 @@ namespace TCC.Classes
             conn.Close();
         }
 
+        public void updateFinalEmp(int sit, int idServ, int idCli, int repuCli, string obsFinais)
+        {
+            string sql = "UPDATE servico " +
+                "SET situacao = " + sit + ", " +
+                "obs_finais_empresa = " + obsFinais + " " +
+                "WHERE id  = " + idServ + " ";
+
+            atualizaRepuCli(idCli, repuCli);
+
+            MySqlConnection conn = new Conn().conectar();
+            new Conn().executar(sql, conn);
+            conn.Close();
+        }
+
+        public void updateFinalCli(int sit, int idServ, int idUsu, int idEmp, int repuQ, int repuA, int repuT, string obsFinais)
+        {
+            string sql = "UPDATE servico " +
+                "SET situacao = " + sit + ", " +
+                "obs_finais_usuario = " + obsFinais + " " +
+                "WHERE id  = " + idServ + " ";
+
+            string sql2 = "UPDATE usuario " +
+                "SET qtd_servicos = qtd_servicos + 1 " +
+                "WHERE id  = " + idUsu + " ";
+
+            atualizaRepuEmpresa(idEmp);
+
+            MySqlConnection conn = new Conn().conectar();
+            new Conn().executar(sql, conn);
+            conn.Close();
+        }
+
+        private void atualizaRepuCli(int idU, int repuCli)
+        {
+            int repuCalculada = repuCli;
+            string sql = "UPDATE usuario " +
+                "SET reputacao = " + repuCalculada + " " +
+                "WHERE id  = " + idU + " ";
+
+            MySqlConnection conn = new Conn().conectar();
+            new Conn().executar(sql, conn);
+            conn.Close();
+        }
+        private void atualizaRepuEmpresa(int idEmp)
+        {
+            
+            
+        }
+
         public void updateSit(int sit, int idServ)
         {
             string sql = "UPDATE servico " +
@@ -105,6 +154,23 @@ namespace TCC.Classes
             conn.Close();
         }
 
+
+        public void updateSitExe(int sit, int idServ)
+        {
+            string sql = "UPDATE servico " +
+                "SET situacao = " + sit + ", " +
+                "data_inicio = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "' " +
+                "WHERE id  = " + idServ + " ";
+
+            MySqlConnection conn = new Conn().conectar();
+            new Conn().executar(sql, conn);
+            conn.Close();
+        }
+
+
+
+
+        
 
         public void deleteServico(int id)
         {

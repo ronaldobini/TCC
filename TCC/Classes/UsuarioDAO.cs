@@ -15,7 +15,7 @@ namespace TCC.Classes
             string sql = "INSERT INTO usuario (id, login, senha, nome, email, " +
                 " cpf, telefone1, telefone2, endereco, numero, complemento, " +
                 " cep, id_cidade, reputacao, data_cadastro, ultimo_login, erros_senha, " +
-                " block, nivel_acesso) " +
+                " block, qtd_servicos) " +
                 " VALUES( " + 
                 " NULL, " + // ID
                 " '" + user.Login + "', " + // Login
@@ -35,7 +35,7 @@ namespace TCC.Classes
                 " '" + user.UltimoLogin.ToString() + "', " + // Data Ultimo Login
                 " " + user.ErrosSenha + ", " + // Erros Senha
                 " " + user.Block + ", " + // Block
-                " " + user.Nivel + " " + // Nivel Acesso
+                " " + user.QtdServicos + " " + // QTD SERVICOS
                 "); ";
             string msg = "";
             MySqlConnection conn = new Conn().conectar();
@@ -70,7 +70,7 @@ namespace TCC.Classes
                 " ultimo_login = '" + user.UltimoLogin.ToString() + "', " +
                 " erros_senha = " + user.ErrosSenha+
                 " ,block = " + user.Block +
-                " ,nivel_acesso = " + user.Nivel + 
+                " ,qtd_servicos = " + user.QtdServicos + 
                 " WHERE id  = " + user.Id ;
 
             MySqlConnection conn = new Conn().conectar();
@@ -182,7 +182,7 @@ namespace TCC.Classes
             user.UltimoLogin = reader.GetMySqlDateTime(15);
             user.ErrosSenha = reader.GetInt32(16);
             user.Block = reader.GetInt32(17);
-            user.Nivel = reader.GetInt32(18);
+            user.QtdServicos = reader.GetInt32(18);
             user.UserEmp = new UsuarioEmpresaDAO().selectUserIdUser(user.Id);
             return user;
         }

@@ -27,7 +27,7 @@ namespace TCC.Classes
         private MySqlDateTime ultimoLogin;
         private int errosSenha;
         private int block;
-        private int nivel;
+        private int qtdServicos;
         private UsuarioEmpresa userEmp;
 
         public Usuario()
@@ -37,7 +37,7 @@ namespace TCC.Classes
         public Usuario(int id, string login, string senha, string nome, string email,
             string cpf, string tel1, string tel2, string endereco, int numero, string complemento,
             string cep, Cidade cidade, int reputacao, MySqlDateTime dataCadastro, MySqlDateTime ultimoLogin,
-            int errosSenha, int block, int nivel, UsuarioEmpresa userEmp)
+            int errosSenha, int block, int qtdServicos, UsuarioEmpresa userEmp)
         {
             this.id = id;
             this.login = login;
@@ -57,7 +57,7 @@ namespace TCC.Classes
             this.ultimoLogin = ultimoLogin;
             this.errosSenha = errosSenha;
             this.block = block;
-            this.nivel = nivel;
+            this.qtdServicos = qtdServicos;
             this.userEmp = userEmp;
         }
 
@@ -79,7 +79,7 @@ namespace TCC.Classes
         public MySqlDateTime UltimoLogin { get => ultimoLogin; set => ultimoLogin = value; }
         public int ErrosSenha { get => errosSenha; set => errosSenha = value; }
         public int Block { get => block; set => block = value; }
-        public int Nivel { get => nivel; set => nivel = value; }
+        public int QtdServicos { get => qtdServicos; set => qtdServicos = value; }
         public UsuarioEmpresa UserEmp { get => userEmp; set => userEmp = value; }
     }
 }

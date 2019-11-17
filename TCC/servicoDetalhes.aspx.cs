@@ -24,7 +24,10 @@ namespace TCC
         public string sitS = " - ";
         public string disabled = "disabled";
         public int contratoID = 0;
-        
+
+        public Servico serv;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -33,7 +36,7 @@ namespace TCC
             {
                 servicoget = Int32.Parse(Request.QueryString["idSerDet"]);
 
-                Servico serv = new ServicoDAO().selectServico(servicoget);
+                serv = new ServicoDAO().selectServico(servicoget);
                 Empresa emp = new EmpresaDAO().selectEmp(serv.IdEmp);
                 Usuario usu = new UsuarioDAO().selectUser(serv.IdUser);
                 descServ = new EmpresaServicoDAO().selectDescPorId(serv.IdEmpSer);
@@ -114,7 +117,13 @@ namespace TCC
             {
                 Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
             }
-            new ServicoDAO().updateSit(3, servicoget);
+           
+
+            string obsFinais = obsFinaisEmpresa.Value;
+            int repuCli = Int32.Parse(repCli.Value);
+            int idCli = serv.IdUser;
+
+            new ServicoDAO().updateFinalEmp(3, servicoget, idCli, repuCli, obsFinais);
             mensagem.Text = "Serviço enviado para aprovação final do usuário!";
             sit = 3;
 
@@ -131,7 +140,13 @@ namespace TCC
 
         public void clienteEnd(object sender, EventArgs e)
         {
-            new ServicoDAO().updateSit(4, servicoget);
+            string obsFinais = obsFinaisCli.Value;
+            int formRepQ = Int32.Parse(repQ.Value);
+            int formRepA = Int32.Parse(repA.Value);
+            int formRepT = Int32.Parse(repT.Value);
+            int idCli = serv.IdUser;
+
+            new ServicoDAO().updateFinalCli(4, servicoget,idCli,serv.IdEmp,formRepQ,formRepA,formRepT,obsFinais);
             mensagem.Text = "Aprovado com sucesso! Serviço está finalizado.";
             sit = 4;
         }

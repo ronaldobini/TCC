@@ -193,28 +193,30 @@
                             if(Session["sIdEmp"] != null){
                     %>
                             
-                                <button runat="server" onserverclick="empresaEnd" class="btn btn-success" type="submit" data-toggle="modal" data-target=".bd-example-modal-xl">Finalizar</button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-xl">Serviço Finalizado</button>
                                 <button runat="server" onserverclick="anyProblem" class="btn btn-outline-danger" type="submit">Tive problemas com o Cliente</button>
 
                                 <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-xl">
                                       <div class="modal-content">
                                           <div class="conteudo_modal">
-                                              <form>
+                                             
                                                   Reputação do Cliente <br /><br />
-                                                  <select class="form-control">
-                                                      <option>1</option>
-                                                      <option>2</option>
-                                                      <option>3</option>
-                                                      <option>4</option>
-                                                      <option>5</option>
-                                                      <option>6</option>
-                                                      <option>7</option>
-                                                      <option>8</option>
-                                                      <option>9</option>
-                                                      <option>10</option>
-                                                    </select>
-                                                </form>
+                                                  <select runat="server" class="form-control" id="repCli">
+                                                      <option value="1">1</option>
+                                                      <option value="2">2</option>
+                                                      <option value="3">3</option>
+                                                      <option value="4">4</option>
+                                                      <option value="5">5</option>
+                                                      <option value="6">6</option>
+                                                      <option value="7">7</option>
+                                                      <option value="8">8</option>
+                                                      <option value="9">9</option>
+                                                      <option value="10">10</option>
+                                                    </select><br />
+                                                    <textarea runat="server" id="obsFinaisEmpresa" placeholder="Escreva aqui suas observações sobre o serviço (...)" rows="3" cols="30"></textarea><br />
+                                                    <input type="submit" runat="server" onserverclick="empresaEnd" value="Enviar"/>
+                                               
                                           </div>
                                       </div>
                                     </div>
@@ -226,56 +228,28 @@
                             if(Session["sCliente"] != null){
                     %>
                             
-                                <button runat="server" onserverclick="clienteEnd" class="btn btn-success" type="submit" data-toggle="modal" data-target=".bd-example-modal-xl">Serviço executado como previsto</button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-x2">Serviço executado como previsto</button>
                                 <button runat="server" onserverclick="anyProblem" class="btn btn-outline-danger" type="submit">Tive problemas</button>
                            
                                 <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-xl2">
                                       <div class="modal-content">
                                           <div class="conteudo_modal">
-                                              <form>
+                                              
                                                   Qualidade do serviço <br /><br />
-                                                  <select class="form-control">
-                                                      <option>1</option>
-                                                      <option>2</option>
-                                                      <option>3</option>
-                                                      <option>4</option>
-                                                      <option>5</option>
-                                                      <option>6</option>
-                                                      <option>7</option>
-                                                      <option>8</option>
-                                                      <option>9</option>
-                                                      <option>10</option>
-                                                    </select><br /><br />
+                                                   <input type="text" id="repQ" runat="server" placeholder="0-100"/>
+                                                   <br /><br />
 
                                                   Qualidade do atendimento <br /><br />
-                                                  <select class="form-control">
-                                                      <option>1</option>
-                                                      <option>2</option>
-                                                      <option>3</option>
-                                                      <option>4</option>
-                                                      <option>5</option>
-                                                      <option>6</option>
-                                                      <option>7</option>
-                                                      <option>8</option>
-                                                      <option>9</option>
-                                                      <option>10</option>
-                                                    </select><br /><br />
+                                                    <input type="text" id="repA" runat="server" placeholder="0-100"/><br /><br />
 
-                                                  Qualidade do tempo de atendimento <br /><br />
-                                                  <select class="form-control">
-                                                      <option>1</option>
-                                                      <option>2</option>
-                                                      <option>3</option>
-                                                      <option>4</option>
-                                                      <option>5</option>
-                                                      <option>6</option>
-                                                      <option>7</option>
-                                                      <option>8</option>
-                                                      <option>9</option>
-                                                      <option>10</option>
-                                                    </select>
-                                                </form>
+                                                  Velocidade do Serviço <br /><br />
+                                                    <input type="text" id="repT" runat="server" placeholder="0-100"/><br /><br />
+
+                                                    <textarea runat="server" id="obsFinaisCli" placeholder="Escreva aqui suas observações sobre o serviço (...)" rows="3" cols="30"></textarea><br />
+                                                    
+                                                    <input type="submit" runat="server" onserverclick="clienteEnd" value="Enviar"/>
+                                                
                                           </div>
                                       </div>
                                     </div>
@@ -331,7 +305,7 @@
 
         <br><br>
 
-        <textarea runat="server" id="msgUser" placeholder="Escreva aqui sua mensagem..." rows="6" cols="100"></textarea>
+        <textarea runat="server" id="msgUser" placeholder="Escreva aqui sua mensagem..." rows="6" cols="60"></textarea>
         <br><br>
         <input type="submit" runat="server" value="Enviar" onserverclick="enviarMsg" class="btn btn-primary">
 
