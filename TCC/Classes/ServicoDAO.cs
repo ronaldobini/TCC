@@ -29,7 +29,7 @@ namespace TCC.Classes
                 "" + serv.IdUser + "," +
                 "" + serv.IdEmp + "," +
                 "" + serv.IdRepresEmp + "," +
-                "'" + serv.DataIni + "'," +
+                "'" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "'," +
                 "" + serv.Categoria.Id + "," +
                 "" + serv.IdEmpSer + "," +
                 "'" + serv.DescUser + "'," +

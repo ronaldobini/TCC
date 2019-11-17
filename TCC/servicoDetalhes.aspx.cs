@@ -27,10 +27,7 @@ namespace TCC
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["sIdEmp"] == null)
-            {
-                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
-            }
+            
 
             if (Request.QueryString["idSerDet"] != null)
             {
