@@ -55,7 +55,7 @@ namespace TCC
                     //cidade.Text = col.Cidade.Nome;
                     funcao.Text = col.UserEmp.Funcao;
                     formacao.Text = col.UserEmp.Formacao;
-                   
+
                     List<Escolaridade> escolaridades = new Escolaridade().ListarEscolaridades();
                     Escolaridade.DataTextField = "descricao";
                     Escolaridade.DataValueField = "IdEscolaridade";
@@ -70,10 +70,41 @@ namespace TCC
                     Escolaridade.SelectedValue = col.UserEmp.IdEscolar.ToString();
                     cidadesDD.SelectedValue = col.Cidade.Id.ToString();
 
+                    List<Cargo> cargos = new Cargo().ListarCargos();
+                    Cargo.DataTextField = "Descricao";
+                    Cargo.DataValueField = "id";
+                    Cargo.DataSource = cargos;
+                    Cargo.DataBind();
+                    Cargo.SelectedValue = col.UserEmp.NivelEmp.ToString();
+
+
+
                 }
             }
+            else
+            {
+                if (!IsPostBack)
+                {
+                    List<Cidade> cidades = new CidadeDAO().selectAllCids();
+                    cidadesDD.DataTextField = "nome";
+                    cidadesDD.DataValueField = "id";
+                    cidadesDD.DataSource = cidades;
+                    cidadesDD.DataBind();
+                    List<Escolaridade> escolaridades = new Escolaridade().ListarEscolaridades();
+                    Escolaridade.DataTextField = "descricao";
+                    Escolaridade.DataValueField = "IdEscolaridade";
+                    Escolaridade.DataSource = escolaridades;
+                    Escolaridade.DataBind();
+                    List<Cargo> cargos = new Cargo().ListarCargos();
+                    Cargo.DataTextField = "Descricao";
+                    Cargo.DataValueField = "id";
+                    Cargo.DataSource = cargos;
+                    Cargo.DataBind();
+                }
 
-           
+            }
+
+
 
         }
         public void cadastrar(object sender, EventArgs e)
@@ -95,6 +126,7 @@ namespace TCC
             postCel = cel.Text;
             postFunc = funcao.Text;
             postEscolar = Int32.Parse(Escolaridade.SelectedValue);
+            int cargoSelecionado = Int32.Parse(Cargo.SelectedValue);
             string descEscolar = new Escolaridade().EscolherEscolaridade(postEscolar).Descricao;
             int idEmp = 0;
             if (Session["sIdEmp"] != null)
@@ -107,7 +139,7 @@ namespace TCC
                 postCep, cidade, 0, mysqldt, new MySqlDateTime(), 0, 0, 0, null);
             var msg = new UsuarioDAO().insertUser(user);
             user = new UsuarioDAO().selectUserLogin(postLogin);
-            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, user.Id, idEmp, postFunc, 10, 0, descEscolar, formacao.Text, 0, postEscolar);
+            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, user.Id, idEmp, postFunc, cargoSelecionado, 0, descEscolar, formacao.Text, 0, postEscolar);
 
             new UsuarioEmpresaDAO().insertUserEmp(userEmp);
 
@@ -130,6 +162,7 @@ namespace TCC
             postEscolar = Int32.Parse(Escolaridade.SelectedValue);
             postFunc = funcao.Text;
             string descEscolar = new Escolaridade().EscolherEscolaridade(postEscolar).Descricao;
+            int cargoSelecionado = Int32.Parse(Cargo.SelectedValue);
             int idEmp = -1;
             if (Session["sIdEmp"] != null)
             {
@@ -139,12 +172,16 @@ namespace TCC
 
             new UsuarioDAO().updateUser(col);
 
-            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, col.Id, idEmp, postFunc, 10, 0, descEscolar, formacao.Text, 0, postEscolar);
+            UsuarioEmpresa userEmp = new UsuarioEmpresa(0, col.Id, idEmp, postFunc, cargoSelecionado, 0, descEscolar, formacao.Text, 0, postEscolar);
 
             new UsuarioEmpresaDAO().updateUsuarioEmpresa(userEmp);
 
             Response.Redirect("empresaColaboradores.aspx");
 
+        }
+        public void Voltar(object sender, EventArgs e) {
+
+            Response.Redirect("empresaColaboradores.aspx");
         }
     }
 }

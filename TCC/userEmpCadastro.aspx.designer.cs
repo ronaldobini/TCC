@@ -123,6 +123,15 @@ namespace TCC
         protected global::System.Web.UI.WebControls.DropDownList cidadesDD;
 
         /// <summary>
+        /// Controle Cargo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Cargo;
+
+        /// <summary>
         /// Controle funcao.
         /// </summary>
         /// <remarks>

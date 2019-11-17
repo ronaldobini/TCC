@@ -17,8 +17,9 @@ namespace TCC.Classes
         private string formacao;
         private int repMedia;
         private int idEscolar;
+        private short flativo;
         public UsuarioEmpresa(int id, int idUsuario, int idEmpresa, string funcao, int nivelEmp, int qtdServicos,
-            string nivelEscolar, string formacao, int repMedia, int idEscolar)
+            string nivelEscolar, string formacao, int repMedia, int idEscolar,short flativo)
         {
             this.idEscolar = idEscolar;
             this.id = id;
@@ -30,6 +31,7 @@ namespace TCC.Classes
             this.nivelEscolar = nivelEscolar;
             this.formacao = formacao;
             this.repMedia = repMedia;
+            this.flativo = flativo;
         }
 
         public UsuarioEmpresa()
@@ -49,6 +51,7 @@ namespace TCC.Classes
         public string Formacao { get => formacao; set => formacao = value; }
         public int RepMedia { get => repMedia; set => repMedia = value; }
         public int IdEscolar { get =>idEscolar; set => idEscolar=value; }
+        public short FlAtivo { get=>flativo; set=>flativo=value; }
 
     }
 }
