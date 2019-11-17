@@ -6,12 +6,18 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
     <title>Gerenciar Colaboradores</title>
 </head>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 <body>
     <div class="top_cliente">
         <div class="top_int_cliente">
@@ -76,17 +82,39 @@
                 <br>
                 <hr>
                 <br>
+                <%if (statusOperação == 1)
+                    { %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong><%=msg %></strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <%}
+                    else
+                    {
+                        if (statusOperação == 2)
+                        {
+                %>
 
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong><%=msg %></strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <%
+                        }
+                    } %>
                 <table class="table table-dark">
                     <thead>
                         <tr>
-                            <th scope="col">Nº</th>
                             <th scope="col">Nome do Colaborador</th>
                             <th scope="col">Função</th>
                             <th scope="col">Data Cadastro</th>
                             <th scope="col">Visualizar</th>
                             <th scope="col">Editar</th>
-                            <th scope="col">Remover</th>
+                            <th scope="col">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -100,7 +128,7 @@
                                     string id = col.Nome;
                         %>
                         <tr>
-                            <th scope="row"><%=col.Id %></th>
+                            
                             <td><%=col.Nome%></td>
                             <td><%=col.UserEmp.Funcao%></td>
                             <td><%=col.DataCadastro%></td>
@@ -110,18 +138,15 @@
                                 <img src="imgs/edit.png" /></a></td>
                             <%if (col.UserEmp.FlAtivo == 0)
                                 { %>
-                            <td><a href="<%=linkDel %>">
+                            <td><a data-toggle="tooltip" data-placement="top" title="Desativar colaborador" href="<%=linkDel %>">
                                 <img src="imgs/delete.png" /></a></td>
                             <%}
                             else
                             { %>
-                            <td><a href="empresacolaboradores.aspx/Reativar?id=<%=col.Id %>">
-                                <img src="imgs/checked.png" /></a></td>
+                            <td><a data-toggle="tooltip" data-placement="top" title="Reativar colaborador" href="empresacolaboradores.aspx?funcao=Reativar&id=<%=col.Id %>">
+                                <img src="imgs/nonstop.png" /></a></td>
                             <%} %>
-                            <%--asp:ImageButton ID='d_<%=id%>'
-                            ImageUrl="imgs/delete.png"
-                            AlternateText="No Image available"
-                            OnClick="ImageButton_Click" runat="server" /> --%>
+                           
                         </tr>
                         <%
                                 }

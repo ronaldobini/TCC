@@ -36,7 +36,7 @@ namespace TCC
         {
             new UsuarioEmpresaDAO().DesativarUsuario(id);
 
-            Response.Redirect("empresaColaboradores.aspx");
+            Response.Redirect("empresaColaboradores.aspx?sit=1&msg=sucessoDesativarServ");
         }
         protected void deleteServicoEmpresa(int idServico)
         {

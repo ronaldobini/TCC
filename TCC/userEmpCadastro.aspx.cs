@@ -35,6 +35,13 @@ namespace TCC
             {
                 Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
             }
+            if(!IsPostBack)
+            PreencherTela();
+
+
+        }
+        public void PreencherTela()
+        {
             if (Request.QueryString["id"] != null)
             {
                 id = Int32.Parse(Request.QueryString["id"]);
@@ -103,9 +110,6 @@ namespace TCC
                 }
 
             }
-
-
-
         }
         public void cadastrar(object sender, EventArgs e)
         {

@@ -29,7 +29,7 @@ namespace TCC.Classes
         public string ReativarUsuario(int id)
         {
             string msg = "";
-            string sql = String.Format("update usuario_empresa set fl_ativo=0 where id={0}", id);
+            string sql = String.Format("update usuario_empresa set fl_ativo=0 where id_usuario={0}", id);
             MySqlConnection conn = new Conn().conectar();
             if (new Conn().executar(sql, conn))
             {
@@ -152,7 +152,7 @@ namespace TCC.Classes
         }
         public List<UsuarioEmpresa> selectUsersIdEmpresa(int idEmpresa)
         {
-            string sql = "SELECT * FROM usuario_empresa WHERE id_empresa = '" + idEmpresa + "'";
+            string sql = "SELECT * FROM usuario_empresa WHERE id_empresa = '" + idEmpresa + "' order by nivel_empresa ";
             List<UsuarioEmpresa> usersEmp = new List<UsuarioEmpresa>();
             UsuarioEmpresa userEmp = new UsuarioEmpresa();
             MySqlConnection conn = new Conn().conectar();
