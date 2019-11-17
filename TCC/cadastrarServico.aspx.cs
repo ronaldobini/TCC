@@ -50,6 +50,10 @@ namespace TCC
         }
         public void Cadastrar(object sender, EventArgs e)
         {
+            if (Session["sIdEmp"] == null)
+            {
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
+            }
 
             int idEmpresa = (int)Session["sIdEmp"];
             int categoriaValue = Int32.Parse(categoria.Text);
@@ -72,6 +76,11 @@ namespace TCC
         }
         public void Editar(object sender, EventArgs e)
         {
+            if (Session["sIdEmp"] == null)
+            {
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
+            }
+
             int idEmpresa = (int)Session["sIdEmp"];
             int categoriaValue = Int32.Parse(categoria.Text);
 

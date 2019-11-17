@@ -98,11 +98,15 @@ body {
     padding: 25px;
 }
 
+.conteudo_modal {
+    text-align:center;
+}
+
 .conteudo_solicitacao_cliente_int {
-	width: 100%;
-	height: auto;
-	margin: auto;
-	text-align: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    text-align: center;
 }
 .conteudo_solicitacao_cliente_int2 {
     width: 100%;

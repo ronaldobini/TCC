@@ -27,6 +27,8 @@ namespace TCC
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             if (Request.QueryString["idSerDet"] != null)
             {
                 servicoget = Int32.Parse(Request.QueryString["idSerDet"]);
@@ -55,18 +57,9 @@ namespace TCC
             }
             else
             {
-
                 nomeEmpresa = "Erro: Serviço Não Encontrado";
-
             }
-
-
-
-
-
-
         }
-
 
         public string corrigiData(string sss)
         {
@@ -77,6 +70,10 @@ namespace TCC
 
         public void empresaUpdate(object sender, EventArgs e)
         {
+        if (Session["sIdEmp"] == null)
+        {
+            Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
+        }
             double valor = double.Parse(txValor.Text);
 
             //string dataCorrigida = corrigiData(txDataEstimada.Text);
@@ -90,6 +87,10 @@ namespace TCC
 
         public void empresaAprove(object sender, EventArgs e)
         {
+            if (Session["sIdEmp"] == null)
+            {
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
+            }
             new ServicoDAO().updateSit(1,servicoget);
             mensagem.Text = "Aprovado com sucesso! Pendente aprovação do usuário.";
             sit = 1;
@@ -98,6 +99,10 @@ namespace TCC
 
         public void empresaReprove(object sender, EventArgs e)
         {
+            if (Session["sIdEmp"] == null)
+            {
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
+            }
             new ServicoDAO().updateSit(-1, servicoget);
             mensagem.Text = "Serviço reprovado!";
             sit = -1;
@@ -105,6 +110,10 @@ namespace TCC
 
         public void empresaEnd(object sender, EventArgs e)
         {
+            if (Session["sIdEmp"] == null)
+            {
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
+            }
             new ServicoDAO().updateSit(3, servicoget);
             mensagem.Text = "Serviço enviado para aprovação final do usuário!";
             sit = 3;
@@ -142,8 +151,6 @@ namespace TCC
             listaChat = new ChatMensagemDAO().selectChatMIdChatC(contratoID);
         }
         
-
-
 
 
         public void verificarSit()
@@ -198,11 +205,5 @@ namespace TCC
                 txDataEstimada.Enabled = false;
             }
         }
-
-
-
-
-
-
     }
 }

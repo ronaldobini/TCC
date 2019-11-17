@@ -35,6 +35,11 @@ namespace TCC
 
         public void atualizarSaldo(object sender, EventArgs e)
         {
+            if (Session["sIdEmp"] == null)
+            {
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
+            }
+
             int SS_empresa = (int)Session["sIdEmp"];
 
             double val = double.Parse(valor.Value);

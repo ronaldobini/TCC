@@ -16,7 +16,7 @@
      <center>
     <div class="top_cliente">
 		<div class="top_int_cliente">
-			<img src="logo.png" height="120">
+			<img src="imgs/logoComprida.png" height="120">
 		</div>
 	</div>
    
@@ -38,7 +38,7 @@
 			        <a class="nav-link" href="solicitacoesCliente.html">Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="principal.html" method="POST">
+			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
 			      <button class="btn btn-outline-danger" type="submit">Sair</button>
 			    </form>
 			  </div>
@@ -67,7 +67,7 @@
 
         </div>
     </form>
-          <br /> <br /> <br /> <br />
+          <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 
 <div class="footerTest">
         <div class="footerTest_int">
