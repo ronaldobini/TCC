@@ -98,7 +98,7 @@ namespace TCC.Classes
         {
             string sql = "UPDATE servico " +
                 "SET situacao = " + sit + ", " +
-                "obs_finais_empresa = " + obsFinais + " " +
+                "obs_finais_empresa = '" + obsFinais + "' " +
                 "WHERE id  = " + idServ + " ";
 
             atualizaRepuCli(idCli, repuCli);
@@ -112,6 +112,9 @@ namespace TCC.Classes
         {
             string sql = "UPDATE servico " +
                 "SET situacao = " + sit + ", " +
+                "reputacao_qualidade = " + repuQ + ", " +
+                "reputacao_atendimento = " + repuA + ", " +
+                "reputacao_tempo = " + repuT + ", " +
                 "obs_finais_usuario = " + obsFinais + " " +
                 "WHERE id  = " + idServ + " ";
 
@@ -119,28 +122,69 @@ namespace TCC.Classes
                 "SET qtd_servicos = qtd_servicos + 1 " +
                 "WHERE id  = " + idUsu + " ";
 
-            atualizaRepuEmpresa(idEmp);
+            atualizaRepuEmpresa(idEmp, repuQ, repuA, repuT);
 
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
+            new Conn().executar(sql2, conn);
             conn.Close();
         }
 
         private void atualizaRepuCli(int idU, int repuCli)
         {
-            int repuCalculada = repuCli;
+            Usuario cliente = new UsuarioDAO().selectUser(idU);
+            int qtdServicos = cliente.QtdServicos;
+            int repuAtual = cliente.Reputacao;
+            double repuCalculada = 0.0;
+
+            repuCalculada = ((repuAtual * qtdServicos) + repuCli) / (qtdServicos);
+            repuCalculada = Math.Round(repuCalculada,0);
+            int repuCalculadaI = (int)repuCalculada;
+
             string sql = "UPDATE usuario " +
-                "SET reputacao = " + repuCalculada + " " +
+                "SET reputacao = " + repuCalculadaI + " " +
                 "WHERE id  = " + idU + " ";
 
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
             conn.Close();
         }
-        private void atualizaRepuEmpresa(int idEmp)
+        private void atualizaRepuEmpresa(int idEmp, int rQua, int rAte, int rTem)
         {
-            
-            
+            Empresa emp = new EmpresaDAO().selectEmp(idEmp);
+
+            int atualQ = emp.RepQualidade;
+            int atualA = emp.RepAtendimento;
+            int atualT = emp.RepTempo;
+
+            int qtdServs = emp.QtdServ;
+
+            double repuCalculadaQ = 0.0;
+            repuCalculadaQ = ((atualQ * qtdServs) + rQua) / (qtdServs);
+            repuCalculadaQ = Math.Round(repuCalculadaQ, 0);
+            int repuCalculadaQI = (int)repuCalculadaQ;
+
+            double repuCalculadaA = 0.0;
+            repuCalculadaA = ((atualA * qtdServs) + rAte) / (qtdServs);
+            repuCalculadaA = Math.Round(repuCalculadaA, 0);
+            int repuCalculadaAI = (int)repuCalculadaA;
+
+            double repuCalculadaT = 0.0;
+            repuCalculadaT = ((atualT * qtdServs) + rTem) / (qtdServs);
+            repuCalculadaT = Math.Round(repuCalculadaT, 0);
+            int repuCalculadaTI = (int)repuCalculadaT;
+
+            string sql = "UPDATE empresa " +
+               "SET reputacao_qualidade = " + repuCalculadaQI + ", " +
+               "reputacao_atendimento = " + repuCalculadaAI + ", " +
+               "reputacao_tempo = " + repuCalculadaTI + ", " +
+               "qtd_servicos = qtd_servicos + 1 " +
+               "WHERE id  = " + idEmp + " ";
+
+            MySqlConnection conn = new Conn().conectar();
+            new Conn().executar(sql, conn);
+            conn.Close();
+
         }
 
         public void updateSit(int sit, int idServ)
