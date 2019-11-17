@@ -43,72 +43,70 @@
 
 	<div class="conteudo_pagina_cadastro">
 		<div class="conteudo_pagina_cadastro_int">
-			<img src="imgs/logoSimples.png" width="100" class="logoMenor"><br>
+			<img src="imgs/logoSimples.png" width="100" class="logoMenor"><br/>
 			<h3>Cadastre sua empresa no Servitiba!</h3>
 			<form method="POST" action="#" runat="server">
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="cnpj">CNPJ</label>
-			      <input type="text"  runat="server" class="form-control" id="cnpj" placeholder="CNPJ">
+			      <input type="text"  runat="server" class="form-control" id="cnpj" placeholder="CNPJ" required/>
 			    </div>
 			    <div class="form-group col-md-6">
 			      <label for="razaoSocial">Razão Social</label>
-			      <input type="text"  runat="server" class="form-control" id="razaoSocial" placeholder="Razão Social">
+			      <input type="text"  runat="server" class="form-control" id="razaoSocial" placeholder="Razão Social" required/>
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="tel">Telefone</label>
-			      <input type="tel"  runat="server" class="form-control" id="tel" placeholder="xxxx-xxxx">
+			      <input type="tel"  runat="server" class="form-control" id="tel" placeholder="xxxx-xxxx" required/>
 			    </div>
 			    <div class="form-group col-md-6">
 			      <label for="cel">Celular</label>
-			      <input type="text" runat="server"  class="form-control telefone" id="cel" placeholder="(XX)x xxxx-xxxx">
+			      <input type="text" runat="server"  class="form-control telefone" id="cel" placeholder="xxxxx-xxxx" required/>
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-12">
 			      <label for="cep">CEP</label>
-			      <input type="tel" runat="server"  class="form-control" id="cep" placeholder="CEP">
+			      <input type="tel" runat="server"  class="form-control" id="cep" placeholder="CEP" required/>
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-6">
 			      <label for="endereco">Endereço</label>
-			      <input type="text"  runat="server" class="form-control" id="endereco" placeholder="Endereço">
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="complemento">Complemento</label>
-			      <input type="text" runat="server"  class="form-control" id="complemento" placeholder="Complemento">
+			      <input type="text"  runat="server" class="form-control" id="endereco" placeholder="Endereço" required/>
 			    </div>
 			    <div class="form-group col-md-4">
+			      <label for="complemento">Complemento</label>
+			      <input type="text" runat="server"  class="form-control" id="complemento" placeholder="Complemento"/>
+			    </div>
+			    <div class="form-group col-md-2">
 			      <label for="numero">Número</label>
-			      <input type="text" runat="server"  class="form-control" id="numero" placeholder="Número">
+			      <input type="text" runat="server"  class="form-control" id="numero" placeholder="Número" required/>
 			    </div>
 			  </div>
 
 			  <div class="form-row">
 			    <div class="form-group col-md-2">
 			      <label for="inputEmail4">Latitude</label>
-			      <input type="text" runat="server"  class="form-control" id="inputEmail4" placeholder="Latitude">
+			      <input type="text" runat="server"  class="form-control" id="inputEmail4" placeholder="Latitude"/>
 			    </div>
 			    <div class="form-group col-md-2">
 			      <label for="inputPassword4">Longitude</label>
-			      <input type="text"  runat="server" class="form-control" id="inputPassword4" placeholder="Longitude">
+			      <input type="text"  runat="server" class="form-control" id="inputPassword4" placeholder="Longitude"/>
 			    </div>
 			    <div class="form-group col-md-8">
-			      <label for="descricao">Descrição da Empresa</label> <br>
-			      <textarea runat="server" name="message" rows="5" id="descricao" cols="60"></textarea>
+			      <label for="descricao">Descrição da Empresa</label> <br/>
+			      <textarea runat="server" name="message" rows="5" id="descricao" cols="60" required></textarea>
 			    </div>
 			  </div>
-
 			  
 			  <button type="submit" runat="server" onserverclick="cadastrar" class="btn btn-primary">Próximo</button>
-
 			  
 			</form>
 		</div>		
