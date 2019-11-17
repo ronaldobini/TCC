@@ -95,7 +95,7 @@
 				      <th scope="col">Resumo</th>
 				      <th scope="col">Data do início</th>
 				      <th scope="col">Data Fim</th>
-				      <th scope="col">Situ</th>
+				      <th scope="col">Status</th>
 				      <th scope="col">Detalhes</th>
 				    </tr>
 				  </thead>

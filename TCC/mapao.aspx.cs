@@ -52,10 +52,6 @@ namespace TCC
                     
                 }
             }
-
-
-
-
         }
 
         private string pegarSevicos(int id, int catEscolhida)
