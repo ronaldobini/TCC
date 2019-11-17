@@ -41,7 +41,7 @@
 			    </ul>
 			    
 <% if (Session["sId"] == null){ %>
-                    <a href="cadastroCliente.aspx" style="margin-right:30px;"> <button class="btn btn-primary" type="submit">Cadastre-se para solicitar um serviço</button></a>
+                    <a href="cadastrarUsuario.aspx" style="margin-right:30px;"> <button class="btn btn-primary" type="submit">Cadastre-se para solicitar um serviço</button></a>
 			        <a href="loginCliente.aspx"> <button class="btn btn-outline-success" type="submit">Login</button></a>
                     
 <% }else{ %>
