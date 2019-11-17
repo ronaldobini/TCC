@@ -228,7 +228,7 @@
                             if(Session["sCliente"] != null){
                     %>
                             
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-x2">Serviço executado como previsto</button>
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-x1">Serviço executado como previsto</button>
                                 <button runat="server" onserverclick="anyProblem" class="btn btn-outline-danger" type="submit">Tive problemas</button>
                            
                                 <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
