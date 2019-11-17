@@ -32,8 +32,12 @@
 			        <a class="nav-link" href="contato.aspx">Contato <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
+                  <a href="loginAdm.aspx"><button class="btn btn-danger" >Sou ADM</button></a>
 			    <form class="form-inline my-2 my-lg-0" action="loginEmpresa.aspx" method="POST">
+                  
+                  <div class="menu_teste_2">
 			      <button class="btn btn-primary" type="submit">Sou Empresa</button>
+                  </div>
 			    </form>
 			  </div>
 			</nav>
