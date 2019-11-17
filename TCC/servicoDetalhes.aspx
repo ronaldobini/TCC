@@ -215,7 +215,7 @@
                                                       <option value="10">10</option>
                                                     </select><br />
                                                     <textarea runat="server" id="obsFinaisEmpresa" placeholder="Escreva aqui suas observações sobre o serviço (...)" rows="3" cols="30"></textarea><br />
-                                                    <input type="submit" runat="server" onserverclick="empresaEnd" value="Enviar"/>
+                                                    <input type="submit" runat="server" onserverclick="empresaEnd" value="Enviar" class="btn btn-success"/>
                                                
                                           </div>
                                       </div>
@@ -248,7 +248,7 @@
 
                                                     <textarea runat="server" id="obsFinaisCli" placeholder="Escreva aqui suas observações sobre o serviço (...)" rows="3" cols="30"></textarea><br />
                                                     
-                                                    <input type="submit" runat="server" onserverclick="clienteEnd" value="Enviar"/>
+                                                    <input type="submit" runat="server" onserverclick="clienteEnd" value="Enviar" class="btn btn-success"/>
                                                 
                                           </div>
                                       </div>
@@ -314,7 +314,7 @@
       </form>
     </div>
   </div>
-
+    <br /><br /><br />
 <div class="footer-good">
         <div class="footerTest_int">
             © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
