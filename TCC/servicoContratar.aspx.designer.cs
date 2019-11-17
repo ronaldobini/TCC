@@ -22,12 +22,12 @@ namespace TCC {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle descuser.
+        /// Controle descuserForm.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descuser;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea descuserForm;
     }
 }

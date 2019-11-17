@@ -84,7 +84,6 @@ namespace TCC.Classes
             ChatContrato chatC = new ChatContrato();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
-            reader.Read();
             chatC = preencherChatC(reader);
               
             conn.Close();

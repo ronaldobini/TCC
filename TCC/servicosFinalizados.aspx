@@ -29,7 +29,9 @@
 
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
-			      <li class="nav-item">
+			        <% if ((int)Session["sNivelEmp"] > 1)
+                      {%>
+			      <li class="nav-item active">
 			        <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
 
@@ -37,26 +39,36 @@
 			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
 			      </li>
 
-                   <li class="nav-item active">
+                   <li class="nav-item">
 			        <a class="nav-link" href="servicosFinalizados.aspx">Serviços Finalizados <span class="sr-only">(página atual)</span></a>
 			      </li>
 
 			      <li class="nav-item">
 			        <a class="nav-link" href="gerenciarServicos.aspx">Gerenciar Serviços <span class="sr-only">(página atual)</span></a>
 			      </li>
-
+                     <% }
+                if ((int)Session["sNivelEmp"] > 2)
+                {%>
                    <li class="nav-item">
 			        <a class="nav-link" href="empresaColaboradores.aspx">Gerenciar Colaboradores <span class="sr-only">(página atual)</span></a>
 			      </li>
 
                    <li class="nav-item">
-			        <a class="nav-link" href="empresaFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="gerenciarFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
 			      </li>
+
+                    <% }
+                    else
+                    { %>
+
+                    <li class="nav-item">
+			            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+			        </li>
+
+                    <% } %>
 			    </ul>
                    <a style="margin-right:30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
-			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
-			      <button class="btn btn-outline-danger" type="submit">Sair</button>
-			    </form>
+			    <a href="Logout.aspx"><button class="btn btn-outline-danger">Sair</button></a>
 			  </div>
 			</nav>
 		</div>
@@ -98,9 +110,9 @@
         int idCliente = serv.IdUser;
         int idEmpSer = serv.IdEmpSer;
         string resumo = serv.DescUser;
-        DateTime datIni = serv.DataIni;
-        DateTime datFim = serv.DataFimEst;
-        DateTime datFimR = serv.DataFim;
+        datIni = serv.DataIni;
+        datFim = serv.DataFimEst;
+        datFimR = serv.DataFim;
         double notaMedia = serv.RepQualidade;
 
         TCC.Classes.Usuario user = new TCC.Classes.UsuarioDAO().selectUser(idCliente);

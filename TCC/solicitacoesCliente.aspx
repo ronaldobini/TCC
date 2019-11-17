@@ -7,9 +7,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css"/>
     <title>Solicitações</title>
 </head>
 <body>
@@ -79,11 +79,11 @@
                         <img src="imgs/circular-clock.png" /></a>
 
                 </div>
-                <br>
-                <hr>
+                <br/>
+                <hr/>
 
-                <br>
-                <br>
+                <br/>
+                <br/>
                 <table class="table table-dark">
                     <thead>
                         <tr>
@@ -92,7 +92,7 @@
                             <th scope="col">Categoria</th>
                             <th scope="col">Data da Solicitação</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Chat</th>
+                            <th scope="col">Detalhes</th>
                             <th scope="col">Cancelar</th>
                         </tr>
                     </thead>
@@ -149,7 +149,7 @@
                             %>
                                 </td>
                             <td><a href="<%=linkServDet %>">
-                                <img src="imgs/conversation.png" /></a></td>
+                                <img src="imgs/more.png" /></a></td>
                             <td><a href="<%=linkDel %>">
                                 <img src="imgs/delete.png" /></a></td>
 

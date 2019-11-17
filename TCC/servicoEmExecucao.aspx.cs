@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TCC.Classes;
+using MySql.Data.Types;
 
 namespace TCC
 {
@@ -12,6 +13,8 @@ namespace TCC
     {
 
         public List<Servico> servsDB = new List<Servico>();
+        public DateTime datIni;
+        public DateTime datFim;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +26,7 @@ namespace TCC
             {
                 int SS_empresa = (int)Session["sIdEmp"];
                 //puxa lista do banco de dados
-                servsDB = new ServicoDAO().selectAllServsEmpSolic(SS_empresa);
+                servsDB = new ServicoDAO().selectAllServsEmpExe(SS_empresa);
             }
             else
             {
