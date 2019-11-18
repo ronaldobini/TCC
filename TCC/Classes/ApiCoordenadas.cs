@@ -1,14 +1,17 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 
 namespace TCC.Classes
 {
-    public class ApiLatitude
+    public class ApiCoordenadas
     {
 
-
+        public string key;
+        public string url = "";
 
         public double pegatLat(string busca)
         {
@@ -55,7 +58,5 @@ namespace TCC.Classes
             return lng;
 
         }
-
-
     }
 }

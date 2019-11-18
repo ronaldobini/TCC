@@ -110,5 +110,14 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea descricao;
+        
+        /// <summary>
+        /// Controle cidade.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cidade;
     }
 }

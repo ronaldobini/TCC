@@ -13,6 +13,14 @@ namespace TCC.Classes
         {
             string msg = "";
             //Vou deixar bem separado o que é oq pra ficar mais claro
+
+            string latS = emp.Lat.ToString();
+            string lonS = emp.Lon.ToString();
+
+            latS = latS.Replace(",", ".");
+            lonS = lonS.Replace(",", ".");
+
+
             string sql = "INSERT INTO empresa (id, id_diretor, id_comercial, id_tecnico, cnpj, razao_social," +
                 "telefone1, telefone2, endereco, numero, complemento, cep, lat, lon, id_cidade, inicio_empresa, descricao_empresa," +
                 "qtd_funcionarios, reputacao_tempo, reputacao_qualidade, reputacao_atendimento, reputacao_fiscal, qtd_servicos," +
@@ -30,8 +38,8 @@ namespace TCC.Classes
                 "'" + emp.Numero + "'," +
                 "'" + emp.Complemento + "'," +
                 "'" + emp.Cep + "'," +
-                "'" + emp.Lat + "'," +
-                "'" + emp.Lon + "'," +
+                "" + latS + "," +
+                "" + lonS + "," +
                 "'" + emp.IdCidade + "'," +
                 "'" + emp.InicioEmpresa.ToString() + "'," +
                 "'" + emp.DescEmpresa + "'," +
@@ -216,8 +224,8 @@ namespace TCC.Classes
             emp.Numero = reader.GetInt32(9);
             emp.Complemento = reader.GetString(10);
             emp.Cep = reader.GetString(11);
-            emp.Lat = reader.GetString(12);
-            emp.Lon = reader.GetString(13);
+            emp.Lat = reader.GetDouble(12);
+            emp.Lon = reader.GetDouble(13);
             emp.IdCidade = reader.GetInt32(14);
 
             emp.InicioEmpresa = reader.GetMySqlDateTime(15);

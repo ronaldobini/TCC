@@ -15,7 +15,7 @@ namespace TCC.Classes
         //-25.436958
         //-49.19756
 
-        public MapPoint(string lat, string lon, string titulo, string servicos, int reputacaoMedia, int tipo, int idEmpresa)
+        public MapPoint(double lat, double lon, string titulo, string servicos, int reputacaoMedia, int tipo, int idEmpresa)
         {
             string tipoS = "-";
             if (tipo == 1)
@@ -35,12 +35,18 @@ namespace TCC.Classes
 
             //mapPoint = "{ position: new google.maps.LatLng("+lat+", "+lon+"),type: '"+tipoS+"',infos: '<b>"+titulo+" </b><br>"+servicos+ "<br> Nota: " + reputacaoMedia + " < br >' }";
 
-            mapPoint = "{ position: new google.maps.LatLng(" + lat + ", " + lon + "),type: '" + tipoS + "'," +
+            string latS = lat.ToString();
+            string lonS = lon.ToString();
+
+            latS = latS.Replace(",",".");
+            lonS = lonS.Replace(",", ".");
+
+            mapPoint = "{ position: new google.maps.LatLng(" + latS + ", " + lonS + "),type: '" + tipoS + "'," +
                 "infos: '<b>" + titulo + " </b><br>" + servicos + " <br><br> " +
                 "Reputacao: " + reputacaoMedia + "<br>" + notaBarra +
                 "<br><a href=empresaDetalhes.aspx?idEmpDet=" + idEmpresa + ">Detalhes </a>' }";
 
-
+            
         }
 
 

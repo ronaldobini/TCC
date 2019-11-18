@@ -104,6 +104,10 @@
 			      <label for="descricao">Descrição da Empresa</label> <br/>
 			      <textarea runat="server" name="message" rows="5" id="descricao" cols="60" required></textarea>
 			    </div>
+                  <div class="form-group">
+                    <label for="categoria">Cidade</label>
+                    <asp:DropDownList ID="cidade" runat="server" CssClass="form-control" required></asp:DropDownList>
+                </div>
 			  </div>
 			  
 			  <button type="submit" runat="server" onserverclick="cadastrar" class="btn btn-primary">Próximo</button>

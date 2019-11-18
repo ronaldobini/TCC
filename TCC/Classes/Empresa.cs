@@ -23,8 +23,8 @@ namespace TCC.Classes
         private int numero;
         private string complemento;
         private string cep;
-        private string lat;
-        private string lon;
+        private double lat;
+        private double lon;
         private int idCidade;
         public Cidade cidade { get; set; }
         private MySqlDateTime inicioEmpresa;
@@ -41,7 +41,7 @@ namespace TCC.Classes
         private int block;
 
         public Empresa(int id, int idDiretor, int idComercial, int idTecnico, string cnpj, string razaoSocial,
-            string tel1, string tel2, string endereco, int numero, string complemento, string cep, string lat, string lon, int idCidade,
+            string tel1, string tel2, string endereco, int numero, string complemento, string cep, double lat, double lon, int idCidade,
             MySqlDateTime inicioEmpresa, string descEmpresa, int qtdFuncionarios, int repTempo, int repQualidade, int repAtendimento,
             int repQuantidade, int repFiscal, int qtdServ, string zonaAtendimento, MySqlDateTime dataCadastro, int block)
         {
@@ -90,8 +90,8 @@ namespace TCC.Classes
         public int Numero { get => numero; set => numero = value; }
         public string Complemento { get => complemento; set => complemento = value; }
         public string Cep { get => cep; set => cep = value; }
-        public string Lat { get => lat; set => lat = value; }
-        public string Lon { get => lon; set => lon = value; }
+        public double Lat { get => lat; set => lat = value; }
+        public double Lon { get => lon; set => lon = value; }
         public int IdCidade { get => idCidade; set => idCidade = value; }
         public MySqlDateTime InicioEmpresa { get => inicioEmpresa; set => inicioEmpresa = value; }
         public string DescEmpresa { get => descEmpresa; set => descEmpresa = value; }

@@ -213,6 +213,7 @@
     <Compile Include="cadastrarUsuario.aspx.designer.cs">
       <DependentUpon>cadastrarUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ApiCoordenadas.cs" />
     <Compile Include="Classes\Cargo.cs" />
     <Compile Include="Classes\Categoria.cs" />
     <Compile Include="Classes\CategoriaDAO.cs" />
