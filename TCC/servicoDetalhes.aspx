@@ -142,8 +142,8 @@
               <div class="form-group col-md-4">
                   <br /><br />
                 <table id="funcs" class="table table-dark">
-                    <tr><th style="width:100px;">Nome Técnico</th><th style="width:100px;">Formação</th><th style="width:100px;">Cpf</th><th style="width:100px;">Tel</th></tr>
-                    <tr><td>José Marques</td><td>Serviços gerais</td><td>094.085.216-96</td><td>(41) 3028-1562</td></tr>
+                    <tr><th style="width:100px;">Nome Técnico</th><th style="width:100px;">Formação</th><th style="width:100px;">Tel</th></tr>
+                    <tr><td>José Marques</td><td>Serviços gerais</td><td>(41) 3028-1562</td></tr>
                     <%  
                         if (listaServTec != null)
                         {
@@ -152,11 +152,12 @@
 
                                 TCC.Classes.UsuarioEmpresa ue = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(tec.IdTec);
                                 TCC.Classes.Usuario uu = new TCC.Classes.UsuarioDAO().selectUser(tec.IdTec);
+                               
                                     %>
-                                        <tr><td><%=uu.Nome %></td><td><%=ue.Formacao %></td><td><%=uu.Cpf %></td><td><%=uu.Tel1 %></td></tr>
-                                    <%
+                                        <tr><td><%=uu.Nome %></td><td><%=ue.Formacao %></td><td><%=uu.Tel1 %></td></tr>
+                                    <%                              
+                            }
                         }
-                    }
 
                      %>
                 </table>
@@ -283,24 +284,27 @@
                   { %> 
               <td scope="row" colspan="2">Chat com o cliente</td>
                 <% } else {
+                        
                     %>
               <td scope="row" colspan="2">Chat com a empresa</td>
+
                   <%} %>
             </tr>
           </thead>
           <tbody>
               <%
-                if (listaChat != null)
-                {
-                foreach (var msg in listaChat)
-                {
+                  if (listaChat != null)
+                  {
+                      foreach (var msg in listaChat)
+                      {
 
-                TCC.Classes.Usuario uum = new TCC.Classes.UsuarioDAO().selectUser(msg.IdUser);
-                TCC.Classes.UsuarioEmpresa uem = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(msg.IdUser);
+                          TCC.Classes.Usuario uum = new TCC.Classes.UsuarioDAO().selectUser(msg.IdUser);
+                          TCC.Classes.UsuarioEmpresa uem = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(msg.IdUser);
+                          //if (Session[sIdEmp] != uem.IdEmpresa) { uem.Funcao = "Cliente"; }
                %>
                 <tr class="chat_cliente">
                 <th scope="row"></th>
-                <th scope="row"><%=uum.Nome %> (<%=uem.Funcao %>): <%=msg.Mensagem %> </th>
+                <th scope="row"><%=uum.Nome %> (<%=msg.Tempo %>): <%=msg.Mensagem %> </th>
                  </tr>     
                 <%
                  }

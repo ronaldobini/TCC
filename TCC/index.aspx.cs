@@ -22,5 +22,40 @@ namespace TCC
             //users = dao.selectAllUsers();
             
         }
-    }
+
+
+        public void espiarClick(object sender, EventArgs e)
+        {
+
+            string cepForm = cep.Value;
+
+            if(cepForm.Length < 8)
+            {
+                cepForm = "80010020";
+            }
+
+            string lt = new ApiCoordenadas().pegarLat(cepForm).ToString();
+            string lg = new ApiCoordenadas().pegarLng(cepForm).ToString();
+
+            string latS = lt.Replace(",", ".");
+            string lonS = lg.Replace(",", ".");
+
+
+            Session["latCentro"] = latS;
+            Session["lngCentro"] = lonS;
+
+            Response.Redirect("mapao.aspx");
+
+        }
+
+        public void loginCliente(object sender, EventArgs e)
+        {
+            Response.Redirect("loginCliente.aspx");
+        }
+        public void cadastroCliete(object sender, EventArgs e)
+        {
+            Response.Redirect("cadastrarCliente.aspx");
+        }
+
+        }
 }

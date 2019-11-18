@@ -11,5 +11,23 @@ namespace TCC {
     
     
     public partial class Index {
+        
+        /// <summary>
+        /// Controle cep.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cep;
+        
+        /// <summary>
+        /// Controle Espiar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputSubmit Espiar;
     }
 }

@@ -92,14 +92,7 @@
 			  </div>
 
 			  <div class="form-row">
-			    <div class="form-group col-md-2">
-			      <label for="inputEmail4">Latitude</label>
-			      <input type="text" runat="server"  class="form-control" id="inputEmail4" placeholder="Latitude"/>
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputPassword4">Longitude</label>
-			      <input type="text"  runat="server" class="form-control" id="inputPassword4" placeholder="Longitude"/>
-			    </div>
+			   
 			    <div class="form-group col-md-8">
 			      <label for="descricao">Descrição da Empresa</label> <br/>
 			      <textarea runat="server" name="message" rows="5" id="descricao" cols="60" required></textarea>

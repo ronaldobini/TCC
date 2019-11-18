@@ -51,7 +51,9 @@ namespace TCC
                 if (!IsPostBack)
                 {
                     txValor.Text = serv.Valor.ToString();
-                    txDataEstimada.Text = serv.DataFimEst.ToString();
+                    string dataEstimada = serv.DataFimEst.ToString();
+                    if (dataEstimada  == "01/01/2001 00:00:00") { dataEstimada = "A definir"; }
+                    txDataEstimada.Text = dataEstimada;
                 }
                 descUsu = serv.DescUser;
                 sit = serv.Sit;

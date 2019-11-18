@@ -51,7 +51,7 @@ namespace TCC
             Cidade cid = cidadeDAO.selectCidadePorId(idCidade);
 
             string busca = postEnd + ", " + postNum + " " + cid.Nome;
-            double lat = new ApiCoordenadas().pegatLat(busca);
+            double lat = new ApiCoordenadas().pegarLat(busca);
             double lng = new ApiCoordenadas().pegarLng(busca);
 
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));

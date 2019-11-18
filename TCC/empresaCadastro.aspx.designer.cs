@@ -85,24 +85,6 @@ namespace TCC {
         protected global::System.Web.UI.HtmlControls.HtmlInputText numero;
         
         /// <summary>
-        /// Controle inputEmail4.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputEmail4;
-        
-        /// <summary>
-        /// Controle inputPassword4.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputPassword4;
-        
-        /// <summary>
         /// Controle descricao.
         /// </summary>
         /// <remarks>

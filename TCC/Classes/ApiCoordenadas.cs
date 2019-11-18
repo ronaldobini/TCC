@@ -13,7 +13,10 @@ namespace TCC.Classes
         public string key;
         public string url = "";
 
-        public double pegatLat(string busca)
+        //-25.436958
+        //-49.19756
+
+        public double pegarLat(string busca)
         {
             key = "AIzaSyCSbnmsy0j1KVVLOG8FxGELMeha_pqnvYo";
             url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + busca + "&key=" + key;
@@ -25,12 +28,18 @@ namespace TCC.Classes
             var objeto = JObject.Parse(json); // parse as array  
 
             JArray vetor = (JArray)objeto["results"];
+            double lat = -25.436958;
 
+            try
+            {
+                lat = double.Parse(vetor[0]["geometry"]["location"]["lat"].ToString());
+            }
+            catch (Exception e)
+            {
+                lat = -25.436958;
+            }
 
-            double lat = double.Parse(vetor[0]["geometry"]["location"]["lat"].ToString());
-            double lng = double.Parse(vetor[0]["geometry"]["location"]["lng"].ToString());
-
-            string endBonito = vetor[0]["formatted_address"].ToString();
+            //string endBonito = vetor[0]["formatted_address"].ToString();
 
             return lat;
         }
@@ -49,9 +58,16 @@ namespace TCC.Classes
 
             JArray vetor = (JArray)objeto["results"];
 
+            double lng = -49.19756;
+            try
+            {
+                lng = double.Parse(vetor[0]["geometry"]["location"]["lng"].ToString());
+            }
+            catch (Exception e)
+            {
 
-            double lat = double.Parse(vetor[0]["geometry"]["location"]["lat"].ToString());
-            double lng = double.Parse(vetor[0]["geometry"]["location"]["lng"].ToString());
+            }
+            
 
             string endBonito = vetor[0]["formatted_address"].ToString();
 

@@ -58,9 +58,21 @@ namespace TCC
                         Session["sQtdServicos"] = logando.QtdServicos;
                         Session["sCliente"] = 1;
                         Session["sFuncao"] = Session["sRep"];
-                    new LogDAO().logit("Login Cliente", (int)logando.Id);
+                        string endereco = logando.Endereco + " " + logando.Numero;
 
-                    Response.Redirect("mapao.aspx");
+                        string lt = new ApiCoordenadas().pegarLat(endereco).ToString();
+                        string lg = new ApiCoordenadas().pegarLng(endereco).ToString();
+
+                        string latS = lt.Replace(",", ".");
+                        string lonS = lg.Replace(",", ".");
+
+
+                        Session["latCentro"] = latS;
+                        Session["lngCentro"] = lonS;
+
+                        new LogDAO().logit("Login Cliente", (int)logando.Id);
+
+                        Response.Redirect("mapao.aspx");
                 }
                     else
                     {
