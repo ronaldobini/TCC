@@ -11,8 +11,6 @@ namespace TCC
     public partial class empresaDetalhes : System.Web.UI.Page
     {
 
-        
-
         public int getEmpresaMapa = 0;
 
         public string cnpj = "-";
@@ -36,11 +34,7 @@ namespace TCC
         public string zona = "-";
 
 
-
         public List<EmpresaServico> servs;
-
-
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -96,12 +90,6 @@ namespace TCC
                 razaoSocial = "ERRO AO OBTER A EMPRESA A PARTIR DO MAPA";
                 descricao = "ERRO AO OBTER A EMPRESA A PARTIR DO MAPA";
             }
-
-
-            
-
-
-
 
         }
 

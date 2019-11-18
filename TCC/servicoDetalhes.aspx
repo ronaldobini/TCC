@@ -271,43 +271,49 @@
                     <br /><br />
                     <font color="green"><asp:Label ID="mensagem" runat="server"></asp:Label></font>
         
-        <hr> <br>
+        <hr/> <br/>
         
         
-        Chat: <br><br> <br>
+        Chat: <br/><br/> <br/>
 
         <table class="table table-dark">
           <thead>
             <tr>
+              <% if (Session["sIdEmp"] != null)
+                  { %> 
               <td scope="row" colspan="2">Chat com o cliente</td>
+                <% } else {
+                    %>
+              <td scope="row" colspan="2">Chat com a empresa</td>
+                  <%} %>
             </tr>
           </thead>
           <tbody>
               <%
                 if (listaChat != null)
                 {
-                    foreach (var msg in listaChat)
-                    {
+                foreach (var msg in listaChat)
+                {
 
-                        TCC.Classes.Usuario uum = new TCC.Classes.UsuarioDAO().selectUser(msg.IdUser);
-                        TCC.Classes.UsuarioEmpresa uem = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(msg.IdUser);
-                          %>
-                        <tr class="chat_cliente">
-                          <th scope="row"></th>
-                          <th scope="row"><%=uum.Nome %> (<%=uem.Funcao %>): <%=msg.Mensagem %> </th>
-                        </tr>     
-                          <%
-                    }
+                TCC.Classes.Usuario uum = new TCC.Classes.UsuarioDAO().selectUser(msg.IdUser);
+                TCC.Classes.UsuarioEmpresa uem = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(msg.IdUser);
+               %>
+                <tr class="chat_cliente">
+                <th scope="row"></th>
+                <th scope="row"><%=uum.Nome %> (<%=uem.Funcao %>): <%=msg.Mensagem %> </th>
+                 </tr>     
+                <%
+                 }
                 }
               %>
           </tbody>
         </table>
 
-        <br><br>
+        <br/><br/>
 
         <textarea runat="server" id="msgUser" placeholder="Escreva aqui sua mensagem..." rows="6" cols="60"></textarea>
-        <br><br>
-        <input type="submit" runat="server" value="Enviar" onserverclick="enviarMsg" class="btn btn-primary">
+        <br/><br/>
+        <input type="submit" runat="server" value="Enviar" onserverclick="enviarMsg" class="btn btn-primary"/>
 
       </div>
     
