@@ -139,7 +139,7 @@ namespace TCC.Classes
             int repuAtual = cliente.Reputacao;
             double repuCalculada = 0.0;
 
-            repuCalculada = ((repuAtual * qtdServicos) + repuCli) / (qtdServicos);
+            repuCalculada = ((repuAtual * qtdServicos) + repuCli) / (qtdServicos+1);
             repuCalculada = Math.Round(repuCalculada,0);
             int repuCalculadaI = (int)repuCalculada;
 
