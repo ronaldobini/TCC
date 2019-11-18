@@ -151,7 +151,7 @@ namespace TCC.Classes
         }
         public Empresa selectEmpPorCNPJ(String cnpj)
         {
-            string sql = "SELECT * FROM empresa WHERE cnpj = " + cnpj;
+            string sql = "SELECT * FROM empresa WHERE cnpj = '" + cnpj+"'";
             Empresa emp = new Empresa();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);

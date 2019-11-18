@@ -72,7 +72,7 @@ namespace TCC
 
             if(verificaCat != 1)
             {
-                results = "foraDaCategoria";
+                results = "Sem Serviços";
             }
            
 
@@ -96,7 +96,7 @@ namespace TCC
                 {
                     
                     string servicosEmp = pegarSevicos(empresa.Id, catPost);
-                    if (servicosEmp != "foraDaCategoria")
+                    if (servicosEmp != "Sem Serviços")
                     {
                         int repMedia = (empresa.RepAtendimento + empresa.RepQualidade + empresa.RepTempo) / 3;
                         int limitDesc = 1;
