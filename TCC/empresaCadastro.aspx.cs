@@ -20,9 +20,17 @@ namespace TCC
         private string postComplemento;
         private int postNum;
         private string postDesc;
+        CidadeDAO cidadeDAO = new CidadeDAO();
+        List<Cidade> lista = new List<Cidade>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            lista = cidadeDAO.selectAllCids();
+            foreach (var item in lista)
+            {
+                cidade.Items.Add(new ListItem() { Value = item.Id.ToString(), Text = item.Nome });
+            }
 
         }
 
@@ -37,11 +45,18 @@ namespace TCC
             postComplemento = complemento.Value;
             postNum = Int32.Parse(numero.Value);
             postDesc = descricao.Value;
-            Cidade cid = new Cidade();
-            //cid = new CidadeDAO().selectCidadePorNome(postCid);
+
+
+            int idCidade = Int32.Parse(cidade.Text);
+            Cidade cid = cidadeDAO.selectCidadePorId(idCidade);
+
+            string busca = postEnd + ", " + postNum + " " + cid.Nome;
+            double lat = new ApiCoordenadas().pegatLat(busca);
+            double lng = new ApiCoordenadas().pegarLng(busca);
+
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
             Empresa emp = new Empresa(1, 1, 1, 1, postCnpj, postRazaoSocial, postTel, postCel, postEnd, postNum, postComplemento, postCep,
-                "000", "000", 1, mysqldt, postDesc , 1, 1, 1, 1, 1, 1, 1, "centro", mysqldt, 0);
+                lat, lng, cid.Id, mysqldt, postDesc , 1, 1, 1, 1, 1, 1, 1, "centro", mysqldt, 0);
             new EmpresaDAO().insertEmpresa(emp);
             emp = new EmpresaDAO().selectEmpPorCNPJ(postCnpj);
             Session["sIdEmp"] = emp.Id;
