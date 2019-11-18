@@ -60,6 +60,8 @@ namespace TCC
             new EmpresaDAO().insertEmpresa(emp);
             emp = new EmpresaDAO().selectEmpPorCNPJ(postCnpj);
             Session["sIdEmp"] = emp.Id;
+            EmpresaSaldo saldo = new EmpresaSaldo(0, emp.Id, 0, 0, 0);
+            new EmpresaSaldoDAO().insertEmpSaldo(saldo);
             Response.Redirect("userEmpCadastro.aspx");
         }
     }

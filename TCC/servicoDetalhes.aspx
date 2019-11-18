@@ -135,7 +135,7 @@
             <div class="form-row">            
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Descrição Cliente</label> <br>
-                <textarea rows="6" cols="90" <%=disabled %> class="testeText">
+                <textarea rows="6" cols="90" disabled class="testeText">
                 <%=descUsu %>
                 </textarea>
               </div>
@@ -143,7 +143,7 @@
                   <br /><br />
                 <table id="funcs" class="table table-dark">
                     <tr><th style="width:100px;">Nome Técnico</th><th style="width:100px;">Formação</th><th style="width:100px;">Cpf</th><th style="width:100px;">Tel</th></tr>
-                    <tr><td>a</td><td>a</td><td>a</td><td>a</td></tr>
+                    <tr><td>José Marques</td><td>Serviços gerais</td><td>094.085.216-96</td><td>(41) 3028-1562</td></tr>
                     <%  
                         if (listaServTec != null)
                         {

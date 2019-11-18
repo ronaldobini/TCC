@@ -122,6 +122,8 @@ namespace TCC.Classes
                 "SET qtd_servicos = qtd_servicos + 1 " +
                 "WHERE id  = " + idUsu + " ";
 
+            
+
             atualizaRepuEmpresa(idEmp, repuQ, repuA, repuT);
 
             MySqlConnection conn = new Conn().conectar();
