@@ -161,6 +161,11 @@
 
                      %>
                 </table>
+			<asp:DropDownList ID="servTecsEmp" runat="server" class="form-control">
+				<asp:ListItem Text="Roberto do Amaral (Técnico)" Value="1"></asp:ListItem>
+				<asp:ListItem Text="Felipe Roberts (Engenheiro)" Value="2"></asp:ListItem>
+			</asp:DropDownList>
+		      	<button runat="server" onserverclick="addTecServ" class="btn btn-success" type="submit">Add</button> 
               </div>
             </div>
           
