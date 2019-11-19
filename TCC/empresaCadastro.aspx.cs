@@ -56,13 +56,13 @@ namespace TCC
 
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
             Empresa emp = new Empresa(1, 1, 1, 1, postCnpj, postRazaoSocial, postTel, postCel, postEnd, postNum, postComplemento, postCep,
-                lat, lng, cid.Id, mysqldt, postDesc , 1, 1, 1, 1, 1, 1, 1, "centro", mysqldt, 0);
+                lat, lng, cid.Id, mysqldt, postDesc , 1, 1, 1, 1, 1, 1, 1, "centro", mysqldt, 1);
             new EmpresaDAO().insertEmpresa(emp);
             emp = new EmpresaDAO().selectEmpPorCNPJ(postCnpj);
             Session["sIdEmp"] = emp.Id;
             EmpresaSaldo saldo = new EmpresaSaldo(0, emp.Id, 0, 0, 0);
             new EmpresaSaldoDAO().insertEmpSaldo(saldo);
-            Response.Redirect("userEmpCadastro.aspx");
+            Response.Redirect("userEmpCadastro.aspx?acao=primCad");
         }
     }
 }

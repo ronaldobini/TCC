@@ -26,23 +26,24 @@ namespace TCC
         private string postCel;
         private string postCidade = "Curitiba";
         private string postFunc = "ainda n";
-        private string postFormacao = "ainda n";
+        //private string postFormacao = "ainda n";
         public int id = -1;
         public string tituloDaPag = "";
         public Usuario col;
         public int statusOperação = 0;
         public string msg = "";
+        public string acao = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["sIdEmp"] == null)
             {
                 Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
             }
-            
-                PreencherTela();
-            
-
-
+            if (Request.QueryString["acao"] != null)
+            {
+                acao = Request.QueryString["acao"];
+            }
+            PreencherTela();
         }
         public void PreencherTela()
         {
@@ -111,15 +112,26 @@ namespace TCC
                     Cargo.DataValueField = "id";
                     Cargo.DataSource = cargos;
                     Cargo.DataBind();
+
+                    CargoFixo.DataTextField = "Descricao";
+                    CargoFixo.DataValueField = "id";
+                    CargoFixo.DataSource = cargos;
+                    CargoFixo.DataBind();
+                    CargoFixo.SelectedValue = "3";
                 }
 
             }
         }
         public void cadastrar(object sender, EventArgs e)
         {
+            int idEmp = 0;
             if (Session["sIdEmp"] == null)
             {
                 Response.Redirect("loginEmpresa.aspx");
+            }
+            else
+            {
+                idEmp = (int)Session["sIdEmp"];
             }
             postLogin = login.Text;
             postSenha = senha.Text;
@@ -134,13 +146,18 @@ namespace TCC
             postCel = cel.Text;
             postFunc = funcao.Text;
             postEscolar = Int32.Parse(Escolaridade.SelectedValue);
-            int cargoSelecionado = Int32.Parse(Cargo.SelectedValue);
-            string descEscolar = new Escolaridade().EscolherEscolaridade(postEscolar).Descricao;
-            int idEmp = 0;
-            if (Session["sIdEmp"] != null)
+            //int cargoSelecionado = Int32.Parse(Cargo.SelectedValue);   
+            int cargoSelecionado = -1;
+            if (acao.Equals("primCad"))
             {
-                idEmp = (int)Session["sIdEmp"];
+                cargoSelecionado = 3;
             }
+            else
+            {
+                cargoSelecionado = Int32.Parse(Cargo.SelectedValue);
+            }
+            string descEscolar = new Escolaridade().EscolherEscolaridade(postEscolar).Descricao;
+            
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
             Cidade cidade = new CidadeDAO().selectCidadePorNome(postCidade);
             Usuario user = new Usuario(0, postLogin, postSenha, postNome, postEmail, postCpf, postTel, postCel, postEnd, postNum, postComplemento,
@@ -151,6 +168,15 @@ namespace TCC
 
             if(new UsuarioEmpresaDAO().insertUserEmp(userEmp))
             {
+                if (acao.Equals("primCad"))
+                {
+                    Empresa emp = new EmpresaDAO().selectEmp(idEmp);
+                    emp.IdTecnico = user.Id;
+                    emp.IdDiretor = user.Id;
+                    emp.IdComercial = user.Id;
+                    emp.Block = 0;
+                    new EmpresaDAO().updateEmpresa(emp);
+                }
                 if (Session["sId"] == null)
                 {
                     Response.Redirect("loginEmpresa.aspx?sit=1&msg=sucessoCadastrarEmpresa");
@@ -166,8 +192,6 @@ namespace TCC
                 statusOperação = 2;
                 msg = Mensagens.ResourceManager.GetString("ErroInesperado");
             }
-
-
         }
         public void editar(object sender, EventArgs e)
         {
@@ -199,9 +223,26 @@ namespace TCC
 
             new UsuarioEmpresaDAO().updateUsuarioEmpresa(userEmp);
 
+            Empresa emp = new EmpresaDAO().selectEmp(idEmp);
+
+            if (cargoSelecionado == 1) // Tecnico
+            {
+                emp.IdTecnico = col.Id;
+            }
+            else if (cargoSelecionado == 3) // Diretor
+            {
+                emp.IdDiretor = col.Id;
+            }
+            else if (cargoSelecionado == 2) // Representante Comercial
+            {
+                emp.IdComercial = col.Id;
+            }
+            new EmpresaDAO().updateEmpresa(emp);
+
             Response.Redirect("empresaColaboradores.aspx");
 
         }
+
         public void Voltar(object sender, EventArgs e) {
 
             Response.Redirect("empresaColaboradores.aspx");

@@ -7,13 +7,11 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace TCC
-{
-
-
-    public partial class userEmpCadastro
-    {
-
+namespace TCC {
+    
+    
+    public partial class userEmpCadastro {
+        
         /// <summary>
         /// Controle login.
         /// </summary>
@@ -22,7 +20,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox login;
-
+        
         /// <summary>
         /// Controle senha.
         /// </summary>
@@ -31,7 +29,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox senha;
-
+        
         /// <summary>
         /// Controle nomCompleto.
         /// </summary>
@@ -40,7 +38,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nomCompleto;
-
+        
         /// <summary>
         /// Controle email.
         /// </summary>
@@ -49,7 +47,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox email;
-
+        
         /// <summary>
         /// Controle cpf.
         /// </summary>
@@ -58,7 +56,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox cpf;
-
+        
         /// <summary>
         /// Controle cep.
         /// </summary>
@@ -67,7 +65,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox cep;
-
+        
         /// <summary>
         /// Controle endereco.
         /// </summary>
@@ -76,7 +74,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox endereco;
-
+        
         /// <summary>
         /// Controle complemento.
         /// </summary>
@@ -85,7 +83,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox complemento;
-
+        
         /// <summary>
         /// Controle numero.
         /// </summary>
@@ -94,7 +92,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox numero;
-
+        
         /// <summary>
         /// Controle tel.
         /// </summary>
@@ -103,7 +101,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tel;
-
+        
         /// <summary>
         /// Controle cel.
         /// </summary>
@@ -112,7 +110,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox cel;
-
+        
         /// <summary>
         /// Controle cidadesDD.
         /// </summary>
@@ -121,7 +119,16 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cidadesDD;
-
+        
+        /// <summary>
+        /// Controle CargoFixo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CargoFixo;
+        
         /// <summary>
         /// Controle Cargo.
         /// </summary>
@@ -130,7 +137,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList Cargo;
-
+        
         /// <summary>
         /// Controle funcao.
         /// </summary>
@@ -139,7 +146,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox funcao;
-
+        
         /// <summary>
         /// Controle Escolaridade.
         /// </summary>
@@ -148,7 +155,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList Escolaridade;
-
+        
         /// <summary>
         /// Controle formacao.
         /// </summary>

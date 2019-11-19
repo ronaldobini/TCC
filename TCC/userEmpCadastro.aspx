@@ -59,7 +59,7 @@
             <%if (id == -1)
                 {
             %>
-            <h3>Cadastre novo colaborador</h3>
+            <h3>Cadastre o Diretor</h3>
             <% }
                 else
                 {
@@ -69,29 +69,29 @@
             <% }
             %>
             <%if (statusOperação == 1)
-                    { %>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong><%=msg %></strong>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <%}
-                    else
+                { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong><%=msg %></strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <%}
+                else
+                {
+                    if (statusOperação == 2)
                     {
-                        if (statusOperação == 2)
-                        {
-                %>
+            %>
 
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <strong><%=msg %></strong>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <%
-                        }
-                    } %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong><%=msg %></strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <%
+                    }
+                } %>
             <form method="POST" action="#" runat="server">
 
                 <div class="form-row">
@@ -160,13 +160,29 @@
                             <asp:ListItem />
                         </asp:DropDownList>
                     </div>
-
+                    <%if (acao.Equals("primCad"))
+                        { %>
+                    <div class="form-group col-md-6">
+                        <label for="CargoFixo">Cargo</label>
+                        <asp:DropDownList Enabled="false" CssClass="form-control" ID="CargoFixo" runat="Server">
+                            <asp:ListItem />
+                        </asp:DropDownList>
+                    </div>
+                    <%--<div class="form-group col-md-6">
+                        <label for="cel">Cargo</label>
+                        <asp:TextBox ID="TextBox1" Enabled="false" class="form-control" placeholder="Diretor" runat="server"></asp:TextBox>
+                    </div>--%>
+                    <%}
+                        else
+                        {
+                    %>
                     <div class="form-group col-md-6">
                         <label for="Cargo">Cargo</label>
                         <asp:DropDownList CssClass="form-control" ID="Cargo" runat="Server">
                             <asp:ListItem />
                         </asp:DropDownList>
                     </div>
+                    <%} %>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
@@ -204,7 +220,7 @@
                 <button type="submit" runat="server" onserverclick="editar" class="btn btn-success">Editar</button>
                 <% }
                 %>
-                
+
                 <button type="submit" runat="server" onserverclick="Voltar" class="btn btn-primary">Voltar</button>
             </form>
         </div>
