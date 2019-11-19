@@ -14,6 +14,7 @@
     <form id="form1" runat="server" action="#">
     
         <input type="text" id="txEndereco" runat="server" />
+        <button runat="server" onserverclick="coo">GO</button>
          <%=mostrar %>
 
     </form>

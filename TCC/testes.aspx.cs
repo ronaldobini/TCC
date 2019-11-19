@@ -26,9 +26,18 @@ namespace TCC
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            double a = new ApiCoordenadas().pegarLng("RUA FELICIO ZIBARTH");
+            
+        }
 
-            mostrar = a.ToString();
+
+
+        public void coo(object sender, EventArgs e)
+        {
+
+            double a = new ApiCoordenadas().pegarLng(txEndereco.Value);
+            double b = new ApiCoordenadas().pegarLat(txEndereco.Value);
+
+            mostrar = b.ToString() + "" + a.ToString();
         }
 
 
