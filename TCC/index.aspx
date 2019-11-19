@@ -33,39 +33,42 @@
 			      </li>
 			    </ul>
                   <a href="loginAdm.aspx"><button class="btn btn-danger" >Sou ADM</button></a>
-			    <form class="form-inline my-2 my-lg-0" action="loginEmpresa.aspx" method="POST">
+			    
                   
                   <div class="menu_teste_2">
-			      <button class="btn btn-primary" type="submit">Sou Empresa</button>
+			      <a href="loginEmpresa.aspx"><button class="btn btn-primary" type="submit">Sou Empresa</button></a>
                   </div>
-			    </form>
+			    
 			  </div>
 			</nav>
 		</div>
 	</div>
-
-	<div class="conteudo_pagina_principal">
-		<div class="conteudo_pagina_principal_int">
-			<img src="imgs/logoComprida.png" width="650"> <br><br>
-            <div class="tamanho_campos">
-			    <form method="POST" action="mapao.aspx">
-				    <div class="form-group">
-					    <input type="" name="" placeholder="Nome Completo" class="form-control"> <br><br>
-					    <input type="" name="" placeholder="CEP" class="form-control">
-					    <small id="emailHelp" class="form-text text-muted">Sem cadastro, sem burocracias! Experimente dar apenas uma espiadinha!</small> <br>
-					    <input type="submit" name="" value="Espiar" class="btn btn-primary">
-				    </div>
-			    </form>
-            </div>
-		</div>		
-	</div>
-
+    <form runat="server">
+	    <div class="conteudo_pagina_principal">
+		    <div class="conteudo_pagina_principal_int">
+			    <img src="imgs/logoComprida.png" width="650"> <br><br>
+                <div class="tamanho_campos">
+			        
+				        <div class="form-group">
+					        <%--<input type="text" runat="server" name="" placeholder="Nome Completo" class="form-control"> <br><br>--%>
+					        <input type="text" runat="server" id="cep" placeholder="CEP" class="form-control">
+					        <small id="emailHelp" class="form-text text-muted">Sem cadastro, sem burocracias! Experimente dar apenas uma espiadinha!</small> <br>
+					        <input type="submit" runat="server" onserverclick="espiarClick" id="Espiar" value="Espiar" class="btn btn-primary">
+				        
+			        
+                </div>
+		    </div>		
+	    </div>
+    
 	<div class="conteudo_pagina_principal_2">
 		<div class="conteudo_pagina_principal_2_int">
-			<div class="botao_esq"><a href="loginCliente.aspx"><button class="btn btn-success">Login</button></a></div>
-			<div class="botao_dir"><a href="cadastrarUsuario.aspx"><button class="btn btn-success">Cadastrar-se</button></a></div>
+			<div class="botao_esq"><a href="loginCliente.aspx"><button runat="server" onserverclick="loginCliente" class="btn btn-success">Login</button></a></div>
+			<div class="botao_dir"><a href="cadastrarUsuario.aspx"><button runat="server" onserverclick="cadastroCliete" class="btn btn-success">Cadastrar-se</button></a></div>
 		</div>
 	</div>
+    </form>
+
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 

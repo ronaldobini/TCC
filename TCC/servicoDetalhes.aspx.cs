@@ -51,7 +51,9 @@ namespace TCC
                 if (!IsPostBack)
                 {
                     txValor.Text = serv.Valor.ToString();
-                    txDataEstimada.Text = serv.DataFimEst.ToString();
+                    string dataEstimada = serv.DataFimEst.ToString();
+                    if (dataEstimada  == "01/01/2001 00:00:00") { dataEstimada = "A definir"; }
+                    txDataEstimada.Text = dataEstimada;
                 }
                 descUsu = serv.DescUser;
                 sit = serv.Sit;
@@ -134,8 +136,8 @@ namespace TCC
         public void clientePay(object sender, EventArgs e)
         {
             new ServicoDAO().updateSit(2, servicoget);
-            mensagem.Text = "Aprovado com sucesso! Redirecionando para o pagamento...";
-            //Response.Redirect("pagamento.aspx");
+            mensagem.Text = "Aprovado com sucesso! Pagamento aprovado!";
+            new EmpresaSaldoDAO().updateEmpSaldoPendente(serv.IdEmp, serv.Valor);
             sit = 2;
             verificarSit();
         }
@@ -149,6 +151,7 @@ namespace TCC
             int idCli = serv.IdUser;
 
             new ServicoDAO().updateFinalCli(4, servicoget,idCli,serv.IdEmp,formRepQ,formRepA,formRepT,obsFinais);
+            new EmpresaSaldoDAO().updateEmpSaldoLiberado(serv.IdEmp,serv.Valor);
             mensagem.Text = "Aprovado com sucesso! Serviço está finalizado.";
             sit = 4;
             verificarSit();

@@ -78,6 +78,8 @@ namespace TCC
             ChatMensagem chatMens = new ChatMensagem(0, idNovoCont, emp.IdComercial, new DateTime(), "Obrigado pela solicitação, qualquer dúvida não hesite em perguntar!", 0);
             new ChatMensagemDAO().insertChatM(chatMens);
 
+           
+
             Response.Redirect("solicitacoesCliente.aspx");
         }
 

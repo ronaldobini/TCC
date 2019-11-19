@@ -120,7 +120,7 @@
                         var map;
                         function initMap() {
                             map = new google.maps.Map(document.getElementById('map'), {
-                                center: { lat: -25.436958, lng: -49.279756 },
+                                center: { lat: <%=Session["latCentro"]%>, lng: <%=Session["lngCentro"]%> },
                                 zoom: 12,
                                 mapTypeId: 'roadmap'
                             });

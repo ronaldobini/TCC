@@ -51,7 +51,7 @@ namespace TCC
             Cidade cid = cidadeDAO.selectCidadePorId(idCidade);
 
             string busca = postEnd + ", " + postNum + " " + cid.Nome;
-            double lat = new ApiCoordenadas().pegatLat(busca);
+            double lat = new ApiCoordenadas().pegarLat(busca);
             double lng = new ApiCoordenadas().pegarLng(busca);
 
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
@@ -60,6 +60,8 @@ namespace TCC
             new EmpresaDAO().insertEmpresa(emp);
             emp = new EmpresaDAO().selectEmpPorCNPJ(postCnpj);
             Session["sIdEmp"] = emp.Id;
+            EmpresaSaldo saldo = new EmpresaSaldo(0, emp.Id, 0, 0, 0);
+            new EmpresaSaldoDAO().insertEmpSaldo(saldo);
             Response.Redirect("userEmpCadastro.aspx");
         }
     }

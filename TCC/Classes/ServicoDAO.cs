@@ -98,6 +98,7 @@ namespace TCC.Classes
         {
             string sql = "UPDATE servico " +
                 "SET situacao = " + sit + ", " +
+                "aceite_empresa = 1, " +
                 "obs_finais_empresa = '" + obsFinais + "' " +
                 "WHERE id  = " + idServ + " ";
 
@@ -115,12 +116,15 @@ namespace TCC.Classes
                 "reputacao_qualidade = " + repuQ + ", " +
                 "reputacao_atendimento = " + repuA + ", " +
                 "reputacao_tempo = " + repuT + ", " +
+                "aceite_usuario = 1, " +
                 "obs_finais_usuario = '" + obsFinais + "' " +
                 "WHERE id  = " + idServ + " ";
 
             string sql2 = "UPDATE usuario " +
                 "SET qtd_servicos = qtd_servicos + 1 " +
                 "WHERE id  = " + idUsu + " ";
+
+            
 
             atualizaRepuEmpresa(idEmp, repuQ, repuA, repuT);
 
@@ -137,7 +141,7 @@ namespace TCC.Classes
             int repuAtual = cliente.Reputacao;
             double repuCalculada = 0.0;
 
-            repuCalculada = ((repuAtual * qtdServicos) + repuCli) / (qtdServicos);
+            repuCalculada = ((repuAtual * qtdServicos) + repuCli) / (qtdServicos+1);
             repuCalculada = Math.Round(repuCalculada,0);
             int repuCalculadaI = (int)repuCalculada;
 

@@ -125,13 +125,12 @@
                 <th>CEP</th>
                 <th>Quantidade de Funcionários</th>
                 <th>Quantidade de Serviços Executados</th>
-                <th>Reputação</th>
               </tr>
               <tr>
                 <td><%=telefone2 %></td>
                 <td><%=cep %></td>
                 <td><%=qtdFunc %></td>
-                <td><%=qtdServ %></td>                
+                <td><%=qtdServ %></td>  
               </tr>
                 
             </table> <br /><br />

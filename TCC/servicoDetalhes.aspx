@@ -135,15 +135,15 @@
             <div class="form-row">            
               <div class="form-group col-md-6">
                 <label for="inputEmail4">Descrição Cliente</label> <br>
-                <textarea rows="6" cols="90" <%=disabled %> class="testeText">
+                <textarea rows="6" cols="90" disabled class="testeText">
                 <%=descUsu %>
                 </textarea>
               </div>
               <div class="form-group col-md-4">
                   <br /><br />
                 <table id="funcs" class="table table-dark">
-                    <tr><th style="width:100px;">Nome Técnico</th><th style="width:100px;">Formação</th><th style="width:100px;">Cpf</th><th style="width:100px;">Tel</th></tr>
-                    <tr><td>a</td><td>a</td><td>a</td><td>a</td></tr>
+                    <tr><th style="width:100px;">Nome Técnico</th><th style="width:100px;">Formação</th><th style="width:100px;">Tel</th></tr>
+                    <tr><td>José Marques</td><td>Serviços gerais</td><td>(41) 3028-1562</td></tr>
                     <%  
                         if (listaServTec != null)
                         {
@@ -152,11 +152,12 @@
 
                                 TCC.Classes.UsuarioEmpresa ue = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(tec.IdTec);
                                 TCC.Classes.Usuario uu = new TCC.Classes.UsuarioDAO().selectUser(tec.IdTec);
+                               
                                     %>
-                                        <tr><td><%=uu.Nome %></td><td><%=ue.Formacao %></td><td><%=uu.Cpf %></td><td><%=uu.Tel1 %></td></tr>
-                                    <%
+                                        <tr><td><%=uu.Nome %></td><td><%=ue.Formacao %></td><td><%=uu.Tel1 %></td></tr>
+                                    <%                              
+                            }
                         }
-                    }
 
                      %>
                 </table>
@@ -271,43 +272,52 @@
                     <br /><br />
                     <font color="green"><asp:Label ID="mensagem" runat="server"></asp:Label></font>
         
-        <hr> <br>
+        <hr/> <br/>
         
         
-        Chat: <br><br> <br>
+        Chat: <br/><br/> <br/>
 
         <table class="table table-dark">
           <thead>
             <tr>
+              <% if (Session["sIdEmp"] != null)
+                  { %> 
               <td scope="row" colspan="2">Chat com o cliente</td>
+                <% } else {
+                        
+                    %>
+              <td scope="row" colspan="2">Chat com a empresa</td>
+
+                  <%} %>
             </tr>
           </thead>
           <tbody>
               <%
-                if (listaChat != null)
-                {
-                    foreach (var msg in listaChat)
-                    {
+                  if (listaChat != null)
+                  {
+                      foreach (var msg in listaChat)
+                      {
 
-                        TCC.Classes.Usuario uum = new TCC.Classes.UsuarioDAO().selectUser(msg.IdUser);
-                        TCC.Classes.UsuarioEmpresa uem = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(msg.IdUser);
-                          %>
-                        <tr class="chat_cliente">
-                          <th scope="row"></th>
-                          <th scope="row"><%=uum.Nome %> (<%=uem.Funcao %>): <%=msg.Mensagem %> </th>
-                        </tr>     
-                          <%
-                    }
+                          TCC.Classes.Usuario uum = new TCC.Classes.UsuarioDAO().selectUser(msg.IdUser);
+                          TCC.Classes.UsuarioEmpresa uem = new TCC.Classes.UsuarioEmpresaDAO().selectUserIdUser(msg.IdUser);
+                          //if (Session[sIdEmp] != uem.IdEmpresa) { uem.Funcao = "Cliente"; }
+               %>
+                <tr class="chat_cliente">
+                <th scope="row"></th>
+                <th scope="row"><%=uum.Nome %> (<%=msg.Tempo %>): <%=msg.Mensagem %> </th>
+                 </tr>     
+                <%
+                 }
                 }
               %>
           </tbody>
         </table>
 
-        <br><br>
+        <br/><br/>
 
         <textarea runat="server" id="msgUser" placeholder="Escreva aqui sua mensagem..." rows="6" cols="60"></textarea>
-        <br><br>
-        <input type="submit" runat="server" value="Enviar" onserverclick="enviarMsg" class="btn btn-primary">
+        <br/><br/>
+        <input type="submit" runat="server" value="Enviar" onserverclick="enviarMsg" class="btn btn-primary"/>
 
       </div>
     

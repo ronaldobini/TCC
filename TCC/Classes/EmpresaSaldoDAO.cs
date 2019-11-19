@@ -12,9 +12,9 @@ namespace TCC.Classes
         {
             string sql = "INSERT INTO empresa_saldo(id, id_empresa, saldo_liberado,saldo_pendente, saldo_total_historico) " +
                 "VALUES (NULL," +
-                "" + empSal.IdEmp + "," +
-                "" + empSal.SaldoLiberado + "," +
-                "" + empSal.SaldoPendente + "," +
+                "" + empSal.IdEmp + ", " +
+                "" + empSal.SaldoLiberado + ", " +
+                "" + empSal.SaldoPendente + ", " +
                 "" + empSal.SaldoTotalHistorico + "" +
                 ") ";
             MySqlConnection conn = new Conn().conectar();
@@ -71,6 +71,28 @@ namespace TCC.Classes
             }
             conn.Close();
             return empSal;
+        }
+
+        public void updateEmpSaldoPendente(int idEmp, double valor)
+        {
+            string sql = "UPDATE empresa_saldo " +
+                "SET saldo_pendente = saldo_pendente + " + valor + " " +
+                "WHERE id_empresa = " + idEmp + " ";
+            MySqlConnection conn = new Conn().conectar();
+            new Conn().executar(sql, conn);
+            conn.Close();
+        }
+
+        public void updateEmpSaldoLiberado(int idEmp, double valor)
+        {
+            string sql = "UPDATE empresa_saldo " +
+                "SET saldo_pendente = saldo_pendente - " + valor + ", " +
+                "saldo_liberado = saldo_liberado + " + valor + ", " +
+                "saldo_total_historico = saldo_total_historico + " + valor + " " +
+                "WHERE id_empresa = " + idEmp + " ";
+            MySqlConnection conn = new Conn().conectar();
+            new Conn().executar(sql, conn);
+            conn.Close();
         }
 
         public List<EmpresaSaldo> selectAllEmpresaSaldo()
