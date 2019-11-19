@@ -174,6 +174,11 @@ namespace TCC
             listaChat = new ChatMensagemDAO().selectChatMIdChatC(contratoID);
         }
         
+        public void addTecServ(object sender, EventArgs e)
+        {
+            //todo
+        }
+        
 
 
         public void verificarSit()
@@ -191,6 +196,7 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
+                //servTecsEmp.Enabled = false;
             }
             else if (sit == 2)
             {
@@ -198,6 +204,7 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
+                //servTecsEmp.Enabled = false;
             }
             else if (sit == 3)
             {
@@ -205,6 +212,7 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
+                //servTecsEmp.Enabled = false;
             }
             else if (sit == 4)
             {
@@ -212,6 +220,7 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
+                //servTecsEmp.Enabled = false;
             }
             else if (sit == -1)
             {
@@ -219,6 +228,7 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
+                //servTecsEmp.Enabled = false;
             }
             else if (sit == -2)
             {
@@ -226,6 +236,7 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
+                //servTecsEmp.Enabled = false;
             }
         }
     }
