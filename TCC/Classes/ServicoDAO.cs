@@ -98,6 +98,7 @@ namespace TCC.Classes
         {
             string sql = "UPDATE servico " +
                 "SET situacao = " + sit + ", " +
+                "aceite_empresa = 1, " +
                 "obs_finais_empresa = '" + obsFinais + "' " +
                 "WHERE id  = " + idServ + " ";
 
@@ -115,6 +116,7 @@ namespace TCC.Classes
                 "reputacao_qualidade = " + repuQ + ", " +
                 "reputacao_atendimento = " + repuA + ", " +
                 "reputacao_tempo = " + repuT + ", " +
+                "aceite_usuario = 1, " +
                 "obs_finais_usuario = '" + obsFinais + "' " +
                 "WHERE id  = " + idServ + " ";
 
