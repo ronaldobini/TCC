@@ -51,7 +51,7 @@ namespace TCC
             {
                 Session["sTempIdEmpEsc"] = getEmpresaEscolhida;
                 Session["sTempIdSerEsc"] = getServicoEscolhido;
-                Response.Redirect("cadstroCliente.aspx");
+                Response.Redirect("loginCliente.aspx");
             }
 
 
