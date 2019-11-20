@@ -85,15 +85,6 @@ namespace TCC {
         protected global::System.Web.UI.HtmlControls.HtmlInputText numero;
         
         /// <summary>
-        /// Controle descricao.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea descricao;
-        
-        /// <summary>
         /// Controle cidade.
         /// </summary>
         /// <remarks>
@@ -101,5 +92,32 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cidade;
+        
+        /// <summary>
+        /// Controle zonaAtendimento.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText zonaAtendimento;
+        
+        /// <summary>
+        /// Controle qtdFunc.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText qtdFunc;
+        
+        /// <summary>
+        /// Controle descricao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea descricao;
     }
 }

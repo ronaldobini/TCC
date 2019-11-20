@@ -68,7 +68,7 @@
 			      <input type="text" runat="server"  class="form-control telefone" id="cel" placeholder="xxxxx-xxxx" required/>
 			    </div>
 			  </div>
-
+                
 			  <div class="form-row">
 			    <div class="form-group col-md-12">
 			      <label for="cep">CEP</label>
@@ -90,17 +90,27 @@
 			      <input type="text" runat="server"  class="form-control" id="numero" placeholder="Número" required/>
 			    </div>
 			  </div>
-
+                
+			  <div class="form-group col-md-3">
+                  <div class="form-group">
+                    <label for="categoria">Cidade</label>
+                    <asp:DropDownList ID="cidade" runat="server" CssClass="form-control" required></asp:DropDownList>
+                </div>
+			    <div class="form-row">
+			      <label for="zonaA">Zona de Atendimento</label>
+			      <input type="text" runat="server"  class="form-control" id="zonaAtendimento" placeholder="Zona Atendimento" required/>
+			    </div>
+			    <div class="form-row">
+			      <label for="funcs">Funcionarios</label>
+			      <input type="text" runat="server"  class="form-control" value="1" id="qtdFunc" placeholder="Quantidade de Funcionarios" required/>
+			    </div>
+			  </div>
 			  <div class="form-row">
 			   
 			    <div class="form-group col-md-8">
 			      <label for="descricao">Descrição da Empresa</label> <br/>
 			      <textarea runat="server" name="message" rows="5" id="descricao" cols="60" required></textarea>
 			    </div>
-                  <div class="form-group">
-                    <label for="categoria">Cidade</label>
-                    <asp:DropDownList ID="cidade" runat="server" CssClass="form-control" required></asp:DropDownList>
-                </div>
 			  </div>
 			  
 			  <button type="submit" runat="server" onserverclick="cadastrar" class="btn btn-primary">Próximo</button>

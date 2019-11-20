@@ -20,6 +20,8 @@ namespace TCC
         private string postComplemento;
         private int postNum;
         private string postDesc;
+        private int postQtdFunc;
+        private string postZonaAtend;
         CidadeDAO cidadeDAO = new CidadeDAO();
         List<Cidade> lista = new List<Cidade>();
 
@@ -45,7 +47,8 @@ namespace TCC
             postComplemento = complemento.Value;
             postNum = Int32.Parse(numero.Value);
             postDesc = descricao.Value;
-
+            postQtdFunc = Int32.Parse(qtdFunc.Value);
+            postZonaAtend = zonaAtendimento.Value;
 
             int idCidade = Int32.Parse(cidade.Text);
             Cidade cid = cidadeDAO.selectCidadePorId(idCidade);
@@ -56,7 +59,7 @@ namespace TCC
 
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
             Empresa emp = new Empresa(1, 1, 1, 1, postCnpj, postRazaoSocial, postTel, postCel, postEnd, postNum, postComplemento, postCep,
-                lat, lng, cid.Id, mysqldt, postDesc , 1, 0, 0, 0, 0, 80, 0, "Curitiba e região", mysqldt, 1);
+                lat, lng, cid.Id, mysqldt, postDesc , postQtdFunc, 0, 0, 0, 0, 80, 0, postZonaAtend, mysqldt, 1);
             new EmpresaDAO().insertEmpresa(emp);
             emp = new EmpresaDAO().selectEmpPorCNPJ(postCnpj);
             Session["sIdEmp"] = emp.Id;
