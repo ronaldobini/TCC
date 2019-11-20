@@ -15,10 +15,13 @@ namespace TCC
         public string descServ = "-";
         public string nomeEmpresa = " - ";
         public string nomeCliente = " - ";
+        public string repCliente = " - ";
+        public string endCliente = " - ";
         public double valor = 0.0;
         public int sit = -3;
         public DateTime dataEstimada;
         public List<ServicoTecnico> listaServTec;
+        public List<UsuarioEmpresa> listaUE;
         public List<ChatMensagem> listaChat;
         public string descUsu = " - ";
         public string sitS = " - ";
@@ -41,6 +44,7 @@ namespace TCC
                 Usuario usu = new UsuarioDAO().selectUser(serv.IdUser);
                 descServ = new EmpresaServicoDAO().selectDescPorId(serv.IdEmpSer);
                 listaServTec = new ServicoTecnicoDAO().selectServTecsServ(serv.Id);
+                listaUE = new UsuarioEmpresaDAO().selectUsersIdEmpresa(serv.IdEmp);
                 ChatContrato chatContrato = new ChatContratoDAO().selectChatCIdServ(serv.Id);
 
                 listaChat = new ChatMensagemDAO().selectChatMIdChatC(chatContrato.Id);
@@ -48,6 +52,22 @@ namespace TCC
 
                 nomeEmpresa = emp.RazaoSocial;
                 nomeCliente = usu.Nome;
+                repCliente = usu.Reputacao.ToString(); if (repCliente == "0") repCliente = "Primeiro Serviço";
+                endCliente = usu.Endereco + " - " + usu.Tel1;
+                int c = 0;
+                foreach(UsuarioEmpresa ue in listaUE)
+                {
+                    
+                    Usuario uu = new UsuarioDAO().selectUser(ue.IdUsuario);
+                    string nome = uu.Nome + " (" + ue.Funcao + ")";
+                    string iduu = "" + uu.Id;
+                   
+                    servTecsEmp.Items.Insert(c, new ListItem(nome, iduu));
+                    c++;
+                }
+                
+
+
                 if (!IsPostBack)
                 {
                     txValor.Text = serv.Valor.ToString();
@@ -176,7 +196,11 @@ namespace TCC
         
         public void addTecServ(object sender, EventArgs e)
         {
-            //todo
+            int ueAdd = Int32.Parse(servTecsEmp.SelectedValue);
+
+            ServicoTecnico servTec = new ServicoTecnico(0,servicoget,ueAdd, 0, "-");
+            new ServicoTecnicoDAO().insertServTec(servTec);
+            Response.Redirect("servicoDetalhes.aspx?idSerDet="+servicoget);
         }
         
 
@@ -187,8 +211,22 @@ namespace TCC
             {
                 sitS = "Em solicitação, pendente aceite da empresa e acordo de preço e previsão";
                 disabled = " ";
-                txValor.Enabled = true;
-                txDataEstimada.Enabled = true;
+                if (Session["sIdEmp"] != null)
+                {
+                    txValor.Enabled = true;
+                    txDataEstimada.Enabled = true;
+                    servTecsEmp.Enabled = true;
+                    btAdd.Visible = true;
+                }
+                else
+                {
+                    txValor.Enabled = false;
+                    txDataEstimada.Enabled = false;
+                    servTecsEmp.Enabled = false;
+                    btAdd.Visible = false;
+                }
+                    
+                
             }
             else if (sit == 1)
             {
@@ -196,7 +234,8 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
-                //servTecsEmp.Enabled = false;
+                servTecsEmp.Enabled = false;
+                btAdd.Visible = false;
             }
             else if (sit == 2)
             {
@@ -204,7 +243,8 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
-                //servTecsEmp.Enabled = false;
+                servTecsEmp.Enabled = false;
+                btAdd.Visible = false;
             }
             else if (sit == 3)
             {
@@ -212,7 +252,8 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
-                //servTecsEmp.Enabled = false;
+                servTecsEmp.Enabled = false;
+                btAdd.Visible = false;
             }
             else if (sit == 4)
             {
@@ -220,7 +261,8 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
-                //servTecsEmp.Enabled = false;
+                servTecsEmp.Enabled = false;
+                btAdd.Visible = false;
             }
             else if (sit == -1)
             {
@@ -228,7 +270,8 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
-                //servTecsEmp.Enabled = false;
+                servTecsEmp.Enabled = false;
+                btAdd.Visible = false;
             }
             else if (sit == -2)
             {
@@ -236,7 +279,8 @@ namespace TCC
                 disabled = "disabled";
                 txValor.Enabled = false;
                 txDataEstimada.Enabled = false;
-                //servTecsEmp.Enabled = false;
+                servTecsEmp.Enabled = false;
+                btAdd.Visible = false;
             }
         }
     }

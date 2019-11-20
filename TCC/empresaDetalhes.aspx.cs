@@ -62,6 +62,9 @@ namespace TCC
                 qtdServ = emp.QtdServ.ToString();
                 zona = emp.ZonaAtendimento;
 
+                
+                
+
                 repQ = "Atendimento (" + repQ + "%)<div class=\"progress\" style=\"width:85px; height: 7px;\">" +
                                   "<div class=\"progress-bar progress-bar-striped progress-bar-animated role=\"progressbar\" style=\"width: " + repQ + "%\"; aria-valuenow=\"" + repQ + "\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>" +
                                 "</div>";
@@ -71,6 +74,14 @@ namespace TCC
                 repT = "Tempo (" + repT + "%)<div class=\"progress\" style=\"width:85px; height: 7px;\">" +
                                   "<div class=\"progress-bar progress-bar-striped progress-bar-animated role=\"progressbar\" style=\"width: " + repT + "%\"; aria-valuenow=\"" + repT + "\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>" +
                                 "</div>";
+
+
+                if (repQ == "0" || repQ == "1")
+                {
+                    repQ = "Sem reputação definida";
+                    repA = "";
+                    repT = "";
+                }
 
                 Usuario ueDiretor = new UsuarioDAO().selectUser(emp.IdDiretor);
                 Usuario ueComercial = new UsuarioDAO().selectUser(emp.IdComercial);

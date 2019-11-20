@@ -45,8 +45,9 @@ namespace TCC
                     {
                         string servicosEmp = pegarSevicos(empresa.Id, catPost);
                         int repMedia = (empresa.RepAtendimento + empresa.RepQualidade + empresa.RepTempo) / 3;
-                        int limitDesc = 1;
-                        if (empresa.DescEmpresa.Length > 12) limitDesc = 12; else limitDesc = empresa.DescEmpresa.Length;
+
+                        int limitDesc = 24;
+                        if (empresa.DescEmpresa.Length > 24) limitDesc = 24; else limitDesc = empresa.DescEmpresa.Length;
                         listaPontos.Add(new MapPoint(empresa.Lat, empresa.Lon, empresa.RazaoSocial, empresa.DescEmpresa.Substring(0, limitDesc) +"(...)" + "<br>" + servicosEmp, repMedia, 1, empresa.Id));
                     }
                     
@@ -63,7 +64,7 @@ namespace TCC
 
             foreach (EmpresaServico serv in servs)
             {
-                results = results + "<br>" + serv.Desc;
+                results = results + "<br>" + serv.Desc + " ("+serv.ValorAprox+")";
                 if(serv.IdCat == catEscolhida || catEscolhida == 0)
                 {
                     verificaCat = 1;
@@ -99,8 +100,8 @@ namespace TCC
                     if (servicosEmp != "Sem Serviços")
                     {
                         int repMedia = (empresa.RepAtendimento + empresa.RepQualidade + empresa.RepTempo) / 3;
-                        int limitDesc = 1;
-                        if (empresa.DescEmpresa.Length > 12) limitDesc = 12; else limitDesc = empresa.DescEmpresa.Length;
+                        int limitDesc = 24;
+                        if (empresa.DescEmpresa.Length > 24) limitDesc = 24; else limitDesc = empresa.DescEmpresa.Length;
                         listaPontos.Add(new MapPoint(empresa.Lat, empresa.Lon, empresa.RazaoSocial, empresa.DescEmpresa.Substring(0, limitDesc) + "(...)" + "<br>" + servicosEmp, repMedia, 1, empresa.Id));
                     }
 

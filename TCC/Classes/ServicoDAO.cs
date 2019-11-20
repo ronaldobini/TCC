@@ -116,6 +116,7 @@ namespace TCC.Classes
                 "reputacao_qualidade = " + repuQ + ", " +
                 "reputacao_atendimento = " + repuA + ", " +
                 "reputacao_tempo = " + repuT + ", " +
+                "data_fim = NOW(), " +
                 "aceite_usuario = 1, " +
                 "obs_finais_usuario = '" + obsFinais + "' " +
                 "WHERE id  = " + idServ + " ";

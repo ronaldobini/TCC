@@ -120,7 +120,7 @@
               </div>
               <div class="form-group col-md-2 caixinha">
                   <label for="inputPassword4">Cliente:</label><br />
-                  <font color="blue"><%=nomeCliente %></font>
+                  <font color="blue"><%=nomeCliente %><br />Reputação: <%=repCliente %><br /><%=endCliente %></font>
               </div>
               <div class="form-group col-md-2">
                   <label for="inputPassword4">Preço:</label><br />
@@ -143,7 +143,6 @@
                   <br /><br />
                 <table id="funcs" class="table table-dark">
                     <tr><th style="width:100px;">Nome Técnico</th><th style="width:100px;">Formação</th><th style="width:100px;">Tel</th></tr>
-                    <tr><td>José Marques</td><td>Serviços gerais</td><td>(41) 3028-1562</td></tr>
                     <%  
                         if (listaServTec != null)
                         {
@@ -162,10 +161,8 @@
                      %>
                 </table>
 			<asp:DropDownList ID="servTecsEmp" runat="server" class="form-control">
-				<asp:ListItem Text="Roberto do Amaral (Técnico)" Value="1"></asp:ListItem>
-				<asp:ListItem Text="Felipe Roberts (Engenheiro)" Value="2"></asp:ListItem>
 			</asp:DropDownList>
-		      	<button runat="server" onserverclick="addTecServ" class="btn btn-success" type="submit">Add</button> 
+		      	<button runat="server" onserverclick="addTecServ" id="btAdd" class="btn btn-success" type="submit">Add</button> 
               </div>
             </div>
           

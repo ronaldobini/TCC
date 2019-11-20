@@ -104,12 +104,15 @@
                                 {
                                     string linkDel = "excluir.aspx?id=" + sol.Id + "&funcao=delSolicUser";
                                     string linkServDet = "servicoDetalhes.aspx?idSerDet="+sol.Id;
+
+                                    string di = sol.DataIni.ToString();
+                                     if (di  == "01/01/2001 00:00:00") { di = "A definir"; }
                         %>
                         <tr>
                             <th scope="row"><%=sol.Id %></th>
                             <td><%=sol.DescUser%></td>
                             <td><%=sol.Categoria.Descricao%></td>
-                            <td><%=sol.DataIni%></td>
+                            <td><%=di%></td>
                             <td>
                             <%if (sol.Sit == 0) //Em solicitacao/negociacao para aceite da empresa
                                 {

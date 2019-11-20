@@ -31,6 +31,24 @@ namespace TCC {
         protected global::System.Web.UI.WebControls.TextBox txDataEstimada;
         
         /// <summary>
+        /// Controle servTecsEmp.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList servTecsEmp;
+        
+        /// <summary>
+        /// Controle btAdd.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btAdd;
+        
+        /// <summary>
         /// Controle repCli.
         /// </summary>
         /// <remarks>
