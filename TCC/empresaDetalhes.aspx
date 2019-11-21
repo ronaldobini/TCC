@@ -158,7 +158,7 @@
           <br /><br /> Comentários de Clientes:<br /><br />
             
 
-                        <table>
+                        <table class="table table-dark centralizarConteudoTabelas">
                             <tr><th style="width:200px;">Data</th><th style="width:400px;">Comentários</th></tr>
                             <%foreach (var servC in servsComments)
                                 {
@@ -170,7 +170,7 @@
                         
                             <% } %>
                         </table>
-            <br /><br />
+            <br /><br /><br /><br />
 
 
 	<div class="footer-good">
