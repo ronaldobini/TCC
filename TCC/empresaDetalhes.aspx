@@ -159,14 +159,14 @@
             
 
                         <table>
-                            <tr><th style="width:200px;">Serviço</th><th style="width:200px;">Data</th><th style="width:200px;">Comentários</th></tr>
+                            <tr><th style="width:200px;">Data</th><th style="width:400px;">Comentários</th></tr>
                             <%foreach (var servC in servsComments)
                                 {
                             %>
 
                         
 
-                            <tr><td><%=servC.Desc %></td><td><%=servC.DataFim %></td><td><%=servC.ObsFinUser %></td></tr>                        
+                            <tr><td><%=servC.DataFim %></td><td><%=servC.ObsFinUser %></td></tr>                        
                         
                             <% } %>
                         </table>
