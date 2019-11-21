@@ -1,10 +1,12 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TCC.Classes;
+using TCC.Validators;
 
 namespace TCC
 {
@@ -43,8 +45,13 @@ namespace TCC
             loginPost = loginPost.Replace(" OR ", "0");
 
             Usuario logando = new Usuario();
-
-            logando = new UsuarioDAO().selectUserLogin(loginPost);
+            logando.Login = loginPost;
+            logando.Senha = senhaPost;
+            LoginClienteValidator validator = new LoginClienteValidator();
+            ValidationResult result = validator.Validate(logando);
+            if (result.IsValid)
+            {
+                logando = new UsuarioDAO().selectUserLogin(loginPost);
 
                 if (logando.Block != 1)
                 {
@@ -73,7 +80,7 @@ namespace TCC
                         new LogDAO().logit("Login Cliente", (int)logando.Id);
 
                         Response.Redirect("mapao.aspx");
-                }
+                    }
                     else
                     {
                         mensagem = "Dados Incorretos";
@@ -87,9 +94,14 @@ namespace TCC
                 }
                 else
                 {
-                mensagem = "Usuario Bloqueado";
+                    mensagem = "Usuario Bloqueado";
                 }
             }
+            else
+            {
+                mensagem = result.ToString(" & ");
+            }
+        }
 
     }
 }

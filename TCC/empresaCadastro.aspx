@@ -45,6 +45,18 @@
 		<div class="conteudo_pagina_cadastro_int">
 			<img src="imgs/logoSimples.png" width="100" class="logoMenor"><br/>
 			<h3>Cadastre sua empresa no Servitiba!</h3>
+
+             <%if (mensagem != "")
+                    { %>
+                <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <%foreach (var a in mensagem.Split('&'))
+                                {%>
+                            <li><%=a %></li>
+                            <%}%>
+                        </ul>
+                </div>
+                <%} %>
 			<form method="POST" action="#" runat="server">
 
 			  <div class="form-row">
@@ -91,25 +103,25 @@
 			    </div>
 			  </div>
                 
-			  <div class="form-group col-md-3">
-                  <div class="form-group">
+			  <div class="form-row col-md-12">
+                  <div class="form-group col-md-4">
                     <label for="categoria">Cidade</label>
                     <asp:DropDownList ID="cidade" runat="server" CssClass="form-control" required></asp:DropDownList>
                 </div>
-			    <div class="form-row">
+			    <div class="form-group col-md-4">
 			      <label for="zonaA">Zona de Atendimento</label>
 			      <input type="text" runat="server"  class="form-control" id="zonaAtendimento" placeholder="Zona Atendimento" required/>
 			    </div>
-			    <div class="form-row">
+			    <div class="form-group col-md-4">
 			      <label for="funcs">Funcionarios</label>
 			      <input type="text" runat="server"  class="form-control" value="1" id="qtdFunc" placeholder="Quantidade de Funcionarios" required/>
 			    </div>
 			  </div>
-			  <div class="form-row">
+			  <div class="form-row col-md-12">
 			   
-			    <div class="form-group col-md-8">
+			    <div class="form-group col-md-12">
 			      <label for="descricao">Descrição da Empresa</label> <br/>
-			      <textarea runat="server" name="message" rows="5" id="descricao" cols="60" required></textarea>
+			      <textarea runat="server" name="message" class="form-control" rows="5" id="descricao" cols="60" required></textarea>
 			    </div>
 			  </div>
 			  

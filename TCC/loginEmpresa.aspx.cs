@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TCC.Classes;
 using TCC.Properties;
+using TCC.Validators;
 
 namespace TCC
 {
@@ -50,31 +52,49 @@ namespace TCC
             loginPost = loginPost.Replace(" OR ", "0");
 
             Usuario logando = new Usuario();
-            logando = new UsuarioDAO().selectUserLogin(loginPost);
-
-            UsuarioEmpresa empresa = new UsuarioEmpresa();
-            empresa = new UsuarioEmpresaDAO().selectUserIdUser(logando.Id);
-
-            if (logando.Block != 1)
+            logando.Login = loginPost;
+            logando.Senha = senhaPost;
+            LoginClienteValidator validator = new LoginClienteValidator();
+            ValidationResult result = validator.Validate(logando);
+            if (result.IsValid)
             {
-                String senha = logando.Senha;
-                if (senha.Equals(senhaPost))
+                logando = new UsuarioDAO().selectUserLogin(loginPost);
+
+                UsuarioEmpresa empresa = new UsuarioEmpresa();
+                empresa = new UsuarioEmpresaDAO().selectUserIdUser(logando.Id);
+
+                if (logando.Block != 1)
                 {
-                    if (empresa.Id > 0)
+                    String senha = logando.Senha;
+                    if (senha.Equals(senhaPost))
                     {
-                        mensagem = "Login e senha OK";
-                        Session["sId"] = logando.Id;
-                        Session["sNome"] = logando.Nome;
-                        Session["sNivelEmp"] = empresa.NivelEmp;
-                        Session["sFuncao"] = empresa.Funcao;
-                        Session["sIdEmp"] = empresa.IdEmpresa;
-                        Session.Timeout = 20;
-                        new LogDAO().logit("Login Empresa",(int)logando.Id);
-                        Response.Redirect("indexPrestador.aspx");
+                        if (empresa.Id > 0)
+                        {
+                            mensagem = "Login e senha OK";
+                            Session["sId"] = logando.Id;
+                            Session["sNome"] = logando.Nome;
+                            Session["sNivelEmp"] = empresa.NivelEmp;
+                            Session["sFuncao"] = empresa.Funcao;
+                            Session["sIdEmp"] = empresa.IdEmpresa;
+                            Session.Timeout = 20;
+                            new LogDAO().logit("Login Empresa", (int)logando.Id);
+                            Response.Redirect("indexPrestador.aspx");
+                        }
+                        else
+                        {
+                            mensagem = "Você não está cadastrado em uma empresa";
+                            ++contaErros;
+                            logando = null;
+                            if (contaErros >= 5)
+                            {
+                                mensagem = "Tentativas esgotadas";
+                            }
+                        }
+
                     }
                     else
                     {
-                        mensagem = "Você não está cadastrado em uma empresa";
+                        mensagem = "Dados Incorretos";
                         ++contaErros;
                         logando = null;
                         if (contaErros >= 5)
@@ -82,22 +102,15 @@ namespace TCC
                             mensagem = "Tentativas esgotadas";
                         }
                     }
-                   
                 }
                 else
                 {
-                    mensagem = "Dados Incorretos";
-                    ++contaErros;
-                    logando = null;
-                    if (contaErros >= 5)
-                    {
-                        mensagem = "Tentativas esgotadas";
-                    }
+                    mensagem = "Usuario Bloqueado";
                 }
             }
             else
             {
-                mensagem = "Usuario Bloqueado";
+                mensagem = result.ToString(" & ");
             }
         }
     }

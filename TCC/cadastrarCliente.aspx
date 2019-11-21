@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
@@ -55,6 +55,18 @@
             <h3>Editar Dados</h3>
             <% }
             %>
+
+             <%if (mensagem != "")
+                    { %>
+                <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <%foreach (var a in mensagem.Split('&'))
+                                {%>
+                            <li><%=a %></li>
+                            <%}%>
+                        </ul>
+                </div>
+                <%} %>
             <form method="POST" action="#" runat="server">
 
                 <div class="form-row">
@@ -106,30 +118,33 @@
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="tel">Telefone</label>
                         <asp:TextBox ID="tel" class="form-control telefone" placeholder="(XX)x xxxx-xxxx" runat="server"></asp:TextBox>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="cel">Celular</label>
                         <asp:TextBox ID="cel" class="form-control telefone" placeholder="(XX)x xxxx-xxxx" runat="server"></asp:TextBox>
                     </div>
+                    <div class="form-group col-md-4">
+                        <label for="cidadesDD">Cidade</label>
+                        <asp:DropDownList ID="cidadesDD" class="form-control " runat="Server">
+                            <asp:ListItem />
+                        </asp:DropDownList>
+                    </div>
+
                 </div>
 
-                 <asp:DropDownList ID="cidadesDD" runat="Server">
-                        <asp:ListItem />
-                    </asp:DropDownList>
-
-             <asp:HiddenField ID="IdField" runat="server" />
-
-                <% if (col.Id== 0)
-                             { %>
-                        <button type="submit" runat="server" onserverclick="Cadastrar" class="btn btn-primary">Cadastrar</button>
-                     <% }
-                             else
-                             { %>
-                        <button type="submit" runat="server" onserverclick="Editar" class="btn btn-primary">Salvar</button>
-                    <%} %>
+                <asp:HiddenField ID="IdField" runat="server" />
+               
+                <% if (col.Id == 0)
+                    { %>
+                <button type="submit" runat="server" onserverclick="Cadastrar" class="btn btn-primary">Cadastrar</button>
+                <% }
+                    else
+                    { %>
+                <button type="submit" runat="server" onserverclick="Editar" class="btn btn-primary">Salvar</button>
+                <%} %>
 
                 <small id="a" class="form-text text-muted">Sua empresa já é cadastrada? <a href="loginEmpresa.html">Faça Login</a>!</small>
                 <small id="b" class="form-text text-muted">Não tem login? Solicite ao seu superior!</small>
@@ -142,7 +157,8 @@
     <br>
     <div class="footer-good">
         <div class="footerTest_int">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
+            © 2019 Copyright - Servitiba
+            <img src="imgs/logoSimples.png" width="30" class="img_rodape" />
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

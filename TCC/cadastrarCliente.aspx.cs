@@ -1,4 +1,5 @@
-﻿using MySql.Data.Types;
+﻿using FluentValidation.Results;
+using MySql.Data.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,23 +7,25 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TCC.Classes;
+using TCC.Validators;
 
 namespace TCC
 {
     public partial class cadastrarCliente : System.Web.UI.Page
     {
 
-        private string postLogin;
-        private string postSenha;
-        private string postNome;
-        private string postEmail;
-        private string postCpf;
-        private string postCep;
-        private string postEnd;
-        private string postComplemento;
-        private int postNum;
-        private string postTel;
-        private string postCel;
+        public string mensagem = "";
+        private string postLogin="";
+        private string postSenha = "";
+        private string postNome = "";
+        private string postEmail = "";
+        private string postCpf = "";
+        private string postCep = "";
+        private string postEnd = "";
+        private string postComplemento = "";
+        private int postNum ;
+        private string postTel = "";
+        private string postCel = "";
         private string postCidade = "Curitiba";
         private string postFunc = "ainda n";
         private string postFormacao = "ainda n";
@@ -79,19 +82,37 @@ namespace TCC
             postCep = cep.Text;
             postEnd = endereco.Text;
             postComplemento = complemento.Text;
-            postNum = Int32.Parse(numero.Text);
             postTel = tel.Text;
             postCel = cel.Text;
             var idcidade = Int32.Parse(cidadesDD.SelectedValue);
 
             MySqlDateTime mysqldt = new MySqlDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
+            if (numero.Text != "")
+            {
+                postNum = Int32.Parse(numero.Text);
+
+            }
+            else
+            {
+                postNum = 0;
+            }
+
 
             Usuario user = new Usuario(0, postLogin, postSenha, postNome, postEmail, postCpf, postTel, postCel, postEnd, postNum, postComplemento,
                 postCep, new CidadeDAO().selectCidadePorId(idcidade), 0, mysqldt, new MySqlDateTime(), 0, 0, 0, null);
-            new UsuarioDAO().insertUser(user);
-            
+            CadastroClienteValidator validator = new CadastroClienteValidator();
 
-            Response.Redirect("index.aspx");
+            ValidationResult result = validator.Validate(user);
+            if (result.IsValid)
+            {
+                new UsuarioDAO().insertUser(user);
+                Response.Redirect("index.aspx");
+
+            }
+            else
+            {
+                mensagem = result.ToString(" & ");
+            }
 
         }
 
