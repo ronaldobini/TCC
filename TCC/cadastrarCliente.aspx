@@ -72,33 +72,33 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="login">Login</label>
-                        <asp:TextBox ID="login" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="login" class="form-control" placeholder="Login" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="senha">Senha</label>
-                        <asp:TextBox ID="senha" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="senha" class="form-control" placeholder="Senha" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="nomCompleto">Nome Completo</label>
-                        <asp:TextBox ID="nomCompleto" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="nomCompleto" class="form-control" placeholder="Nome Completo" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">E-mail</label>
-                        <asp:TextBox ID="email" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="email" class="form-control" placeholder="E-mail" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="cpf">CPF</label>
-                        <asp:TextBox ID="cpf" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="cpf" class="form-control" placeholder="CPF" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="cep">CEP</label>
-                        <asp:TextBox ID="cep" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="cep" class="form-control" placeholder="CEP" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
@@ -109,11 +109,11 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="complemento">Complemento</label>
-                        <asp:TextBox ID="complemento" class="form-control" placeholder="Casa" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="complemento" class="form-control" placeholder="Complemento" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="numero">Número</label>
-                        <asp:TextBox ID="numero" class="form-control" placeholder="123" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="numero" class="form-control" placeholder="Numero" runat="server"></asp:TextBox>
                     </div>
                 </div>
 
@@ -137,7 +137,7 @@
 
                 <asp:HiddenField ID="IdField" runat="server" />
                
-                <% if (col.Id == 0)
+                <% if (user.Id == 0)
                     { %>
                 <button type="submit" runat="server" onserverclick="Cadastrar" class="btn btn-primary">Cadastrar</button>
                 <% }

@@ -31,34 +31,35 @@ namespace TCC
         private string postFormacao = "ainda n";
         public int idGet = 0;
         public string tituloDaPag = "";
-        public Usuario col=new Usuario();
+        public Usuario user = new Usuario();
         protected void Page_Load(object sender, EventArgs e)
         {
+            idGet = Int32.Parse(Request.QueryString["id"]);
             if (Request.QueryString["id"] != null)
             {
                 if (!IsPostBack)
                 {
 
                     idGet = Int32.Parse(Request.QueryString["id"]);
-                    col = new UsuarioDAO().selectUser(idGet);
-                    login.Text = col.Login;
-                    senha.Text = col.Senha;
-                    nomCompleto.Text = col.Nome;
-                    email.Text = col.Email;
-                    cpf.Text = col.Cpf;
-                    cep.Text = col.Cep;
-                    endereco.Text = col.Endereco;
-                    complemento.Text = col.Complemento;
-                    numero.Text = col.Numero.ToString();
-                    tel.Text = col.Tel1;
-                    cel.Text = col.Tel2;
+                    user = new UsuarioDAO().selectUser(idGet);
+                    login.Text = user.Login;
+                    senha.Text = user.Senha;
+                    nomCompleto.Text = user.Nome;
+                    email.Text = user.Email;
+                    cpf.Text = user.Cpf;
+                    cep.Text = user.Cep;
+                    endereco.Text = user.Endereco;
+                    complemento.Text = user.Complemento;
+                    numero.Text = user.Numero.ToString();
+                    tel.Text = user.Tel1;
+                    cel.Text = user.Tel2;
                     IdField.Value = idGet.ToString();
                     List<Cidade> cidades = new CidadeDAO().selectAllCids();
                     cidadesDD.DataTextField = "nome";
                     cidadesDD.DataValueField = "id";
                     cidadesDD.DataSource = cidades;
                     cidadesDD.DataBind();
-                    cidadesDD.SelectedValue = col.Cidade.Id.ToString();
+                    cidadesDD.SelectedValue = user.Cidade.Id.ToString();
                 }
             }
             else
@@ -119,22 +120,20 @@ namespace TCC
         public void Editar(object sender, EventArgs e)
         {
             int idvalue = Int32.Parse(IdField.Value);
-            postLogin = login.Text;
-            postSenha = senha.Text;
-            postNome = nomCompleto.Text;
-            postEmail = email.Text;
-            postCpf = cpf.Text;
-            postCep = cep.Text;
-            postEnd = endereco.Text;
-            postComplemento = complemento.Text;
-            postNum = Int32.Parse(numero.Text);
-            postTel = tel.Text;
-            postCel = cel.Text;
-            var idcidade = Int32.Parse(cidadesDD.SelectedValue);
+            user.Login = login.Text;
+            user.Senha = senha.Text;
+            user.Nome = nomCompleto.Text;
+            user.Email = email.Text;
+            user.Cpf = cpf.Text;
+            user.Cep = cep.Text;
+            user.Endereco = endereco.Text;
+            user.Complemento = complemento.Text;
+            user.Numero = Int32.Parse(numero.Text);
+            user.Tel1 = tel.Text;
+            user.Tel2 = cel.Text;
+            user.Cidade = new CidadeDAO().selectCidadePorNome(cidadesDD.SelectedValue);
 
-            Usuario user = new Usuario(idvalue, postLogin, postSenha, postNome, postEmail, postCpf, postTel, postCel, postEnd, postNum, postComplemento,
-                postCep, new CidadeDAO().selectCidadePorId(idcidade), 0, col.DataCadastro, new MySqlDateTime(), 0, 0, 0, null);
-            new UsuarioDAO().updateUser(user);
+           new UsuarioDAO().updateUser(user);
 
 
             Response.Redirect("mapao.aspx");
