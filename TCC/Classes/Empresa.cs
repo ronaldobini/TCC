@@ -25,7 +25,7 @@ namespace TCC.Classes
         private string cep;
         private double lat;
         private double lon;
-        private int idCidade;
+        //private int idCidade;
         public Cidade cidade { get; set; }
         private MySqlDateTime inicioEmpresa;
         private string descEmpresa;
@@ -41,7 +41,7 @@ namespace TCC.Classes
         private int block;
 
         public Empresa(int id, int idDiretor, int idComercial, int idTecnico, string cnpj, string razaoSocial,
-            string tel1, string tel2, string endereco, int numero, string complemento, string cep, double lat, double lon, int idCidade,
+            string tel1, string tel2, string endereco, int numero, string complemento, string cep, double lat, double lon, Cidade cidade,
             MySqlDateTime inicioEmpresa, string descEmpresa, int qtdFuncionarios, int repTempo, int repQualidade, int repAtendimento,
             int repQuantidade, int repFiscal, int qtdServ, string zonaAtendimento, MySqlDateTime dataCadastro, int block)
         {
@@ -59,7 +59,7 @@ namespace TCC.Classes
             this.cep = cep;
             this.lat = lat;
             this.lon = lon;
-            this.idCidade = idCidade;
+            this.cidade = cidade;
             this.inicioEmpresa = inicioEmpresa;
             this.descEmpresa = descEmpresa;
             this.qtdFuncionarios = qtdFuncionarios;
@@ -92,7 +92,7 @@ namespace TCC.Classes
         public string Cep { get => cep; set => cep = value; }
         public double Lat { get => lat; set => lat = value; }
         public double Lon { get => lon; set => lon = value; }
-        public int IdCidade { get => idCidade; set => idCidade = value; }
+        //public int IdCidade { get => idCidade; set => idCidade = value; }
         public MySqlDateTime InicioEmpresa { get => inicioEmpresa; set => inicioEmpresa = value; }
         public string DescEmpresa { get => descEmpresa; set => descEmpresa = value; }
         public int QtdFuncionarios { get => qtdFuncionarios; set => qtdFuncionarios = value; }

@@ -40,7 +40,7 @@ namespace TCC.Classes
                 "'" + emp.Cep + "'," +
                 "" + latS + "," +
                 "" + lonS + "," +
-                "'" + emp.IdCidade + "'," +
+                "'" + emp.cidade.Id + "'," +
                 "'" + emp.InicioEmpresa.ToString() + "'," +
                 "'" + emp.DescEmpresa + "'," +
                 "'" + emp.QtdFuncionarios + "'," +
@@ -83,7 +83,7 @@ namespace TCC.Classes
                 "cep = '" + emp.Cep + "'," +
                 "lat = '" + emp.Lat + "'," +
                 "lon = '" + emp.Lon + "'," +
-                "id_cidade = '" + emp.IdCidade + "', " +
+                "id_cidade = '" + emp.cidade.Id + "', " +
                 "inicio_empresa = '" + emp.InicioEmpresa.ToString() + "'," +
                 "descricao_empresa = '" + emp.DescEmpresa + "'," +
                 "qtd_funcionarios = '" + emp.QtdFuncionarios + "'," +
@@ -226,7 +226,7 @@ namespace TCC.Classes
             emp.Cep = reader.GetString(11);
             emp.Lat = reader.GetDouble(12);
             emp.Lon = reader.GetDouble(13);
-            emp.IdCidade = reader.GetInt32(14);
+            emp.cidade = new CidadeDAO().selectCidadePorId(reader.GetInt32(14));
 
             emp.InicioEmpresa = reader.GetMySqlDateTime(15);
             emp.DescEmpresa = reader.GetString(16);

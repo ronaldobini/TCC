@@ -19,7 +19,7 @@ namespace TCC {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cnpj;
+        protected global::System.Web.UI.WebControls.TextBox cnpj;
         
         /// <summary>
         /// Controle razaoSocial.
@@ -28,7 +28,7 @@ namespace TCC {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText razaoSocial;
+        protected global::System.Web.UI.WebControls.TextBox razaoSocial;
         
         /// <summary>
         /// Controle tel.
@@ -37,7 +37,7 @@ namespace TCC {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl tel;
+        protected global::System.Web.UI.WebControls.TextBox tel;
         
         /// <summary>
         /// Controle cel.
@@ -46,7 +46,7 @@ namespace TCC {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cel;
+        protected global::System.Web.UI.WebControls.TextBox cel;
         
         /// <summary>
         /// Controle cep.
@@ -55,7 +55,7 @@ namespace TCC {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl cep;
+        protected global::System.Web.UI.WebControls.TextBox cep;
         
         /// <summary>
         /// Controle endereco.
@@ -64,7 +64,7 @@ namespace TCC {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText endereco;
+        protected global::System.Web.UI.WebControls.TextBox endereco;
         
         /// <summary>
         /// Controle complemento.
@@ -73,7 +73,7 @@ namespace TCC {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText complemento;
+        protected global::System.Web.UI.WebControls.TextBox complemento;
         
         /// <summary>
         /// Controle numero.
@@ -82,16 +82,16 @@ namespace TCC {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText numero;
+        protected global::System.Web.UI.WebControls.TextBox numero;
         
         /// <summary>
-        /// Controle cidade.
+        /// Controle cidadesDD.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cidade;
+        protected global::System.Web.UI.WebControls.DropDownList cidadesDD;
         
         /// <summary>
         /// Controle zonaAtendimento.
@@ -100,7 +100,7 @@ namespace TCC {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText zonaAtendimento;
+        protected global::System.Web.UI.WebControls.TextBox zonaAtendimento;
         
         /// <summary>
         /// Controle qtdFunc.
@@ -109,7 +109,7 @@ namespace TCC {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText qtdFunc;
+        protected global::System.Web.UI.WebControls.TextBox qtdFunc;
         
         /// <summary>
         /// Controle descricao.

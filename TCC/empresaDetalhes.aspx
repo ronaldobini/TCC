@@ -75,7 +75,7 @@
                         
                             <% } %>
                         </table>
-            <br /><br />
+            <br />
 
             <hr />
             Detalhes:<br /><br />
@@ -102,7 +102,7 @@
                     <td><center><%=repQ %></td>
                     <td><center><%=repT %></td>
                 </tr>
-            </table><br /><br />
+            </table>
 
             <table class="table table-dark centralizarConteudoTabelas">
               <tr>
@@ -117,7 +117,7 @@
                 <td><%=endereco %>, <%=numero %></td>
                 <td><%=complemento %></td>
               </tr>
-            </table> <br /><br />
+            </table> 
 
             <table class="table table-dark centralizarConteudoTabelas">
               <tr>
@@ -133,7 +133,7 @@
                 <td><%=qtdServ %></td>  
               </tr>
                 
-            </table> <br /><br />
+            </table>
 
            
 
@@ -155,7 +155,7 @@
 	         
 		</div>
 	</div>
-          <br /><br /> Comentários de Clientes:<br /><br />
+          <br/>Comentários de Clientes:<br /><br />
             
 
                         <table>
@@ -163,13 +163,12 @@
                             <%foreach (var servC in servsComments)
                                 {
                             %>
-
-                        
-
-                            <tr><td><%=servC.DataFim %></td><td><%=servC.ObsFinUser %></td></tr>                        
-                        
+                            <tr><td><%=servC.DataFim %></td><td><%=servC.ObsFinUser %></td></tr>             
                             <% } %>
                         </table>
+            <br /><br />
+            <br /><br />
+            <br /><br />
             <br /><br />
 
 
