@@ -35,6 +35,7 @@ namespace TCC
 
 
         public List<EmpresaServico> servs;
+        public List<Servico> servsComments;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -93,7 +94,7 @@ namespace TCC
                 tecnico = ueTecnico.Nome;
 
                 servs = new EmpresaServicoDAO().selectAllServicoPorEmpresa(emp.Id);
-
+                servsComments = new SevicoDAO().selectAllServsEmp(emp.Id);
 
             }
             else
