@@ -110,7 +110,7 @@
                 </div>
 			    <div class="form-group col-md-4">
 			      <label for="zonaA">Zona de Atendimento</label>
-			      <input type="text" runat="server"  class="form-control" id="zonaAtendimento" placeholder="Zona Atendimento" required/>
+			      <input type="text" runat="server" value="Curitiba e Região" class="form-control" id="zonaAtendimento" placeholder="Zona Atendimento" required/>
 			    </div>
 			    <div class="form-group col-md-4">
 			      <label for="funcs">Funcionarios</label>
