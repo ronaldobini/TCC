@@ -155,7 +155,22 @@
 	         
 		</div>
 	</div>
-        <br /><br />
+          <br /><br /> Comentários de Clientes:<br /><br />
+            
+
+                        <table>
+                            <tr><th style="width:200px;">Serviço</th><th style="width:200px;">Data</th><th style="width:200px;">Comentários</th></tr>
+                            <%foreach (var servC in servsComments)
+                                {
+                            %>
+
+                        
+
+                            <tr><td><%=servC.Desc %></td><td><%=servC.DataFim %></td><td><%=servC.ObsFinUser %></td></tr>                        
+                        
+                            <% } %>
+                        </table>
+            <br /><br />
 
 
 	<div class="footer-good">
