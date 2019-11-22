@@ -69,6 +69,12 @@ namespace TCC.Classes
         }
         public void updateEmpresa(Empresa emp)
         {
+            string latS = emp.Lat.ToString();
+            string lonS = emp.Lon.ToString();
+
+            latS = latS.Replace(",", ".");
+            lonS = lonS.Replace(",", ".");
+
             string sql = "UPDATE empresa " +
                 "SET id_diretor = " + emp.IdDiretor + "," +
                 "id_comercial = " + emp.IdComercial + "," +
@@ -81,8 +87,8 @@ namespace TCC.Classes
                 "numero = '" + emp.Numero + "'," +
                 "complemento = '" + emp.Complemento + "'," +
                 "cep = '" + emp.Cep + "'," +
-                "lat = '" + emp.Lat + "'," +
-                "lon = '" + emp.Lon + "'," +
+                "lat = " + latS + "," +
+                "lon = " + lonS + "," +
                 "id_cidade = '" + emp.cidade.Id + "', " +
                 "inicio_empresa = '" + emp.InicioEmpresa.ToString() + "'," +
                 "descricao_empresa = '" + emp.DescEmpresa + "'," +
