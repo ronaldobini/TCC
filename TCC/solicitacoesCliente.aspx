@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css"/>
     <title>Solicitações</title>
 </head>
-<body>
+<body class="body2">
     <div class="top_cliente">
         <div class="top_int_cliente">
             <img src="imgs/logoComprida.png" width="300"/>
@@ -21,7 +21,7 @@
 
         <div class="menu">
 		<div class="menu_int">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 			  
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
 			    <span class="navbar-toggler-icon"></span>
@@ -63,29 +63,42 @@
                     Legenda dos status:
                     <br>
                     <br>
-                    Aceite: <a data-toggle="tooltip" title="">
-                        <img src="imgs/checked.png" />
-
-                    </a>--------- Pendente: <a data-toggle="tooltip" title="">
-                        <img src="imgs/pause.png" />
-
-                    </a>--------- Negada: <a data-toggle="tooltip" title="">
+                    <div class="d-flex justify-content-around">
+                    
+                    <div class="col-md-2">
+                                            Aceite:<a data-toggle="tooltip" title="">
+                        <img src="imgs/checked.png" /></a>
+                    </div>
+                        <div class="col-md-2">
+                            
+                    Pendente: <a data-toggle="tooltip" title="">
+                        <img src="imgs/pause.png" /></a>
+                        </div>
+                        <div class="col-md-2">
+                                                Negada: <a data-toggle="tooltip" title="">
                         <img src="imgs/x-button.png" /></a>
-
-                    </a>--------- Iniciado: <a data-toggle="tooltip" title="">
+                        </div>
+                        <div class="col-md-2">
+                            
+                    Iniciado: <a data-toggle="tooltip" title="">
                         <img src="imgs/play.png" /></a>
+                        </div>
 
-                    </a>--------- Aguardando ação cliente/prestador: <a data-toggle="tooltip" title="">
+                        <div class="col-md-4">
+                            
+                    Aguardando ação cliente/prestador: <a data-toggle="tooltip" title="">
                         <img src="imgs/circular-clock.png" /></a>
-
+                        </div>
+                        </div>
                 </div>
+
                 <br/>
                 <hr/>
 
                 <br/>
                 <br/>
-                <table class="table table-dark">
-                    <thead>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
                         <tr>
                             <th scope="col">Nº</th>
                             <th scope="col">Solicitação</th>
@@ -165,12 +178,12 @@
             </div>
         </div>
     </div>
-    <br /><br /><br />
 
-    <div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
-        </div>
-    </div>
+     <footer class="py-3 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
+
 </body>
 </html>

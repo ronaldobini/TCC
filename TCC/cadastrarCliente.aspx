@@ -13,9 +13,7 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <div class="menu_principal">
-        <div class="menu_principal_int">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
                     <span class="navbar-toggler-icon"></span>
@@ -23,7 +21,7 @@
 
                 <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="index.aspx">Pagina inicial<span class="sr-only">(página atual)</span></a>
                         </li>
 
@@ -37,12 +35,11 @@
                     </ul>
                 </div>
             </nav>
-        </div>
-    </div>
+    <div class="container">
 
-    <div class="conteudo_pagina_cadastro">
-        <div class="conteudo_pagina_cadastro_int">
-            <img src="logoTeste.png" width="100"><br>
+    <div class="conteudo_pagina_principal">
+        <div class="conteudo_pagina_principal_int">
+            <img src="imgs/logoSimples.png" width="100" />
             <%if (idGet == 0)
                 {
             %>
@@ -76,7 +73,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="senha">Senha</label>
-                        <asp:TextBox ID="senha" class="form-control" placeholder="Senha" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="senha" class="form-control" placeholder="Senha" runat="server" type="password"></asp:TextBox>
                     </div>
                 </div>
 
@@ -107,11 +104,11 @@
                         <label for="endereco">Endereço</label>
                         <asp:TextBox ID="endereco" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-4">
                         <label for="complemento">Complemento</label>
                         <asp:TextBox ID="complemento" class="form-control" placeholder="Complemento" runat="server"></asp:TextBox>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-2">
                         <label for="numero">Número</label>
                         <asp:TextBox ID="numero" class="form-control" placeholder="Numero" runat="server"></asp:TextBox>
                     </div>
@@ -146,21 +143,16 @@
                 <button type="submit" runat="server" onserverclick="Editar" class="btn btn-primary">Salvar</button>
                 <%} %>
 
-                <small id="a" class="form-text text-muted">Sua empresa já é cadastrada? <a href="loginEmpresa.html">Faça Login</a>!</small>
-                <small id="b" class="form-text text-muted">Não tem login? Solicite ao seu superior!</small>
             </form>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba
-            <img src="imgs/logoSimples.png" width="30" class="img_rodape" />
         </div>
-    </div>
+    <div class="col-1"></div>
+     <footer class="py-3 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>

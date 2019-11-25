@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
 	<title>Login Empresa</title>
 </head>
-<body class="testBody">
-   <div class="menu_principal">
-		<div class="menu_principal_int">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body>
+
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 			  
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
 			    <span class="navbar-toggler-icon"></span>
@@ -36,17 +35,16 @@
 			      </li>
 			    </ul>
 			    <form class="form-inline my-2 my-lg-0" action="loginCliente.aspx" method="POST">
-			      <button class="btn btn-primary" type="submit">Sou Cliente</button>
+			      <button class="btn btn-outline-dark" type="submit">Sou Cliente</button>
 			    </form>
 			  </div>
 			</nav>
-		</div>
-	</div>
 
-	<div class="conteudo_pagina_principal_empresa">
+
+	<div class="conteudo_pagina_principal">
 		<div class="conteudo_pagina_principal_int">
-			<img src="imgs/logoSimples.png" width="250"> <br>
-			<h3>Logue como empresa!</h3>
+			<img src="imgs/logoSimples.png" width="250"> <br/>
+			<h3>Login da empresa!</h3>
 			<br>
             <%if (statusOperação == 1)
                     { %>
@@ -72,25 +70,27 @@
                 <%
                         }
                     } %>
-            <div class="tamanho_campos">
+             <div class="col-sm-4"></div>
+            <div class="tamanho_campos col-sm-5">
 			<form method="POST" action="#" runat="server">
 				<div class="form-group">
-					<input type="text" id="login" runat="server" placeholder="Login" class="form-control"> <br><br>
-					<input type="password" id="senha"  runat="server" placeholder="Senha" class="form-control">
-					<br>
-					<input type="submit" onserverclick="autenticar" value="Login" class="btn btn-dark" runat="server">
-					<br>
-					<small id="emailHelp" class="form-text text-muted">Sua empresa não tem login? <a href="empresaCadastro.aspx">Cadastre-a</a>!</small>
+					<input type="text" id="login" runat="server" placeholder="Login" class="form-control"/> <br/><br/>
+					<input type="password" id="senha"  runat="server" placeholder="Senha" class="form-control"/>
+					<br/>
+					<input type="submit" onserverclick="autenticar" value="Login" class="btn btn-primary btn-block" runat="server"/>
+					<br/>
+					<small id="emailHelp" class="form-text text-muted">Sua empresa não tem login? <a href="empresaCadastro.aspx">Cadastre já</a>!</small>
                     <font color="red"><%=mensagem %></font>
 				</div>
 			</form>
                 </div>
 		</div>		
-	</div><br /><br /><br />
-    <div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
-        </div>
-    </div>
+	</div>
+
+     <footer class="py-3 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
 </body>
 </html>

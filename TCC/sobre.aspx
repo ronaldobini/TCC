@@ -13,9 +13,7 @@
 	<title>Sobre Nós</title>
 </head>
 <body>
-	<div class="menu_principal">
-		<div class="menu_principal_int">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 			  
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
 			    <span class="navbar-toggler-icon"></span>
@@ -37,8 +35,6 @@
 			    </ul>
 			  </div>
 			</nav>
-		</div>
-	</div>
 
 
 	<div class="conteudo_pagina_principal">
@@ -60,13 +56,12 @@
 
 	    </div>
     </div>
+          <footer class="py-3 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
 
-	<br/><br/><br/>
-    <div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
-        </div>
-    </div>
 
 </body>
 </html>

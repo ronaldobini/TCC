@@ -34,9 +34,10 @@ namespace TCC
         public Usuario user = new Usuario();
         protected void Page_Load(object sender, EventArgs e)
         {
-            idGet = Int32.Parse(Request.QueryString["id"]);
+            
             if (Request.QueryString["id"] != null)
             {
+                idGet = Int32.Parse(Request.QueryString["id"]);
                 if (!IsPostBack)
                 {
 

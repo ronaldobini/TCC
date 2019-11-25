@@ -46,9 +46,6 @@
 
 </head>
 <body>
-    
-
-
     	<div class="top_cliente">
 		<div class="top_int_cliente">
 			<img src="imgs/logoComprida.png" width="300"/>
@@ -58,7 +55,7 @@
 
     <div class="menu">
 		<div class="menu_int">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 			  
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
 			    <span class="navbar-toggler-icon"></span>
@@ -69,15 +66,17 @@
 			      <li class="nav-item active">
 			        <a class="nav-link" href="mapao.aspx">Buscar Serviço <span class="sr-only">(página atual)</span></a>
 			      </li>
-
+                  <% if (Session["sId"] == null) { } else{ %>
+                      
 			      <li class="nav-item">
 			        <a class="nav-link" href="solicitacoesCliente.aspx">Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
+                  <% } %>
 
 			    </ul>
 			    
 <% if (Session["sId"] == null){ %>
-                    <a href="cadastrarUsuario.aspx" style="margin-right:30px;"> <button class="btn btn-primary" type="submit">Cadastre-se para solicitar um serviço</button></a>
+                    <a href="cadastrarUsuario.aspx" style="margin-right:30px;"> <button class="btn btn-outline-primary" type="submit">Cadastre já!</button></a>
 			        <a href="loginCliente.aspx"> <button class="btn btn-outline-success" type="submit">Login</button></a>
                     
 <% }else{ %>
@@ -101,14 +100,14 @@
 					
                     <asp:DropDownList ID="categorias" runat="server" class="form-control form-control-lg"></asp:DropDownList>
 					<br/><br/>
-					
+					Digite uma palavra-chave ou tag <br/><br/>
                     <input type="text" class="form-control" id="pesq" name="pesq" runat="server"/>
                     <br/><br/>
 				    <button class="btn btn-success" runat="server"  onserverclick="filtrar">Buscar</button> <br/><br/>
 
 				</form>
 				
-				Aqui você pode digitar o serviço desejado e o mapa mostrará a listagem de serviços deste tipo localizados próximos a você! <br><br><br>
+				Aqui você pode digitar o serviço desejado e o mapa mostrará a listagem de serviços deste tipo localizados próximos a você!
 
 				
 
@@ -190,12 +189,11 @@
 		</div>
 	</div>
 
-    <br /><br />
-	<div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
-        </div>
-    </div>
+     <footer class="py-3 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
 
     
      
