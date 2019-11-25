@@ -94,9 +94,8 @@
 
                 <br/>
                 <hr/>
-
                 <br/>
-                <br/>
+                <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
@@ -175,6 +174,7 @@
                             } %>
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>

@@ -62,7 +62,7 @@
                 </div>
 		</div>		
 	</div>
-     <footer class="py-3 bg-dark">
+     <footer class="py-3 bg-dark footer-good">
             <div class="container">
                 <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
             </div>

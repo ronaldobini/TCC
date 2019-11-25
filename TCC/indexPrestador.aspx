@@ -8,11 +8,11 @@
     
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<title>Solicitações</title>
 </head>
-<body>
+<body class="body2">
 	<div class="top_cliente">
 		<div class="top_int_cliente">
 			<img src="imgs/logoComprida.png" width="300"/>
@@ -21,7 +21,7 @@
 
 	<div class="menu">
 		<div class="menu_int">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 			  
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
 			    <span class="navbar-toggler-icon"></span>
@@ -63,7 +63,7 @@
                     { %>
 
                     <li class="nav-item">
-			            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+			            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços em Execução <span class="sr-only">(página atual)</span></a>
 			        </li>
 
                     <% } %>
@@ -80,16 +80,15 @@
 	<div class="conteudo_solicitacoes_cliente">
 		<div class="conteudo_index_cliente_int">
 			<div class="solicitacaoCliente_int">
-				<br><br>
 				<div class="panel">
-					Legenda das ações: <br><br>
+					Legenda das ações: <br/><br/>
 					</a>Aceitar: <a data-toggle="tooltip" title=""><img src="imgs/checked.png"></a> --------- Recusar: <a data-toggle="tooltip" title=""><img src="imgs/x-button.png"></a>
 					
-				</div><br><hr><br>
-				Estes são os novos pedidos de serviço: <br>
-				 <br><br>
-				<table class="table table-dark">
-				  <thead>
+				</div><br/><hr/><br/>
+				<h5>Estes são os novos pedidos de serviço</h5> <br/>
+                <div class="table-responsive">
+				<table class="table table-bordered">
+				  <thead class="thead-dark">
 				    <tr>
                       <th scope="col">Nº</th>
 				      <th scope="col">Nome do Cliente</th>
@@ -157,15 +156,15 @@
 
 				  </tbody>
 				</table>
+                </div>
 			</div>
 		</div>
 	</div>
 
-    <br /><br /><br /><br /><br /><br /><br /><br />
-	<div class="footerTest">
-        <div class="footer-good">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
-        </div>
-    </div>
+     <footer class="py-3 bg-dark footer-good">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
 </body>
 </html>

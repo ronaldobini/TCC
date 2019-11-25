@@ -74,7 +74,7 @@
             <div class="tamanho_campos col-sm-5">
 			<form method="POST" action="#" runat="server">
 				<div class="form-group">
-					<input type="text" id="login" runat="server" placeholder="Login" class="form-control"/> <br/><br/>
+					<input type="text" id="login" runat="server" placeholder="Login" class="form-control"/> <br/>
 					<input type="password" id="senha"  runat="server" placeholder="Senha" class="form-control"/>
 					<br/>
 					<input type="submit" onserverclick="autenticar" value="Login" class="btn btn-primary btn-block" runat="server"/>
@@ -87,7 +87,7 @@
 		</div>		
 	</div>
 
-     <footer class="py-3 bg-dark">
+     <footer class="py-3 bg-dark footer-good">
             <div class="container">
                 <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
             </div>

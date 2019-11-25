@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Custom Legend</title>
+    <title>Servitiba | Mapa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta charset="utf-8" />
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
