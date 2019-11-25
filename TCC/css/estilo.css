@@ -1,6 +1,8 @@
 body {
     background-color: #EEE9E9;
     font-family: Arial;
+    height:100%;
+    min-height:100%
 }
 
 .body2 {
@@ -367,13 +369,7 @@ tbody tr:hover {
 }
 
 .footer-good {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    color: lightgrey;
+    margin-top: auto;
     background-color: #3c3d41;
 }
 
