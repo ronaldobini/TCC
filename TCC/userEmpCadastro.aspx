@@ -26,7 +26,8 @@
 
 </head>
 <body>
-    <div class="menu_principal">
+    <%if (Session["sId"]==null){%>
+     <div class="menu_principal">
         <div class="menu_principal_int">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
@@ -53,6 +54,53 @@
             </nav>
         </div>
     </div>
+    <%}else{%>
+
+    
+    <div class="menu">
+        <div class="menu_int">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-color">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços em Execução <span class="sr-only">(página atual)</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="servicosFinalizados.aspx">Serviços Finalizados <span class="sr-only">(página atual)</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="gerenciarServicos.aspx">Gerenciar Serviços <span class="sr-only">(página atual)</span></a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="empresaColaboradores.aspx">Gerenciar Colaboradores <span class="sr-only">(página atual)</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="gerenciarFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
+                        </li>
+                    </ul>
+                    <a style="margin-right: 30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
+
+                    <a href="Logout.aspx">
+                        <button class="btn btn-outline-danger">Sair</button></a>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+   <%} %>
 
     <div class="conteudo_pagina_cadastro">
         <div class="conteudo_pagina_cadastro_int">
