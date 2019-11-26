@@ -124,6 +124,7 @@
                             {
                                 if (col.Id != 0)
                                 {
+                                    string linkVisualizar = "VisualizarColaborador.aspx?id=" +col.Id;
                                     string linkEdit = "userEmpCadastro.aspx?id=" + col.Id;
                                     string linkDel = "excluir.aspx?id=" + col.Id + "&funcao=deleteUser";
                                     string id = col.Nome;
@@ -133,7 +134,7 @@
                             <td><%=col.Nome%></td>
                             <td><%=col.UserEmp.Funcao%></td>
                             <td><%=col.DataCadastro%></td>
-                            <td><a href="verDadosColaborador.html">
+                            <td><a href="<%=linkVisualizar %>">
                                 <img src="imgs/binoculars.png" /></a></td>
                             <td><a href="<%=linkEdit %>">
                                 <img src="imgs/edit.png" /></a></td>

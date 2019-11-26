@@ -194,6 +194,7 @@
     <Content Include="solicitacoesCliente.aspx" />
     <Content Include="testes.aspx" />
     <Content Include="userEmpCadastro.aspx" />
+    <Content Include="VisualizarColaborador.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
   </ItemGroup>
@@ -438,6 +439,13 @@
     <Compile Include="Validators\CadastroClienteValidator.cs" />
     <Compile Include="Validators\EmpresaCadastroValidator.cs" />
     <Compile Include="Validators\LoginClienteValidator.cs" />
+    <Compile Include="VisualizarColaborador.aspx.cs">
+      <DependentUpon>VisualizarColaborador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisualizarColaborador.aspx.designer.cs">
+      <DependentUpon>VisualizarColaborador.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\.DS_Store" />
