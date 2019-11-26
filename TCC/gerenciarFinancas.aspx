@@ -33,7 +33,7 @@
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços em Execução <span class="sr-only">(página atual)</span></a>
 			      </li>
 
                    <li class="nav-item">
@@ -60,15 +60,17 @@
 			</nav>
 		</div>
 	</div>
-
-    <div class="conteudo_relatorio_cliente">
-		<div class="conteudo_solicitacao_cliente_int">
+    <div class="conteudo_solicitacoes_cliente">
+        <div class="conteudo_index_cliente_int2">
+            <div class="solicitacaoPrestador_int2">
 			
-				<br/><br/>
-			    <div class="panel">	
-				</div> <br/> <hr/> <br/>
+					<br/>
+				<div class="panel">
+		
+				<hr/>
+				 <br/>
 
-                <img src="imgs/circular-clock.png"/> Saldo de serviços: <br/><br/> <br/>
+                <h4>Saldo de Serviços</h4>
 
 			<div class="table-responsive">
                 <table class="table table-bordered">
@@ -138,13 +140,16 @@
 				  </tbody>
 				</table>
                 </div>
-        </div>
-    </div>
+
     <%
         double liberado = empSaldo.SaldoLiberado;
         double pendente = empSaldo.SaldoPendente;
         double totHist = empSaldo.SaldoTotalHistorico;
     %>
+        <div class="col-1"></div>
+        <br/><br/><br/>
+
+        <div class="table-responsive">
         <table class="table table-dark">
 		    <tr>
 		        <th scope="row">TOTALIZADORES:</th>
@@ -153,9 +158,16 @@
 			    <td>Total histórico: R$<%=totHist %></td>
 			</tr>
 		</table>
+        </div>
+              <div class="row">
+              <div class="col-sm-5"></div>
+                <div class="col-sm-5">
+        		    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-x1">Sacar Dinheiro</button>
+                </div>
+                </div>
 
-        		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-x1">Sacar Dinheiro</button>
-
+        </div>
+    </div>
 				<div class="modal fade bd-example-modal-x1" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog" role="document">
 				    <div class="modal-content">
@@ -166,7 +178,6 @@
 				        </button>
 				      </div>
 				      <div class="modal-body">
-				        <div>
 				        	<form runat="server">
 				        		Conta: <input type="text" name=""/> <br/><br/>
 				        		Agência: <input type="text" name=""/> <br/><br/>
@@ -177,7 +188,6 @@
 				        		<input runat="server" onserverclick="atualizarSaldo" type="submit" name="" value="Confirmar"  class="btn btn-success"/>
 
 				        	</form>
-				        </div>
 				      </div>
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
@@ -185,14 +195,13 @@
 				    </div>
 				  </div>
 				</div>
+  
 
-    <br /><br /><br /><br />
-    <div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
-        </div>
-    </div>
-    
+         <footer class="py-3 bg-dark footer-good">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
         
 </body>
 </html>

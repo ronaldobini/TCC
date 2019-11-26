@@ -72,16 +72,16 @@
     <div class="conteudo_solicitacoes_cliente">
         <div class="conteudo_index_cliente_int2">
             <div class="solicitacaoPrestador_int2">
-                <br>
-                <br>
+                <br/>
+                <br/>
                 <a href="userEmpCadastro.aspx">
                     <button class="btn btn-success">
                         Cadastrar Novo Colaborador
                     </button>
                 </a>
-                <br>
-                <hr>
-                <br>
+                <br/>
+                <hr/>
+                <br/>
                 <%if (statusOperação == 1)
                     { %>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">

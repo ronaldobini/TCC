@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-    <title>Chat</title>
+    <title>Detalhes do Serviço</title>
 </head>
 <body>
     <div class="top_cliente">
@@ -22,7 +22,7 @@
 
     <div class="menu">
         <div class="menu_int">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
                     <span class="navbar-toggler-icon"></span>
@@ -35,12 +35,12 @@
                             { %>
                         <% if ((int)Session["sNivelEmp"] > 1)
                             {%>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="indexPrestador.aspx">Lista de Solicitações <span class="sr-only">(página atual)</span></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+                            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços em Execução <span class="sr-only">(página atual)</span></a>
                         </li>
 
                         <li class="nav-item">
@@ -66,7 +66,7 @@
                             { %>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+                            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços em Execução <span class="sr-only">(página atual)</span></a>
                         </li>
 
                         <% } %>
@@ -101,8 +101,8 @@
     <div class="conteudo_relatorio_cliente">
         <div class="conteudo_solicitacao_cliente_int">
 
-            <br>
-            <br>
+            <br/>
+            <br/>
             <div class="container">
                 <form runat="server" action="#">
                     <div class="form-row">
@@ -330,7 +330,7 @@
 
            
 
-
+            <br/><hr/><br/>
             <table class="table table-dark">
                 <thead>
                     <tr>
@@ -371,8 +371,10 @@
 
             <br />
             <br />
-
-            <textarea runat="server" id="msgUser" placeholder="Escreva aqui sua mensagem..." rows="6" cols="60"></textarea>
+            <div class="row">
+            <div class="col-sm-3"></div>
+            <textarea class="form-control col-sm-6" runat="server" id="msgUser" placeholder="Escreva aqui sua mensagem..." rows="6" cols="60"></textarea>
+            </div>
             <br />
             <br />
             <input type="submit" runat="server" value="Enviar" onserverclick="enviarMsg" class="btn btn-primary" />
@@ -381,11 +383,12 @@
         </form>
     </div>
     </div>
-    <div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba
-            <img src="imgs/logoSimples.png" width="30" class="img_rodape" />
-        </div>
-    </div>
+
+    <div class="col-1"></div>
+     <footer class="py-3 bg-dark footer-good">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
 </body>
 </html>

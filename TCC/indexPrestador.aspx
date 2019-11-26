@@ -37,7 +37,7 @@
 			      </li>
 
 			      <li class="nav-item">
-			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link" href="servicoEmExecucao.aspx">Serviços em Execução <span class="sr-only">(página atual)</span></a>
 			      </li>
 
                    <li class="nav-item">
@@ -77,14 +77,17 @@
 		</div>
 	</div>
 	
+    <div class="conteudo_solicitacoes_cliente">
+        <div class="conteudo_index_cliente_int2">
+            <div class="solicitacaoPrestador_int2">
 
-		<div class="conteudo_relatorio_cliente">
-			<div class="conteudo_solicitacao_cliente_int">
-				<div class="panel">
-					Legenda das ações: <br/><br/>
-					</a>Aceitar: <a data-toggle="tooltip" title=""><img src="imgs/checked.png"></a> --------- Recusar: <a data-toggle="tooltip" title=""><img src="imgs/x-button.png"></a>
-					
-				</div><br/><hr/><br/>
+				<div class="row">               
+                    <div class="col-sm-12 text-center">
+					    <br/><br/> Legenda das ações: <br/><br/>
+					    </a>Aceitar: <a data-toggle="tooltip" title=""><img src="imgs/checked.png"></a> --------- Recusar: <a data-toggle="tooltip" title=""><img src="imgs/x-button.png"></a>
+					</div>
+                    </div>
+				<hr/>
 				<h5>Estes são os novos pedidos de serviço</h5> <br/>
                 <div class="table-responsive">
 				<table class="table table-bordered">
@@ -158,8 +161,8 @@
 				</table>
                 </div>
 			</div>
-		</div>
-
+            </div>
+    </div>
 
      <footer class="py-3 bg-dark footer-good">
             <div class="container">

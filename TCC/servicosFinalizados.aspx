@@ -74,15 +74,15 @@
 		</div>
 	</div>
 	
-	<div class="conteudo_relatorio_cliente">
-		<div class="conteudo_solicitacao_cliente_int">
+        <div class="conteudo_index_cliente_int2">
+            <div class="solicitacaoPrestador_int2">
 			
-				<br/><br/>
+				<br/>
 				<div class="panel">
 		
-				</div> <br/> <hr/> <br/>
-				
-				<img src="imgs/checked.png"/> <h4>Serviços Finalizados</h4>
+				<hr/>
+				 <br/>
+				<h4>Serviços Finalizados <img src="imgs/checked.png"/></h4> 
                 <div class="table-responsive">
 				<table class="table table-bordered">
 				  <thead class="thead-dark">
@@ -93,7 +93,7 @@
 				      <th scope="col">Resumo</th>
 				      <th scope="col">Data do início</th>
 				      <th scope="col">Data Fim Prev</th>
-                      <th scope="col">Data Fim Real</th>,
+                      <th scope="col">Data Fim Real</th>
                       <th scope="col">Nota Media</th>
 				      <th scope="col">Detalhes</th>
 				    </tr>

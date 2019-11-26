@@ -74,14 +74,15 @@
 		</div>
 	</div>
 	
-	<div class="conteudo_relatorio_cliente">
-		<div class="conteudo_solicitacao_cliente_int">
+	    <div class="conteudo_solicitacoes_cliente">
+        <div class="conteudo_index_cliente_int2">
+            <div class="solicitacaoPrestador_int2">
 		
 				<div class="panel">
                     
-				</div> <br> <hr> <br>
+				</div> <br/> <hr/> <br/>
 				
-				<img src="imgs/circular-clock.png"/> <h4>Serviços em Execução</h4>:
+				<h4>Serviços em Execução</h4>
                 <div class="table-responsive">
 				<table class="table table-bordered">
 				  <thead class="thead-dark">
@@ -153,7 +154,7 @@
                 </div>
 			</div>
 		
-			
+			</div>
 		</div>
 
      <footer class="py-3 bg-dark footer-good">
