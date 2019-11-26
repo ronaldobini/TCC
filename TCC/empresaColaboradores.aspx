@@ -8,9 +8,9 @@
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css"/>
     <title>Gerenciar Colaboradores</title>
 </head>
     <script>
@@ -18,7 +18,7 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
-<body>
+<body class="body2">
     <div class="top_cliente">
         <div class="top_int_cliente">
             <img src="imgs/logoComprida.png" width="300" />
@@ -27,7 +27,7 @@
 
     <div class="menu">
         <div class="menu_int">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
                     <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+                            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços em Execução <span class="sr-only">(página atual)</span></a>
                         </li>
 
                         <li class="nav-item">
@@ -106,8 +106,9 @@
                 <%
                         }
                     } %>
-                <table class="table table-dark">
-                    <thead>
+                <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
                         <tr>
                             <th scope="col">Nome do Colaborador</th>
                             <th scope="col">Função</th>
@@ -153,16 +154,16 @@
                             } %>
                     </tbody>
                 </table>
+                </div>
             </div>
 
 
         </div>
     </div>
-    <div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba
-            <img src="imgs/logoSimples.png" width="30" class="img_rodape" />
-        </div>
-    </div>
+         <footer class="py-3 bg-dark footer-good">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
 </body>
 </html>

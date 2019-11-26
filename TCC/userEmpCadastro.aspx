@@ -7,9 +7,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+    <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css"/>
 
     <%
         if (id == -1)
@@ -36,6 +36,7 @@
 
                 <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                     <ul class="navbar-nav mr-auto">
+
                         <li class="nav-item">
                             <a class="nav-link" href="index.aspx">Pagina inicial<span class="sr-only">(página atual)</span></a>
                         </li>
@@ -59,7 +60,7 @@
             <%if (id == -1)
                 {
             %>
-            <h3>Cadastre o Diretor</h3>
+            <h3>Cadastrar colaborador</h3>
             <% }
                 else
                 {
@@ -203,8 +204,6 @@
                     <br />
                     <br />
 
-
-
                 </div>
                 <br />
 
@@ -225,15 +224,11 @@
             </form>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba
-            <img src="imgs/logoSimples.png" width="30" class="img_rodape" />
-        </div>
-    </div>
+
+         <footer class="py-3 bg-dark footer-good">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
 </body>
 </html>

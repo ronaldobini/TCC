@@ -10,19 +10,25 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
-    <title>Cadastrar Serviço</title>
+    <title>
+        <% if (servico.Id == 0){%>
+        Cadastrar Serviço
+        <%}else{ %>
+        Atualizar Serviço
+        <%} %>
+    </title>
 </head>
-<body>
+<body class="body2">
 
     <div class="top_cliente">
         <div class="top_int_cliente">
-            Servitiba
+            <img src="imgs/logoComprida.png" width="300" />
         </div>
     </div>
 
     <div class="menu">
         <div class="menu_int">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
                     <span class="navbar-toggler-icon"></span>
@@ -35,7 +41,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços Em Execução <span class="sr-only">(página atual)</span></a>
+                            <a class="nav-link" href="servicoEmExecucao.aspx">Serviços em Execução <span class="sr-only">(página atual)</span></a>
                         </li>
 
                         <li class="nav-item">
@@ -64,43 +70,40 @@
         </div>
     </div>
 
-    <div class="conteudo_solicitacoes_cliente">
-        <div class="conteudo_index_cliente_int">
-            <div class="solicitacaoPrestador_int">
-                <br />
-                <br />
+        <div class="conteudo_pagina_principal">
+            <div class="conteudo_pagina_principal_int">
+                <div class="col-sm-4"></div>
+                <div class="tamanho_campos col-sm-5">
                 <form method="post" action="#" runat="server">
-                    <div class="container ">
-
-                        <div class="form-group ">
+                        <br/><br/>
+                        <div class="form-group">
                             <label for="descricao">Descrição</label>
-                            <br>
+                            <br/>
                             
-                            <asp:TextBox type="text" runat="server" rows="6" cols="85" class="form-control col-md-6 " style="margin-left: 25%;" id="descricao" placeholder="Descrição"></asp:TextBox>
+                            <asp:TextBox type="text" runat="server" rows="6" cols="85" class="form-control" id="descricao" placeholder="Descrição"></asp:TextBox>
 
                         </div>
                          <div class="form-group ">
                             <label for="precoMedio">Preço Médio</label>
-                            <asp:TextBox type="text" runat="server" class="form-control money col-md-6 "  Style="margin-left: 25%;" ID="precoMedio" placeholder="R$"></asp:TextBox>
+                            <asp:TextBox type="text" runat="server" class="form-control money" ID="precoMedio" placeholder="R$"></asp:TextBox>
 
                         </div>
                         <label for="categoria">Categoria</label>
 
-                        <asp:DropDownList ID="categoria" runat="server" CssClass="form-control col-md-6 " Style="margin-left: 25%;">
+                        <asp:DropDownList ID="categoria" runat="server" CssClass="form-control">
                         </asp:DropDownList>
 
                         <div class="form-group ">
                             <label for="tempo">Tempo previsto</label>
-                            <asp:TextBox type="text" runat="server" class="form-control col-md-6" Style="margin-left: 25%;" ID="tempo" placeholder="Tempo previsto para o serviço"></asp:TextBox>
+                            <asp:TextBox type="text" runat="server" class="form-control" ID="tempo" placeholder="Tempo previsto para o serviço"></asp:TextBox>
 
                             <asp:HiddenField Id="idServico" runat="server" />
                         </div>
 
                          <div class="form-group ">
                             <label for="tempo">Tags para busca</label>
-                            <asp:TextBox type="text" runat="server" class="form-control col-md-6" Style="margin-left: 25%;" value ID="Tags" placeholder="Tags..."></asp:TextBox>
+                            <asp:TextBox type="text" runat="server" class="form-control" value ID="Tags" placeholder="Tags..."></asp:TextBox>
                         </div>
-                    </div>
 
                     <% if (servico.Id== 0)
                              { %>
@@ -111,13 +114,14 @@
                         <button type="submit" runat="server" onserverclick="Editar" class="btn btn-primary">Salvar</button>
                     <%} %>
                 </form>
+                </div>
                 <br />
                 <br />
 
 
             </div>
         </div>
-    </div>
+
 
     <br>
     <div class="footer-good">

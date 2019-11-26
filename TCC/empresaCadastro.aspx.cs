@@ -143,8 +143,6 @@ namespace TCC
             {
                 mensagem = result.ToString(" & ");
             }
-
-
         }
         public void editar(object sender, EventArgs e)
         {
