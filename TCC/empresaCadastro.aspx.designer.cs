@@ -7,11 +7,13 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace TCC {
-    
-    
-    public partial class empresaCadastro {
-        
+namespace TCC
+{
+
+
+    public partial class empresaCadastro
+    {
+
         /// <summary>
         /// Controle cnpj.
         /// </summary>
@@ -20,7 +22,7 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox cnpj;
-        
+
         /// <summary>
         /// Controle razaoSocial.
         /// </summary>
@@ -29,7 +31,7 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox razaoSocial;
-        
+
         /// <summary>
         /// Controle tel.
         /// </summary>
@@ -38,7 +40,7 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tel;
-        
+
         /// <summary>
         /// Controle cel.
         /// </summary>
@@ -47,16 +49,7 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox cel;
-        
-        /// <summary>
-        /// Controle cep.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cep;
-        
+
         /// <summary>
         /// Controle endereco.
         /// </summary>
@@ -65,7 +58,7 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox endereco;
-        
+
         /// <summary>
         /// Controle complemento.
         /// </summary>
@@ -74,7 +67,7 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox complemento;
-        
+
         /// <summary>
         /// Controle numero.
         /// </summary>
@@ -83,7 +76,16 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox numero;
-        
+
+        /// <summary>
+        /// Controle cep.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cep;
+
         /// <summary>
         /// Controle cidadesDD.
         /// </summary>
@@ -92,7 +94,7 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cidadesDD;
-        
+
         /// <summary>
         /// Controle zonaAtendimento.
         /// </summary>
@@ -101,7 +103,7 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox zonaAtendimento;
-        
+
         /// <summary>
         /// Controle qtdFunc.
         /// </summary>
@@ -110,7 +112,7 @@ namespace TCC {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox qtdFunc;
-        
+
         /// <summary>
         /// Controle descricao.
         /// </summary>

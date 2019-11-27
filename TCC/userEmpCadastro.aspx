@@ -25,11 +25,11 @@
     <title><%=tituloDaPag %></title>
 
 </head>
-<body>
+<body class="body2">
     <%if (Session["sId"]==null){%>
      <div class="menu_principal">
         <div class="menu_principal_int">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
                     <span class="navbar-toggler-icon"></span>
@@ -181,11 +181,11 @@
                         <label for="endereco">Endereço</label>
                         <asp:TextBox ID="endereco" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-4">
                         <label for="complemento">Complemento</label>
                         <asp:TextBox ID="complemento" class="form-control" placeholder="Complemento" runat="server"></asp:TextBox>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-2">
                         <label for="numero">Número</label>
                         <asp:TextBox ID="numero" class="form-control" placeholder="Número da casa" runat="server"></asp:TextBox>
                     </div>
@@ -235,7 +235,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label for="funcao">Funçao</label>
+                        <label for="funcao">Função</label>
                         <asp:TextBox ID="funcao" class="form-control" placeholder="Função" runat="server"></asp:TextBox>
                     </div>
                     <div class="form-group col-md-4">
@@ -245,7 +245,7 @@
                         </asp:DropDownList>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="formacao">Formaçao</label>
+                        <label for="formacao">Formação</label>
                         <asp:TextBox ID="formacao" class="form-control" placeholder="Formaçao" runat="server"></asp:TextBox>
                     </div>
 

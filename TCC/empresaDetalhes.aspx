@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
 	<title>Buscar Serviço</title>
 </head>
-<body>
+<body class="body2">
     <center>
     <div class="top_cliente">
 		<div class="top_int_cliente">
@@ -22,7 +22,7 @@
    
 	 <div class="menu">
 		<div class="menu_int">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 			  
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
 			    <span class="navbar-toggler-icon"></span>
@@ -80,7 +80,8 @@
             <hr />
             Detalhes:<br /><br />
 
-            <table class="table table-dark centralizarConteudoTabelas">
+            <table class="table table-bordered centralizarConteudoTabelas">
+                 <thead class="thead-dark">
               <tr>
                 <th>Razão Social</th>
                 <th>CNPJ</th>
@@ -93,9 +94,10 @@
                 <td><%=diretor %></td>
                 <td><%=comercial %></td>
               </tr>
+               </thead>
             </table>
 
-             <table class="table table-dark centralizarConteudoTabelas">
+             <table class="table table-light centralizarConteudoTabelas">
                 
                 <tr>
                     <td><center><%=repA %></td>
@@ -104,40 +106,45 @@
                 </tr>
             </table>
 
-            <table class="table table-dark centralizarConteudoTabelas">
+            <table class="table table-bordered centralizarConteudoTabelas">
+                 <thead class="thead-dark">
               <tr>
-                <th>Representante Técnico</th>
-                <th>Telefone 1</th>
+                <th>Representante Técnico</th>               
                 <th>Endereço</th>
                 <th>Complemento</th>
+                <th>CEP</th>
               </tr>
               <tr>
                 <td><%=tecnico %></td>
-                <td><%=telefone1 %></td>
                 <td><%=endereco %>, <%=numero %></td>
                 <td><%=complemento %></td>
+                <td><%=cep %></td>
               </tr>
+                </thead>
             </table> 
 
-            <table class="table table-dark centralizarConteudoTabelas">
+            <table class="table table-bordered centralizarConteudoTabelas">
+                 <thead class="thead-dark">
               <tr>
+                <th>Telefone 1</th>
                 <th>Telefone 2</th>
-                <th>CEP</th>
                 <th>Quantidade de Funcionários</th>
                 <th>Quantidade de Serviços Executados</th>
               </tr>
               <tr>
+                <td><%=telefone1 %></td>
                 <td><%=telefone2 %></td>
-                <td><%=cep %></td>
                 <td><%=qtdFunc %></td>
                 <td><%=qtdServ %></td>  
               </tr>
+                     </thead>
                 
             </table>
 
            
 
-            <table class="table table-dark centralizarConteudoTabelas">
+               <table class="table table-bordered centralizarConteudoTabelas">
+                 <thead class="thead-dark">
               <tr>
                 <th>Data do Cadastro</th>
                 <th>Zona de atendimento</th>
@@ -146,6 +153,7 @@
                 <td><%=cadastro %></td>
                 <td><%=zona %></td>
               </tr>
+                     </thead>
             </table>
 
 
@@ -166,16 +174,12 @@
                             <tr><td><%=servC.DataFim %></td><td><%=servC.ObsFinUser %></td></tr>             
                             <% } %>
                         </table>
-            <br /><br />
-            <br /><br />
-            <br /><br />
-            <br /><br />
 
 
-	<div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
-        </div>
-    </div>
+         <footer class="py-3 bg-dark footer-good">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
 </body>
 </html>

@@ -16,7 +16,7 @@
 <body class="testBody">
     <div class="menu_principal">
         <div class="menu_principal_int">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
                     <span class="navbar-toggler-icon"></span>
@@ -95,22 +95,15 @@
                         <%--<input type="text" runat="server"  class="form-control telefone" id="cel" placeholder="xxxxx-xxxx" required/>--%>
                     </div>
                 </div>
+  
 
                 <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="cep">CEP</label>
-                        <asp:TextBox ID="cep" class="form-control" placeholder="CEP" runat="server"></asp:TextBox>
-                        <%--<input type="tel" runat="server"  class="form-control" id="cep" placeholder="CEP" required/>--%>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-5">
                         <label for="endereco">Endereço</label>
                         <asp:TextBox ID="endereco" class="form-control" placeholder="Endereço" runat="server"></asp:TextBox>
                         <%--<input type="text"  runat="server" class="form-control" id="endereco" placeholder="Endereço" required/>--%>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label for="complemento">Complemento</label>
                         <asp:TextBox ID="complemento" class="form-control" placeholder="Complemento" runat="server"></asp:TextBox>
                         <%--<input type="text" runat="server"  class="form-control" id="complemento" placeholder="Complemento"/>--%>
@@ -120,9 +113,14 @@
                         <asp:TextBox ID="numero" class="form-control" placeholder="Número" runat="server"></asp:TextBox>
                         <%--<input type="text" runat="server" class="form-control" id="numero" placeholder="Número" required />--%>
                     </div>
+                                        <div class="form-group col-md-2">
+                        <label for="cep">CEP</label>
+                        <asp:TextBox ID="cep" class="form-control" placeholder="CEP" runat="server"></asp:TextBox>
+                        <%--<input type="tel" runat="server"  class="form-control" id="cep" placeholder="CEP" required/>--%>
+                    </div>
                 </div>
 
-                <div class="form-row col-md-12">
+                <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="categoria">Cidade</label>
                         <asp:DropDownList ID="cidadesDD" runat="server" CssClass="form-control" required></asp:DropDownList>
@@ -163,13 +161,13 @@
         <small id="emailHelp" class="form-text text-muted">Sua empresa já é cadastrada? <a href="loginEmpresa.aspx">Faça Login</a>!</small>
         <small id="emailHelp" class="form-text text-muted">Não tem login? Solicite ao seu superior!</small>
     </div>
-    <br>
-    <br>
-    <div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba
-            <img src="imgs/logoSimples.png" width="30" class="img_rodape" />
-        </div>
-    </div>
+    <br/>
+    <br/>
+
+         <footer class="py-3 bg-dark footer-good">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
 </body>
 </html>

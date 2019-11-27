@@ -88,9 +88,6 @@ namespace TCC
                     Cargo.DataSource = cargos;
                     Cargo.DataBind();
                     Cargo.SelectedValue = col.UserEmp.NivelEmp.ToString();
-
-
-
                 }
             }
             else

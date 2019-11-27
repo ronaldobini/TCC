@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
     <title>Detalhes do Serviço</title>
 </head>
-<body>
+<body class="body2">
     <div class="top_cliente">
         <div class="top_int_cliente">
             <img src="imgs/logoComprida.png" width="300" />
@@ -107,38 +107,38 @@
                 <form runat="server" action="#">
                     <div class="form-row">
                         <div class="form-group col-md-3 ">
-                            Num. Serviço: <%=servicoget %>
+                            <b>Num. Serviço:</b> <%=servicoget %>
                         </div>
                         <div class="form-group col-md-3 ">
-                            Descrição: <%=descServ %>
+                            <b>Descrição:</b> <%=descServ %>
                         </div>
                         <div class="form-group col-md-6 ">
-                            Situação: <%=sitS %>
+                            <b>Situação:</b> <%=sitS %>
                         </div>
 
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3 ">
-                            Empresa: <%=nomeEmpresa %>
+                            <b>Empresa:</b> <%=nomeEmpresa %>
                         </div>
                         <div class="form-group col-md-3">
-                            Cliente:<%=nomeCliente %>
+                            <b>Cliente:</b><%=nomeCliente %>
                         </div>
                         <div class="form-group col-md-3 ">
-                            Reputação: <%=repCliente %>
+                            <b>Reputação:</b> <%=repCliente %>
                         </div>
                         <div class="form-group col-md-3 ">
-                            Endereço: <%=endCliente %>
+                            <b>Endereço:</b> <%=endCliente %>
                         </div>
                     </div>
                     <div class="form-row">
 
                         <div class="form-group col-md-6">
-                            <label for="inputPassword4">Preço:</label><br />
+                            <label for="inputPassword4"><b>Preço:</b></label><br />
                             <asp:TextBox class="form-control" ID="txValor" runat="server"></asp:TextBox>
                         </div>
                         <div class="form-group col-md-6 ">
-                            <label for="inputPassword4">Previsão:</label><br />
+                            <label for="inputPassword4"><b>Previsão:</b></label><br />
                             <asp:TextBox class="form-control" ID="txDataEstimada" runat="server"></asp:TextBox>
                         </div>
 
@@ -147,7 +147,7 @@
                     <br />
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="inputEmail4">Descrição Cliente</label>
+                            <label for="inputEmail4"><b>Descrição Cliente</b></label>
                             <br>
                             <textarea rows="3" disabled class="form-control">
                                         <%=descUsu %>

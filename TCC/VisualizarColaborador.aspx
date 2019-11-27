@@ -16,7 +16,7 @@
     <title><%=tituloDaPag %></title>
 
 </head>
-<body>
+<body class="body2">
     
     <div class="menu">
         <div class="menu_int">

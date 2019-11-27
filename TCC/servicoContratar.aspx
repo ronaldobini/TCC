@@ -7,12 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-	<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-	<title>Contratar Serviço</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css"/>
+	<title>Solicitar Serviço</title>
 </head>
-<body>
+<body class="body2">
      <center>
     <div class="top_cliente">
 		<div class="top_int_cliente">
@@ -22,7 +22,7 @@
    
 	<div class="menu">
 		<div class="menu_int">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-color">
 			  
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
 			    <span class="navbar-toggler-icon"></span>
@@ -31,16 +31,15 @@
 			  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
 			    <ul class="navbar-nav mr-auto">
 			      <li class="nav-item">
-			        <a class="nav-link" href="mapao.aspx">Buscar Serviço <span class="sr-only">(página atual)</span></a>
+			        <a class="nav-link active" href="mapao.aspx">Buscar Serviço <span class="sr-only">(página atual)</span></a>
 			      </li>
 
 			      <li class="nav-item">
 			        <a class="nav-link" href="solicitacoesCliente.aspx">Solicitações <span class="sr-only">(página atual)</span></a>
 			      </li>
 			    </ul>
-			    <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
-			      <button class="btn btn-outline-danger" type="submit">Sair</button>
-			    </form>
+			        <a style="margin-right:30px;" href="cadastrarCliente.aspx?=<%=Session["sId"]%>"><font color="green"><%=Session["sNome"] %></font></a>
+                    <a href="Logout.aspx"><button class="btn btn-outline-danger">Sair</button></a>
 			  </div>
 			</nav>
 		</div>
@@ -67,13 +66,12 @@
 
         </div>
     </form>
-          <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
-
-<div class="footer-good">
-        <div class="footerTest_int">
-            © 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/>
-        </div>
-    </div>
+         <br/><br/>
+         <footer class="py-3 bg-dark footer-good">
+            <div class="container">
+                <p class="m-0 text-center text-white">© 2019 Copyright - Servitiba <img src="imgs/logoSimples.png"  width="30" class="img_rodape"/></p>
+            </div>
+      </footer>
 
 
 </body>
