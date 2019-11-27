@@ -54,7 +54,8 @@ namespace TCC.Classes
         public void updateUser(Usuario user)
         {
             string sql = "UPDATE usuario" +
-                " SET senha = '" + user.Senha + "'," +
+                " SET login = '" + user.Login + "'," +
+                "senha = '" + user.Senha + "'," +
                 "  nome = '" + user.Nome + "', " +
                 " email = '" + user.Email + "',  " +
                 " cpf = '" + user.Cpf + "', " +
@@ -72,7 +73,7 @@ namespace TCC.Classes
                 " WHERE id  = " + user.Id ;
 
             MySqlConnection conn = new Conn().conectar();
-            new Conn().executar(sql, conn);
+            bool sera = new Conn().executar(sql, conn);
             conn.Close();
         }
 

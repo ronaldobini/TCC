@@ -121,6 +121,7 @@ namespace TCC
         public void Editar(object sender, EventArgs e)
         {
             int idvalue = Int32.Parse(IdField.Value);
+            user.Id = idvalue;
             user.Login = login.Text;
             user.Senha = senha.Text;
             user.Nome = nomCompleto.Text;

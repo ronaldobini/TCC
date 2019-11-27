@@ -44,7 +44,7 @@
 			        <a href="loginCliente.aspx"> <button class="btn btn-outline-success" type="submit">Login</button></a>
                     
 <% }else{ %>
-                    <a style="margin-right:30px;" href="cadastrarCliente.aspx?=<%=Session["sId"]%>"><font color="green"><%=Session["sNome"] %></font></a>
+                    <a style="margin-right:30px;" href="cadastrarCliente.aspx?id=<%=Session["sId"]%>"><font color="green"><%=Session["sNome"] %></font></a>
                     <a href="Logout.aspx"><button class="btn btn-outline-danger">Sair</button></a>
 <% } %>
 			      
