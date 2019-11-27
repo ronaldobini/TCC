@@ -33,9 +33,9 @@ namespace TCC
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["sIdEmp"] == null)
+            if (Session["sId"] == null)
             {
-                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
+                Response.Redirect("index.aspx?msg=sessaoInvalida");
             }
 
 
