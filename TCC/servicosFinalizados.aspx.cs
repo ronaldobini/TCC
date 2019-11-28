@@ -13,7 +13,7 @@ namespace TCC
         public List<Servico> servsDB = new List<Servico>();
         public DateTime datFimR;
         public DateTime datIni;
-        public DateTime datFim;
+        public string datFim;
 
         protected void Page_Load(object sender, EventArgs e)
         {

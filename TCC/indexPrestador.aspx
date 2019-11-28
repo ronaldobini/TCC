@@ -134,6 +134,8 @@
         string servico = new TCC.Classes.EmpresaServicoDAO().selectDescPorId(idEmpSer);
 
         string linkServDet = "servicoDetalhes.aspx?idSerDet="+idServico;
+        string linkAceitar = "servicoDetalhes.aspx?modo=aceitar&idSerDet="+idServico;
+        string linkRecusar = "servicoDetalhes.aspx?modo=recusar&idSerDet="+idServico;
 
           string di = dataFimEst.ToString();
           if (di  == "01/01/2001 00:00:00") { di = "A definir"; }
@@ -149,7 +151,7 @@
 				      <td><%=servico %></td>
 				      <td><%=resumo %></td>
 				      <td><%=di %></td> 
-				      <td><a href=""><img src="imgs/checked.png"></a> --- <a href=""><img src="imgs/x-button.png"></a></td>
+				      <td><a href="<%=linkAceitar %>"><img src="imgs/checked.png"></a> --- <a href="<%=linkRecusar %>"><img src="imgs/x-button.png"></a></td>
 				      <td><a href="<%=linkServDet %>"><img src="imgs/more.png"></a></td>
 				    </tr>	
                       

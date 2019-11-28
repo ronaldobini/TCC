@@ -82,7 +82,23 @@ namespace TCC
                 descUsu = serv.DescUser;
                 sit = serv.Sit;
 
-                verificarSit();
+
+                //ACEITAR OU RECUSAR DIRETO PELA TELA INDEX PRESTADOR OU LISTA DE SOLIC
+                if (Request.QueryString["modo"] != null)
+                {
+                    if(Request.QueryString["modo"] == "aceitar")
+                    {
+                        empresaAprove(null,null);
+                    }
+
+                    if (Request.QueryString["modo"] == "recusar")
+                    {
+                        empresaReprove(null, null);
+                    }
+
+                }
+
+                    verificarSit();
             }
             else
             {
@@ -107,7 +123,7 @@ namespace TCC
 
             //string dataCorrigida = corrigiData(txDataEstimada.Text);
 
-            DateTime prev = DateTime.Parse(txDataEstimada.Text);
+            string prev = txDataEstimada.Text;
 
             new ServicoDAO().updateServicoValor(valor,prev, servicoget);
             mensagem.Text="Dados atualizados com sucesso!";

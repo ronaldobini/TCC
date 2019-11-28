@@ -12,7 +12,7 @@ namespace TCC
     public partial class indexPrestador : System.Web.UI.Page
     {
         public List<Servico> servsDB = new List<Servico>();
-        public DateTime dataFimEst;
+        public string dataFimEst;
 
         protected void Page_Load(object sender, EventArgs e)
         {

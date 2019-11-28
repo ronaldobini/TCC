@@ -18,7 +18,7 @@ namespace TCC.Classes
         private string descUser;
         private int prioridade;
         private double valor;
-        private DateTime dataFimEst;
+        private string dataFimEst;
         private DateTime dataFim;
         private int sit;
         private int aceiteUser;
@@ -35,7 +35,7 @@ namespace TCC.Classes
         }
 
         public Servico(int id, int idUser, int idEmp, int idRepresEmp, DateTime dataIni, Categoria categoria, int idEmpSer, string descUser,
-            int prioridade, double valor, DateTime dataFimEst, DateTime dataFim, int sit, int aceiteUser, int aceiteEmp,
+            int prioridade, double valor, string dataFimEst, DateTime dataFim, int sit, int aceiteUser, int aceiteEmp,
             double repTempo, double repQualidade, double repAtendimento, string obsFinUser, string obsFinEmp)
         {
             this.id = id;
@@ -74,7 +74,7 @@ namespace TCC.Classes
         public string DescUser { get => descUser; set => descUser = value; }
         public int Prioridade { get => prioridade; set => prioridade = value; }
         public double Valor { get => valor; set => valor = value; }
-        public DateTime DataFimEst { get => dataFimEst; set => dataFimEst = value; }
+        public string DataFimEst { get => dataFimEst; set => dataFimEst = value; }
         public DateTime DataFim { get => dataFim; set => dataFim = value; }
         public int Sit { get => sit; set => sit = value; }
         public int AceiteUser { get => aceiteUser; set => aceiteUser = value; }

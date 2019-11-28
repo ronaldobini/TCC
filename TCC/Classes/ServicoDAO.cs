@@ -82,13 +82,12 @@ namespace TCC.Classes
             conn.Close();
         }
 
-        public void updateServicoValor(double valor, DateTime dataPrev, int idServ)
+        public void updateServicoValor(double valor, string dataPrev, int idServ)
         {
             string sql = "UPDATE servico " +
                 "SET valor = " + valor + ", " +
-                "data_fim_estimada = '" + dataPrev.ToString("yyyy-MM-dd HH:mm:ss") + "' " +
+                "data_fim_estimada = '" + dataPrev + "' " +
                 "WHERE id  = " + idServ + " ";
-            string tst = dataPrev.ToString("yyyy-MM-dd HH:mm:ss");
             MySqlConnection conn = new Conn().conectar();
             new Conn().executar(sql, conn);
             conn.Close();
@@ -434,13 +433,13 @@ namespace TCC.Classes
             try
             {
                 serv.DataIni = DateTime.Parse(reader.GetMySqlDateTime(4).Value.ToString());
-                serv.DataFimEst = DateTime.Parse(reader.GetMySqlDateTime(10).Value.ToString());
+                serv.DataFimEst = reader.GetString(10);
                 serv.DataFim = DateTime.Parse(reader.GetMySqlDateTime(11).Value.ToString());
             }
             catch (Exception e)
             {
                 serv.DataIni = new DateTime();
-                serv.DataFimEst = new DateTime();
+                serv.DataFimEst = "A definir";
                 serv.DataFim = new DateTime();
             }
             serv.Categoria = new CategoriaDAO().selectCat(reader.GetInt32(5));

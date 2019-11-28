@@ -6,12 +6,39 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    
     <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
     <title>Detalhes do Serviço</title>
+
+    <script type="text/javascript">    
+      
+       
+          function numberToReal(numero) {
+            var numero = numero.toFixed(2).split('.');
+            numero[0] = numero[0].split(/(?=(?:...)*$)/).join('.');
+            return numero.join(',');
+          }
+
+        $(function () {
+
+            $('#txValor').on('input', function (e) {
+                var valor = $("#txValor").val();
+                valor = parseFloat(valor);
+                numberToReal(valor);
+                $("#txValor").removeAttr("value");
+                $("#txValor").attr("value", valor);
+                $("#txValor").prop("value", valor);
+            });
+
+        });
+             
+    </script>
+
+
 </head>
 <body class="body2">
     <div class="top_cliente">
