@@ -33,7 +33,7 @@
 			    </ul>		    
                   
                   <div class="menu_teste_2">
-			      <a href="loginEmpresa.aspx"><button class="btn btn-outline-dark" type="submit">Sou Empresa</button></a>
+			      <a href="loginEmpresa.aspx"><button class="btn btn-primary" type="submit">Sou Empresa</button></a>
                   </div>
 			    
 			  </div>

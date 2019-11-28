@@ -59,7 +59,7 @@
                             <a class="nav-link" href="gerenciarFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
                         </li>
                     </ul>
-                    <a style="margin-right: 30px;" href="minhaConta.aspx"><font color="green"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
+                    <a style="margin-right: 30px;" href="minhaConta.aspx"><font color="#65e05e"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
 
                     <a href="Logout.aspx">
                         <button class="btn btn-outline-danger">Sair</button></a>

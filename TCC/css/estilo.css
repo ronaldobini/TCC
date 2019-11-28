@@ -24,15 +24,15 @@ body {
 }
 
 .top_int {
-	width: 1300px;
-	height: 120px;
-	background-color: #5937c2;
-	margin: auto;
-	text-align: center;
-	line-height: 120px;
-	color: white !important;	
-	border-radius: 15px 15px 0 0;
-	font-size: 30px;
+    width: 1300px;
+    height: 120px;
+    background-color: #5c309c;
+    margin: auto;
+    text-align: center;
+    line-height: 120px;
+    color: white !important;
+    border-radius: 15px 15px 0 0;
+    font-size: 30px;
 }
 
 .top_cliente {
@@ -43,7 +43,7 @@ body {
 .top_int_cliente {
     width: 100%;
     height: 120px;
-    background-color: #c6ffb1;
+    background-color: #5c309c;
     margin: auto;
     text-align: center;
     line-height: 120px;
@@ -396,5 +396,5 @@ h6 {
 }
 
 .navbar-color {
-    background-image: linear-gradient(to right, #66CD00, #B3EE3A);
+    background-image: linear-gradient(to right, #956bd1, #5c309c);
 }

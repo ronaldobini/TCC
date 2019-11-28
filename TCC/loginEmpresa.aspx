@@ -35,7 +35,7 @@
 			      </li>
 			    </ul>
 			    <form class="form-inline my-2 my-lg-0" action="loginCliente.aspx" method="POST">
-			      <button class="btn btn-outline-dark" type="submit">Sou Cliente</button>
+			      <button class="btn btn-success" type="submit">Sou Cliente</button>
 			    </form>
 			  </div>
 			</nav>
