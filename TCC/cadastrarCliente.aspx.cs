@@ -133,10 +133,11 @@ namespace TCC
             user.Numero = Int32.Parse(numero.Text);
             user.Tel1 = tel.Text;
             user.Tel2 = cel.Text;
-            user.Cidade = new CidadeDAO().selectCidadePorNome(cidadesDD.SelectedValue);
+            user.Cidade = new CidadeDAO().selectCidadePorId(Int32.Parse(cidadesDD.SelectedValue));
 
            new UsuarioDAO().updateUser(user);
 
+            Session["sNome"] = user.Nome;
 
             Response.Redirect("mapao.aspx");
 

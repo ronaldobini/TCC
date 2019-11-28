@@ -35,7 +35,7 @@ namespace TCC.Classes
         }
         public Cidade selectCidadePorNome(string nome)
         {
-            string sql = "SELECT * FROM cidade WHERE nome = '" + nome+"'";
+            string sql = "SELECT * FROM cidade WHERE nome = '" + nome + "'";
             Cidade cid = new Cidade();
             MySqlConnection conn = new Conn().conectar();
             MySqlDataReader reader = new Conn().consultar(sql, conn);
