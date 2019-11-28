@@ -94,7 +94,7 @@ namespace TCC
                 tecnico = ueTecnico.Nome;
 
                 servs = new EmpresaServicoDAO().selectAllServicoPorEmpresa(emp.Id);
-                servsComments = new ServicoDAO().selectAllServsEmp(emp.Id);
+                servsComments = new ServicoDAO().selectAllServsEmpFin(emp.Id);
 
             }
             else

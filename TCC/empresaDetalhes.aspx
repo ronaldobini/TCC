@@ -66,12 +66,13 @@
                             <%foreach (var serv in servs)
                                 {
                                     string linkContratar = "servicoContratar.aspx?idEmpEsc="+(getEmpresaMapa)+"&idSerEsc="+(serv.Id);
-                                    int i = 0;
+                                   
+                                   string valorMoeda = String.Format("{0:C}", serv.ValorAprox);
                             %>
 
                         
 
-                            <tr><td><%=serv.Desc %></td><td><%=serv.ValorAprox %></td><td><%=serv.TempoAprox %></td><td><a href="<%=linkContratar %>">Contratar </a></td></tr>                        
+                            <tr><td><%=serv.Desc %></td><td><%=valorMoeda %></td><td><%=serv.TempoAprox %></td><td><a href="<%=linkContratar %>">Contratar </a></td></tr>                        
                         
                             <% } %>
                         </table>

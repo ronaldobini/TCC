@@ -102,6 +102,7 @@
         string servico = new TCC.Classes.EmpresaServicoDAO().selectDescPorId(idEmpSer);
 
         double valor = serv.Valor;
+        string valorS = String.Format("{0:C}", valor);
         DateTime datIni = serv.DataIni;
 
         int sit = serv.Sit;
@@ -127,7 +128,7 @@
 				      <th scope="row"><%=idServico %></th>
 				      <td><%=servico %></td>
 				      <td><%=cliente %></td>
-				      <td><%=valor %></td>
+				      <td><%=valorS %></td>
 				      <td><%=datIni %></td>                      
 				      <td><%=situ %></td>
 				      <td><a href="<%=link%>"><img src="imgs/more.png"></a></td>

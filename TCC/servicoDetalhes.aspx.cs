@@ -75,6 +75,7 @@ namespace TCC
                 if (!IsPostBack)
                 {
                     txValor.Text = serv.Valor.ToString();
+                    
                     string dataEstimada = serv.DataFimEst.ToString();
                     if (dataEstimada  == "01/01/2001 00:00:00") { dataEstimada = "A definir"; }
                     txDataEstimada.Text = dataEstimada;
@@ -99,6 +100,7 @@ namespace TCC
                 }
 
                     verificarSit();
+                    if (sit > 0) txValor.Text = String.Format("{0:C}", serv.Valor);
             }
             else
             {

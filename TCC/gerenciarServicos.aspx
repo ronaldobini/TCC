@@ -126,10 +126,11 @@
                                 {
                                     var linkEditar = "cadastrarServico.aspx?Id=" + servico.Id;
                                     var linkExcluir = "excluir.aspx?Id=" + servico.Id + "&funcao=deleteServicoEmpresa";
+                                    string valorS = String.Format("{0:C}", servico.ValorAprox);
                             %>
                             <tr>
                                 <th><%=servico.Desc %></th>
-                                <td><%=servico.ValorAprox %></td>
+                                <td><%=valorS %></td>
                                 <td><%=servico.TempoAprox %></td>
                                 <td>
                                     <a href="<%=linkEditar %>">
