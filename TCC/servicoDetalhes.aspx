@@ -209,35 +209,7 @@
             <br>
             <hr />
 
-               <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-xl">Serviço Finalizado</button>
-            <button runat="server" onserverclick="anyProblem" class="btn btn-outline-danger" type="submit">Tive problemas com o Cliente</button>
-
-            <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <div class="conteudo_modal">
-                            Reputação do Cliente
-                            <br />
-                            <br />
-                            <select runat="server" class="form-control" id="Select1">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select><br />
-                            <textarea runat="server" class="form-control" id="Textarea1" placeholder="Escreva aqui suas observações sobre o serviço (...)" rows="3" cols="30"></textarea><br />
-                            <input type="submit" runat="server" onserverclick="empresaEnd" value="Enviar" class="btn btn-success" />
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+              
 
             <% if (sit == 0)
                 {
