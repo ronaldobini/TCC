@@ -52,7 +52,12 @@
                             <a class="nav-link" href="gerenciarFinancas.aspx">Gerenciar Finanças <span class="sr-only">(página atual)</span></a>
                         </li>
                     </ul>
-                    <a style="margin-right: 30px;" href="minhaConta.aspx"><font color="#65e05e"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
+                    <%if ((int)Session["sNivelEmp"] > 2)
+                         {%>
+                   <a style="margin-right:30px;" href="empresaCadastro.aspx?id=<%=(int)Session["sIdEmp"] %>"><font color="#65e05e"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
+                  <%} else{%>
+                  <a style="margin-right:30px;"><font color="#65e05e"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
+                  <%}%>
                     <form class="form-inline my-2 my-lg-0" action="index.aspx" method="POST">
                         <button class="btn btn-outline-danger" type="submit">Sair</button>
                     </form>

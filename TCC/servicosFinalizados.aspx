@@ -66,9 +66,13 @@
 			        </li>
 
                     <% } %>
-			    </ul>
-                   <a style="margin-right:30px;" href="minhaConta.aspx"><font color="#65e05e"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
-			    <a href="Logout.aspx"><button class="btn btn-outline-danger">Sair</button></a>
+			    </ul><%if ((int)Session["sNivelEmp"] > 2)
+                         {%>
+                   <a style="margin-right:30px;" href="empresaCadastro.aspx?id=<%=(int)Session["sIdEmp"] %>"><font color="#65e05e"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
+                  <%} else{%>
+                  <a style="margin-right:30px;"><font color="#65e05e"><%=Session["sNome"] %> (<%=Session["sFuncao"] %>)</font></a>
+                  <%}%>
+                  <a href="Logout.aspx"><button class="btn btn-outline-danger">Sair</button></a>
 			  </div>
 			</nav>
 		</div>

@@ -7,13 +7,11 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace TCC
-{
-
-
-    public partial class servicoDetalhes
-    {
-
+namespace TCC {
+    
+    
+    public partial class servicoDetalhes {
+        
         /// <summary>
         /// Controle txValor.
         /// </summary>
@@ -22,7 +20,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txValor;
-
+        
         /// <summary>
         /// Controle txDataEstimada.
         /// </summary>
@@ -31,7 +29,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txDataEstimada;
-
+        
         /// <summary>
         /// Controle servTecsEmp.
         /// </summary>
@@ -40,7 +38,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList servTecsEmp;
-
+        
         /// <summary>
         /// Controle btAdd.
         /// </summary>
@@ -49,25 +47,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btAdd;
-
-        /// <summary>
-        /// Controle Select1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect Select1;
-
-        /// <summary>
-        /// Controle Textarea1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea Textarea1;
-
+        
         /// <summary>
         /// Controle repCli.
         /// </summary>
@@ -76,7 +56,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect repCli;
-
+        
         /// <summary>
         /// Controle obsFinaisEmpresa.
         /// </summary>
@@ -85,7 +65,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea obsFinaisEmpresa;
-
+        
         /// <summary>
         /// Controle repQ.
         /// </summary>
@@ -94,7 +74,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText repQ;
-
+        
         /// <summary>
         /// Controle repA.
         /// </summary>
@@ -103,7 +83,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText repA;
-
+        
         /// <summary>
         /// Controle repT.
         /// </summary>
@@ -112,7 +92,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText repT;
-
+        
         /// <summary>
         /// Controle obsFinaisCli.
         /// </summary>
@@ -121,7 +101,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea obsFinaisCli;
-
+        
         /// <summary>
         /// Controle mensagem.
         /// </summary>
@@ -130,7 +110,7 @@ namespace TCC
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label mensagem;
-
+        
         /// <summary>
         /// Controle msgUser.
         /// </summary>
