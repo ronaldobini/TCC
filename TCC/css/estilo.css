@@ -369,7 +369,7 @@ tbody tr:hover {
 .footer-good {
     bottom: 0;
     width: 100%;
-    position: absolute;
+    
     margin-top: auto;
     background-color: #3c3d41;
 }
