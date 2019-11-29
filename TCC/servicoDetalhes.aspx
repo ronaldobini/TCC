@@ -7,8 +7,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
@@ -208,7 +209,35 @@
             <br>
             <hr />
 
+               <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-xl">Serviço Finalizado</button>
+            <button runat="server" onserverclick="anyProblem" class="btn btn-outline-danger" type="submit">Tive problemas com o Cliente</button>
 
+            <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="conteudo_modal">
+                            Reputação do Cliente
+                            <br />
+                            <br />
+                            <select runat="server" class="form-control" id="Select1">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select><br />
+                            <textarea runat="server" class="form-control" id="Textarea1" placeholder="Escreva aqui suas observações sobre o serviço (...)" rows="3" cols="30"></textarea><br />
+                            <input type="submit" runat="server" onserverclick="empresaEnd" value="Enviar" class="btn btn-success" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <% if (sit == 0)
                 {
@@ -263,7 +292,7 @@
                                 <option value="9">9</option>
                                 <option value="10">10</option>
                             </select><br />
-                            <textarea runat="server" id="obsFinaisEmpresa" placeholder="Escreva aqui suas observações sobre o serviço (...)" rows="3" cols="30"></textarea><br />
+                            <textarea runat="server" class="form-control" id="obsFinaisEmpresa" placeholder="Escreva aqui suas observações sobre o serviço (...)" rows="3" cols="30"></textarea><br />
                             <input type="submit" runat="server" onserverclick="empresaEnd" value="Enviar" class="btn btn-success" />
 
                         </div>
