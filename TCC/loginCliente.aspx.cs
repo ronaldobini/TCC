@@ -65,7 +65,7 @@ namespace TCC
                         Session["sQtdServicos"] = logando.QtdServicos;
                         Session["sCliente"] = 1;
                         Session["sFuncao"] = Session["sRep"];
-                        string endereco = logando.Endereco + " " + logando.Numero;
+                        string endereco = logando.Endereco + " " + logando.Numero + " " + logando.Cidade.Nome;
 
                         string lt = new ApiCoordenadas().pegarLat(endereco).ToString();
                         string lg = new ApiCoordenadas().pegarLng(endereco).ToString();
