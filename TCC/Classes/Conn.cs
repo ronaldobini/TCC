@@ -21,6 +21,12 @@ namespace TCC.Classes
             database = "tccsilence";
             uid = "tccsilence";
             password = "UFPRtcc2019";
+
+            //server = "localhost";
+            //database = "servitiba";
+            //uid = "root";
+            //password = "";
+
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";

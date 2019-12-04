@@ -114,13 +114,12 @@
 			</div>
 			<div class="conteudo_index_cliente_int_r">
 				    <div id="map"></div>
-                    <div id="legend"><h3>Legend</h3></div>
                     <script>
                         var map;
                         function initMap() {
                             map = new google.maps.Map(document.getElementById('map'), {
                                 center: { lat: <%=Session["latCentro"]%>, lng: <%=Session["lngCentro"]%> },
-                                zoom: 12,
+                                zoom: 13,
                                 mapTypeId: 'roadmap'
                             });
 
