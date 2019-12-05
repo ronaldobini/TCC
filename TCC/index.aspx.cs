@@ -27,9 +27,9 @@ namespace TCC
         public void espiarClick(object sender, EventArgs e)
         {
 
-            string cepForm = cep.Value;
+            string cepForm = cep.Value+" - Curitiba";
 
-            if(cepForm.Length < 8)
+            if(cepForm.Length < 2)
             {
                 cepForm = "80010020";
             }
