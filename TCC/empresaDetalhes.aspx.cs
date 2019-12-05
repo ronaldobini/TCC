@@ -66,10 +66,10 @@ namespace TCC
                 
                 
 
-                repQ = "Atendimento (" + repQ + "%)<div class=\"progress\" style=\"width:85px; height: 7px;\">" +
+                repQ = "Qualidade (" + repQ + "%)<div class=\"progress\" style=\"width:85px; height: 7px;\">" +
                                   "<div class=\"progress-bar progress-bar-striped progress-bar-animated role=\"progressbar\" style=\"width: " + repQ + "%\"; aria-valuenow=\"" + repQ + "\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>" +
                                 "</div>";
-                repA = "Qualidade (" + repA + "%)<div class=\"progress\" style=\"width:85px; height: 7px;\">" +
+                repA = "Atendimento (" + repA + "%)<div class=\"progress\" style=\"width:85px; height: 7px;\">" +
                                   "<div class=\"progress-bar progress-bar-striped progress-bar-animated role=\"progressbar\" style=\"width: " + repA + "%\"; aria-valuenow=\"" + repA + "\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>" +
                                 "</div>";
                 repT = "Tempo (" + repT + "%)<div class=\"progress\" style=\"width:85px; height: 7px;\">" +

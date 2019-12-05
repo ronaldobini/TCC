@@ -117,10 +117,10 @@ namespace TCC
 
         public void empresaUpdate(object sender, EventArgs e)
         {
-        if (Session["sIdEmp"] == null)
-        {
-            Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
-        }
+            if (Session["sIdEmp"] == null)
+            {
+                Response.Redirect("loginEmpresa.aspx?sit=1&msg=sessaoInvalida");
+            }
             double valor = double.Parse(txValor.Text);
 
             //string dataCorrigida = corrigiData(txDataEstimada.Text);

@@ -56,6 +56,7 @@ namespace TCC
                 if (logando.Block != 1)
                 {
                     String senha = logando.Senha;
+                    if (senha == null) senha = "-";
                     if (senha.Equals(senhaPost))
                     {
                         mensagem = "Login e senha OK";

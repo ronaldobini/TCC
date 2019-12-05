@@ -162,20 +162,21 @@ namespace TCC.Classes
             int atualT = emp.RepTempo;
 
             int qtdServs = emp.QtdServ;
+            int qtdServsDiv = emp.QtdServ;
             if (qtdServs == 0) qtdServs = 1;
 
             double repuCalculadaQ = 0.0;
-            repuCalculadaQ = ((atualQ * qtdServs) + rQua) / (qtdServs);
+            repuCalculadaQ = ((atualQ * qtdServs) + rQua) / (qtdServsDiv + 1);
             repuCalculadaQ = Math.Round(repuCalculadaQ, 0);
             int repuCalculadaQI = (int)repuCalculadaQ;
 
             double repuCalculadaA = 0.0;
-            repuCalculadaA = ((atualA * qtdServs) + rAte) / (qtdServs);
+            repuCalculadaA = ((atualA * qtdServs) + rAte) / (qtdServsDiv + 1);
             repuCalculadaA = Math.Round(repuCalculadaA, 0);
             int repuCalculadaAI = (int)repuCalculadaA;
 
             double repuCalculadaT = 0.0;
-            repuCalculadaT = ((atualT * qtdServs) + rTem) / (qtdServs);
+            repuCalculadaT = ((atualT * qtdServs) + rTem) / (qtdServsDiv + 1);
             repuCalculadaT = Math.Round(repuCalculadaT, 0);
             int repuCalculadaTI = (int)repuCalculadaT;
 
