@@ -48,8 +48,8 @@
                 <div class="tamanho_campos col-sm-5">			   
 				        <div class="form-group">
 
-					        <input type="text" runat="server" id="cep" placeholder="CEP" class="form-control">
-					        <small id="emailHelp" class="form-text text-muted">Sem cadastro, sem burocracias! Experimente dar apenas uma espiadinha!</small> <br>
+					        <input type="text" runat="server" id="cep" placeholder="Digite seu CEP, rua ou bairro..." class="form-control">
+					        <small id="emailHelp" class="form-text ">Sem cadastro, sem burocracias! Experimente dar apenas uma espiadinha!</small> <br>
 					        <input type="submit" runat="server" onserverclick="espiarClick" id="Espiar" value="Espiar" class="btn btn-primary btn-block">	        
                         </div>
 		        </div>		

@@ -96,7 +96,6 @@
 				      <th scope="col">Serviço</th>
 				      <th scope="col">Resumo</th>
 				      <th scope="col">Data do início</th>
-				      <th scope="col">Data Fim</th>
 				      <th scope="col">Status</th>
 				      <th scope="col">Detalhes</th>
 				    </tr>
@@ -112,13 +111,13 @@
         int idEmpSer = serv.IdEmpSer;
         string resumo = serv.DescUser;
         datIni = serv.DataIni;
-        datFim = serv.DataFim;
+        datFim = serv.DataFim;        
         int sit = serv.Sit;
 
         string situ = "-";
         if (sit == 1)
         {
-            situ = "<font color=white>Pendente Aceite / Pagamento</font>";
+            situ = "<font color=black>Pendente Aceite / Pagamento</font>";
         }else if (sit == 2)
         {
             situ = "<font color=orange>Executando</font>";
@@ -143,8 +142,8 @@
 				      <td><%=cliente %></td>
 				      <td><%=servico %></td>
 				      <td><%=resumo %></td>
-				      <td><%=datIni %></td>
-				      <td><%=datFim %></td>                        
+				      <td><%=datIni %></td>              
+                  
 				      <td><%=situ %></td>
 				      <td><a href="<%=linkServDet %>"><img src="imgs/more.png"></a></td>
 				    </tr>

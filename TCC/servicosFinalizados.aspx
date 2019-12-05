@@ -115,7 +115,7 @@
         datIni = serv.DataIni;
         datFim = serv.DataFimEst;
         datFimR = serv.DataFim;
-        double notaMedia = serv.RepQualidade;
+        double notaMedia = (serv.RepQualidade + serv.RepAtendimento + serv.RepTempo)/3;
 
         TCC.Classes.Usuario user = new TCC.Classes.UsuarioDAO().selectUser(idCliente);
         string cliente = user.Nome;
@@ -123,6 +123,8 @@
         string servico = new TCC.Classes.EmpresaServicoDAO().selectDescPorId(idEmpSer);
         
         string linkServDet = "servicoDetalhes.aspx?idSerDet="+idServico;
+
+        string mediabonita = notaMedia.ToString().Substring(0,2) + "%";
 
 %>
 				    <tr>
@@ -133,7 +135,7 @@
 				      <td><%=datIni %></td>
 				      <td><%=datFim %></td>                        
 				      <td><%=datFimR %></td>                        
-				      <td><%=notaMedia %></td>
+				      <td><%=mediabonita %></td>
 				      <td><a href="<%=linkServDet %>"><img src="imgs/more.png"></a></td>
 				    </tr>
 
