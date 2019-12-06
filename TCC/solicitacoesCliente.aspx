@@ -66,7 +66,7 @@
                     <div class="d-flex justify-content-around">
                     
                     <div class="col-md-2">
-                                            Aceite:<a data-toggle="tooltip" title="">
+                                            Fiinalizado:<a data-toggle="tooltip" title="">
                         <img src="imgs/checked.png" /></a>
                     </div>
                         <div class="col-md-2">
