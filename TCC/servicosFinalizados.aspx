@@ -121,10 +121,11 @@
         string cliente = user.Nome;
 
         string servico = new TCC.Classes.EmpresaServicoDAO().selectDescPorId(idEmpSer);
-        
+
         string linkServDet = "servicoDetalhes.aspx?idSerDet="+idServico;
 
-        string mediabonita = notaMedia.ToString().Substring(0,2) + "%";
+        //string mediabonita = notaMedia.ToString().Substring(0,2) + "%";
+        string mediabonita = Math.Round(notaMedia) + "%";
 
 %>
 				    <tr>
