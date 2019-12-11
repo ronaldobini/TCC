@@ -17,16 +17,16 @@ namespace TCC.Classes
         public MySqlConnection conectar()
         {
 
-            //server = "tccsilence.mysql.dbaas.com.br";
-            //database = "tccsilence";
-            //uid = "tccsilence";
-            //password = "UFPRtcc2019";
+            server = "tccsilence.mysql.dbaas.com.br";
+            database = "tccsilence";
+            uid = "tccsilence";
+            password = "UFPRtcc2019";
 
-            server = "localhost";
-            database = "servitiba";
-            uid = "root";
-            password = "";
-
+            //server = "localhost";
+          ////  database = "servitiba";
+           // uid = "root";
+            // password = "";
+            //
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
