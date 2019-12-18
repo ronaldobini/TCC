@@ -1,0 +1,38 @@
+
+Para Instalar e rodar o sistema, você precisará configurar um servidor IIS .NET e copiar os codigos compilados para a pasta do servidor:
+
+1 - Faça logon no computador do servidor Web como administrador.
+2 - Clique em Iniciar, aponte para Configurações e clique em Painel de Controle.
+3 - Clique duas vezes em Ferramentas Administrativas e depois em Gerenciador de Serviços da Internet.
+4 - Clique com o botão direito do mouse no site que você deseja configurar no painel esquerdo e depois clique em Propriedades.
+5 - Clique na guia Site.
+6 - Digite uma descrição para o site na caixa Descrição.
+7 - Digite o endereço IP a ser usado para o site ou deixe a configuração padrão Todos (Não Atribuídos).
+8 - Modificar a porta de protocolo de controle de transmissão (TCP) conforme apropriado.
+9 - Clique na guia Diretório Base.
+10 - Para usar uma pasta no computador local, clique em Um diretório neste computador e, em seguida, clique em Procurar para localizar a pasta que você deseja usar.
+11 - Para usar uma pasta que foi compartilhada a partir de outro computador na rede, clique em Um compartilhamento localizado em outro computador e digite o caminho da rede ou clique em Procurar para selecionar a pasta compartilhada.
+12 - Clique em Leitura para conceder acesso de leitura à pasta (necessário).
+13 - Clique em OK para aceitar as propriedades do site.
+
+Criar um novo site
+
+Para criar um novo site no IIS, execute estas etapas:
+
+1 - Faça logon no computador do servidor Web como administrador.
+2 - Clique em Iniciar, aponte para Configurações e clique em Painel de Controle.
+3 - Clique duas vezes em Ferramentas Administrativas e depois em Gerenciador de Serviços da Internet.
+4 - Clique em Ação, aponte para Novo e clique em Site.
+5 - Após o início do Assistente para Criação de Site, clique em Avançar.
+6 - Digite uma descrição para o site.
+
+Essa descrição é usada internamente para identificar o site da Web só no Gerenciador de serviços de Internet.
+Selecione o endereço IP a ser usado para o site.
+
+Se você selecionar Todos (Não Atribuídos), o site ficará acessível em todas as interfaces e endereços IP configurados.
+7 - Digite o número da porta TCP para publicar o site no.
+8 - Digite o nome de cabeçalho de Host (o nome real que é usado para acessar este site).
+9 - Clique em Avançar.
+10 - Digite o caminho para a pasta que contém os documentos do site ou clique em Procurar para selecionar a pasta e clique em Avançar.
+11 - Selecione as permissões de acesso para o site e clique em Avançar.
+12 - Clique em Concluir.
